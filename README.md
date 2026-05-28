@@ -28,6 +28,8 @@ skill list.
 - **handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
+- **jj-atomic** — atomic-commit discipline: `jj diff` → split → semantic
+  message; docs / docstrings / READMEs ship in the same change.
 
 ### engineering
 - **tdd-bdd** — strict red-green-refactor loop with BDD Given/When/Then
@@ -36,6 +38,8 @@ skill list.
   hypothesise → instrument → fix with regression test → cleanup.
 - **grill-with-docs** — docs-anchored Socratic interview; updates
   `CONTEXT.md` inline, offers ADRs only on the three-of-three rule.
+- **r-style** — Tidyverse + `box::use` + `dtplyr` standards with
+  paired good/bad sibling docs (`box.md`, `tidyverse.md`, `dtplyr.md`).
 
 ## Adding a skill
 
