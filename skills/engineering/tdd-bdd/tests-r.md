@@ -7,6 +7,50 @@ core tdd-bdd loop in an R repo.
 
 ---
 
+## Characteristics — what makes a test good or bad
+
+Use this rubric before writing any `it(...)` block. The paired examples
+below are concrete instances of these rules in R.
+
+### Good tests
+- Verify **behavior users or callers care about** — inputs in, observable
+  outputs/state/errors out.
+- Exercise the **public interface only** (`box::use`'d exports, the
+  `targets` pipeline output, the exported S3/S4 method).
+- **Survive internal refactors.** Rename a helper, split a function,
+  swap an internal data structure — the test stays green.
+- **Test WHAT, not HOW.** "Returns NULL when no terms pass the threshold",
+  not "calls `filter_terms()` once with `z >= threshold`".
+- **One logical assertion per `it`.** Multiple `expect_*()` calls are fine
+  if they describe one outcome (e.g. a returned data.frame's class *and*
+  its columns); two unrelated outcomes belong in two `it` blocks.
+- **The test name reads like a spec line.** A reader who sees only the
+  `describe` + `it` titles understands the contract.
+
+### Bad tests (anti-patterns)
+- **Mock internal collaborators** (`mockery::stub()` on a function inside
+  the same module, just to "isolate" it). The test now passes when the
+  real wiring is broken.
+- **Reach past the public interface** to verify — e.g. call a non-exported
+  `pkg:::private_helper()`, inspect an environment slot, regex over
+  `capture.output()` of an internal `print` method.
+- **Assert on call counts or call order** of internal helpers. Refactor
+  the helper away and the test fails for no behavior change.
+- **Fail during refactor despite unchanged behavior.** The clearest
+  diagnostic: if `git diff` shows only renames or extractions and the
+  suite goes red, those tests were testing implementation.
+- **Test names describe mechanics**, not intent: "iterates twice over the
+  list", "calls `purrr::map` with the right lambda".
+- **Verify through a side channel** instead of the function's return
+  value — e.g. read a temp file the function wrote, then parse it,
+  instead of asserting on the function's exposed result.
+
+The single-sentence test: *if a colleague refactors the function's internals
+without changing its contract, this test should stay green.* If you can't
+honestly say yes, the test is coupled to implementation.
+
+---
+
 ## 1. Make the "Given" explicit — fixture, not environment
 
 ### Bad — depends on a real project directory
