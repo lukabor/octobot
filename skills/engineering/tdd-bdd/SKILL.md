@@ -98,3 +98,7 @@ from step 0 is a *plan*; it is not a queue of tests to enqueue at once.
   — don't silently drop it. Move it up (integration) or down (unit) one
   level and reconfirm with the user.
 - Refactor only with a green bar. No "tidy while red".
+
+## See also
+- [../diagnose/SKILL.md](../diagnose/SKILL.md) — chasing an existing bug?
+  Run `/diagnose` first; phase 5 hands back here for the regression test.

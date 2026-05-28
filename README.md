@@ -32,6 +32,8 @@ skill list.
 ### engineering
 - **tdd-bdd** — strict red-green-refactor loop with BDD Given/When/Then
   scenarios as the unit of work.
+- **diagnose** — six-phase bug hunt: feedback loop → reproduce →
+  hypothesise → instrument → fix with regression test → cleanup.
 
 ## Adding a skill
 
