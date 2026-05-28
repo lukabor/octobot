@@ -12,10 +12,16 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 - Behavior is observable from outside the unit (input → output, state
   change, side effect) — pure refactors are out of scope.
 
-## Language references
-- **R** (testthat ed. 3+, `box::use`, `describe`/`it`): see
-  [tests-r.md](tests-r.md) for paired good/bad examples covering fixtures,
-  typed errors, render-vs-data, and precondition encoding.
+## Language references — R
+
+Testthat ed. 3+, `box::use`, `describe`/`it`.
+
+- [tests-r.md](tests-r.md) — paired good/bad examples + characteristics.
+- [interface-design-r.md](interface-design-r.md) — DI, pure functions,
+  minimal surface. *Consult before step 1.*
+- [deep-modules-r.md](deep-modules-r.md) — small interface, large impl.
+- [mocking-r.md](mocking-r.md) — boundaries only. *Consult before `mockery::stub` / `local_mocked_bindings`.*
+- [refactoring-r.md](refactoring-r.md) — what to look for in step 3.
 
 ## Process
 
