@@ -12,6 +12,11 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 - Behavior is observable from outside the unit (input → output, state
   change, side effect) — pure refactors are out of scope.
 
+## Language references
+- **R** (testthat ed. 3+, `box::use`, `describe`/`it`): see
+  [tests-r.md](tests-r.md) for paired good/bad examples covering fixtures,
+  typed errors, render-vs-data, and precondition encoding.
+
 ## Process
 
 ### 0. Frame
