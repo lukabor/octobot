@@ -42,6 +42,12 @@ result <- df |> dp$filter(x > 0) |> dp$summarise(n = dp$n())
 This is the project's preferred form when calling many functions from one
 package — avoids 12 names in the import list and keeps grep-ability.
 
+**Exception — `dplyr` + `dtplyr`.** The NSE helpers `across`, `all_of`,
+`any_of`, `n` must be imported as **bare names** even when the rest of
+`dplyr` is aliased. `dtplyr`'s AST matcher does not see `dp$across(...)`
+and the call leaks into the generated `data.table` expression
+unevaluated. See [dtplyr.md § dtplyr × box::use](dtplyr.md#dtplyr--boxuse--the-nse-restriction).
+
 ## Public surface = `box::export`
 
 When writing a `box` module:

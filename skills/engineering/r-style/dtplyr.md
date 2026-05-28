@@ -37,6 +37,64 @@ Three rules:
 - **No `:=` inside the chain.** Reference semantics defeat lazy
   evaluation; if you need it, drop out to plain `data.table`.
 
+## `dtplyr` × `box::use` — the NSE restriction
+
+`dtplyr` rewrites your `dplyr` verb chain into a `data.table`
+`j`-expression by **pattern-matching the AST**. The matcher only sees
+calls that are either **bare** (`across(...)`) or **`::`-namespaced**
+(`dplyr::across(...)`). Anything else — including the aliased form
+`dp$across(...)` you get from `box::use(dp = dplyr)` — is opaque and
+leaks into the generated `j`-expression *unevaluated*. You then get a
+cryptic `data.table` error or a silently wrong result.
+
+The names that matter (the `dplyr` NSE helpers used by `dtplyr`):
+`across`, `all_of`, `any_of`, `n`, plus any non-standard-evaluation helper
+you put inside a `summarise()` / `mutate()` / `group_by()`.
+
+### Bad — aliased import only
+```r
+box::use(
+  dp = dplyr,
+  dt = data.table[lazy_dt],
+)
+
+agg <- df |>
+  dt$lazy_dt() |>
+  dp$group_by(dp$across(dp$all_of(grp))) |>   # opaque to dtplyr!
+  dp$summarise(n = dp$n())
+```
+
+### Good — alias the verbs, import NSE helpers as bare names
+```r
+box::use(
+  dplyr,
+  # bare names: dtplyr's NSE pattern matcher only recognises
+  # `across`/`all_of`/`any_of`/`n` when the AST is a bare call or
+  # `::`-namespaced; `dplyr$across(...)` is opaque to it and leaks
+  # into data.table's j-expression unevaluated.
+  dplyr[across, all_of, any_of, n],
+  dtplyr,
+  tibble,
+)
+
+agg <- df |>
+  dtplyr$lazy_dt() |>
+  dplyr$group_by(across(all_of(grp))) |>      # bare — dtplyr sees it
+  dplyr$summarise(n = n()) |>
+  tibble$as_tibble()
+```
+
+Two-line rule:
+1. Keep `dplyr$verb()` aliasing for the **verbs** (`filter`, `mutate`,
+   `summarise`, `group_by`, …) — those execute normally.
+2. Import `across`, `all_of`, `any_of`, `n` as **bare names** so the
+   `dtplyr` AST matcher recognises them.
+
+The same applies for any other NSE helper that `dtplyr` special-cases
+(`if_any`, `if_all`, `desc`, `cur_group`, …). When in doubt: bare-name
+import, then verify the pipeline returns a `tibble` not a `data.table`
+error.
+
 ## Reference-semantics warning
 
 `data.table` mutates in place. A function that accepts a `data.table` and
