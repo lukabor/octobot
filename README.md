@@ -29,6 +29,10 @@ skill list.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
 
+### engineering
+- **tdd-bdd** — strict red-green-refactor loop with BDD Given/When/Then
+  scenarios as the unit of work.
+
 ## Adding a skill
 
 Run `/write-a-skill` in any project. It will ask for name, trigger, and
