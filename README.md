@@ -29,14 +29,6 @@ skill list.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
 
-## Concepts
-
-Reference docs (not auto-loaded; copy into a project's `CLAUDE.md` or paste
-into a session as needed):
-
-- [karpathy-behavioral-guidelines](concepts/karpathy-behavioral-guidelines.md)
-  — Andrej-Karpathy-flavored rules for cautious LLM coding.
-
 ## Adding a skill
 
 Run `/write-a-skill` in any project. It will ask for name, trigger, and
