@@ -32,3 +32,8 @@ description: Run a Socratic loop that removes ambiguity from a task before any i
 - No implementation, no file edits during grilling.
 - No leading questions ("you want X, right?"). Ask open questions.
 - If the user gets impatient, offer to stop early with the current understanding.
+
+## See also
+- [../../engineering/grill-with-docs/SKILL.md](../../engineering/grill-with-docs/SKILL.md)
+  — same energy, but anchored to the repo's `CONTEXT.md` and code. Use
+  that one when a codebase exists to grill against.

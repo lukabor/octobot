@@ -34,6 +34,8 @@ skill list.
   scenarios as the unit of work.
 - **diagnose** — six-phase bug hunt: feedback loop → reproduce →
   hypothesise → instrument → fix with regression test → cleanup.
+- **grill-with-docs** — docs-anchored Socratic interview; updates
+  `CONTEXT.md` inline, offers ADRs only on the three-of-three rule.
 
 ## Adding a skill
 

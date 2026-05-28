@@ -77,3 +77,5 @@ Hand off to [tdd-bdd](../tdd-bdd/SKILL.md):
 - [../tdd-bdd/SKILL.md](../tdd-bdd/SKILL.md) — phase 5 is a tdd-bdd cycle.
 - [../tdd-bdd/refactoring-r.md](../tdd-bdd/refactoring-r.md) — file
   architectural follow-ups here.
+- [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — phase 3
+  hypothesis names should use canonical terms from `CONTEXT.md`.
