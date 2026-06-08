@@ -56,7 +56,7 @@ description: Scaffold a new Python project with uv for dependency management, a 
   the scaffold lean and let the user grow it.
 
 ## See also
-- [`../../../concepts/three-stage-dockerfile.md`](../../_concepts/three-stage-dockerfile.md)
+- [`../../_concepts/three-stage-dockerfile.md`](../../_concepts/three-stage-dockerfile.md)
   — rationale for the base/production/development pattern in `Dockerfile.tpl`.
 - [`../../engineering/dev-python/SKILL.md`](../../engineering/dev-python/SKILL.md)
   — workflow that this scaffold sets up.

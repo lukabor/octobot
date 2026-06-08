@@ -16,6 +16,8 @@ mkdir -p ~/.claude/skills
 for s in ~/code/octobot/skills/*/*/; do
   ln -s "${s%/}" "$HOME/.claude/skills/$(basename "$s")"
 done
+# shared concept docs (referenced by skills via ../_concepts/...)
+ln -s ~/code/octobot/concepts ~/.claude/skills/_concepts
 ```
 
 Open any project, start Claude Code, and the skills below appear in the
@@ -40,6 +42,23 @@ skill list.
   `CONTEXT.md` inline, offers ADRs only on the three-of-three rule.
 - **r-style** — Tidyverse + `box::use` + `dtplyr` standards with
   paired good/bad sibling docs (`box.md`, `tidyverse.md`, `dtplyr.md`).
+- **dev-python** — orchestrate the full Python workflow (implement →
+  lint → typecheck → test → commit). Explicit trigger only.
+- **dev-r** — orchestrate the full R workflow; auto-detects package
+  (`DESCRIPTION`) vs analysis (`_targets.R`).
+- **write-readme-py** — generate `README.md` from `pyproject.toml` +
+  `justfile`.
+
+### scaffold
+- **build-py-project** — uv + Docker (3-stage) + justfile + pyproject.
+- **build-r-package** — renv + rocker/r-ver + DESCRIPTION + testthat.
+- **build-r-analysis** — renv + rocker/verse + `_targets.R` + Quarto.
+
+### concepts
+Shared reference docs (not skills; loaded on demand by SKILLs that link them):
+- [`concepts/three-stage-dockerfile.md`](concepts/three-stage-dockerfile.md)
+  — base / production / development Docker pattern used by every
+  `scaffold/build-*` skill.
 
 ## Adding a skill
 

@@ -104,3 +104,7 @@ working-copy is split into two atomic commits with proper messages.
   as the fix.
 - [`../../engineering/diagnose/SKILL.md`](../../engineering/diagnose/SKILL.md)
   — phase-6 post-mortem commit message names the confirmed hypothesis.
+- [`../../engineering/dev-python/SKILL.md`](../../engineering/dev-python/SKILL.md)
+  and
+  [`../../engineering/dev-r/SKILL.md`](../../engineering/dev-r/SKILL.md)
+  — workflow orchestrators that hand off here for the commit phase.
