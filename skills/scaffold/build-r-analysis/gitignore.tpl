@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.Rdata
+.DS_Store
+*.Rproj
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/staging/
+_targets/
+data/processed/
+reports/*.html
+reports/*.pdf
