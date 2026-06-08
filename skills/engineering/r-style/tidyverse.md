@@ -97,6 +97,94 @@ load_hippie()
 See [box.md](box.md). `source` is invisible imports + arbitrary side
 effects; `box::use` is named imports + tested boundaries.
 
+## 5. Native pipe `|>` only — no `%>%`
+
+Use the base R native pipe. `magrittr`'s `%>%` is an extra dependency
+with subtly different semantics (`.` placeholder, lazy evaluation, S4
+method dispatch quirks).
+
+### Bad
+```r
+df %>% filter(x > 0) %>% select(a, b)
+```
+
+### Good
+```r
+df |> filter(x > 0) |> select(a, b)
+```
+
+When you need a placeholder, name the argument:
+
+```r
+df |> filter(x > 0) |> with(cor(a, b))   # WRONG — looks like magrittr `.`
+df |> filter(x > 0) |> (\(d) cor(d$a, d$b))()   # RIGHT — explicit lambda
+```
+
+## 6. Anonymous functions — `\(x)` over `function(x)`
+
+The native shorthand is shorter, scans faster inside a pipe, and is
+unambiguous in argument position.
+
+### Bad
+```r
+list |> map(function(x) x^2)
+```
+
+### Good
+```r
+list |> map(\(x) x^2)
+```
+
+`function(x)` is fine for top-level definitions (`flatten_one <-
+function(v) ...`); the shorthand is the default *inline*.
+
+## 7. Naming — `snake_case` for everything except constants
+
+```r
+# Functions, variables
+calculate_mean   <- function(x) mean(x)
+dataset_ids      <- c("DS001", "DS002")
+
+# Constants
+MAX_ITERATIONS   <- 1000
+DEFAULT_TIMEOUT  <- 30L
+```
+
+Anti-patterns: `camelCase`, `dot.separated` (legacy base R idiom), and
+`PascalCase` for anything that isn't an S4 class.
+
+```r
+# WRONG
+calculateMean    <- function(x) mean(x)
+my.helper        <- function(x) x
+maxIterations    <- 1000
+```
+
+## 8. Roxygen2 docs on every exported function (packages only)
+
+In an R package (`DESCRIPTION` present), every `@export`ed function
+needs a roxygen2 block. Markdown enabled.
+
+```r
+#' Calculate the mean of a numeric vector
+#'
+#' @param x A numeric vector.
+#' @param na_rm Logical. Remove NAs before computing? Default `TRUE`.
+#' @returns A scalar numeric.
+#' @export
+calculate_mean <- function(x, na_rm = TRUE) {
+  mean(x, na.rm = na_rm)
+}
+```
+
+Minimum required tags: title (the first line), `@param` for every
+argument, `@returns`, `@export`. `@examples` when the function is
+non-trivial. No docs is a `devtools::check()` warning.
+
+In `box::use`-based projects without a `DESCRIPTION`, roxygen2 is
+optional — but a one-line `#'` comment over every exported function is
+still strongly recommended.
+
 ## Tooling
 
 - `styler::style_pkg()` — auto-format to Tidyverse rules.

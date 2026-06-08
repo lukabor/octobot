@@ -26,6 +26,12 @@ description: Project R coding standards — Tidyverse style, `box::use` for impo
    `data.table`-class objects above ~1 M rows, wrap with
    `data.table::lazy_dt(df)` and exit with `as_tibble()`. See
    [dtplyr.md](dtplyr.md).
+5. **Native pipe `|>` only.** No `%>%`. Anonymous functions: `\(x)`,
+   not `function(x)`. See [tidyverse.md §5–6](tidyverse.md).
+6. **`snake_case` for names, `SCREAMING_SNAKE_CASE` for constants.**
+   No `camelCase`, no `dot.separated`. See [tidyverse.md §7](tidyverse.md).
+7. **Roxygen2 on every exported function** in a package
+   (`DESCRIPTION` present). See [tidyverse.md §8](tidyverse.md).
 
 ## Tooling, not enforcement
 The skill states the rules; `styler::style_pkg()` and `lintr` enforce them.
