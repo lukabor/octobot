@@ -9,15 +9,14 @@ Modeled on [mattpocock/skills](https://github.com/mattpocock/skills).
 
 Claude Code discovers skills at `~/.claude/skills/<name>/SKILL.md` (flat,
 one level deep — category subfolders are not scanned). Symlink each skill
-individually:
+individually; the `_concepts/` doc folder lives inside `skills/` and is
+not symlinked separately (skills reach it via relative paths):
 
 ```bash
 mkdir -p ~/.claude/skills
 for s in ~/code/octobot/skills/*/*/; do
   ln -s "${s%/}" "$HOME/.claude/skills/$(basename "$s")"
 done
-# shared concept docs (referenced by skills via ../_concepts/...)
-ln -s ~/code/octobot/concepts ~/.claude/skills/_concepts
 ```
 
 Open any project, start Claude Code, and the skills below appear in the
@@ -54,9 +53,13 @@ skill list.
 - **build-r-package** — renv + rocker/r-ver + DESCRIPTION + testthat.
 - **build-r-analysis** — renv + rocker/verse + `_targets.R` + Quarto.
 
-### concepts
-Shared reference docs (not skills; loaded on demand by SKILLs that link them):
-- [`concepts/three-stage-dockerfile.md`](concepts/three-stage-dockerfile.md)
+### _concepts
+Shared reference docs under `skills/_concepts/` — not skills (no
+`SKILL.md`), loaded on demand by skills that link them. The leading
+underscore is the "not a skill" marker; the install loop above skips it
+because it sits one level shallower than `skills/<category>/<name>/`.
+
+- [`skills/_concepts/three-stage-dockerfile.md`](skills/_concepts/three-stage-dockerfile.md)
   — base / production / development Docker pattern used by every
   `scaffold/build-*` skill.
 
@@ -65,3 +68,25 @@ Shared reference docs (not skills; loaded on demand by SKILLs that link them):
 Run `/write-a-skill` in any project. It will ask for name, trigger, and
 success criteria, then scaffold `skills/<category>/<name>/SKILL.md` in this
 repo.
+
+## Roadmap
+
+Known gaps tracked here. Pick one off the list when you have a quiet
+afternoon.
+
+- **`handoff` needs a filled example.** The SKILL.md ships a template but
+  no worked instance. Add `handoff/example.md` — a one-page fictional but
+  realistic filled handoff doc — so a reader sees the format in motion
+  (matches the strength of `jj-atomic/examples.md`).
+- **`grill-me` needs a filled dialogue.** Add `grill-me/example.md` —
+  a short Q-by-Q transcript on a vague task that resolves into a
+  one-paragraph statement, mirroring `grill-with-docs/examples-r.md`.
+  Makes the plan-only vs docs-anchored distinction obvious at a glance.
+- **Python siblings for `tdd-bdd` / `diagnose`.** R has `tests-r.md`,
+  `mocking-r.md`, `feedback-loops-r.md`, etc. Python equivalents
+  (`tests-py.md`, `mocking-py.md`, `feedback-loops-py.md`) are
+  acknowledged as missing in [`dev-python/SKILL.md`](skills/engineering/dev-python/SKILL.md).
+- **`write-readme-r`.** The R counterpart to `write-readme-py` (read
+  `DESCRIPTION` for packages and `_targets.R` + `index.qmd` for
+  analyses) is noted as out of scope in
+  [`write-readme-py/SKILL.md`](skills/engineering/write-readme-py/SKILL.md).
