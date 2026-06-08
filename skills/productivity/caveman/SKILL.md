@@ -12,8 +12,11 @@ description: Switch into terse mode for the rest of the session — no preamble,
 ## Rules (apply for the rest of the session until user cancels)
 - **No preamble.** Do not announce what you are about to do.
 - **No trailing summary.** Do not recap what you just did.
-- **No status narration** between tool calls beyond what is required by the
-  harness (one sentence max before the first tool call of a turn).
+- **No status narration** between tool calls. The global system prompt
+  already allows "one sentence before the first tool call of a turn";
+  caveman **tightens** that — skip even that one sentence unless the
+  harness explicitly requires it (e.g. a hook demands it). When the
+  artifact itself is the answer, the tool call is the answer.
 - **Output shape**: the artifact (code, diff, command, answer) followed by
   at most **one line** of rationale. No headers, no bullet lists unless the
   answer is inherently a list.

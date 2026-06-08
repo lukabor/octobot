@@ -26,14 +26,20 @@ description: Scaffold a new Claude Code skill with the octobot conventions — f
    memorized).
 4. **Review** — show the draft to the user; iterate until approved. Verify:
    - `name:` matches the folder name
-   - `description:` contains "Use when" and is < 1024 chars
-   - file is ≤ 100 lines (split into REFERENCE.md / EXAMPLES.md otherwise)
+   - `description:` contains "Use when" and is ≤ 1024 chars
+   - file is ≤ 100 lines. If you need more, split into **topic-named
+     siblings** — e.g. `tests-r.md`, `mocking-r.md`, `feedback-loops-r.md`,
+     `anti-patterns.md`, `examples.md`. One topic per file, named for the
+     topic (not for the role). `REFERENCE.md` / `EXAMPLES.md` are reserved
+     for genuinely role-shaped content — most splits are topic splits.
    - no time-sensitive content
 5. **Link** — Claude Code only scans one level deep under `~/.claude/skills/`,
    so create a per-skill symlink:
    `ln -s ~/code/octobot/skills/<category>/<name> ~/.claude/skills/<name>`
-6. **Commit** — from the octobot repo:
-   `jj describe -m "add skill: <name>"` (and `jj git push` if a remote exists).
+6. **Commit** — from the octobot repo, following the `type(scope):
+   imperative` format from [`../jj-atomic/SKILL.md`](../jj-atomic/SKILL.md):
+   `jj describe -m "feat(skills): add <name> skill"`
+   (and `jj git push` if a remote exists).
 
 ## Template
 ```markdown
