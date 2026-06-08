@@ -1,0 +1,86 @@
+---
+name: dev-python
+description: Orchestrate the full Python development workflow in a uv + Docker + justfile project — implement, lint, typecheck, test (TDD-BDD), commit. Use ONLY when the user explicitly asks for the workflow ("run the python workflow", "full dev loop", "/dev-python"). Do NOT auto-invoke for individual tasks like fixing a bug, adding a function, or writing tests — those use the relevant focused skill (`/tdd-bdd`, `/diagnose`, `/jj-atomic`) directly.
+---
+
+# dev-python
+
+Workflow for `build-py-project`-shaped repos (uv + Docker + justfile).
+Each phase must pass before the next. Do not advance silently.
+
+## When to use
+- User says "run the python workflow", "full dev loop", "/dev-python".
+- A fresh feature or fix needs the complete loop, not a single skill.
+
+## When NOT to use
+- Single-task work: a bug fix → `/diagnose` + `/tdd-bdd` directly.
+- Writing tests for an already-implemented behaviour → `/tdd-bdd` only.
+- Committing a single change → `/jj-atomic` only.
+
+## Phases
+
+### 0. Frame
+Apply Karpathy guardrails from [`../../../CLAUDE.md`](../../CLAUDE.md):
+state assumptions, name the simpler approach, surface tradeoffs. If the
+task is ambiguous, hand off to [`/grill-me`](../../productivity/grill-me/SKILL.md)
+or [`/grill-with-docs`](../grill-with-docs/SKILL.md) first.
+
+### 1. Implement
+- Write code under `src/<package>/`.
+- Match existing style; touch only what the task requires.
+
+### 2. Lint
+```bash
+just lint           # ruff check
+```
+If it fails:
+```bash
+just lint-fix && just fmt
+just lint && just fmt-check   # confirm clean
+```
+
+### 3. Typecheck
+```bash
+just typecheck      # ty check
+```
+Fix type errors. Don't suppress with `# type: ignore` unless genuinely
+unavoidable — explain inline why.
+
+### 4. Test (TDD-BDD)
+Hand to [`/tdd-bdd`](tdd-bdd/SKILL.md) to write Given/When/Then
+scenarios and the failing tests. Then:
+```bash
+just test
+```
+All tests must pass before commit. New edge case found mid-loop → add
+to suite, don't skip.
+
+### 5. Commit
+Hand to [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md). The fix
++ the regression test land in the **same** atomic change.
+
+## Reference: justfile commands
+
+| Command | What |
+|---|---|
+| `just build-dev` / `build-prod` | Build dev / prod container |
+| `just up` / `up-prod` | Shell into dev / start prod container |
+| `just down` | Stop all containers |
+| `just lint` / `lint-fix` | ruff check / with auto-fix |
+| `just fmt` / `fmt-check` | ruff format (apply / check) |
+| `just typecheck` | ty check |
+| `just test` / `test-verbose` | pytest with coverage |
+| `just check` | lint + fmt-check + typecheck + test |
+| `just fix-and-check` | lint-fix + fmt + typecheck + test |
+
+## See also
+- [`../tdd-bdd/SKILL.md`](../tdd-bdd/SKILL.md) — Given/When/Then loop.
+  Python siblings (`tests-py.md`, `mocking-py.md`, …) are not yet
+  written; R siblings work as analogies until they land.
+- [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — six-phase bug hunt.
+- [`../../productivity/jj-atomic/SKILL.md`](../../productivity/jj-atomic/SKILL.md)
+  — commit discipline.
+- [`../../scaffold/build-py-project/SKILL.md`](../../scaffold/build-py-project/SKILL.md)
+  — sets up the project this workflow assumes.
+- [`write-readme-py`](../write-readme-py/SKILL.md) — README from
+  `pyproject.toml` + `justfile`.
