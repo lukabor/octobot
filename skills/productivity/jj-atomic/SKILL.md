@@ -70,7 +70,13 @@ jj diff                              # 1. read every line
 jj split  <paths-for-second-change>  # 2. one concern per change
 jj describe -m '...'                 # 3. semantic message
 jj diff   --revision @-              # 4. verify the message matches what shipped
+jj new   -m 'WIP'                    # 5. open a fresh empty @ for the next unit
 ```
+
+**Step 5 is not optional.** After `jj describe`, the current change is
+sealed; without `jj new`, every subsequent edit accumulates into a
+change with an outdated message. Open a fresh empty `@` immediately so
+the next concern starts in a clean working copy.
 
 ## Anti-patterns
 - **`jj describe` before `jj diff`.** You'll commit debug `cat()`s,
@@ -83,6 +89,8 @@ jj diff   --revision @-              # 4. verify the message matches what shippe
   OAuth2 login flow`. Scope is the smallest area the change touches.
 - **Docs in the next commit.** "I'll update the README after." You
   won't. Same change or it doesn't ship.
+- **Skipping `jj new` after describe.** Edits land in the just-described
+  change; its message rots into a lie. Always open a fresh `@`.
 
 ## Examples
 See [examples.md](examples.md) for a real before/after where a
