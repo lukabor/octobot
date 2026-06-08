@@ -20,10 +20,13 @@ Each phase must pass before the next. Do not advance silently.
 ## Phases
 
 ### 0. Frame
-Apply Karpathy guardrails from [`../../../CLAUDE.md`](../../CLAUDE.md):
-state assumptions, name the simpler approach, surface tradeoffs. If the
-task is ambiguous, hand off to [`/grill-me`](../../productivity/grill-me/SKILL.md)
-or [`/grill-with-docs`](../grill-with-docs/SKILL.md) first.
+Karpathy guardrails — state assumptions explicitly, name the simpler
+approach you're rejecting, surface tradeoffs. Push back when warranted; if
+something is unclear, stop and ask. See
+[`../../../CLAUDE.md`](../../../CLAUDE.md) for the full version. If the
+task is ambiguous, hand off to
+[`/grill-me`](../../productivity/grill-me/SKILL.md) or
+[`/grill-with-docs`](../grill-with-docs/SKILL.md) first.
 
 ### 1. Implement
 - Write code under `src/<package>/`.
@@ -47,13 +50,15 @@ Fix type errors. Don't suppress with `# type: ignore` unless genuinely
 unavoidable — explain inline why.
 
 ### 4. Test (TDD-BDD)
-Hand to [`/tdd-bdd`](tdd-bdd/SKILL.md) to write Given/When/Then
-scenarios and the failing tests. Then:
+Hand to [`/tdd-bdd`](../tdd-bdd/SKILL.md), which loops red→green→refactor
+**one scenario at a time** — never write all the tests upfront (that's the
+horizontal-slicing anti-pattern called out in tdd-bdd itself). When every
+scenario from step 0 is green:
 ```bash
 just test
 ```
-All tests must pass before commit. New edge case found mid-loop → add
-to suite, don't skip.
+The full suite must be green before commit. New edge case found mid-loop
+→ add as the next scenario, don't skip.
 
 ### 5. Commit
 Hand to [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md). The fix

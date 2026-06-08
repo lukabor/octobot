@@ -72,32 +72,19 @@ Testthat ed. 3+, `box::use`, `describe`/`it`.
 - No production code exists that is not exercised by a test added in this
   loop.
 
-## Anti-pattern: horizontal slicing
+## Anti-patterns
 
-**DO NOT write all the tests first, then all the implementation.** Treating
-RED as "write every test from step 0" and GREEN as "make them all pass" is
-horizontal slicing. It produces tests of *imagined* behavior — you commit to
-shapes and signatures before the code teaches you what actually matters.
-
-```
-WRONG (horizontal):    RIGHT (vertical, tracer bullets):
-  RED:   t1 t2 t3        RED→GREEN: t1 → impl1
-  GREEN: i1 i2 i3        RED→GREEN: t2 → impl2
-                         RED→GREEN: t3 → impl3
-```
-
-Each cycle responds to what the previous cycle revealed. The scenario list
-from step 0 is a *plan*; it is not a queue of tests to enqueue at once.
+See [anti-patterns.md](anti-patterns.md) — horizontal slicing, passing on
+first run, refactoring while red, silently dropping an untestable scenario.
 
 ## Guardrails
-- **Never** skip the red step. If a test passes on first run, it is
-  testing the wrong thing — fix it before continuing.
-- **Never** write more than one failing test at a time (horizontal-slicing
-  trap above).
-- If a scenario turns out to be untestable at the chosen level, surface it
-  — don't silently drop it. Move it up (integration) or down (unit) one
-  level and reconfirm with the user.
-- Refactor only with a green bar. No "tidy while red".
+- **Never** skip the red step (see anti-patterns.md *"Passing on first run"*).
+- **Never** write more than one failing test at a time (see anti-patterns.md
+  *"Horizontal slicing"*).
+- Refactor only with a green bar (see anti-patterns.md
+  *"Refactoring while red"*).
+- If a scenario turns out untestable at the chosen level, surface it (see
+  anti-patterns.md *"Silently dropping…"*).
 
 ## See also
 - [../diagnose/SKILL.md](../diagnose/SKILL.md) — chasing an existing bug?

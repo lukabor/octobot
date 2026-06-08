@@ -79,18 +79,10 @@ change with an outdated message. Open a fresh empty `@` immediately so
 the next concern starts in a clean working copy.
 
 ## Anti-patterns
-- **`jj describe` before `jj diff`.** You'll commit debug `cat()`s,
-  stray `browser()` calls, and TODO scratchpads.
-- **"Mixed bag" commits.** `refactor + fix + new feature` in one change
-  is three regressions waiting to happen and an unrevertable mess.
-- **Past-tense / declarative messages.** `"added auth"`, `"auth now
-  works"`. These don't complete "this change will…".
-- **No scope.** `feat: add login` is weaker than `feat(auth): add
-  OAuth2 login flow`. Scope is the smallest area the change touches.
-- **Docs in the next commit.** "I'll update the README after." You
-  won't. Same change or it doesn't ship.
-- **Skipping `jj new` after describe.** Edits land in the just-described
-  change; its message rots into a lie. Always open a fresh `@`.
+
+See [anti-patterns.md](anti-patterns.md) — `jj describe` before
+`jj diff`, mixed-bag commits, past-tense messages, missing scope, docs
+deferred to the next commit, skipping `jj new` after describe.
 
 ## Examples
 See [examples.md](examples.md) for a real before/after where a
@@ -104,7 +96,4 @@ working-copy is split into two atomic commits with proper messages.
   as the fix.
 - [`../../engineering/diagnose/SKILL.md`](../../engineering/diagnose/SKILL.md)
   — phase-6 post-mortem commit message names the confirmed hypothesis.
-- [`../../engineering/dev-python/SKILL.md`](../../engineering/dev-python/SKILL.md)
-  and
-  [`../../engineering/dev-r/SKILL.md`](../../engineering/dev-r/SKILL.md)
-  — workflow orchestrators that hand off here for the commit phase.
+- [`../../engineering/dev-python/SKILL.md`](../../engineering/dev-python/SKILL.md) / [`../../engineering/dev-r/SKILL.md`](../../engineering/dev-r/SKILL.md) — workflow orchestrators that hand off here for the commit phase.
