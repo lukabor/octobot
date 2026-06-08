@@ -7,6 +7,48 @@ core tdd-bdd loop in an R repo.
 
 ---
 
+## Test-file prologue (`box::use` for testthat)
+
+Every test file under `tests/testthat/**/test_*.R` opens with the same
+three blocks:
+
+```r
+# R
+
+project_root <- normalizePath(file.path(
+  testthat::test_path(), "..", "..", ".."
+))
+options(box.path = project_root)
+
+box::use(
+  testthat[
+    describe, it,
+    expect_true, expect_false, expect_equal, expect_error,
+    expect_type, expect_identical, expect_null, expect_silent
+  ]
+)
+
+box::use(
+  R/indication/get_modb_bulk_config[get_dataset_config],
+  R/indication/query_modb[get_modb_client]
+)
+```
+
+Why each block:
+- **`testthat::test_path()` walk-up + `options(box.path = ...)`** anchors
+  `box::use(R/...)` resolution to the repo root regardless of where
+  `testthat::test_dir()` set the working directory.
+- **`box::use(testthat[...])`** — bare-name imports of every `describe`,
+  `it`, and `expect_*` the file calls. No `library(testthat)`.
+- **Separate `box::use(R/.../module[...])` block** for the system under
+  test, alphabetised, named imports only.
+
+Snippets below show only the `describe(...) { it(...) ... }` body — the
+prologue is implied. When writing a new test file, copy this prologue
+verbatim.
+
+---
+
 ## Characteristics — what makes a test good or bad
 
 Use this rubric before writing any `it(...)` block. The paired examples

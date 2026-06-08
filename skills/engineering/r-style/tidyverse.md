@@ -3,6 +3,10 @@
 Follows the [Tidyverse style guide](https://style.tidyverse.org/) where it
 matches the project's idiom. Four substitutions matter most.
 
+> Snippets below show only the function bodies; the `box::use(...)`
+> prologue is omitted for clarity. Real files start with one — see
+> [box.md](box.md).
+
 ## <a id="for-loops"></a>1. `for` loops → `purrr` mapping
 
 ### Bad — real example, list-column flattening

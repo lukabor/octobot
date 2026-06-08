@@ -2,6 +2,10 @@
 
 Three rules. Apply them before writing the test, not after.
 
+> Snippets below show only the function bodies; the `box::use(...)`
+> prologue is omitted for clarity. Real files start with one — see
+> [`../r-style/box.md`](../r-style/box.md).
+
 ## 1. Dependency injection — pass clients, don't construct them
 
 Functions that build their own dependencies are hard to test because the

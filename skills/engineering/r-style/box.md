@@ -65,6 +65,57 @@ Keep `box::export()` deliberately small — see
 [../tdd-bdd/deep-modules-r.md](../tdd-bdd/deep-modules-r.md). Every name
 you export is a contract you owe future callers and tests.
 
+## `.Rmd` setup chunks — no exception
+
+The rule is the same for `.Rmd` setup chunks as for `.R` files: **no
+`library()`, no `source()`**. Migrated bookdown chapters open with a
+single `box::use(...)` block and call `knitr::opts_chunk$set(...)` with
+explicit `::` namespacing — never `library(knitr)`.
+
+```r
+# Rmd/indication/<chapter>.Rmd — migrated style
+box::use(targets[tar_read])
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+**The one documented exception** is a *legacy-script bridge*: when a
+chapter must `sys.source()` an older script that resolves bare names
+(e.g. `data.table`, `dplyr`) at top level. The shim must (a) carry a
+comment explaining *why* it isn't using `box::use`, and (b) be tracked
+as a migration target — not a precedent. Example from the repo:
+
+```r
+# Legacy script shim: source `legacy_analysis.R` into a private env
+# (parent = globalenv) so its many intermediate bindings do NOT leak
+# into sibling chapters. ...
+library(data.table); library(dplyr); library(tibble); library(stringr); library(magrittr)
+box::use(R/base/utility_fn[get_ensembl_link])
+hom_env <- new.env(parent = globalenv())
+sys.source("R/indication/legacy_script.R", envir = hom_env)
+```
+
+Two infrastructure pieces support this policy:
+
+- `R/base/render_book.R` sets `options(box.path = project_root)` so
+  `box::use(R/...)` resolves regardless of bookdown's working directory.
+- The same file anchors the knit env to `globalenv()` so legacy bare-name
+  lookups still work *without* breaking `box::use` bindings.
+
+## Reloading modules — `box::reload()`
+
+`box::use` caches modules across the R session. When you've edited a
+module and want the change to take effect in the same session — testing
+in the REPL, iterating in a `diagnose` loop, re-rendering a chapter —
+call:
+
+```r
+box::reload(R/indication/client)        # drops the cache; next box::use re-evaluates
+```
+
+Use this in `feedback-loops-r.md` loops where determinism matters more
+than speed. See
+[`../diagnose/feedback-loops-r.md`](../diagnose/feedback-loops-r.md#make-the-loop-deterministic).
+
 ## Anti-patterns
 
 ### `library()` at the top of a file — BAD

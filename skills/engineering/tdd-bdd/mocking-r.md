@@ -2,6 +2,10 @@
 
 **Mock at system boundaries. Never mock your own code.**
 
+> Snippets below show only the function bodies; the `box::use(...)`
+> prologue is omitted for clarity. Real files start with one — see
+> [`../r-style/box.md`](../r-style/box.md).
+
 ## Boundaries you may mock
 
 - HTTP / REST APIs — `httptest2`, `webmockr`, or `httr2::with_mocked_responses()`.
