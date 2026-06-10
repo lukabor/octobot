@@ -28,6 +28,8 @@ description: Scaffold a new Python project with uv for dependency management, a 
    ├── tests/fixtures/.gitkeep
    ├── justfile                   ← justfile.tpl
    ├── pyproject.toml             ← pyproject.toml.tpl
+   ├── README.md                  ← README.md.tpl (stub; hatchling needs
+   │                                it to exist — /write-readme-py replaces it)
    └── .gitignore                 ← gitignore.tpl
    ```
 3. **Delegate Docker** to
