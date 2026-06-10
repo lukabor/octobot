@@ -9,8 +9,7 @@ Modeled on [mattpocock/skills](https://github.com/mattpocock/skills).
 
 Claude Code discovers skills at `~/.claude/skills/<name>/SKILL.md` (flat,
 one level deep — category subfolders are not scanned). Symlink each skill
-individually; the `_concepts/` doc folder lives inside `skills/` and is
-not symlinked separately (skills reach it via relative paths):
+individually:
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -49,19 +48,21 @@ skill list.
   `justfile`.
 
 ### scaffold
-- **build-py-project** — uv + Docker (3-stage) + justfile + pyproject.
-- **build-r-package** — renv + rocker/r-ver + DESCRIPTION + testthat.
-- **build-r-analysis** — renv + rocker/verse + `_targets.R` + Quarto.
-
-### _concepts
-Shared reference docs under `skills/_concepts/` — not skills (no
-`SKILL.md`), loaded on demand by skills that link them. The leading
-underscore is the "not a skill" marker; the install loop above skips it
-because it sits one level shallower than `skills/<category>/<name>/`.
-
-- [`skills/_concepts/three-stage-dockerfile.md`](skills/_concepts/three-stage-dockerfile.md)
-  — base / production / development Docker pattern used by every
-  `scaffold/build-*` skill.
+- **build-py-project** — uv + justfile + pyproject; Docker via
+  `containerize-project`.
+- **build-r-package** — renv + DESCRIPTION + testthat; Docker via
+  `containerize-project`.
+- **build-r-analysis** — renv + `_targets.R` + Quarto; Docker via
+  `containerize-project`.
+- **containerize-project** — three-stage Docker (base/production/
+  development) for uv and renv projects: Dockerfile, compose,
+  `.dockerignore`, justfile recipes. Hardened defaults (non-root
+  production user, pinned uv, no source mount in prod). The `build-*`
+  skills delegate their Docker step here; also works standalone on an
+  existing repo.
+- **add-docker-secrets** — build-time (BuildKit secret mounts) and
+  runtime (`env_file` / compose secrets) credentials without leaking
+  into image layers.
 
 ## Adding a skill
 

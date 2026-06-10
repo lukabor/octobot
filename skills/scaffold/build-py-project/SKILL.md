@@ -1,6 +1,6 @@
 ---
 name: build-py-project
-description: Scaffold a new Python project with uv for dependency management, a three-stage Docker setup (base/production/development), docker-compose, justfile task runner, and pyproject.toml configured with ruff, ty, and pytest. Materialises files into a target directory and stops on `jj diff` for review before any commit. Use when the user says "new python project", "scaffold python", "create python project", "set up python repo", "bootstrap python", "/build-py-project".
+description: Scaffold a new Python project with uv for dependency management, a justfile task runner, and pyproject.toml configured with ruff, ty, and pytest, then delegate the three-stage Docker setup (Dockerfile, docker-compose, .dockerignore) to containerize-project. Materialises files into a target directory and stops on `jj diff` for review before any commit. Use when the user says "new python project", "scaffold python", "create python project", "set up python repo", "bootstrap python", "/build-py-project".
 ---
 
 # build-py-project
@@ -26,17 +26,19 @@ description: Scaffold a new Python project with uv for dependency management, a 
    <project>/
    ├── src/<package>/__init__.py
    ├── tests/fixtures/.gitkeep
-   ├── Dockerfile                 ← Dockerfile.tpl
-   ├── docker-compose.yml         ← docker-compose.yml.tpl
    ├── justfile                   ← justfile.tpl
    ├── pyproject.toml             ← pyproject.toml.tpl
    └── .gitignore                 ← gitignore.tpl
    ```
-3. **Stop. Do not run `jj describe`.** Tell the user:
+3. **Delegate Docker** to
+   [`/containerize-project`](../containerize-project/SKILL.md) (python
+   variant): it writes `Dockerfile`, `docker-compose.yml`,
+   `.dockerignore`, and appends the Docker recipes to the justfile.
+4. **Stop. Do not run `jj describe`.** Tell the user:
    > "Review with `jj diff` (or `git status` + `git diff`). Then run
    > `just build-dev` to verify the toolchain. Describe the change with
    > [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md) when satisfied."
-4. **Suggest** running [`/write-readme-py`](../../engineering/write-readme-py/SKILL.md)
+5. **Suggest** running [`/write-readme-py`](../../engineering/write-readme-py/SKILL.md)
    after the first successful build to generate the README.
 
 ## Placeholders used by templates
@@ -56,8 +58,8 @@ description: Scaffold a new Python project with uv for dependency management, a 
   the scaffold lean and let the user grow it.
 
 ## See also
-- [`../../_concepts/three-stage-dockerfile.md`](../../_concepts/three-stage-dockerfile.md)
-  — rationale for the base/production/development pattern in `Dockerfile.tpl`.
+- [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
+  — owns the Docker templates and the three-stage pattern rationale.
 - [`../../engineering/dev-python/SKILL.md`](../../engineering/dev-python/SKILL.md)
   — workflow that this scaffold sets up.
 - [`../../engineering/write-readme-py/SKILL.md`](../../engineering/write-readme-py/SKILL.md)

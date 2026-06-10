@@ -6,21 +6,8 @@ set dotenv-load := false
 default:
     @just --list
 
-# ── Docker ──────────────────────────────────────────────────────────────
-build-dev:
-    docker compose build dev
-
-build-prod:
-    docker compose build production
-
-up:
-    docker compose run --rm dev bash
-
-down:
-    docker compose down
-
-rebuild:
-    docker compose build --no-cache dev
+# Docker recipes (build-dev, up, down, …) are appended by
+# /containerize-project from its justfile-docker.tpl.
 
 # ── Pipeline ────────────────────────────────────────────────────────────
 run:

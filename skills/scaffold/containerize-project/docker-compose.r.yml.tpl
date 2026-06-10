@@ -9,14 +9,13 @@ services:
       - .:/usr/<package-name>
       - renv-cache:/root/.cache/R/renv
 
+  # No source mount: production runs the baked image as built.
   production:
     build:
       context: .
       dockerfile: Dockerfile
       target: production
     container_name: <package-name>-prod
-    volumes:
-      - .:/usr/<package-name>
 
 volumes:
   renv-cache:

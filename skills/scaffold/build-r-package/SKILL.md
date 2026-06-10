@@ -1,6 +1,6 @@
 ---
 name: build-r-package
-description: Scaffold a new R package with renv for dependency management, a three-stage Docker setup (base/production/development) on rocker/r-ver, docker-compose, justfile task runner, DESCRIPTION, NAMESPACE generation via roxygen2, and testthat ed. 3. Materialises files into a target directory and stops on `jj diff` for review before any commit. Use when the user says "new R package", "scaffold R package", "create R package", "set up R package", "bootstrap R package", "/build-r-package".
+description: Scaffold a new R package with renv for dependency management, a justfile task runner, DESCRIPTION, NAMESPACE generation via roxygen2, and testthat ed. 3, then delegate the three-stage Docker setup on rocker/r-ver (Dockerfile, docker-compose, .dockerignore) to containerize-project. Materialises files into a target directory and stops on `jj diff` for review before any commit. Use when the user says "new R package", "scaffold R package", "create R package", "set up R package", "bootstrap R package", "/build-r-package".
 ---
 
 # build-r-package
@@ -25,18 +25,20 @@ description: Scaffold a new R package with renv for dependency management, a thr
    <package>/
    ├── R/<package>-package.R
    ├── tests/testthat/test-<package>.R
-   ├── Dockerfile                  ← Dockerfile.tpl
-   ├── docker-compose.yml          ← docker-compose.yml.tpl
    ├── justfile                    ← justfile.tpl
    ├── DESCRIPTION                 ← DESCRIPTION.tpl
    └── .gitignore                  ← gitignore.tpl
    ```
-3. **Stop. Do not run `jj describe`.** Tell the user:
+3. **Delegate Docker** to
+   [`/containerize-project`](../containerize-project/SKILL.md)
+   (r-package variant): it writes `Dockerfile`, `docker-compose.yml`,
+   `.dockerignore`, and appends the Docker recipes to the justfile.
+4. **Stop. Do not run `jj describe`.** Tell the user:
    > "Review with `jj diff`. Then run `just build-dev` → `just up` → `R
    > -e 'renv::init()'` to lock dependencies; then `just document` and
    > `just check`. Describe the change with
    > [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md) when satisfied."
-4. **Suggest** `/write-readme-py`'s R counterpart once it exists (not
+5. **Suggest** `/write-readme-py`'s R counterpart once it exists (not
    yet — see octobot/README.md *Out of scope*).
 
 ## Placeholders used by templates
@@ -57,8 +59,8 @@ description: Scaffold a new R package with renv for dependency management, a thr
   invent stub functions.
 
 ## See also
-- [`../../_concepts/three-stage-dockerfile.md`](../../_concepts/three-stage-dockerfile.md)
-  — rationale for `Dockerfile.tpl`.
+- [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
+  — owns the Docker templates and the three-stage pattern rationale.
 - [`../../engineering/dev-r/SKILL.md`](../../engineering/dev-r/SKILL.md)
   — workflow auto-detects DESCRIPTION → R-package loop.
 - [`../../engineering/r-style/SKILL.md`](../../engineering/r-style/SKILL.md)
