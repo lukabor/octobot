@@ -14,6 +14,9 @@ description: Scaffold a new Claude Code skill with the octobot conventions — f
 ## Process
 1. **Gather** — ask the user (one message, grouped):
    - kebab-case name and which category (`productivity`, `engineering`, `misc`)
+   - name is a **verb-first action phrase** (`build-py-project`,
+     `containerize-project`) — octobot's house form of Anthropic's
+     naming guidance; never a vague noun (`helper`, `utils`)
    - one-line purpose
    - concrete trigger phrases ("Use when ...")
    - success / done criteria
