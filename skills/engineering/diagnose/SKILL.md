@@ -21,8 +21,9 @@ you don't, you are guessing.
 ### 1. Build the feedback loop
 Before hypothesising, construct a reproducible pass/fail signal. Iterate on
 the loop itself until it runs in seconds and the failure is unambiguous.
-See [feedback-loops-r.md](feedback-loops-r.md) for R recipes (testthat,
-`targets`, bookdown, shiny) and two canonical worked examples.
+Recipes + two worked examples per language:
+[feedback-loops-py.md](feedback-loops-py.md) (pytest) /
+[feedback-loops-r.md](feedback-loops-r.md) (testthat, `targets`, bookdown).
 
 ### 2. Reproduce
 Run the loop. Confirm it triggers the **exact** symptom the user reported,
@@ -43,10 +44,11 @@ instrumentation.
 
 ### 4. Instrument
 Map each test to **one** Phase-3 prediction. Change one variable at a time.
-Prefer interactive inspection over logging — see
-[instrumentation-r.md](instrumentation-r.md) for `browser`, `debugonce`,
-`rlang::entrace` / `last_trace`, `lobstr::cst`, `profvis`, and the
-`### DIAGNOSE-<date>` tag convention so cleanup is `grep`-able.
+Prefer interactive inspection over logging —
+[instrumentation-py.md](instrumentation-py.md) (`breakpoint`, `--pdb`,
+`cProfile`) / [instrumentation-r.md](instrumentation-r.md) (`browser`,
+`debugonce`, `profvis`) — plus the `### DIAGNOSE-<date>` tag convention so
+cleanup is `grep`-able.
 
 ### 5. Fix + regression test
 Hand off to [tdd-bdd](../tdd-bdd/SKILL.md):
