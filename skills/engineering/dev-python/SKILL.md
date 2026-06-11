@@ -79,9 +79,9 @@ Hand to [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md). The fix
 | `just fix-and-check` | lint-fix + fmt + typecheck + test |
 
 ## See also
-- [`../tdd-bdd/SKILL.md`](../tdd-bdd/SKILL.md) — Given/When/Then loop.
-  Python siblings (`tests-py.md`, `mocking-py.md`, …) are not yet
-  written; R siblings work as analogies until they land.
+- [`../tdd-bdd/SKILL.md`](../tdd-bdd/SKILL.md) — Given/When/Then loop;
+  Python siblings `tests-py.md`, `mocking-py.md`, `interface-design-py.md`,
+  `docstrings-py.md`.
 - [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — six-phase bug hunt.
 - [`../../productivity/jj-atomic/SKILL.md`](../../productivity/jj-atomic/SKILL.md)
   — commit discipline.
