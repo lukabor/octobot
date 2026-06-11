@@ -14,10 +14,10 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 
 ## Language references — Python
 
-Pytest only: fixtures via `@pytest.fixture` (no `unittest.TestCase`),
-`parametrize`, scenario as docstring. No Gherkin frameworks solo.
-
-- [tests-py.md](tests-py.md) — paired good/bad examples + characteristics.
+- [tests-py.md](tests-py.md) — paired good/bad examples + characteristics;
+  pytest only (`@pytest.fixture`, `parametrize`, scenario as docstring).
+- [mocking-py.md](mocking-py.md) — boundaries only, façade + DI over
+  patching. *Consult before any `patch` / `monkeypatch`.*
 
 ## Language references — R
 
