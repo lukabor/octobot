@@ -12,6 +12,13 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 - Behavior is observable from outside the unit (input → output, state
   change, side effect) — pure refactors are out of scope.
 
+## Language references — Python
+
+Pytest only: fixtures via `@pytest.fixture` (no `unittest.TestCase`),
+`parametrize`, scenario as docstring. No Gherkin frameworks solo.
+
+- [tests-py.md](tests-py.md) — paired good/bad examples + characteristics.
+
 ## Language references — R
 
 Testthat ed. 3+, `box::use`, `describe`/`it`.
