@@ -14,20 +14,21 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 
 ## Language references — Python
 
-- [tests-py.md](tests-py.md) — paired good/bad examples + characteristics;
-  pytest only (`@pytest.fixture`, `parametrize`, scenario as docstring).
-- [mocking-py.md](mocking-py.md) — boundaries only, façade + DI over
-  patching. *Consult before any `patch` / `monkeypatch`.*
+Pytest only — `@pytest.fixture`, `parametrize`, scenario as docstring.
+
+- [tests-py.md](tests-py.md) — paired good/bad examples.
+- [interface-design-py.md](interface-design-py.md) — DI, pure functions, typing, deep modules. *Before step 1.*
+- [mocking-py.md](mocking-py.md) — boundaries only, façade + DI over patching. *Before `patch` / `monkeypatch`.*
+- [docstrings-py.md](docstrings-py.md) — Google style, types in annotations not prose.
 
 ## Language references — R
 
 Testthat ed. 3+, `box::use`, `describe`/`it`.
 
-- [tests-r.md](tests-r.md) — paired good/bad examples + characteristics.
-- [interface-design-r.md](interface-design-r.md) — DI, pure functions,
-  minimal surface. *Consult before step 1.*
+- [tests-r.md](tests-r.md) — paired good/bad examples.
+- [interface-design-r.md](interface-design-r.md) — DI, pure functions, minimal surface. *Before step 1.*
 - [deep-modules-r.md](deep-modules-r.md) — small interface, large impl.
-- [mocking-r.md](mocking-r.md) — boundaries only. *Consult before `mockery::stub` / `local_mocked_bindings`.*
+- [mocking-r.md](mocking-r.md) — boundaries only. *Before `mockery::stub` / `local_mocked_bindings`.*
 - [refactoring-r.md](refactoring-r.md) — what to look for in step 3.
 
 ## Process
@@ -96,5 +97,4 @@ first run, refactoring while red, silently dropping an untestable scenario.
 ## See also
 - [../diagnose/SKILL.md](../diagnose/SKILL.md) — chasing an existing bug?
   Run `/diagnose` first; phase 5 hands back here for the regression test.
-- [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — run before
-  step 0 so scenarios use the canonical `CONTEXT.md` vocabulary.
+- [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — run before step 0 so scenarios use canonical `CONTEXT.md` vocabulary.
