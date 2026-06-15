@@ -17,17 +17,28 @@ Before implementing:
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop. Name what's confusing. Ask.
 
-## 2. Simplicity First
+## 2. Simplicity First — the three sieves
 
-**Minimum code that solves the problem. Nothing speculative.**
+**Admit nothing by default. Every line must earn its place — to enter, or to
+stay.** Pass each through three sieves:
 
-- No features beyond what was asked.
-- No abstractions for single-use code.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
+- **Real** — Is the need true, or speculative? No feature beyond what was
+  asked; no abstraction for single-use code; no "flexibility" nobody
+  requested; no error handling for impossible scenarios.
+- **Good** — Does it leave the code better for the next reader — not merely
+  shorter? Betterment must be nameable, not cosmetic.
+- **Minimal** — Is this the leanest form? stdlib before custom code; a native
+  feature before a dependency; one line before fifty.
 
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+The burden is on **keeping**, not cutting: "it's clearer this way" must
+*justify* survival, never merely *excuse* it. If you write 200 lines and it
+could be 50, rewrite it.
+
+Run the sieves at the **seal boundary** (the commit), not per keystroke — the
+[`sieve`](skills/engineering/sieve/SKILL.md) skill is the full gate, and
+[`winnow`](skills/engineering/winnow/SKILL.md) the after-the-fact debloat
+pass. Exceptions that always pass Good: input validation, error handling that
+prevents data loss, security, accessibility, explicitly requested behaviour.
 
 ## 3. Surgical Changes
 

@@ -78,7 +78,7 @@ write to any new file in the repo before proceeding.
   confirming the first such write.
 
 ## See also
-- [../tdd-bdd/SKILL.md](../tdd-bdd/SKILL.md) — once vocabulary is pinned,
+- [../bdd/SKILL.md](../bdd/SKILL.md) — once vocabulary is pinned,
   the Given/When/Then scenarios should use the canonical terms.
 - [../diagnose/SKILL.md](../diagnose/SKILL.md) — hypothesis names in
   diagnose post-mortems should match `CONTEXT.md` terminology.

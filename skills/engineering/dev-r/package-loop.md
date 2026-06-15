@@ -28,10 +28,10 @@ just style
 
 ## 4. Test (TDD-BDD)
 
-Hand to [`/tdd-bdd`](../tdd-bdd/SKILL.md), which loops red→green→refactor
+Hand to [`/bdd`](../bdd/SKILL.md), which loops red→green→refactor
 **one scenario at a time** — never write all the tests upfront (see
-[`../tdd-bdd/anti-patterns.md`](../tdd-bdd/anti-patterns.md)). Test
-prologue follows [`../tdd-bdd/tests-r.md`](../tdd-bdd/tests-r.md). Run:
+[`../bdd/anti-patterns.md`](../bdd/anti-patterns.md)). Test
+prologue follows [`../bdd/tests-r.md`](../bdd/tests-r.md). Run:
 
 ```bash
 just test           # devtools::test()

@@ -48,7 +48,7 @@ User: *"MODB tissue column."*
 > downstream `purrr::compact` drops it), or an error?
 
 Forces the user to commit to the contract before any test is written.
-Hands cleanly to `/tdd-bdd` once locked.
+Hands cleanly to `/bdd` once locked.
 
 ## Cross-reference contradiction the agent surfaces
 

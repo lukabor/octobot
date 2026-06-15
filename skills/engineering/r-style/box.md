@@ -62,7 +62,7 @@ fetch_pages     <- function(req) { ... }
 ```
 
 Keep `box::export()` deliberately small — see
-[../tdd-bdd/deep-modules-r.md](../tdd-bdd/deep-modules-r.md). Every name
+[../bdd/deep-modules-r.md](../bdd/deep-modules-r.md). Every name
 you export is a contract you owe future callers and tests.
 
 ## `.Rmd` setup chunks — no exception

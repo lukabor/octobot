@@ -60,6 +60,6 @@ description: Scaffold a new R analysis project with renv for dependency manageme
   — workflow auto-detects `_targets.R` → R-analysis loop.
 - [`../../engineering/r-style/SKILL.md`](../../engineering/r-style/SKILL.md)
   — every function in `R/functions/` and `R/pipeline/` follows these.
-- [`../../engineering/tdd-bdd/SKILL.md`](../../engineering/tdd-bdd/SKILL.md)
+- [`../../engineering/bdd/SKILL.md`](../../engineering/bdd/SKILL.md)
   — `tests/testthat/` opens with the standard `box::use(testthat[...])`
-  prologue (see `tdd-bdd/tests-r.md`).
+  prologue (see `bdd/tests-r.md`).

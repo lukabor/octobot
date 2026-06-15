@@ -1,6 +1,6 @@
 ---
 name: dev-python
-description: Orchestrate the full Python development workflow in a uv + Docker + justfile project — implement, lint, typecheck, test (TDD-BDD), commit. Use ONLY when the user explicitly asks for the workflow ("run the python workflow", "full dev loop", "/dev-python"). Do NOT auto-invoke for individual tasks like fixing a bug, adding a function, or writing tests — those use the relevant focused skill (`/tdd-bdd`, `/diagnose`, `/jj-atomic`) directly.
+description: Orchestrate the full Python development workflow in a uv + Docker + justfile project — implement, lint, typecheck, test (TDD-BDD), commit. Use ONLY when the user explicitly asks for the workflow ("run the python workflow", "full dev loop", "/dev-python"). Do NOT auto-invoke for individual tasks like fixing a bug, adding a function, or writing tests — those use the relevant focused skill (`/bdd`, `/diagnose`, `/jj-atomic`) directly.
 ---
 
 # dev-python
@@ -13,8 +13,8 @@ Each phase must pass before the next. Do not advance silently.
 - A fresh feature or fix needs the complete loop, not a single skill.
 
 ## When NOT to use
-- Single-task work: a bug fix → `/diagnose` + `/tdd-bdd` directly.
-- Writing tests for an already-implemented behaviour → `/tdd-bdd` only.
+- Single-task work: a bug fix → `/diagnose` + `/bdd` directly.
+- Writing tests for an already-implemented behaviour → `/bdd` only.
 - Committing a single change → `/jj-atomic` only.
 
 ## Phases
@@ -50,9 +50,9 @@ Fix type errors. Don't suppress with `# type: ignore` unless genuinely
 unavoidable — explain inline why.
 
 ### 4. Test (TDD-BDD)
-Hand to [`/tdd-bdd`](../tdd-bdd/SKILL.md), which loops red→green→refactor
+Hand to [`/bdd`](../bdd/SKILL.md), which loops red→green→refactor
 **one scenario at a time** — never write all the tests upfront (that's the
-horizontal-slicing anti-pattern called out in tdd-bdd itself). When every
+horizontal-slicing anti-pattern called out in bdd itself). When every
 scenario from step 0 is green:
 ```bash
 just test
@@ -79,7 +79,7 @@ Hand to [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md). The fix
 | `just fix-and-check` | lint-fix + fmt + typecheck + test |
 
 ## See also
-- [`../tdd-bdd/SKILL.md`](../tdd-bdd/SKILL.md) — Given/When/Then loop;
+- [`../bdd/SKILL.md`](../bdd/SKILL.md) — Given/When/Then loop;
   Python siblings `tests-py.md`, `mocking-py.md`, `interface-design-py.md`,
   `docstrings-py.md`.
 - [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — six-phase bug hunt.

@@ -18,9 +18,9 @@ just style-check    # fix with: just style
 
 ## 3. Test (TDD-BDD)
 
-Hand to [`/tdd-bdd`](../tdd-bdd/SKILL.md), which loops red→green→refactor
+Hand to [`/bdd`](../bdd/SKILL.md), which loops red→green→refactor
 **one scenario at a time** — never write all the tests upfront (see
-[`../tdd-bdd/anti-patterns.md`](../tdd-bdd/anti-patterns.md)). Target
+[`../bdd/anti-patterns.md`](../bdd/anti-patterns.md)). Target
 `R/functions/`. Then:
 
 ```bash

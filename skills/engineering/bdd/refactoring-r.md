@@ -1,6 +1,6 @@
 # Refactor candidates (R)
 
-After every tdd-bdd cycle goes green, scan for these. Refactor only with a
+After every bdd cycle goes green, scan for these. Refactor only with a
 green test bar.
 
 ## Duplication → extract a function

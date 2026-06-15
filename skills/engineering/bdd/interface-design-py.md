@@ -71,6 +71,23 @@ must cover. Shrink it:
 - Fold orthogonal args into one structured input (a small frozen
   dataclass) rather than six positional parameters.
 
+## 4. Don't pair parameters that can silently disagree
+
+Two parameters that encode the same fact let a caller make them contradict
+with no error ever. A function taking both a `conn` and the `db_path` it
+"belongs to" can be handed a connection to database A and a path beside
+database B — and nothing catches it.
+
+```python
+# BAD — two sources of truth for one fact; they can disagree silently
+def reindex(conn: Connection, db_path: Path) -> None: ...
+```
+
+Split the entry points so each caller supplies exactly **one** source of
+truth — derive the other, or take only the one the body actually uses. The
+test that would have caught the mismatch is one you never have to write,
+because the mismatch is now unrepresentable.
+
 ## Choosing the type of "thing"
 
 | Need | Use |

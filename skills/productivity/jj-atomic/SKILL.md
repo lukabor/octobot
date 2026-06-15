@@ -78,6 +78,12 @@ sealed; without `jj new`, every subsequent edit accumulates into a
 change with an outdated message. Open a fresh empty `@` immediately so
 the next concern starts in a clean working copy.
 
+**Run every `jj` mutation in the foreground.** `squash`, `describe`,
+`split`, `new` rewrite the working copy; backgrounding one (a detached
+`ruff format && jj squash …`) races the working-copy snapshot and the
+op aborts. Background only long read-only work (builds, test runs). See
+[anti-patterns.md](anti-patterns.md) *"Backgrounding a `jj` mutation"*.
+
 ## Anti-patterns
 
 See [anti-patterns.md](anti-patterns.md) — `jj describe` before
@@ -91,7 +97,7 @@ working-copy is split into two atomic commits with proper messages.
 ## See also
 - [`../../engineering/r-style/SKILL.md`](../../engineering/r-style/SKILL.md)
   — style refactors are their own atomic change.
-- [`../../engineering/tdd-bdd/SKILL.md`](../../engineering/tdd-bdd/SKILL.md)
+- [`../../engineering/bdd/SKILL.md`](../../engineering/bdd/SKILL.md)
   — the regression test for a bug fix lands in the *same* atomic change
   as the fix.
 - [`../../engineering/diagnose/SKILL.md`](../../engineering/diagnose/SKILL.md)

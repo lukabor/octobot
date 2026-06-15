@@ -99,7 +99,7 @@ Test passes. H1 confirmed.
 **Phase 5 — regression test** = the idempotence test above (already
 written). Now move the `copy()` from the diagnostic patch into the real
 fix at the boundary the contract requires (likely the constructor of the
-`modb_result` object — see `../tdd-bdd/interface-design-r.md`).
+`modb_result` object — see `../bdd/interface-design-r.md`).
 
 **Phase 6 — cleanup.**
 `grep -r "### DIAGNOSE-" .` shows zero hits. Commit message:
@@ -143,4 +143,4 @@ Nothing to revert. Commit: *"test(textmining): seed RNG to stabilise
 top-term tie-break — H1 confirmed"*. File an architectural follow-up:
 "production `score_terms()` should break ties on a stable key
 (`term_id`) rather than relying on input order" → goes to
-`../tdd-bdd/refactoring-r.md` candidate list.
+`../bdd/refactoring-r.md` candidate list.

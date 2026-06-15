@@ -1,6 +1,6 @@
 ---
 name: dev-r
-description: Orchestrate the full R development workflow. Auto-detects project type — `DESCRIPTION` present → R package; `_targets.R` present → R analysis — and runs the appropriate loop (implement → lint → style → test → commit). Applies /r-style throughout. Use ONLY when the user explicitly asks for the workflow ("run the R workflow", "full R dev loop", "/dev-r"). Do NOT auto-invoke for individual R tasks — those use `/tdd-bdd`, `/diagnose`, `/r-style`, or `/jj-atomic` directly.
+description: Orchestrate the full R development workflow. Auto-detects project type — `DESCRIPTION` present → R package; `_targets.R` present → R analysis — and runs the appropriate loop (implement → lint → style → test → commit). Applies /r-style throughout. Use ONLY when the user explicitly asks for the workflow ("run the R workflow", "full R dev loop", "/dev-r"). Do NOT auto-invoke for individual R tasks — those use `/bdd`, `/diagnose`, `/r-style`, or `/jj-atomic` directly.
 ---
 
 # dev-r
@@ -17,8 +17,8 @@ Workflow for R repos. Detects project type from filesystem markers:
 Apply [`/r-style`](../r-style/SKILL.md) at every implementation step.
 
 ## When NOT to use
-- Single-task work: bug fix → `/diagnose` + `/tdd-bdd` directly.
-- Writing tests → `/tdd-bdd` only.
+- Single-task work: bug fix → `/diagnose` + `/bdd` directly.
+- Writing tests → `/bdd` only.
 - Reviewing R style of one file → `/r-style` only.
 - Committing → `/jj-atomic` only.
 
@@ -42,7 +42,7 @@ or [`/grill-with-docs`](../grill-with-docs/SKILL.md) (anchors to
   (lint → style → test → run pipeline → render → commit)
 
 ## See also
-- [`../tdd-bdd/SKILL.md`](../tdd-bdd/SKILL.md) and its R siblings
+- [`../bdd/SKILL.md`](../bdd/SKILL.md) and its R siblings
   (`tests-r.md`, `interface-design-r.md`, `mocking-r.md`,
   `deep-modules-r.md`, `refactoring-r.md`, `anti-patterns.md`).
 - [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — six-phase bug hunt

@@ -35,7 +35,7 @@ drive it from one pytest test — also where the fix will live.
   out "broke because pandas 2.2 changed a default".
 - **Isolate the filesystem**: `tmp_path`, never the repo tree.
 - **Kill ambient network** so a hung NCBI call can't masquerade as a bug
-  (see [../tdd-bdd/mocking-py.md](../tdd-bdd/mocking-py.md) autouse fixture).
+  (see [../bdd/mocking-py.md](../bdd/mocking-py.md) autouse fixture).
 
 If the same loop gives two different answers in a row, **fix the loop
 before phase 2**.
@@ -72,7 +72,7 @@ Test passes. H1 confirmed.
 **Phase 5 — regression test** = the idempotence test. Move the copy from
 the diagnostic patch into the real fix at the contract boundary (return a
 fresh frame, don't mutate the argument — see
-[../tdd-bdd/interface-design-py.md](../tdd-bdd/interface-design-py.md)).
+[../bdd/interface-design-py.md](../bdd/interface-design-py.md)).
 
 **Phase 6 — cleanup.** `grep -rn "### DIAGNOSE-" .` → zero hits. Commit:
 *"fix(assemble_expr): return a fresh frame — H1: pandas view aliasing
@@ -108,4 +108,4 @@ time).
 **Phase 6 — cleanup.** Nothing to revert. Commit: *"test(textmining): seed
 RNG to stabilise tie-break — H1 confirmed"*. File a follow-up: production
 `score_terms()` should break ties on a stable key (`term_id`), not input
-order → [../tdd-bdd/refactoring-r.md](../tdd-bdd/refactoring-r.md) candidate.
+order → [../bdd/refactoring-r.md](../bdd/refactoring-r.md) candidate.

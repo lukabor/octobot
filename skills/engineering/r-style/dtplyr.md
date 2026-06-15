@@ -148,5 +148,5 @@ Read that before you reach for `:=`.
 ## See also
 - [box.md](box.md) — preferred way to bring `data.table` / `dtplyr`
   names into scope (`dt = data.table[...]`).
-- [../tdd-bdd/interface-design-r.md](../tdd-bdd/interface-design-r.md) —
+- [../bdd/interface-design-r.md](../bdd/interface-design-r.md) —
   "return, don't mutate" applies even harder to `data.table`.

@@ -1,4 +1,4 @@
-# tdd-bdd anti-patterns
+# bdd anti-patterns
 
 ## Horizontal slicing
 

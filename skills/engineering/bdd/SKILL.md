@@ -1,12 +1,12 @@
 ---
-name: tdd-bdd
-description: Drive implementation with a strict red-green-refactor loop where every test is first stated as a BDD-flavored Given/When/Then scenario before being translated into the project's native test framework. Use when the user says "tdd", "bdd", "/tdd-bdd", "use TDD", "use BDD", "behaviour-driven development", "behavior-driven development", "red-green-refactor", "write tests first", or asks to add a feature/fix a bug and a test suite exists (or should exist) in the repo.
+name: bdd
+description: Drive implementation with a strict red-green-refactor loop where every test is first stated as a BDD-flavored Given/When/Then scenario before being translated into the project's native test framework. Use when the user says "tdd", "bdd", "/bdd", "use TDD", "use BDD", "behaviour-driven development", "behavior-driven development", "red-green-refactor", "write tests first", or asks to add a feature/fix a bug and a test suite exists (or should exist) in the repo.
 ---
 
-# tdd-bdd
+# bdd
 
 ## When to use
-- User says "tdd", "/tdd-bdd", "test first", "write a failing test first".
+- User says "tdd", "/bdd", "test first", "write a failing test first".
 - A bug fix or new behavior is requested and the repo has a test runner
   (or one can be added in < 5 min).
 - Behavior is observable from outside the unit (input → output, state
@@ -79,6 +79,26 @@ Testthat ed. 3+, `box::use`, `describe`/`it`.
 - Each test carries its Given/When/Then docstring.
 - No production code exists that is not exercised by a test added in this
   loop.
+
+## Fixtures must match the graph the producer really emits
+
+Hand-built unit fixtures encode the shape you *imagine*, and stay green
+while the real producer emits a different one. A query tool was written
+assuming `calls` edges reach callee definitions; the real mappers stop a
+cross-file call at a same-named reference node, so the tool was blind across
+files — and the hand-made fixtures hid it the whole way (rule 17). Before
+building on a stored shape, **probe what the writer actually produces** (or
+generate the fixture *with* the real producer), and **live-verify on a
+realistic multi-file input** before calling a phase done.
+
+## Green is necessary, not sufficient
+
+A passing scenario suite does not exercise thread death, lock contention,
+caller ordering, hostile filesystem layouts, or stale stored data (rule 13).
+A green suite is a *claim*, not a proof. After the loop is green, **budget a
+recall-biased review pass** — [`../review-angles/SKILL.md`](../review-angles/SKILL.md)
+— and refute the green ([`../review-angles/refute.md`](../review-angles/refute.md))
+before calling it done. Fix findings red-test-first, like any other feature.
 
 ## Anti-patterns
 

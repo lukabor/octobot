@@ -1,8 +1,8 @@
-# Python tests for tdd-bdd
+# Python tests for bdd
 
 Paired good/bad examples for Python (pytest only). One principle per
 section: bad first, good second, then a one-paragraph reason. Use these as
-the concrete reference when applying the core tdd-bdd loop in a Python
+the concrete reference when applying the core bdd loop in a Python
 repo.
 
 **Framework rule — pytest, nothing else.** Fixtures via `@pytest.fixture`

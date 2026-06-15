@@ -32,7 +32,16 @@ skill list.
   message; docs / docstrings / READMEs ship in the same change.
 
 ### engineering
-- **tdd-bdd** — strict red-green-refactor loop with BDD Given/When/Then
+- **sieve** — Socratic Real / Good / Minimal gate; burden on *keeping*, not
+  cutting. Fires at the seal boundary (build, prune, analysis). Pairs with
+  `winnow`.
+- **winnow** — blunt after-the-fact debloat audit; `delete/stdlib/native/
+  yagni/shrink` tags, `net: -N lines`. Only ever removes. Pairs with `sieve`.
+- **background-work** — rules for daemon threads, trigger loops, shared
+  locks, readiness surfaces — the failures a green unit suite misses.
+- **review-angles** — recall-biased correctness checklist for the post-green
+  review pass (stale refs, TOCTOU, ordering state, durability, invalidation).
+- **bdd** — strict red-green-refactor loop with BDD Given/When/Then
   scenarios as the unit of work.
 - **diagnose** — six-phase bug hunt: feedback loop → reproduce →
   hypothesise → instrument → fix with regression test → cleanup.
@@ -83,7 +92,7 @@ afternoon.
   a short Q-by-Q transcript on a vague task that resolves into a
   one-paragraph statement, mirroring `grill-with-docs/examples-r.md`.
   Makes the plan-only vs docs-anchored distinction obvious at a glance.
-- **Python siblings for `tdd-bdd` / `diagnose`.** R has `tests-r.md`,
+- **Python siblings for `bdd` / `diagnose`.** R has `tests-r.md`,
   `mocking-r.md`, `feedback-loops-r.md`, etc. Python equivalents
   (`tests-py.md`, `mocking-py.md`, `feedback-loops-py.md`) are
   acknowledged as missing in [`dev-python/SKILL.md`](skills/engineering/dev-python/SKILL.md).
@@ -91,3 +100,25 @@ afternoon.
   `DESCRIPTION` for packages and `_targets.R` + `index.qmd` for
   analyses) is noted as out of scope in
   [`write-readme-py/SKILL.md`](skills/engineering/write-readme-py/SKILL.md).
+
+### Socratic spine (toward a harness)
+
+The library is being organized around a Socratic lifecycle —
+**Question** (grill-me, grill-with-docs, plan-project) → **Gate** (sieve) →
+**Build** (bdd) → **Refute** (review-angles, winnow, refute.md) →
+**Seal** (jj-atomic). Done so far: the three-sieve spine in `CLAUDE.md §2`
+and the shared `refute.md` elenchus doctrine. Remaining, **in order — don't
+build the harness before the leaves are proven by real use**:
+
+- **Generalize `dev-python` / `dev-r` into one Socratic harness.** Both are
+  already proto-harnesses (implement → lint → test → commit). Extract one
+  language-agnostic loop — *grill → plan → per-slice(bdd red/green → sieve at
+  seal → jj-atomic) → review-angles + winnow → handoff* — with `dev-python` /
+  `dev-r` as the language-flavored leaves. This is the harness target.
+- **Shared `## Intensity` convention.** `caveman` and `sieve` both have
+  lite/full/ultra; standardize a one-line intensity block so the harness can
+  run the whole spine at one setting (ultra = aggressive end-to-end).
+- **Recategorize skills by lifecycle phase** (`question/gate/build/refute/
+  seal/`) — *only if* the harness reads categories to sequence. Claude Code
+  doesn't scan category dirs, so until the harness consumes them this is
+  motion, not progress. Defer until the harness exists.

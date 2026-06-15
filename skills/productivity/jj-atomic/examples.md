@@ -50,7 +50,7 @@ Why this works:
   change will…".
 - Body bullets are each one concern, each `type(scope): imperative`.
 - The test ships with the fix (see
-  [`../../engineering/tdd-bdd/SKILL.md`](../../engineering/tdd-bdd/SKILL.md)).
+  [`../../engineering/bdd/SKILL.md`](../../engineering/bdd/SKILL.md)).
 - The docstring update ships with the fix (see
   [SKILL.md §5](SKILL.md)).
 

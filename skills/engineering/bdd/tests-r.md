@@ -1,9 +1,9 @@
-# R tests for tdd-bdd
+# R tests for bdd
 
 Paired good/bad examples for R (testthat ed. 3+, `box::use`,
 `describe`/`it`). One principle per section: bad first, good second, then a
 one-paragraph reason. Use these as the concrete reference when applying the
-core tdd-bdd loop in an R repo.
+core bdd loop in an R repo.
 
 ---
 

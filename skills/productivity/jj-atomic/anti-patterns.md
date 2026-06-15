@@ -34,3 +34,14 @@ ship. See SKILL.md §5 *"Docs travel with the code"*.
 Edits land in the just-described change; its message rots into a lie. Always
 open a fresh `@` immediately after `jj describe`. See SKILL.md *"Workflow"*
 step 5.
+
+## Backgrounding a `jj` mutation
+
+Running `jj squash` / `describe` / `split` / `new` as a *background*
+command (e.g. a chained `ruff format && jj squash …` fired detached)
+fails — observed three times in one session, exit 144, the format step
+succeeding and the `jj` step dying. A mutating `jj` op snapshots and
+rewrites the working copy; backgrounding it races the harness's own
+working-copy snapshot and the op aborts. Run every `jj` mutation in the
+**foreground**, one at a time. Background is for long read-only work
+(builds, test runs), never for sealing a commit.

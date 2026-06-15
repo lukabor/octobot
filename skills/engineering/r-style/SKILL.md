@@ -50,9 +50,9 @@ file under review.
   saving. See [dtplyr.md](dtplyr.md#when-not-to-use).
 
 ## See also
-- [../tdd-bdd/deep-modules-r.md](../tdd-bdd/deep-modules-r.md) —
+- [../bdd/deep-modules-r.md](../bdd/deep-modules-r.md) —
   `box::export()` is the public-surface control mechanism.
-- [../tdd-bdd/interface-design-r.md](../tdd-bdd/interface-design-r.md) —
+- [../bdd/interface-design-r.md](../bdd/interface-design-r.md) —
   pure functions + DI compose with these style rules.
 - [../diagnose/feedback-loops-r.md](../diagnose/feedback-loops-r.md) —
   worked example #1 (in-place mutation) is the canonical `dtplyr` /

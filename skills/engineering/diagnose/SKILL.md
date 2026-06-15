@@ -51,10 +51,10 @@ Prefer interactive inspection over logging —
 cleanup is `grep`-able.
 
 ### 5. Fix + regression test
-Hand off to [tdd-bdd](../tdd-bdd/SKILL.md):
+Hand off to [bdd](../bdd/SKILL.md):
 - State the bug as one Given/When/Then scenario.
 - Translate into a failing testthat test at the **public** interface
-  (see `../tdd-bdd/mocking-r.md` — do not reach past it).
+  (see `../bdd/mocking-r.md` — do not reach past it).
 - Watch it fail with the original error.
 - Apply the fix. Watch it pass. Re-run the original user-facing scenario.
 
@@ -65,7 +65,7 @@ Hand off to [tdd-bdd](../tdd-bdd/SKILL.md):
 - Commit message names the confirmed hypothesis ("H1: `data.table`
   reference semantics in `assemble_expr`") so future readers see the *why*.
 - Note architectural follow-ups as
-  [refactoring-r.md](../tdd-bdd/refactoring-r.md) candidates; file them,
+  [refactoring-r.md](../bdd/refactoring-r.md) candidates; file them,
   don't auto-fix in the same commit.
 
 ## Guardrails
@@ -76,8 +76,8 @@ Hand off to [tdd-bdd](../tdd-bdd/SKILL.md):
 - **Never** ship instrumentation. Cleanup is a phase, not an afterthought.
 
 ## See also
-- [../tdd-bdd/SKILL.md](../tdd-bdd/SKILL.md) — phase 5 is a tdd-bdd cycle.
-- [../tdd-bdd/refactoring-r.md](../tdd-bdd/refactoring-r.md) — file
+- [../bdd/SKILL.md](../bdd/SKILL.md) — phase 5 is a bdd cycle.
+- [../bdd/refactoring-r.md](../bdd/refactoring-r.md) — file
   architectural follow-ups here.
 - [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — phase 3
   hypothesis names should use canonical terms from `CONTEXT.md`.
