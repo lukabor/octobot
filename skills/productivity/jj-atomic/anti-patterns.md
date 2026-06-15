@@ -45,3 +45,13 @@ rewrites the working copy; backgrounding it races the harness's own
 working-copy snapshot and the op aborts. Run every `jj` mutation in the
 **foreground**, one at a time. Background is for long read-only work
 (builds, test runs), never for sealing a commit.
+
+## Letting a `jj` op spawn an editor headlessly
+
+`jj describe`, `split`, and `commit` open `$JJ_EDITOR` (often a full TUI like
+nvim) when no `-m` is given. In a headless / non-terminal context the editor
+has no stdout to attach to, so it hangs or crashes — the transaction never
+commits and `split` can leave you mid-operation. Always pass `-m` for the
+message, and guard with `JJ_EDITOR=true` so any unexpected editor invocation
+is an instant no-op instead of a hang. `split` describes its *first* part
+from `-m`; describe the remaining `@` explicitly afterwards.
