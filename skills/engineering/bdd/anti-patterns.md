@@ -37,3 +37,14 @@ If a scenario from step 0 turns out to be untestable at the chosen level,
 surface it — don't quietly delete it. Move it up (integration) or down
 (unit) one level and reconfirm with the user. A dropped scenario is a
 contract the suite no longer protects.
+
+## Fixtures that don't match what the producer emits
+
+Hand-built unit fixtures encode the shape you *imagine*, and stay green
+while the real producer emits a different one. A query tool was
+written assuming `calls` edges reach callee definitions; the real mappers
+stop a cross-file call at a same-named reference node, so the tool was blind
+across files — and the hand-made fixtures hid it the whole way. Before
+building on a stored shape, **probe what the writer actually produces** (or
+generate the fixture *with* the real producer), and **live-verify on a
+realistic multi-file input** before calling a phase done.

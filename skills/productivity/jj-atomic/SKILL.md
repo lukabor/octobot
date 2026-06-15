@@ -73,15 +73,12 @@ jj diff   --revision @-              # 4. verify the message matches what shippe
 jj new   -m 'WIP'                    # 5. open a fresh empty @ for the next unit
 ```
 
-**Step 5 is not optional.** After `jj describe`, the current change is
-sealed; without `jj new`, every subsequent edit accumulates into a
-change with an outdated message. Open a fresh empty `@` immediately so
-the next concern starts in a clean working copy.
+**Step 5 is not optional.** Without `jj new`, edits accumulate into the
+sealed change and its message rots into a lie — open a fresh empty `@`
+immediately.
 
-**Run every `jj` mutation in the foreground.** `squash`, `describe`,
-`split`, `new` rewrite the working copy; backgrounding one (a detached
-`ruff format && jj squash …`) races the working-copy snapshot and the
-op aborts. Background only long read-only work (builds, test runs). See
+**Run every `jj` mutation in the foreground** (split/describe/new rewrite the
+working copy; backgrounding races the snapshot and aborts). See
 [anti-patterns.md](anti-patterns.md) *"Backgrounding a `jj` mutation"*.
 
 ## Anti-patterns
@@ -90,11 +87,9 @@ See [anti-patterns.md](anti-patterns.md) — `jj describe` before
 `jj diff`, mixed-bag commits, past-tense messages, missing scope, docs
 deferred to the next commit, skipping `jj new` after describe.
 
-## Examples
-See [examples.md](examples.md) for a real before/after where a
-working-copy is split into two atomic commits with proper messages.
-
 ## See also
+- [examples.md](examples.md) — a real before/after where a working copy is
+  split into two atomic commits with proper messages.
 - [`../../engineering/r-style/SKILL.md`](../../engineering/r-style/SKILL.md)
   — style refactors are their own atomic change.
 - [`../../engineering/bdd/SKILL.md`](../../engineering/bdd/SKILL.md)
