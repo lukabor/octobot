@@ -28,7 +28,7 @@ uses for keeping vs cutting, pointed at *believing* vs acting.
 - [`SKILL.md`](SKILL.md) — refute each review-angle candidate before emitting.
 - [`../winnow/SKILL.md`](../winnow/SKILL.md) — refute "it's redundant" before
   cutting; the type-checker is one skeptic.
-- [`../bdd/SKILL.md`](../bdd/SKILL.md) — rule 13: a green suite is a claim,
-  not a proof; the post-green pass refutes it.
+- [`../bdd/SKILL.md`](../bdd/SKILL.md) — a green suite is a claim, not a
+  proof; the post-green pass refutes it.
 - [`../sieve/SKILL.md`](../sieve/SKILL.md) — Good-with-receipts refutes the
   merely-cosmetic change.

@@ -46,7 +46,7 @@ Close with: `net: -<N> lines possible.`
 - A retry wrapper around an idempotent local operation.
 - A manual loop where a built-in (`map`, `sum`, comprehension) applies.
 
-## The brake — prove redundant before you cut (rule 18)
+## The brake — prove redundant before you cut
 
 A "redundant" idiom may be **load-bearing**. Every `delete`/`shrink` is the
 claim *"this is redundant"* — refute it before you act

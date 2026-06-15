@@ -11,7 +11,7 @@ description: A Socratic gate that decides whether a change earns its place befor
 - About to **add** — a feature, file, dependency, abstraction, parameter.
 - About to **prune** — and a deletion is being defended ("but it's clearer").
 - A backlog item says "do X properly" — is the current way wrong, or just
-  cheaper-to-improve? (rule 20)
+  cheaper-to-improve?
 
 ## Core principle
 **The burden is on keeping, not cutting.** A line does not get to exist by
@@ -29,7 +29,7 @@ Each surviving line must pass **all three**:
    abstraction, a config nobody configures, a flag with one value — fails
    Real. Before taking on a "do it properly" change, prove the current way
    is actually *wrong*, not merely improvable — that sets the bar the change
-   must clear (rule 20).
+   must clear.
 
 2. **Good** — *Does it leave the code better than you found it — clearer to
    the next reader, sounder in shape — not merely shorter?* This sieve faces
