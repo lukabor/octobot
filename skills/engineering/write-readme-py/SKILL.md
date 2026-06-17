@@ -13,7 +13,8 @@ description: Generate a README.md for a Python project scaffolded by `/build-py-
 
 1. **Read sources.**
    - `pyproject.toml` → `project.name`, `project.description`,
-     `project.dependencies`, `project.optional-dependencies` (every group,
+     `project.requires-python`, `project.dependencies`,
+     `project.optional-dependencies` (every group,
      not just `dev`), `project.license`, `project.authors[0]`,
      `project.urls.Repository` (fall back to `Homepage`).
    - `justfile` → each recipe name plus the comment line(s) above it.
@@ -28,8 +29,8 @@ description: Generate a README.md for a Python project scaffolded by `/build-py-
 
 3. **Materialise `README.md`** from
    [`readme-py.template.md`](readme-py.template.md), substituting:
-   - `<project.name>`, `<project.description>`, `<package_name>` (the
-     `project.name` with hyphens → underscores).
+   - `<project.name>`, `<project.description>`, `<project.requires-python>`,
+     `<package_name>` (the `project.name` with hyphens → underscores).
    - `<logo-block>` → `<img src="assets/<name>.<ext>" alt="<name> logo" width="200"/>`
      if the asset exists; empty string otherwise.
    - `<install-block>` → one `uv pip install -e ".[<group>]"` line per

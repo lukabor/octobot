@@ -22,7 +22,7 @@
 
 ## Installation
 
-Requires Python ≥ 3.11. Install with [uv](https://docs.astral.sh/uv/):
+Requires Python <project.requires-python>. Install with [uv](https://docs.astral.sh/uv/):
 
 ```bash
 <install-block>
