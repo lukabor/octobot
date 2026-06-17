@@ -35,7 +35,7 @@
      to run. -->
 ## Usage
 
-```bash
+```<usage-lang>
 <usage-block>
 ```
 

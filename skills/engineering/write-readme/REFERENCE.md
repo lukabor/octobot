@@ -6,12 +6,12 @@ when its source is absent.
 
 ## python (`pyproject.toml`)
 Read: `project.name`, `project.description`, `project.dependencies`,
-`dependency-groups.dev`, `project.license`. Task runner: `justfile`
-recipes (group by `# ── Section ──` comments).
+`project.requires-python`, `dependency-groups.dev`, `project.license`. Task
+runner: `justfile` recipes (group by `# ── Section ──` comments).
 
 ```
 ## Installation
-Requires Python ≥ 3.11. Install with [uv](https://docs.astral.sh/uv/):
+Requires Python <project.requires-python>. Install with [uv](https://docs.astral.sh/uv/):
 
 uv pip install -e "."        # core: <core-deps-csv>
 uv pip install -e ".[dev]"   # + dev tools: <dev-deps-csv>

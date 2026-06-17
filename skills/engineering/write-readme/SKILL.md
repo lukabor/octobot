@@ -15,7 +15,8 @@ description: Generate a README.md for any project by detecting its ecosystem fro
 
 ## Process
 
-1. **Detect ecosystem** (first marker wins; ask if none or several):
+1. **Detect ecosystem** (check in listed order; if several markers are
+   present, ask which is authoritative; if none, use generic):
    | Marker | Ecosystem | Source of truth |
    |---|---|---|
    | `pyproject.toml` | python | `[project]` + `justfile` |
@@ -31,6 +32,10 @@ description: Generate a README.md for any project by detecting its ecosystem fro
 2. **Read sources, never memory.** Pull `name`, `description`, `license`,
    dependencies, and runnable commands from the files above. For a generic
    repo, read the scripts and any existing README to learn what it does.
+   A marker file can exist without authoritative metadata (monorepo roots,
+   tool-only `pyproject.toml` with no `[project]` table) — confirm the
+   manifest actually carries the fields before trusting the detected
+   ecosystem; if it does not, fall back to generic and ask.
 
 3. **Refuse to invent.** If the description is empty, ask the user for a
    one-line description before writing. Never fabricate dependency
@@ -38,17 +43,24 @@ description: Generate a README.md for any project by detecting its ecosystem fro
    not in the repo. Keep shell commands **verbatim** — they are the
    author's tested values; flag anything suspect instead of "fixing" it.
 
-4. **Materialise `README.md`** from
+4. **Guard an existing README.** If `README.md` already exists, show its
+   diff and get explicit confirmation before overwriting — on a repo not yet
+   under version control there is no undo for a clobbered hand-written file.
+
+5. **Materialise `README.md`** from
    [`readme.template.md`](readme.template.md):
    - `<project.name>`, `<project.description>`, `<project.overview>`,
      `<project.license.text>`.
    - `<install-block>` — the ecosystem's install snippet (REFERENCE.md).
    - `<usage-block>` — task-runner recipes (grouped by section comment),
      CLI invocation, or setup steps for a config/script repo.
+   - `<usage-lang>` — the fence language for the usage block (`bash` for
+     shell/task-runner, `r` for an r-analysis pipeline, `rust`/`console`
+     as fits the ecosystem). Do not leave it as `bash` for non-shell usage.
    - `<project-layout>` — the real top-level tree, annotated.
    - **Omit** any section with no source data instead of padding it.
 
-5. **Stop. Do not commit.** Tell the user:
+6. **Stop. Do not commit.** Tell the user:
    > "Review with `jj diff`. Check that the Installation and Usage blocks
    > match how you actually run this. Describe with `/jj-atomic` when
    > satisfied."
