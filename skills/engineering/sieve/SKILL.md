@@ -79,6 +79,9 @@ describe`), not per keystroke — otherwise it fights iteration.
 ## See also
 - [`../winnow/SKILL.md`](../winnow/SKILL.md) — the mechanical after-the-fact
   audit. The sieve judges entry; winnow clears the field.
+- [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) — *Minimal*
+  invokes **depth** intuition. The leanest form that works tends to be the
+  deepest: small interface, large implementation hidden behind it.
 - [`../../productivity/jj-atomic/SKILL.md`](../../productivity/jj-atomic/SKILL.md)
   — the seal where the sieve fires.
 - [`../grill-with-docs/SKILL.md`](../grill-with-docs/SKILL.md)

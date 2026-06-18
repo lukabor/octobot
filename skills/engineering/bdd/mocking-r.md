@@ -1,12 +1,12 @@
 # Mocking in R
 
-**Mock at system boundaries. Never mock your own code.**
+**Mock at system seams. Never mock your own code.**
 
 > Snippets below show only the function bodies; the `box::use(...)`
 > prologue is omitted for clarity. Real files start with one — see
 > [`../r-style/box.md`](../r-style/box.md).
 
-## Boundaries you may mock
+## Seams you may mock
 
 - HTTP / REST APIs — `httptest2`, `webmockr`, or `httr2::with_mocked_responses()`.
 - Databases — prefer a real test DB (`RSQLite::SQLite()` in-memory) over a
@@ -27,7 +27,7 @@
 If a test feels like it needs to stub an internal helper, that is a signal
 your function under test is doing two things. Split it.
 
-## Design for mockability at the boundary
+## Design for mockability at the seam
 
 ### Dependency injection over hardcoded constructors
 
@@ -78,10 +78,10 @@ expectations bleeding into another.
 
 - `testthat::local_mocked_bindings(fn = function(...) ...)` — replaces a
   binding inside the package under test for the scope of one `test_that`.
-  Use only at the *boundary*: stub `httr2::req_perform`, not your own
+  Use only at the *seam*: stub `httr2::req_perform`, not your own
   `parse_response`.
-- `mockery::stub(target, "boundary_fn", value)` — same idea, finer-grained.
-  Same rule: only stub at the boundary.
+- `mockery::stub(target, "seam_fn", value)` — same idea, finer-grained.
+  Same rule: only stub at the seam.
 - `httptest2::with_mock_dir("fixtures/")` — replay recorded HTTP fixtures.
   Best option for integration-style tests against an HTTP service.
 

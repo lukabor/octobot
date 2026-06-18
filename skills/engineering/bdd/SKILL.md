@@ -12,10 +12,15 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 - Behavior is observable from outside the unit (input → output, state
   change, side effect) — pure refactors are out of scope.
 
+## Vocabulary
+Before step 1, anchor on [../codebase-design/SKILL.md](../codebase-design/SKILL.md) —
+module, interface, seam, adapter, depth, leverage, locality. Language siblings
+below restate the vocabulary in R / Python idiom.
+
 ## Language references — Python
 Pytest only — `@pytest.fixture`, `parametrize`, scenario as docstring.
 - [tests-py.md](tests-py.md) — paired good/bad examples.
-- [interface-design-py.md](interface-design-py.md) — DI, pure functions, typing, deep modules. *Before step 1.*
+- [interface-design-py.md](interface-design-py.md) — DI, pure functions, typing. *Before step 1.*
 - [mocking-py.md](mocking-py.md) — boundaries only, façade + DI over patching. *Before `patch` / `monkeypatch`.*
 - [docstrings-py.md](docstrings-py.md) — Google style, types in annotations not prose.
 

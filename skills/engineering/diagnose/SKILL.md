@@ -95,5 +95,6 @@ Then ask: **what would have prevented this bug?**
 - [../bdd/SKILL.md](../bdd/SKILL.md) — phase 5 is a bdd cycle.
 - [../bdd/refactoring-r.md](../bdd/refactoring-r.md) — file
   architectural follow-ups here.
+- [../codebase-design/SKILL.md](../codebase-design/SKILL.md) — definition of **seam** (Phase 5's "no correct seam" finding).
 - [../domain-modeling/SKILL.md](../domain-modeling/SKILL.md) — phase 3
   hypothesis names should use canonical terms from `CONTEXT.md`.

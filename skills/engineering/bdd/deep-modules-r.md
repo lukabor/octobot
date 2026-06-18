@@ -1,10 +1,8 @@
 # Deep modules in R
 
-Adapted from John Ousterhout, *A Philosophy of Software Design*. A **deep
-module** has a small interface and a large implementation. A **shallow
-module** has a large interface and almost no implementation — every helper
-becomes part of the public contract, which makes the code hard to reason
-about *and* hard to test.
+Vocabulary and principles in [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md).
+This file shows what deep / shallow look like with `box::use` — the R lever
+for controlling the interface.
 
 In R you control the interface with `box::use` (or NAMESPACE/`@export` in a
 package). The interface is whatever a caller writes after `box::use(...)`.

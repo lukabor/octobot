@@ -1,16 +1,16 @@
 # Mocking in Python
 
-**Mock at system boundaries. Never mock your own internals. Don't patch
+**Mock at system seams. Never mock your own internals. Don't patch
 what you don't own — wrap it.**
 
-## Boundaries you may mock
+## Seams you may mock
 
 - HTTP / REST APIs — but through a façade you own (below), or replay
   fixtures with `respx` / `responses`.
 - Databases — prefer a real in-memory DB (`sqlite3 :memory:`) or a fake
   repository over patching cursors.
 - Time — inject `now: Callable[[], datetime]`, or `monkeypatch` a clock
-  boundary; never patch `datetime.datetime` globally.
+  seam; never patch `datetime.datetime` globally.
 - Randomness — pass an `rng: np.random.Generator` parameter; seed it in
   the test.
 - File system — `tmp_path`. Real temp files are cheaper than mocks.
@@ -59,7 +59,7 @@ with patch("httpx.Client.get") as m:
 ## Dependency injection over patching
 
 ```python
-# Easy to test — boundary passed in
+# Easy to test — seam passed in
 def annotate(gene_ids: list[str], entrez: EntrezClient) -> list[Annotation]: ...
 
 # Hard to test — constructs its client internally; forces patching

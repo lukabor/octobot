@@ -82,6 +82,10 @@ per-context `CONTEXT.md` under each sub-root.
   confirming the first such write.
 
 ## See also
+- [../codebase-design/SKILL.md](../codebase-design/SKILL.md) — sibling
+  vocabulary skill. **domain-modeling** pins terms for the *problem domain*
+  (CONTEXT.md, glossary); **codebase-design** pins terms for the *solution
+  structure* (module, interface, seam, adapter).
 - [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — the
   user-invoked router that pairs this skill with a Socratic interview.
 - [../bdd/SKILL.md](../bdd/SKILL.md) — once vocabulary is pinned, the

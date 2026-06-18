@@ -1,5 +1,8 @@
 # Interface design for testability (R)
 
+Vocabulary lives in [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) —
+module, interface, seam, adapter. This file is the R-flavored leaf.
+
 Three rules. Apply them before writing the test, not after.
 
 > Snippets below show only the function bodies; the `box::use(...)`

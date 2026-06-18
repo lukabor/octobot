@@ -50,6 +50,10 @@ skill list.
 - **domain-modeling** — actively build / sharpen a project's domain
   model — challenge terms, update `CONTEXT.md` inline, offer ADRs only
   on the three-of-three rule.
+- **codebase-design** — shared vocabulary for designing deep modules
+  (module, interface, seam, adapter, depth, leverage, locality);
+  `DEEPENING.md` for dependency-aware seam strategy, `DESIGN-IT-TWICE.md`
+  for parallel-sub-agent interface exploration.
 - **r-style** — Tidyverse + `box::use` + `dtplyr` standards with
   paired good/bad sibling docs (`box.md`, `tidyverse.md`, `dtplyr.md`).
 - **dev-python** — orchestrate the full Python workflow (implement →

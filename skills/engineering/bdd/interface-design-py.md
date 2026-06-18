@@ -1,8 +1,10 @@
 # Interface design for testability (Python)
 
-Rules to apply before writing the test, not after. A deep module (small
-interface, large implementation — Ousterhout) is the goal; a testable
-interface is the side effect.
+Vocabulary lives in [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) —
+module, interface, seam, adapter, depth. This file is the Python-flavored leaf.
+
+Rules to apply before writing the test, not after. A deep module is the goal;
+a testable interface is the side effect.
 
 ## 1. Dependency injection — pass collaborators, don't construct them
 
