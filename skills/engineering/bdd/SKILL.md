@@ -20,7 +20,7 @@ module, interface, seam, adapter, depth, leverage, locality.
 Pytest only — `@pytest.fixture`, `parametrize`, scenario as docstring.
 - [tests-py.md](tests-py.md) — paired good/bad examples.
 - [interface-design-py.md](interface-design-py.md) — DI, pure functions, typing. *Before step 1.*
-- [mocking-py.md](mocking-py.md) — boundaries only, façade + DI over patching. *Before `patch` / `monkeypatch`.*
+- [mocking-py.md](mocking-py.md) — seams only, façade + DI over patching. *Before `patch` / `monkeypatch`.*
 - [docstrings-py.md](docstrings-py.md) — Google style, types in annotations not prose.
 
 ## Language references — R
@@ -28,7 +28,7 @@ Testthat ed. 3+, `box::use`, `describe`/`it`.
 - [tests-r.md](tests-r.md) — paired good/bad examples.
 - [interface-design-r.md](interface-design-r.md) — DI, pure functions, minimal surface. *Before step 1.*
 - [deep-modules-r.md](deep-modules-r.md) — small interface, large impl.
-- [mocking-r.md](mocking-r.md) — boundaries only. *Before `mockery::stub` / `local_mocked_bindings`.*
+- [mocking-r.md](mocking-r.md) — seams only. *Before `mockery::stub` / `local_mocked_bindings`.*
 - [refactoring-r.md](refactoring-r.md) — what to look for in step 3.
 
 ## Process

@@ -38,7 +38,7 @@ def assemble_expr(raw: pd.DataFrame) -> pd.DataFrame:
 Test passes. H1 confirmed.
 
 **Phase 5 — regression test** = the idempotence test. Move the copy from
-the diagnostic patch into the real fix at the contract boundary (return a
+the diagnostic patch into the real fix at the contract seam (return a
 fresh frame, don't mutate the argument — see
 [../bdd/interface-design-py.md](../bdd/interface-design-py.md)).
 

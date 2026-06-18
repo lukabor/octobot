@@ -27,7 +27,16 @@ skill list.
 - **conjure-a-skill** — meta-skill that scaffolds new skills consistently.
 - **handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
+- **plan-project** — research-backed Socratic interview that kicks off a
+  greenfield project; writes `docs/Roadmap.md` with phased, verifiable plan.
+  Pairs with `update-project`.
+- **update-project** — revise `docs/Roadmap.md` as the project teaches you
+  things; mark phases verified, supersede locked decisions, keep `CONTEXT.md`
+  in sync. Pairs with `plan-project`.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
+- **cavecrew-octobot** — how to invoke the plugin `caveman:cavecrew-*` agents
+  (investigator / builder / reviewer) without the agent-type error; octobot
+  defaults (`jj diff` review, `jj-atomic` commit).
 - **jj-atomic** — atomic-commit discipline: `jj diff` → split → semantic
   message; docs / docstrings / READMEs ship in the same change.
 
@@ -66,6 +75,10 @@ skill list.
   (`DESCRIPTION`) vs analysis (`_targets.R`).
 - **write-readme-py** — generate `README.md` from `pyproject.toml` +
   `justfile`.
+- **add-copilot-project-skill** — scaffold a project-specific skill set for
+  GitHub Copilot in the Claude Code SKILLS structure; single-sourced from the
+  repo's own docs, backed by a mechanical validator. Tuned for config-driven
+  pipelines (e.g. R `{targets}` projects).
 
 ### scaffold
 - **build-py-project** — uv + justfile + pyproject; Docker via
