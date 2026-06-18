@@ -97,6 +97,52 @@ skill list.
   runtime (`env_file` / compose secrets) credentials without leaking
   into image layers.
 
+## Workflows
+
+Common ways the skills chain together. Each recipe is a *sequence*, not a
+script — read the relevant SKILL.md as you enter each step.
+
+### Project lifecycle
+- **Greenfield project** — `/plan-project` (Socratic kickoff → `docs/Roadmap.md`)
+  → `/build-py-project` | `/build-r-package` | `/build-r-analysis` (scaffold)
+  → feature loops below → `/update-project` (revise Roadmap as you learn).
+- **Feature on an existing codebase** — `/grill-with-docs` if the design needs
+  pinning → `/bdd` (red-green-refactor) → post-green review (next recipe)
+  → `/jj-atomic` (seal).
+- **Bug hunt** — `/diagnose` (six phases; hands to `/bdd` at phase 5 for the
+  regression test) → post-green review → `/jj-atomic`.
+
+### Post-green review (the three axes)
+- `/review-angles` — correctness / robustness (stale refs, TOCTOU, ordering,
+  durability). Run *first* — these are the silent killers.
+- `/nuke-review` — structural quality / code judo. Pushes for code that
+  *deletes* moving pieces, not rearranges them. User-invoked.
+- `/winnow` — mechanical debloat with a `net: −N lines` scoreboard.
+- Spawn any of the three as a sub-agent via `/cavecrew-octobot`
+  (the `caveman:cavecrew-reviewer` invocation cheatsheet).
+
+### Architecture & vocabulary
+- **Design conversation** — `/codebase-design` (solution-structure vocab:
+  module / interface / seam / adapter / depth) + `/domain-modeling`
+  (problem-domain vocab: `CONTEXT.md`, ADRs on the three-of-three rule).
+- **Stress-test a plan against the codebase** — `/grill-with-docs`
+  (Socratic interview against `CONTEXT.md` and `docs/adr/`).
+
+### Meta
+- **Author a new skill in this repo** — `/conjure-a-skill` → `/jj-atomic`.
+- **End of session, fresh context next time** — `/handoff`.
+
+### Orthogonal modes
+These overlay any workflow above:
+- **Language harnesses** — `/dev-r` or `/dev-python` orchestrate the full
+  per-language loop (implement → lint → test → commit). Explicit trigger
+  only; don't auto-invoke for individual tasks.
+- **Intensity** — `/caveman` switches the session into terse mode
+  (no preamble, no summaries). `sieve` and others document `lite / full / ultra`.
+- **Agent dispatch** — `/cavecrew-octobot` is the "how to call
+  `caveman:cavecrew-{investigator,builder,reviewer}` in this repo without
+  the agent-type error" cheatsheet.
+
 ## Adding a skill
 
 Run `/conjure-a-skill` in any project. It will ask for name, trigger, and
