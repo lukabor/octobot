@@ -41,6 +41,10 @@ skill list.
   locks, readiness surfaces — the failures a green unit suite misses.
 - **review-angles** — recall-biased correctness checklist for the post-green
   review pass (stale refs, TOCTOU, ordering state, durability, invalidation).
+- **nuke-review** — exceptionally strict structural-quality review for code
+  judo moves; ported from cursor/plugins thermo-nuclear-code-quality-review.
+  Pairs with `review-angles` (correctness) and `winnow` (debloat) as the
+  three post-green review axes. User-invoked.
 - **bdd** — strict red-green-refactor loop with BDD Given/When/Then
   scenarios as the unit of work.
 - **diagnose** — six-phase bug hunt: feedback loop → reproduce →

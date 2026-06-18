@@ -70,3 +70,8 @@ fan out concurrently.
 ## Verify
 - The `Agent` call used a `caveman:`-prefixed `subagent_type`.
 - A review pass named the diff source (`jj diff` / `-r @-`) in its prompt.
+
+## See also (review axis/discipline lives here, not in the cavecrew skill)
+- [`../../engineering/review-angles/SKILL.md`](../../engineering/review-angles/SKILL.md) — *correctness*.
+- [`../../engineering/nuke-review/SKILL.md`](../../engineering/nuke-review/SKILL.md) — *structural quality* (code-judo).
+- [`../../engineering/winnow/SKILL.md`](../../engineering/winnow/SKILL.md) — *mechanical debloat*.

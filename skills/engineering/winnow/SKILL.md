@@ -76,11 +76,12 @@ it sharp.
 ## See also
 - [`../sieve/SKILL.md`](../sieve/SKILL.md) — the judgment gate. Sieve decides
   what earns its place; winnow mechanically clears what doesn't.
+- [`../nuke-review/SKILL.md`](../nuke-review/SKILL.md) — *structural-quality* review (code-judo). Pairs naturally — nuke-review judges shape; winnow clears chaff.
 - [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) — the
   **deletion test** formalised: if removing a module makes complexity
   vanish, it was a pass-through; if it reappears across N callers, it earned
   its keep. The `delete` and `yagni` tags are this test mechanised.
 - [`../bdd/refactoring-r.md`](../bdd/refactoring-r.md) — file the
   architectural follow-ups a winnow surfaces; don't auto-cut them mid-pass.
-- [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — the correctness
+- [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — the *correctness*
   axis winnow deliberately does not touch.

@@ -14,8 +14,7 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 
 ## Vocabulary
 Before step 1, anchor on [../codebase-design/SKILL.md](../codebase-design/SKILL.md) —
-module, interface, seam, adapter, depth, leverage, locality. Language siblings
-below restate the vocabulary in R / Python idiom.
+module, interface, seam, adapter, depth, leverage, locality.
 
 ## Language references — Python
 Pytest only — `@pytest.fixture`, `parametrize`, scenario as docstring.
@@ -86,10 +85,11 @@ Testthat ed. 3+, `box::use`, `describe`/`it`.
 A green suite is a *claim*, not a proof: it never exercised thread death,
 caller ordering, stale data, or the shape the real producer emits (see
 [anti-patterns.md](anti-patterns.md) *"Fixtures that don't match what the
-producer emits"*). After the loop is green, **budget a recall-biased
-review pass** — [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — and
-refute it ([refute.md](../review-angles/refute.md)) before calling it done.
-Fix findings red-test-first, like any other feature.
+producer emits"*). After the loop is green, **budget a review pass** across
+three axes: correctness ([`../review-angles/SKILL.md`](../review-angles/SKILL.md)),
+structural quality ([`../nuke-review/SKILL.md`](../nuke-review/SKILL.md)),
+mechanical debloat ([`../winnow/SKILL.md`](../winnow/SKILL.md)). Refute
+each finding ([refute.md](../review-angles/refute.md)); fix red-test-first.
 
 ## Guardrails
 - **Never** skip red, write >1 failing test at once, or refactor while red.

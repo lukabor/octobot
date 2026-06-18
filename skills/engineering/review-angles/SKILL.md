@@ -70,5 +70,5 @@ angle is worth more than a green suite.
   sit *after*; fixes land as new red-first scenarios here.
 - [`../background-work/SKILL.md`](../background-work/SKILL.md) — the threading
   / lock / readiness angles, split out because they share a setup.
-- [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *structural* axis (what to
-  delete) review-angles deliberately leaves alone; opposite concern.
+- [`../nuke-review/SKILL.md`](../nuke-review/SKILL.md) — the *structural-quality* review axis (code-judo). Different axis from these angles' correctness focus.
+- [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *mechanical debloat* axis (what to delete). Different again.
