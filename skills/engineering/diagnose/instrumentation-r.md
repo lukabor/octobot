@@ -59,8 +59,6 @@ workers, a long bookdown render), `cat()` *with the diagnose tag*:
 cat(sprintf("### DIAGNOSE-2026-05-28 assemble_expr: nrow=%d md5=%s\n",
             nrow(df), digest::digest(df)))
 ```
-The tag matters. Cleanup is `grep -r "### DIAGNOSE-" .` followed by
-manual review — no tag, no cleanup.
 
 ## Performance bugs
 
@@ -89,20 +87,14 @@ After a target fails, inspect upstream inputs without re-running them:
 targets::tar_load_everything()
 browser()                        ### DIAGNOSE-2026-05-28
 ```
-For long-running pipelines, set `tar_option_set(error = "continue")` so
-one bad target doesn't hide later ones from view.
 
 ## The `### DIAGNOSE-<date>` tag convention
 
 - **Every** line you add for diagnosis carries `### DIAGNOSE-YYYY-MM-DD`.
-- Single date format. Single tag. One regex finds them all.
 - Phase 6 ends only when `grep -r "### DIAGNOSE-" .` returns zero hits.
 
 ## Anti-patterns
 - **Adding `print()`s without a tag.** They survive into commits.
 - **Multiple hypotheses instrumented at once.** Loses the signal.
-- **Editing the function under test to "make it work"** while still
-  collecting evidence. That's a fix smuggled into instrumentation —
-  separate the two phases.
-- **Leaving `options(error = recover)` in `.Rprofile`.** Devastating in
-  scripts and CI.
+- **Smuggling a fix into instrumentation.** Separate the two phases.
+- **Leaving `options(error = recover)` in `.Rprofile`** — devastating in CI.
