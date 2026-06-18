@@ -24,7 +24,7 @@ skill list.
 ## Skills
 
 ### productivity
-- **write-a-skill** — meta-skill that scaffolds new skills consistently.
+- **conjure-a-skill** — meta-skill that scaffolds new skills consistently.
 - **handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
@@ -75,7 +75,7 @@ skill list.
 
 ## Adding a skill
 
-Run `/write-a-skill` in any project. It will ask for name, trigger, and
+Run `/conjure-a-skill` in any project. It will ask for name, trigger, and
 success criteria, then scaffold `skills/<category>/<name>/SKILL.md` in this
 repo.
 
