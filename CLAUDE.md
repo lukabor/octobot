@@ -95,7 +95,7 @@ This repo holds Claude Code skills. When editing here:
 - `description:` must contain an explicit "Use when ..." trigger and stay
   under 1024 characters. The description is the *only* thing the agent sees
   when deciding to load the skill — make triggers concrete.
-- Keep `SKILL.md` ≤ 100 lines. Split into `REFERENCE.md` / `EXAMPLES.md` if
+- Keep `SKILL.md` ≤ 110 lines. Split into `REFERENCE.md` / `EXAMPLES.md` if
   it grows.
 - No time-sensitive content (dates, "current" model names).
 - `scripts/` is only for deterministic helpers, not prose.

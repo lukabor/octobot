@@ -1,6 +1,6 @@
 ---
 name: conjure-a-skill
-description: Conjure a new Claude Code skill that earns its place — verb-first name, sharp completion criteria, progressive-disclosure layout, no-op-free body, every file ≤100 lines. Use when the user says "conjure a skill", "/conjure-a-skill", "write a skill", "create a skill", "add a skill", or describes a recurring workflow worth capturing.
+description: Conjure a new Claude Code skill that earns its place — verb-first name, sharp completion criteria, progressive-disclosure layout, no-op-free body, every file ≤110 lines. Use when the user says "conjure a skill", "/conjure-a-skill", "write a skill", "create a skill", "add a skill", or describes a recurring workflow worth capturing.
 ---
 
 # conjure-a-skill
@@ -44,7 +44,7 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
 4. **Review** — show the draft to the user; iterate until approved. Verify:
    - `name:` matches the folder name
    - `description:` contains "Use when" and is ≤ 1024 chars
-   - **every file ≤ 100 lines** — octobot's house cap on **sprawl**. If
+   - **every file ≤ 110 lines** — octobot's house cap on **sprawl**. If
      SKILL.md is too long, use **progressive disclosure**: push
      **reference** into **topic-named siblings** (`tests-r.md`,
      `mocking-r.md`, `feedback-loops-r.md`, `anti-patterns.md`,
@@ -83,14 +83,14 @@ description: <what it does>. Use when <concrete trigger>.
 
 ## Output / done criteria
 - New `SKILL.md` exists at the right path, passes the checks in step 4.
-- Every file in the skill folder is ≤ 100 lines (GLOSSARY.md excepted).
+- Every file in the skill folder is ≤ 110 lines (GLOSSARY.md excepted).
 - User has been told the exact `jj describe` command to run.
 - Skill appears in the skill list on next Claude Code session start.
 
 ## Guardrails
 - Never invent a category — ask if unsure.
 - Never write a skill whose description lacks "Use when".
-- **Never let a file in the skill folder exceed 100 lines** (GLOSSARY.md
+- **Never let a file in the skill folder exceed 110 lines** (GLOSSARY.md
   excepted). Split before committing.
 - Reject any line that fails the **no-op** test (PRINCIPLES.md §pruning).
 

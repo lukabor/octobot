@@ -74,8 +74,14 @@ parallel or atomic shapes.
 
 ## How to phrase findings — direct, serious, demanding; not rude
 - *"this pushes the file past 1k lines. can we decompose this first?"*
+- *"this adds another special-case branch into an already busy flow. can we move this behind its own abstraction?"*
 - *"this works, but it makes the surrounding code more spaghetti. let's keep the behaviour and restructure the implementation."*
+- *"this feels like feature logic leaking into a shared path. can we isolate it?"*
+- *"this abstraction seems unnecessary. can we just keep the direct flow?"*
+- *"why does this need a cast / optional here? can we make the boundary more explicit instead?"*
+- *"this looks like a bespoke helper for something we already have elsewhere. can we reuse the canonical one?"*
 - *"i think there's a code-judo move here that makes this much simpler. can we reframe so these branches disappear?"*
+- *"this refactor moves complexity around, but doesn't really delete it. is there a way to make the model itself simpler?"*
 
 ## Output
 
