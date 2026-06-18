@@ -1,44 +1,12 @@
-# Feedback loops in Python
+# Feedback loops in Python — worked examples
 
-A bug you can reproduce in 2 seconds with one keystroke is half-fixed. The
-loop **is** the product of phase 1. Spend time on it.
-
-## Loop recipes, fastest first
-
-### A single pytest test
-The gold standard. Run one test, quiet, stop on first failure.
-```bash
-just test ARGS="tests/test_assemble.py::test_idempotent -x -q"
-# or directly in the dev container:
-pytest tests/test_assemble.py::test_idempotent -x -q
-```
-`-k` selects by name substring; `--lf` reruns last-failed; `-p no:cov`
-drops coverage overhead while hunting.
-
-### A single function, no test yet
-`python -c` or a 5-line script that prints `PASS` / `FAIL` and exits
-non-zero. That is a valid loop.
-```bash
-python -c "from mypkg.norm import normalize_chrom; assert normalize_chrom('chr1')=='1'; print('PASS')"
-```
-
-### A notebook bug
-Don't re-run 40 cells. Extract the failing logic into a `.py` module and
-drive it from one pytest test — also where the fix will live.
-
-## Make the loop deterministic
-
-- **Seed every RNG**: `np.random.default_rng(42)`, `random.seed(42)`.
-  Never rely on global `np.random` state.
-- **Pin env**: `monkeypatch.setenv("TZ", "UTC")`, `("PYTHONHASHSEED", "0")`.
-- **Freeze versions**: you already build in Docker off `uv.lock` — rules
-  out "broke because pandas 2.2 changed a default".
-- **Isolate the filesystem**: `tmp_path`, never the repo tree.
-- **Kill ambient network** so a hung NCBI call can't masquerade as a bug
-  (see [../bdd/mocking-py.md](../bdd/mocking-py.md) autouse fixture).
-
-If the same loop gives two different answers in a row, **fix the loop
-before phase 2**.
+Two worked instantiations of [loop-recipes.md](loop-recipes.md). Python
+idioms: `pytest path::test -x -q` for a single test; `-k` for substring,
+`--lf` for last-failed, `-p no:cov` to drop coverage overhead.
+Determinism: `np.random.default_rng(42)` (never global `np.random`),
+`monkeypatch.setenv("PYTHONHASHSEED", "0")`, `tmp_path` for filesystem
+isolation; autouse network-kill fixture in
+[../bdd/mocking-py.md](../bdd/mocking-py.md).
 
 ---
 

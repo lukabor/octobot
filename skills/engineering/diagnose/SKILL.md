@@ -19,17 +19,29 @@ you don't, you are guessing.
 ## Phases
 
 ### 1. Build the feedback loop
-Before hypothesising, construct a reproducible pass/fail signal. Iterate on
-the loop itself until it runs in seconds and the failure is unambiguous.
-Recipes + two worked examples per language:
-[feedback-loops-py.md](feedback-loops-py.md) (pytest) /
-[feedback-loops-r.md](feedback-loops-r.md) (testthat, `targets`, bookdown).
+Before hypothesising, construct a reproducible pass/fail signal — iterate
+on the loop itself until it satisfies the gate below.
 
-### 2. Reproduce
+Recipe taxonomy: [loop-recipes.md](loop-recipes.md). Worked examples:
+[feedback-loops-py.md](feedback-loops-py.md) / [feedback-loops-r.md](feedback-loops-r.md).
+
+**Completion gate** (Phase 1 is done only when *all four* hold):
+- [ ] **Red** on the bug — the assert names the user's exact symptom.
+- [ ] **Tight** — seconds, not minutes.
+- [ ] **Deterministic** — same verdict every run.
+- [ ] **Agent-runnable** — unattended; no human prompt mid-loop.
+
+**No red-capable command, no Phase 2.**
+
+### 2. Reproduce + minimise
 Run the loop. Confirm it triggers the **exact** symptom the user reported,
 not a neighbour. *"Got an error"* is not the same as *"got `subscript out
 of bounds` at `R/plot/build_plot.R:42`"*. If you can't reproduce, you
 don't have the bug — go back to phase 1.
+
+Once red, **shrink** the repro to the smallest scenario that still goes
+red — cut inputs, callers, config, data one at a time, re-running after
+each cut. Every remaining element must be load-bearing.
 
 ### 3. Hypothesise (before touching code)
 Generate **3–5 falsifiable hypotheses**, ranked by plausibility. Each must
@@ -53,23 +65,27 @@ cleanup is `grep`-able.
 ### 5. Fix + regression test
 Hand off to [bdd](../bdd/SKILL.md):
 - State the bug as one Given/When/Then scenario.
-- Translate into a failing testthat test at the **public** interface
+- Translate into a failing test at the **public** interface
   (see `../bdd/mocking-r.md` — do not reach past it).
 - Watch it fail with the original error.
 - Apply the fix. Watch it pass. Re-run the original user-facing scenario.
 
+If no correct seam exists, **that is itself the finding** — the codebase
+architecture is preventing the bug from being locked down. File a
+[refactoring-r.md](../bdd/refactoring-r.md) candidate; don't write a test
+that lies about the bug pattern.
+
 ### 6. Cleanup + post-mortem
+Then ask: **what would have prevented this bug?**
+
 - `grep -r "### DIAGNOSE-" .` and remove every tagged line.
 - Confirm the bug no longer reproduces in the user-facing context
   (re-render the book, re-run the pipeline end-to-end).
 - Commit message names the confirmed hypothesis ("H1: `data.table`
   reference semantics in `assemble_expr`") so future readers see the *why*.
-- Note architectural follow-ups as
-  [refactoring-r.md](../bdd/refactoring-r.md) candidates; file them,
-  don't auto-fix in the same commit.
+- File architectural follow-ups to [refactoring-r.md](../bdd/refactoring-r.md); don't auto-fix in the same commit.
 
 ## Guardrails
-- **Never** skip phase 1. Hypothesising without a loop is guessing.
 - **Never** test more than one hypothesis at a time — you lose the signal.
 - **Never** apply the fix before the regression test fails for the right
   reason.

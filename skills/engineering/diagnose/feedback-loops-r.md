@@ -1,63 +1,12 @@
-# Feedback loops in R
+# Feedback loops in R — worked examples
 
-A bug you can reproduce in 2 seconds with one keystroke is half-fixed. The
-loop **is** the product of phase 1. Spend time on it.
-
-## Loop recipes, fastest first
-
-### A single testthat test
-The gold standard. Run only the file you care about, with the minimal
-reporter.
-```r
-testthat::test_file(
-  "tests/testthat/plot/test_build_plot.R",
-  reporter = "minimal"
-)
-```
-Or from the shell:
-```bash
-Rscript -e 'testthat::test_file("tests/testthat/plot/test_build_plot.R", reporter="minimal")'
-```
-
-### A single `targets` target
-Don't rebuild the whole pipeline. Name the broken target.
-```r
-targets::tar_make(names = "assemble_expr")
-# Inspect upstream inputs without re-running:
-targets::tar_load(c(modb_raw, gene_meta))
-```
-
-### A single bookdown chapter
-Avoid re-rendering 40 chapters to debug one.
-```r
-bookdown::preview_chapter("Rmd/chapters/genetics.Rmd")
-# or a one-liner that just knits one Rmd:
-rmarkdown::render("Rmd/chapters/genetics.Rmd", quiet = TRUE)
-```
-
-### Shiny
-```r
-shinytest2::test_app("inst/app", filter = "broken-scenario")
-```
-
-### Worst case: an `Rscript` one-liner
-When nothing native exists, write a 5-line script that prints `"PASS"` /
-`"FAIL"` and exits non-zero on failure. That is your loop.
-
-## Make the loop deterministic
-
-- **Seed the RNG** at the top of the test or script:
-  `withr::local_seed(42)`.
-- **Pin the environment.** `withr::local_envvar(c(TZ = "UTC", LC_ALL = "C"))`
-  kills locale and timezone flakiness.
-- **Pin package versions** with `renv::snapshot()` before you start
-  hunting; rules out "it broke because dplyr 1.1 changed semantics".
-- **Quarantine global options** with `withr::local_options(list(...))`.
-- For `box::use` modules, `box::reload(R/modb/client)` between runs to
-  drop cached state.
-
-If the same loop produces a different answer twice in a row, **fix the
-loop before going to phase 2**.
+Two worked instantiations of [loop-recipes.md](loop-recipes.md). R
+idioms: `testthat::test_file(..., reporter="minimal")` for a single test;
+`targets::tar_make(names = ...)` for one pipeline target;
+`bookdown::preview_chapter()` for one Rmd; `shinytest2::test_app()` for
+Shiny. Determinism: `withr::local_seed/local_envvar/local_options`,
+`box::reload(R/<module>)` to drop cached `box::use` state,
+`renv::snapshot()` to pin versions before hunting.
 
 ---
 
