@@ -1,7 +1,6 @@
 # Worked example — R / bookdown / targets
 
-A short transcript of a `/grill-with-docs` session in a targets-pipeline
-style repo, followed by the `CONTEXT.md` skeleton it would produce.
+Transcript of a `/domain-modeling` session in a targets-pipeline repo; ends with the `CONTEXT.md` skeleton it produces.
 
 ## The conflict: "target"
 
@@ -23,8 +22,6 @@ User: *"The pipeline one."*
 > "gene of interest" instead)`. Confirm?
 
 User: *"yes"*
-
-Agent edits `CONTEXT.md` inline (see skeleton below).
 
 > **Q3.** "One per tissue" — by tissue do you mean the `tissue` column in
 > the MODB metadata (`R/indication/get_modb_bulk_config.R:42`) or the
@@ -60,17 +57,7 @@ Hands cleanly to `/bdd` once locked.
 > `targets`' invalidation. Did you mean to bypass the cache, or use the
 > default `qs2` format?
 
-## When `CONTEXT-MAP.md` kicks in
-
-This repo has three obvious sub-roots (`R/indication1/`, `R/indication2/`,
-`R/indication3/`) *and* three corresponding `Rmd/` trees. On the second
-resolved term that clearly belongs to one of them, the agent proposes a
-`CONTEXT-MAP.md` at the root and a per-context `CONTEXT.md` under each
-`R/<context>/`. Single-context users (most R packages) never see this.
-
 ## Resulting `CONTEXT.md` skeleton
-
-After Q1–Q5 above, the agent has written:
 
 ```md
 # target-assessment-report
@@ -101,16 +88,12 @@ A MODB bulk dataset identified by `DS<NNN>`, configured under
 _Avoid_: cohort, study, sample set.
 ```
 
-Note: zero implementation details. No mention of `dplyr`, no function
-signatures. `CONTEXT.md` is a glossary; design notes belong in ADRs.
+Note: zero implementation details; `CONTEXT.md` is a glossary, design notes belong in ADRs.
 
 ## What would *not* get written
 
-- "We use `box::use` for module imports" → general R idiom, not domain-
-  specific. Out.
-- "The CR expression chapter knits in ~45 seconds" → operational
-  detail, not glossary material. Could become an ADR if a deliberate
-  trade-off ("we knit per-chapter to keep render time bounded") drove it.
-- "We cache targets with `qs2`" → ADR-worthy if there was a real choice
-  (qs2 vs RDS vs parquet); glossary-worthy if the *word* "cache" needs
-  disambiguating. Often both.
+- `box::use` for module imports — general R idiom, out.
+- "knits in ~45s" — operational detail; ADR-worthy only if a deliberate
+  trade-off drove it.
+- "we cache targets with `qs2`" — ADR if there was a real choice (qs2 vs
+  RDS vs parquet); glossary if the word "cache" needs disambiguating.

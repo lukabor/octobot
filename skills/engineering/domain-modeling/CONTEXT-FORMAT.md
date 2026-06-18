@@ -77,4 +77,4 @@ to. If unclear, ask.
 ---
 
 _Format adapted from
-<https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/CONTEXT-FORMAT.md>._
+<https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/CONTEXT-FORMAT.md>._

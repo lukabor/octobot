@@ -47,7 +47,7 @@ description: Kick off a greenfield project with a research-backed Socratic inter
 6. **Write `docs/Roadmap.md`** when answers stop moving decisions —
    skeleton below. Confirm before writing if it's the first file in
    `docs/`.
-7. **ADRs** only by the three-of-three rule from grill-with-docs
+7. **ADRs** only by the three-of-three rule from domain-modeling
    (hard to reverse ∧ surprising ∧ real trade-off). Default no.
 
 ## Roadmap.md skeleton
@@ -78,7 +78,7 @@ description: Kick off a greenfield project with a research-backed Socratic inter
 ## See also
 - [update-project](../update-project/SKILL.md) — agile sibling: revises
   the roadmap this skill produced as the project teaches you things.
-- [grill-with-docs](../../engineering/grill-with-docs/SKILL.md) — vocabulary
+- [domain-modeling](../../engineering/domain-modeling/SKILL.md) — vocabulary
   protocol this skill delegates to.
 - [grill-me](../grill-me/SKILL.md) — lighter sibling: ambiguity removal
   without docs output.

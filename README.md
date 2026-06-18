@@ -45,8 +45,11 @@ skill list.
   scenarios as the unit of work.
 - **diagnose** — six-phase bug hunt: feedback loop → reproduce →
   hypothesise → instrument → fix with regression test → cleanup.
-- **grill-with-docs** — docs-anchored Socratic interview; updates
-  `CONTEXT.md` inline, offers ADRs only on the three-of-three rule.
+- **grill-with-docs** — user-invoked router that runs `grill-me` using
+  `domain-modeling` on an existing codebase.
+- **domain-modeling** — actively build / sharpen a project's domain
+  model — challenge terms, update `CONTEXT.md` inline, offer ADRs only
+  on the three-of-three rule.
 - **r-style** — Tidyverse + `box::use` + `dtplyr` standards with
   paired good/bad sibling docs (`box.md`, `tidyverse.md`, `dtplyr.md`).
 - **dev-python** — orchestrate the full Python workflow (implement →
@@ -90,7 +93,7 @@ afternoon.
   (matches the strength of `jj-atomic/examples.md`).
 - **`grill-me` needs a filled dialogue.** Add `grill-me/example.md` —
   a short Q-by-Q transcript on a vague task that resolves into a
-  one-paragraph statement, mirroring `grill-with-docs/examples-r.md`.
+  one-paragraph statement, mirroring `domain-modeling/examples-r.md`.
   Makes the plan-only vs docs-anchored distinction obvious at a glance.
 - **Python siblings for `bdd` / `diagnose`.** R has `tests-r.md`,
   `mocking-r.md`, `feedback-loops-r.md`, etc. Python equivalents

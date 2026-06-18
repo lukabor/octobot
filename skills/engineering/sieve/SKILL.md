@@ -81,5 +81,5 @@ describe`), not per keystroke — otherwise it fights iteration.
   audit. The sieve judges entry; winnow clears the field.
 - [`../../productivity/jj-atomic/SKILL.md`](../../productivity/jj-atomic/SKILL.md)
   — the seal where the sieve fires.
-- [`../../productivity/grill-with-docs/SKILL.md`](../../productivity/grill-with-docs/SKILL.md)
+- [`../grill-with-docs/SKILL.md`](../grill-with-docs/SKILL.md)
   — Socratic siblings; grill the requirement, then sieve the code.

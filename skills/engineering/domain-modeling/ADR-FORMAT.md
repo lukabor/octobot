@@ -76,4 +76,4 @@ All three must hold. If any one is missing, skip the ADR.
 ---
 
 _Format adapted from
-<https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/ADR-FORMAT.md>._
+<https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/ADR-FORMAT.md>._

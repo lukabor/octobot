@@ -95,4 +95,4 @@ first run, refactoring while red, dropping an untestable scenario.
 ## See also
 - [../diagnose/SKILL.md](../diagnose/SKILL.md) — chasing an existing bug?
   Run `/diagnose` first; phase 5 hands back here for the regression test.
-- [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — run before step 0 so scenarios use canonical `CONTEXT.md` vocabulary.
+- [../domain-modeling/SKILL.md](../domain-modeling/SKILL.md) — run before step 0 so scenarios use canonical `CONTEXT.md` vocabulary.
