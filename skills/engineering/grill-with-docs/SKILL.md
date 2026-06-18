@@ -55,7 +55,7 @@ write to any new file in the repo before proceeding.
 ### Single vs multi-context
 - **Default: single.** One `CONTEXT.md` at the root.
 - **Switch to multi** only when you observe **≥ 2 obvious sub-roots** in
-  the repo (e.g. `R/plot/`, `R/inf/`, `R/ibd/`; or `src/ordering/`,
+  the repo (e.g. `R/ingest/`, `R/analysis/`, `R/report/`; or `src/ordering/`,
   `src/billing/`). On the second resolved term that clearly belongs to
   one of them, propose `CONTEXT-MAP.md` at the root + per-context
   `CONTEXT.md` under each sub-root.

@@ -117,7 +117,7 @@ locally, fails 1/10 times on CI.
 Run the single test 50 times in a row in a one-liner:
 ```bash
 for i in $(seq 50); do
-  Rscript -e 'testthat::test_file("tests/testthat/plot/test_textmining.R", reporter="minimal")' \
+  Rscript -e 'testthat::test_file("tests/testthat/test_textmining.R", reporter="minimal")' \
     || { echo "FAIL on iter $i"; break; }
 done
 ```
