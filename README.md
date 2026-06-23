@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<td width="40%" align="center">
+<td width="60%" align="center">
   <img src="assets/octobot.jpeg" alt="octobot logo" width="200"/>
   <h3>octobot</h3>
   <p>Personal, reusable Claude Code skills — language-agnostic productivity workflows that travel with you across every project.</p>
