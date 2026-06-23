@@ -1,7 +1,25 @@
 # octobot
 
-Personal, reusable Claude Code skills — language-agnostic productivity
-workflows that travel with you across every project.
+<table>
+<tr>
+<td width="40%" align="center">
+  <img src="assets/octobot.png" alt="octobot logo" width="200"/>
+  <h3>octobot</h3>
+  <p>Personal, reusable Claude Code skills — language-agnostic productivity workflows that travel with you across every project.</p>
+</td>
+<td width="60%">
+
+## Table of Contents
+- [Install](#install)
+- [Skills](#skills)
+- [Workflows](#workflows)
+- [Adding a skill](#adding-a-skill)
+- [Roadmap](#roadmap)
+- [License](#license)
+
+</td>
+</tr>
+</table>
 
 Modeled on [mattpocock/skills](https://github.com/mattpocock/skills).
 
@@ -192,3 +210,36 @@ build the harness before the leaves are proven by real use**:
   seal/`) — *only if* the harness reads categories to sequence. Claude Code
   doesn't scan category dirs, so until the harness consumes them this is
   motion, not progress. Defer until the harness exists.
+
+## License
+
+octobot is licensed under the Apache License 2.0.
+
+You are free to:
+- Use octobot for any purpose (commercial or non-commercial)
+- Modify and distribute the code
+- Use it in proprietary software
+- Patent protection included
+
+### Requirements:
+- Include the LICENSE file
+- Preserve copyright notices
+- State any changes you made
+
+### Attribution
+When using octobot, attribution such as the following is appreciated:
+
+In your project:
+> Powered by octobot by Lukasz Boryn
+
+In academic papers:
+```bibtex
+@software{octobot,
+  author = {Boryn, Lukasz},
+  title = {octobot: personal, reusable Claude Code skills},
+  year = {2026},
+  url = {https://github.com/lukabor/octobot}
+}
+```
+
+Full license: See [LICENSE](LICENSE).
