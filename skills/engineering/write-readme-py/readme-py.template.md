@@ -3,6 +3,7 @@
 <table>
 <tr>
 <td width="40%" align="center">
+  <logo-block>
   <h3><project.name></h3>
   <p><project.description></p>
 </td>
@@ -10,7 +11,7 @@
 
 ## Table of Contents
 - [Installation](#installation)
-- [Docker](#docker)
+- [Docker (dev)](#docker-dev)
 - [Quality checks](#quality-checks)
 - [Project layout](#project-layout)
 - [License](#license)
@@ -24,14 +25,12 @@
 Requires Python ≥ 3.11. Install with [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uv pip install -e "."        # core: <core-deps-csv>
-uv pip install -e ".[dev]"   # + dev tools: <dev-deps-csv>
+<install-block>
 ```
 
-## Docker
+## Docker (dev)
 
-Uses [just](https://github.com/casey/just) as a task runner.
-Run `just --list` for the full set of recipes.
+Uses [just](https://github.com/casey/just) as a task runner. Run `just --list` for the full set of recipes.
 
 ```bash
 <docker-section>
@@ -39,7 +38,7 @@ Run `just --list` for the full set of recipes.
 
 ## Quality checks
 
-All checks run inside Docker via `just`.
+All checks run inside Docker.<local-checks-preamble>
 
 ```bash
 # Linting
@@ -52,22 +51,20 @@ All checks run inside Docker via `just`.
 <test-section>
 
 # Combined
-<combined-section>
+<combined-section><local-section>
 ```
 
 ## Project layout
 
 ```
 src/<package_name>/   # library source
-  __init__.py
-tests/
-  fixtures/           # real data fixtures for tests
-Dockerfile            # base / production / development stages
-docker-compose.yml    # dev + production services
-justfile              # task runner
-pyproject.toml        # dependencies and tool config
+tests/                # test suite
+docker-compose.yml
+Dockerfile
+justfile
+pyproject.toml
 ```
 
 ## License
 
-<project.name> is licensed under <project.license.text>.
+<license-block>
