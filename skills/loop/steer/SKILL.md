@@ -23,6 +23,7 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
 | discussed work needs a justified, verifiable blueprint | `/blueprint` |
 | feature too big for one session — map decisions | `/ferry` |
 | a locked blueprint is ready to execute | `/weave` |
+| ferry's blueprints locked — agent-orchestrated crossing | `/call-charon` |
 | ferry delivered — close it out, consolidate the wiki | `/moor` |
 
 ## By situation
