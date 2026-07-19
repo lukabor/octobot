@@ -1,7 +1,7 @@
 # ADR format
 
-ADRs live in `docs/adr/` with sequential numbering: `0001-<slug>.md`,
-`0002-<slug>.md`, etc. Create `docs/adr/` lazily — only when the first
+ADRs live in `OKF/adr/` with sequential numbering: `0001-<slug>.md`,
+`0002-<slug>.md`, etc. Create `OKF/adr/` lazily — only when the first
 ADR is needed.
 
 ## Template
@@ -28,7 +28,7 @@ Add only when they add genuine value. Most ADRs won't need them.
 
 ## Numbering
 
-Scan `docs/adr/` for the highest existing number and increment by one.
+Scan `OKF/adr/` for the highest existing number and increment by one.
 
 ## When to offer an ADR — three-of-three test
 

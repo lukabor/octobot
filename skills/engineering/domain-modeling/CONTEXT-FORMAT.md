@@ -41,21 +41,20 @@ _Avoid_: Client, buyer, account.
 
 ## Single vs multi-context repos
 
-**Single context (most repos):** one `CONTEXT.md` at the repo root.
+**Single context (most repos):** one `OKF/CONTEXT.md`.
 
-**Multi-context:** a `CONTEXT-MAP.md` at the repo root lists the contexts,
-where they live, and how they relate:
+**Multi-context:** glossaries split into `OKF/context/<subroot>.md` —
+one per bounded context — with a Contexts section in `OKF/INDEX.md`
+listing them and how they relate:
 
 ```md
-# Context Map
-
 ## Contexts
 
-- [Ordering](./src/ordering/CONTEXT.md) — receives and tracks customer orders
-- [Billing](./src/billing/CONTEXT.md) — generates invoices and processes payments
-- [Fulfillment](./src/fulfillment/CONTEXT.md) — warehouse picking and shipping
+- [Ordering](context/ordering.md) — receives and tracks customer orders
+- [Billing](context/billing.md) — generates invoices and processes payments
+- [Fulfillment](context/fulfillment.md) — warehouse picking and shipping
 
-## Relationships
+### Relationships
 
 - **Ordering → Fulfillment**: Ordering emits `OrderPlaced` events;
   Fulfillment consumes them to start picking.
@@ -65,11 +64,13 @@ where they live, and how they relate:
 ```
 
 Decision rule:
-- If `CONTEXT-MAP.md` exists → multi-context. Read it to find contexts.
-- Else if a single root `CONTEXT.md` exists → single-context.
-- Else (neither) → create a root `CONTEXT.md` lazily when the first term
+- If `OKF/context/` exists → multi-context. Read INDEX.md to find contexts.
+- Else if `OKF/CONTEXT.md` exists → single-context.
+- Else (neither) → create `OKF/CONTEXT.md` lazily when the first term
   is resolved. Switch to multi-context only on observing ≥ 2 obvious
   sub-roots *and* a second term that clearly belongs to one of them.
+- Split by bounded context only — never per issue; issue-local terms
+  stay in their `OKF/specs/` entry until they recur.
 
 When multiple contexts exist, infer which one the current topic relates
 to. If unclear, ask.

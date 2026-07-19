@@ -45,25 +45,28 @@ habit any skill can do; that's not this skill.
 ## File layout the skill expects
 
 ```
-/
-├── CONTEXT.md             # single-context default
-├── CONTEXT-MAP.md         # only when ≥2 obvious sub-roots exist
-├── docs/adr/
-│   └── 0001-<slug>.md
-└── src/   (or R/, app/, ...)
+OKF/                       # open-knowledge-format wiki (see scribe-OKF)
+├── CONTEXT.md             # single-context default — THE canonical glossary
+├── context/               # multi-context mode: one <subroot>.md per
+│   └── <subroot>.md       #   bounded context, indexed from OKF/INDEX.md
+└── adr/
+    └── 0001-<slug>.md
 ```
 
 Create files **lazily** — only when there's a real first thing to write.
-No `CONTEXT.md` yet? Create it when the first term is resolved. No
-`docs/adr/`? Create it when the first ADR is needed. Confirm the *first*
-write to any new file in the repo before proceeding.
+No `OKF/CONTEXT.md` yet? Create it when the first term is resolved (run
+[scribe-OKF](../../loop/scribe-OKF/SKILL.md) scaffold if `OKF/` itself is
+missing). No `OKF/adr/`? Create it when the first ADR is needed. Confirm
+the *first* write to any new file in the repo before proceeding. A legacy
+root `CONTEXT.md` or `docs/adr/` → offer to migrate into `OKF/`.
 
-If `CONTEXT-MAP.md` exists at root, the repo is in **multi-context mode**.
-Default is single-context. Switch only when you observe **≥ 2 obvious
-sub-roots** (e.g. `R/ingest/`, `R/analysis/`, `R/report/`; or
-`src/ordering/`, `src/billing/`). On the second resolved term that clearly
-belongs to one of them, propose `CONTEXT-MAP.md` at the root +
-per-context `CONTEXT.md` under each sub-root.
+Default is single-context. Switch to **multi-context mode** only on
+observing **≥ 2 obvious sub-roots** (e.g. `R/ingest/`, `R/analysis/`;
+`src/ordering/`, `src/billing/`) *and* a second resolved term clearly
+belonging to one of them — then propose `OKF/context/<subroot>.md` files
+indexed from `OKF/INDEX.md`. **The split axis is the bounded context
+(stable), never the issue (transient)** — issue-local terms live in their
+`OKF/specs/` entry until they recur, then get promoted here.
 
 ## Language references — R
 
@@ -78,8 +81,10 @@ per-context `CONTEXT.md` under each sub-root.
   glossary, not a spec.
 - **Never** open an ADR unless all three of {hard to reverse, surprising
   without context, real trade-off} are true. When in doubt, don't.
-- **Never** create a `CONTEXT.md` / `docs/adr/` in the repo without
+- **Never** create an `OKF/CONTEXT.md` / `OKF/adr/` in the repo without
   confirming the first such write.
+- **Never** create a per-issue glossary — one canonical glossary per
+  bounded context, full stop.
 
 ## See also
 - [../codebase-design/SKILL.md](../codebase-design/SKILL.md) — sibling
