@@ -74,7 +74,7 @@ All loop skills are user-invoked (`disable-model-invocation: true`).
 - **conjure-a-skill** — meta-skill that scaffolds new skills consistently.
 - **write-handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
-- **resolve-conflicts** — jj conflict discipline: topology first, both
+- **resolve-conflicts-jj** — jj conflict discipline: topology first, both
   intents preserved, headless-safe squash.
 - **talk-caveman** — terse-mode: no preamble, no summaries, code + one-line why.
 - **spawn-cavecrew** — how to invoke the plugin `caveman:cavecrew-*` agents

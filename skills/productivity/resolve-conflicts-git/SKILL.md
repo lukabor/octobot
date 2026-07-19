@@ -1,11 +1,11 @@
 ---
 name: resolve-conflicts-git
-description: Resolve git merge/rebase conflicts by intent, not by picking sides — check topology first (phantom conflicts from wrong rebase bases), read both parents' purpose via git show :1:/:2:/:3: and zdiff3 markers, merge meanings, continue with editor guarded. Use when the user says "resolve the conflict", "fix the conflict", git reports "CONFLICT", or a merge/rebase stopped with unmerged paths, in a repo where `[ -d .jj ]` fails. jj repos → resolve-conflicts.
+description: Resolve git merge/rebase conflicts by intent, not by picking sides — check topology first (phantom conflicts from wrong rebase bases), read both parents' purpose via git show :1:/:2:/:3: and zdiff3 markers, merge meanings, continue with editor guarded. Use when the user says "resolve the conflict", "fix the conflict", git reports "CONFLICT", or a merge/rebase stopped with unmerged paths, in a repo where `[ -d .jj ]` fails. jj repos → resolve-conflicts-jj.
 ---
 
 # resolve-conflicts-git
 
-git-native counterpart of [resolve-conflicts](../resolve-conflicts/SKILL.md).
+git-native counterpart of [resolve-conflicts-jj](../resolve-conflicts-jj/SKILL.md).
 Unlike jj, git conflicts are **mid-operation limbo** — `MERGE_HEAD` or a
 paused rebase holds the repo until you continue or abort. The limbo is
 still not an emergency: `--abort` is a clean reset to before the
@@ -80,7 +80,7 @@ under abort-pressure.
   `grep -rn '<<<<<<<' .` before continuing.
 
 ## See also
-- [../resolve-conflicts/SKILL.md](../resolve-conflicts/SKILL.md) — jj
+- [../resolve-conflicts-jj/SKILL.md](../resolve-conflicts-jj/SKILL.md) — jj
   counterpart; topology-first rule and real-world phantom-conflict case
   (`OKF/LEARNINGS.md`) apply verbatim.
 - [../commit-atomic-git/SKILL.md](../commit-atomic-git/SKILL.md) —

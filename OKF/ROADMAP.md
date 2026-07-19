@@ -54,15 +54,15 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
    blueprint end-to-end with pasted Verify output. ✅ verified 2026-07-19
    (ferries/python-siblings D-1..D-3; scratch weave run, Verify "OK").
 4. **Upstream pulls** — tautological-test + pre-agreed seams into bdd;
-   handoff redaction/reference rules; resolve-conflicts (jj port).
-   **Verify:** resolve-conflicts replayed on a synthetic two-sided
+   handoff redaction/reference rules; resolve-conflicts-jj (jj port).
+   **Verify:** resolve-conflicts-jj replayed on a synthetic two-sided
    conflict; house caps hold. ✅ verified 2026-07-19 (rc-test replay,
    both intents merged, chain clean; bdd at 110).
 5. **Invocation audit + steer** — disable-model-invocation on
    orchestrators/rituals; steer router; conjure imperative-verb
    enforcement; README regen. **Verify:** fresh session lists only the
    ~~8~~ 11 model-invoked descriptions (superseded: spawn-cavecrew,
-   review-blueprint, resolve-conflicts must fire from natural phrasing);
+   review-blueprint, resolve-conflicts-jj must fire from natural phrasing);
    steer names every skill; conjure rejects a noun-first name.
    ✅ verified 2026-07-19 (16 flagged / 11 model-invoked by grep; steer
    table covers all 34; conjure gather+review reject noun-first).

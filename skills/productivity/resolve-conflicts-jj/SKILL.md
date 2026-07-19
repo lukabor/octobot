@@ -1,9 +1,9 @@
 ---
-name: resolve-conflicts
-description: Resolve jj conflicts by intent, not by picking sides — check topology first (phantom conflicts from wrong rebase roots), read both parents' purpose, merge meanings, squash with the destination message. Use when the user says "resolve the conflict", "fix the conflict", jj shows (conflict) markers, or a rebase left conflicted commits.
+name: resolve-conflicts-jj
+description: Resolve jj conflicts by intent, not by picking sides — check topology first (phantom conflicts from wrong rebase roots), read both parents' purpose, merge meanings, squash with the destination message. Use when the user says "resolve the conflict", "fix the conflict", jj shows (conflict) markers, or a rebase left conflicted commits. Plain git repos (no .jj) → resolve-conflicts-git.
 ---
 
-# resolve-conflicts
+# resolve-conflicts-jj
 
 jj-native port of mattpocock/skills `resolving-merge-conflicts`. In jj,
 conflicts are **first-class committed objects** — no mid-merge limbo, no

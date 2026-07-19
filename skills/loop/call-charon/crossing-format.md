@@ -101,7 +101,7 @@ Re-run `<Verify command>` after fixes; paste output.
   `jj squash --from charon-NNN@ --into <dest>` (or `jj rebase`), then
   `jj workspace forget charon-NNN` and remove the dir. Parallel
   builders → run `jj workspace update-stale` in the main workspace
-  first. Conflicts → resolve-conflicts skill.
+  first. Conflicts → resolve-conflicts-jj skill.
 - **git**: merge the builder's worktree branch into the mainline, then
   `git worktree remove` it. Conflicts → resolve-conflicts-git skill.
 - Either mode: run the blueprint's Verify in the **main workspace

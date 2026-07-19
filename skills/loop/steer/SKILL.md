@@ -34,7 +34,7 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
 | plan needs stress-testing against the codebase | `/grill-with-docs` |
 | build test-first (fires on "tdd"/"bdd" too) | `/bdd` |
 | non-obvious bug, flake, regression, perf issue | `/diagnose` |
-| jj conflict markers on screen | `/resolve-conflicts` |
+| jj conflict markers on screen | `/resolve-conflicts-jj` |
 | committing; splitting mixed changes | `/commit-atomic-jj` |
 | post-green review — correctness angles | `/review-angles` |
 | post-green review — diff vs its blueprint | `/review-blueprint` |

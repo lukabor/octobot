@@ -15,7 +15,7 @@ is enforced by the harness on every Bash call. This installs the hook.
   `grep "git push"` also matches `jj git push`, which would break every
   jj flow (commit-atomic-jj, call-charon). Only *force* pushes block.
 - **`--force-with-lease` allowed** — the sanctioned force path when a
-  force-push is the agreed plan (resolve-conflicts' immutable rule).
+  force-push is the agreed plan (resolve-conflicts-jj's immutable rule).
 - **Short `-f` force and `clean -df`-style flag combos caught** —
   upstream missed both.
 - jj mutations are not blocked: jj's op log makes them recoverable
