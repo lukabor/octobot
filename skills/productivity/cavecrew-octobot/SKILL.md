@@ -56,6 +56,14 @@ Surgical ≤2-file edit at a known site:
 Run independent calls in **one message** (multiple Agent tool uses) so they
 fan out concurrently.
 
+## The handoff gate (mutating subagents)
+
+A **builder** (or any subagent that edits files) spawns only with a
+written brief: goal, spec/OKF references by path (`OKF/specs/NNN`, the
+pages it needs), constraints, and the **verify command** for its slice.
+A locked spec is the default brief ([implement](../../loop/implement/SKILL.md)).
+Read-only lookups (**investigator**) are exempt. No brief, no builder.
+
 ## octobot conventions
 - **Default action** when asked to "review": pull the diff with `jj diff`
   (uncommitted) or `jj diff -r @-` (last change), hand the paths + the contracts

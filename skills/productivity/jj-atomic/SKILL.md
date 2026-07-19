@@ -51,7 +51,12 @@ If the project uses a ticket prefix (e.g. `DRAKE-42`, `JIRA-101`,
 
 If the project has no ticket convention, omit. Don't invent a prefix.
 
-### 5. Docs travel with the code
+### 5. Spec citations
+A change executing an `OKF/specs/NNN` spec ([implement](../../loop/implement/SKILL.md))
+cites it in the body: `implements spec NNN`. Readers trace the diff to
+its justification without leaving the log.
+
+### 6. Docs travel with the code
 The same `jj describe` must include any of:
 - Updated docstring for a changed public function signature.
 - Updated README / CLAUDE.md for a new CLI flag, script, env var, or
