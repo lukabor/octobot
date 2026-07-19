@@ -62,6 +62,9 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
   edge-declared decision files; resolve one per sitting.
 - **weave** — execute one locked blueprint: bdd at its seams, four-axis
   review, run its Verify with pasted output, seal citing the blueprint.
+- **call-charon** — deliver an arrived ferry's blueprints via agents:
+  one isolated builder per blueprint, fresh-context review flotilla,
+  orchestrator-run Verify gate, passage logged in `MAP.md`.
 - **moor** — close out a delivered ferry: reconcile the wiki with what
   shipped, extract loose ends into new blueprints/ferries, shrink
   index.md; status flips, nothing deleted.
@@ -159,6 +162,12 @@ script — read the relevant SKILL.md as you enter each step.
   → `/commit-atomic-jj` (seal).
 - **Bug hunt** — `/diagnose` (six phases; hands to `/bdd` at phase 5 for the
   regression test) → post-green review → `/commit-atomic-jj`.
+- **Multi-session epic (ferry crossing)** — `/ferry` (map decisions, resolve
+  one per sitting) → `/blueprint` (lock the resulting blueprints) →
+  `/call-charon` (one builder agent per blueprint, review flotilla,
+  orchestrator-run Verify) or `/weave` per blueprint by hand →
+  `/moor` (reconcile the wiki with what shipped, extract loose ends,
+  hand the ferry its rest).
 
 ### Post-green review (the four axes)
 - `/review-angles` — correctness / robustness (stale refs, TOCTOU, ordering,
