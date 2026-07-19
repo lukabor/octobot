@@ -1,6 +1,7 @@
 ---
 name: add-copilot-project-skill
-description: Scaffold a project-specific skill set that guides contributors through a repo's repeatable, error-prone extension tasks — consumed by the GitHub Copilot cloud coding agent via the official .github/skills/ format, single-sourced from the repo's own docs, and backed by a mechanical validator. Tuned for config-driven pipelines (e.g. R `{targets}` projects). Use when the user says "add copilot project skills", "turn our onboarding/extension workflow into skills", "guide contributors to add datasets/modules/targets/chapters", "make a Copilot skill set for this repo", "/add-copilot-project-skill".
+description: Scaffold a .github/skills set (Copilot cloud agent format) for a repo's extension tasks, with validator.
+disable-model-invocation: true
 ---
 
 # add-copilot-project-skill

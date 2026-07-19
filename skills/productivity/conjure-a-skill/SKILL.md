@@ -1,6 +1,7 @@
 ---
 name: conjure-a-skill
-description: Conjure a new Claude Code skill that earns its place — verb-first name, sharp completion criteria, progressive-disclosure layout, no-op-free body, every file ≤110 lines. Use when the user says "conjure a skill", "/conjure-a-skill", "write a skill", "create a skill", "add a skill", or describes a recurring workflow worth capturing.
+description: Author a new octobot skill: verb-first name, Use-when description, 110-line cap, symlink install.
+disable-model-invocation: true
 ---
 
 # conjure-a-skill

@@ -1,6 +1,7 @@
 ---
 name: build-r-package
-description: Scaffold a new R package with renv for dependency management, a justfile task runner, DESCRIPTION, NAMESPACE generation via roxygen2, and testthat ed. 3, then delegate the three-stage Docker setup on rocker/r-ver (Dockerfile, docker-compose, .dockerignore) to containerize-project. Materialises files into a target directory and stops on `jj diff` for review before any commit. Use when the user says "new R package", "scaffold R package", "create R package", "set up R package", "bootstrap R package", "/build-r-package".
+description: Scaffold an R package: renv + justfile + DESCRIPTION + testthat ed. 3; Docker via containerize-project.
+disable-model-invocation: true
 ---
 
 # build-r-package

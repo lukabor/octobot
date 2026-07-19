@@ -1,6 +1,7 @@
 ---
 name: grill-me
-description: Run a Socratic loop that removes ambiguity from a task before any implementation begins. Ask one focused question at a time about intent, edge cases, constraints, and success criteria until the agent can restate the task unambiguously. Use when the user says "grill me", "/grill-me", "ask me questions first", or when the task as stated is too vague to implement safely.
+description: Socratic interview, one question at a time, until the task restates unambiguously.
+disable-model-invocation: true
 ---
 
 # grill-me

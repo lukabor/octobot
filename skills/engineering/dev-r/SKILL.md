@@ -1,6 +1,7 @@
 ---
 name: dev-r
-description: Orchestrate the full R development workflow. Auto-detects project type — `DESCRIPTION` present → R package; `_targets.R` present → R analysis — and runs the appropriate loop (implement → lint → style → test → commit). Applies /r-style throughout. Use ONLY when the user explicitly asks for the workflow ("run the R workflow", "full R dev loop", "/dev-r"). Do NOT auto-invoke for individual R tasks — those use `/bdd`, `/diagnose`, `/r-style`, or `/jj-atomic` directly.
+description: Orchestrate the full R dev loop; auto-detects package (DESCRIPTION) vs analysis (_targets.R).
+disable-model-invocation: true
 ---
 
 # dev-r

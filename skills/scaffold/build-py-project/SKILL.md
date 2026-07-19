@@ -1,6 +1,7 @@
 ---
 name: build-py-project
-description: Scaffold a new Python project with uv for dependency management, a justfile task runner, and pyproject.toml configured with ruff, ty, and pytest, then delegate the three-stage Docker setup (Dockerfile, docker-compose, .dockerignore) to containerize-project. Materialises files into a target directory and stops on `jj diff` for review before any commit. Use when the user says "new python project", "scaffold python", "create python project", "set up python repo", "bootstrap python", "/build-py-project".
+description: Scaffold a Python project: uv + justfile + pyproject (ruff, ty, pytest); Docker via containerize-project.
+disable-model-invocation: true
 ---
 
 # build-py-project

@@ -1,6 +1,7 @@
 ---
 name: write-readme-py
-description: Generate a README.md for a Python project scaffolded by `/build-py-project`. Reads `pyproject.toml` and `justfile` from the current directory to populate logo, extras, license, attribution, and task-runner commands in a Saduko-style two-column layout (logo + TOC header, multi-extras install, Docker/local quality checks, Apache-aware License block). Materialises a README.md and stops on `jj diff` for review before any commit. Use when the user says "write readme", "/write-readme-py", "generate readme", "document the project" inside a Python project.
+description: Generate a README from pyproject.toml + justfile in the Saduko two-column layout.
+disable-model-invocation: true
 ---
 
 # write-readme-py

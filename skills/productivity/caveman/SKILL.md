@@ -1,6 +1,7 @@
 ---
 name: caveman
-description: Switch into terse mode for the rest of the session — no preamble, no trailing summaries, no narration of intent; reply with code plus a one-line rationale only. Use when the user says "caveman", "/caveman", "be terse", or asks for minimum-token responses.
+description: Terse mode for the rest of the session: no preamble, no summaries, artifact + one line.
+disable-model-invocation: true
 ---
 
 # caveman

@@ -1,6 +1,7 @@
 ---
 name: sieve
-description: A Socratic gate that decides whether a change earns its place before you seal it — every line must pass three sieves (Real, Good, Minimal) to enter or to stay. The burden is on keeping, not cutting. Use when the user says "sieve", "/sieve", "should we build this", "is this worth it", "justify keeping this", "Real Good Minimal", "do we need this", before adding a feature/file/dependency, or before pruning one — any decision about whether code deserves to exist.
+description: Real / Good / Minimal gate on whether a change earns its place; fires at the seal.
+disable-model-invocation: true
 ---
 
 # sieve

@@ -1,6 +1,7 @@
 ---
 name: add-docker-secrets
-description: Wire credentials (API keys, tokens, private package-index auth) into a Docker / docker-compose project without baking them into image layers — BuildKit secret mounts for build time, env_file or compose secrets for runtime, plus .gitignore / .dockerignore hygiene checks. Use when the user says "docker secrets", "add a secret", "API key in the container", "token for the build", needs credentials inside a containerized project (e.g. NCBI/Entrez keys, GitHub PAT for private R or Python packages), or asks how to pass secrets into docker build or docker compose.
+description: Wire build-time (BuildKit mounts) and runtime (env_file/compose) secrets without leaking into image layers.
+disable-model-invocation: true
 ---
 
 # add-docker-secrets

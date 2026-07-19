@@ -1,6 +1,7 @@
 ---
 name: handoff
-description: Produce a structured handoff so a fresh session, a teammate, or a spawned subagent can pick up without re-deriving context. Use when the user says "handoff", "wrap up", "summarize for next session", is about to /clear on unfinished work, or a mutating subagent needs its brief.
+description: Structured handoff for a fresh session or a subagent brief; references artifacts, redacts secrets.
+disable-model-invocation: true
 ---
 
 # handoff

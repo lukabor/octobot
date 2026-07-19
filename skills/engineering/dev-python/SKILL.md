@@ -1,6 +1,7 @@
 ---
 name: dev-python
-description: Orchestrate the full Python development workflow in a uv + Docker + justfile project — implement, lint, typecheck, test (TDD-BDD), commit. Use ONLY when the user explicitly asks for the workflow ("run the python workflow", "full dev loop", "/dev-python"). Do NOT auto-invoke for individual tasks like fixing a bug, adding a function, or writing tests — those use the relevant focused skill (`/bdd`, `/diagnose`, `/jj-atomic`) directly.
+description: Orchestrate the full Python dev loop: implement, lint, typecheck, test (bdd), commit.
+disable-model-invocation: true
 ---
 
 # dev-python

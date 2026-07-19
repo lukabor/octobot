@@ -1,6 +1,7 @@
 ---
 name: build-r-analysis
-description: Scaffold a new R analysis project with renv for dependency management, a justfile, a `_targets.R` workflow skeleton, and Quarto reports under `reports/`, then delegate the three-stage Docker setup on rocker/verse (Dockerfile, docker-compose, .dockerignore) to containerize-project. Configured with lintr, styler, testthat, and box. Materialises files and stops on `jj diff` for review before any commit. Use when the user says "new R analysis", "scaffold R project", "create R analysis", "set up R data science project", "new quarto project", "/build-r-analysis".
+description: Scaffold an R analysis: renv + targets + Quarto on rocker/verse; Docker via containerize-project.
+disable-model-invocation: true
 ---
 
 # build-r-analysis

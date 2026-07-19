@@ -1,6 +1,7 @@
 ---
 name: containerize-project
-description: Add a three-stage Docker setup (base/production/development) to a project — Dockerfile, docker-compose.yml, .dockerignore, and Docker recipes in the justfile. Detects the ecosystem from marker files (pyproject.toml → uv on python-slim; DESCRIPTION → renv on rocker/r-ver; _targets.R → renv on rocker/verse). Hardened defaults: non-root production user, pinned package-manager install, no source mount in the production service. Materialises files and stops on `jj diff` for review before any commit. Use when the user says "containerize", "dockerize", "add docker", "/containerize-project", or a scaffold skill (build-py-project, build-r-package, build-r-analysis) delegates Docker setup here.
+description: Add the three-stage Docker setup (base/production/development) to a uv or renv project.
+disable-model-invocation: true
 ---
 
 # containerize-project

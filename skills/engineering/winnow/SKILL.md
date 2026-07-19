@@ -1,6 +1,7 @@
 ---
 name: winnow
-description: A blunt after-the-fact debloat audit that scans existing code for what can be deleted — reinvented stdlib, needless dependencies, speculative abstractions, dead flexibility — and reports a line-count delta. One-directional: it only ever removes. Use when the user says "winnow", "/winnow", "debloat", "what can we delete", "is this over-engineered", "simplify review", "find what to cut", "over-engineering review", or wants a mechanical pass over a diff or file for removable complexity.
+description: After-the-fact debloat audit; only removes; ends with a net: -N lines scoreboard.
+disable-model-invocation: true
 ---
 
 # winnow

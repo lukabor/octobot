@@ -1,6 +1,7 @@
 ---
 name: write-readme
-description: Generate a README.md for any project by detecting its ecosystem from marker files (pyproject.toml → python, DESCRIPTION → R package, _targets.R → R analysis, package.json → node, Cargo.toml → rust, none → generic/shell). Reads the manifest and task runner to populate name, description, install steps, usage commands, and license, then materialises a README from a shared template and stops on `jj diff` for review. Use when the user says "write readme", "/write-readme", "generate readme", "document the project".
+description: Generate a README for any project by ecosystem detection (python/R/node/rust/generic).
+disable-model-invocation: true
 ---
 
 # write-readme
