@@ -42,20 +42,26 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
 2. **blueprint + review-blueprint** — spec skill with spec-format.md;
    fourth review axis (diff vs spec). **Verify:** blueprint a real
    roadmap item into a well-formed spec; review-blueprint flags an
-   injected scope-creep diff.
+   injected scope-creep diff. ✅ verified 2026-07-19 (spec 001 drafted;
+   scratch fixture: CONTAINED ✗ on planted logging + stray function).
 3. **ferry + implement** — decision maps; spec-driven execution with the
    verify gate and handoff-gated subagent dispatch. **Verify:** ferry a
    multi-session feature into ≥3 edged decisions; implement one locked
-   spec end-to-end with pasted Verify output.
+   spec end-to-end with pasted Verify output. ✅ verified 2026-07-19
+   (ferry-python-siblings D-1..D-3; scratch implement run, Verify "OK").
 4. **Upstream pulls** — tautological-test + pre-agreed seams into bdd;
    handoff redaction/reference rules; resolve-conflicts (jj port).
    **Verify:** resolve-conflicts replayed on a synthetic two-sided
-   conflict; house caps hold.
+   conflict; house caps hold. ✅ verified 2026-07-19 (rc-test replay,
+   both intents merged, chain clean; bdd at 110).
 5. **Invocation audit + steer** — disable-model-invocation on
    orchestrators/rituals; steer router; conjure imperative-verb
-   enforcement; README regen. **Verify:** fresh session lists only the 8
-   model-invoked descriptions; steer names every skill; conjure rejects
-   a noun-first name.
+   enforcement; README regen. **Verify:** fresh session lists only the
+   ~~8~~ 11 model-invoked descriptions (superseded: cavecrew-octobot,
+   review-blueprint, resolve-conflicts must fire from natural phrasing);
+   steer names every skill; conjure rejects a noun-first name.
+   ✅ verified 2026-07-19 (16 flagged / 11 model-invoked by grep; steer
+   table covers all 34; conjure gather+review reject noun-first).
 
 ## Risks & gotchas
 

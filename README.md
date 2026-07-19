@@ -56,11 +56,23 @@ scribe-OKF → architect → blueprint → ferry → implement → review+verify
   every agent reads `OKF/INDEX.md` before code.
 - **architect** — plan a project or revise its plan (`OKF/ROADMAP.md`);
   greenfield and revision modes (replaces plan-project + update-project).
+- **blueprint** — synthesize discussed work into a justified, verifiable
+  spec at `OKF/specs/NNN-<slug>.md` (status: draft → locked → implemented).
+- **ferry** — work too big for one session becomes a directory of small,
+  edge-declared decision files; resolve one per sitting.
+- **implement** — execute one locked spec: bdd at its seams, four-axis
+  review, run its Verify with pasted output, seal citing the spec.
+- **steer** — router over every skill; most are user-invoked, steer is
+  the index.
+
+All loop skills are user-invoked (`disable-model-invocation: true`).
 
 ### productivity
 - **conjure-a-skill** — meta-skill that scaffolds new skills consistently.
 - **handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
+- **resolve-conflicts** — jj conflict discipline: topology first, both
+  intents preserved, headless-safe squash.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
 - **cavecrew-octobot** — how to invoke the plugin `caveman:cavecrew-*` agents
   (investigator / builder / reviewer) without the agent-type error; octobot
@@ -78,6 +90,8 @@ scribe-OKF → architect → blueprint → ferry → implement → review+verify
   locks, readiness surfaces — the failures a green unit suite misses.
 - **review-angles** — recall-biased correctness checklist for the post-green
   review pass (stale refs, TOCTOU, ordering state, durability, invalidation).
+- **review-blueprint** — the spec-fidelity axis: diff vs `OKF/specs/NNN` —
+  complete, contained, verified (output pasted). implement's done-gate.
 - **nuke-review** — exceptionally strict structural-quality review for code
   judo moves; ported from cursor/plugins thermo-nuclear-code-quality-review.
   Pairs with `review-angles` (correctness) and `winnow` (debloat) as the
@@ -101,6 +115,8 @@ scribe-OKF → architect → blueprint → ferry → implement → review+verify
   lint → typecheck → test → commit). Explicit trigger only.
 - **dev-r** — orchestrate the full R workflow; auto-detects package
   (`DESCRIPTION`) vs analysis (`_targets.R`).
+- **write-readme** — generate `README.md` for any project via ecosystem
+  detection (python / R / node / rust / generic).
 - **write-readme-py** — generate `README.md` from `pyproject.toml` +
   `justfile`.
 - **add-copilot-project-skill** — scaffold a project-specific skill set for
@@ -141,13 +157,15 @@ script — read the relevant SKILL.md as you enter each step.
 - **Bug hunt** — `/diagnose` (six phases; hands to `/bdd` at phase 5 for the
   regression test) → post-green review → `/jj-atomic`.
 
-### Post-green review (the three axes)
+### Post-green review (the four axes)
 - `/review-angles` — correctness / robustness (stale refs, TOCTOU, ordering,
   durability). Run *first* — these are the silent killers.
 - `/nuke-review` — structural quality / code judo. Pushes for code that
   *deletes* moving pieces, not rearranges them. User-invoked.
 - `/winnow` — mechanical debloat with a `net: −N lines` scoreboard.
-- Spawn any of the three as a sub-agent via `/cavecrew-octobot`
+- `/review-blueprint` — spec fidelity: everything asked, nothing beyond,
+  Verify output pasted.
+- Spawn any axis as a sub-agent via `/cavecrew-octobot`
   (the `caveman:cavecrew-reviewer` invocation cheatsheet).
 
 ### Architecture & vocabulary

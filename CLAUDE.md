@@ -4,6 +4,13 @@ Behavioral guidelines to reduce common LLM coding mistakes, plus repo-local
 conventions for editing octobot itself. Merge with project-specific
 instructions as needed.
 
+**The loop.** Octobot is a loop-engineering metaharness over an OKF
+(open-knowledge-format) wiki: `scribe-OKF → architect → blueprint →
+ferry → implement → review+verify → jj-atomic`. This repo dogfoods it —
+knowledge in [`OKF/`](OKF/INDEX.md), agent directions in
+[`AGENTS.md`](AGENTS.md), skill index in
+[`skills/loop/steer/`](skills/loop/steer/SKILL.md).
+
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial
 tasks, use judgment.
 
