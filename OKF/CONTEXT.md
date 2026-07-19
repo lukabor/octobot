@@ -12,28 +12,31 @@ One folder under `skills/<category>/<name>/` with a SKILL.md router and
 optional topic-named siblings. _Avoid_: command, plugin, prompt.
 
 **The loop**:
-The metaharness cycle scribe-OKF → architect → blueprint → ferry →
-implement → review+verify → jj-atomic. _Avoid_: pipeline, workflow (those
-describe the dev-* orchestrators).
+The metaharness cycle write-OKF → architect → blueprint → ferry →
+weave → review+verify → commit-atomic-jj. _Avoid_: pipeline, workflow (those
+describe the develop-* orchestrators).
 
 **OKF**:
 Open-knowledge-format — the agent-first wiki at a target project's
 `./OKF/`; layout contract in
-[scribe-OKF/okf-layout.md](../skills/loop/scribe-OKF/okf-layout.md).
+[write-OKF/okf-layout.md](../skills/loop/write-OKF/okf-layout.md).
 _Avoid_: docs folder, wiki (unqualified), knowledge base.
 
-**Spec**:
-A blueprint-produced file `OKF/specs/NNN-<slug>.md` with status
-frontmatter; the unit implement executes. _Avoid_: ticket, issue, task.
+**Blueprint**:
+A blueprint-skill-produced file `OKF/blueprints/NNN-<slug>.md` with
+status frontmatter; the unit weave executes. Its `## Contract` section
+states what the change must satisfy. _Avoid_: spec (superseded term —
+renamed for skill↔artifact consistency), ticket, issue, task.
 
 **Brief**:
 The written contract a mutating subagent receives before spawning —
-goal, OKF/spec references, verify command. A locked spec can serve as
+goal, OKF/blueprint references, verify command. A locked blueprint can serve as
 the brief. _Avoid_: prompt (ambiguous).
 
 **Seal**:
-The jj-atomic describe step where scratch becomes artifact; the sieve
+The commit-atomic-jj describe step where scratch becomes artifact; the sieve
 fires here. _Avoid_: commit (mechanics), merge.
 
 **House cap**:
-110 lines per skill file (GLOSSARY.md excepted). _Avoid_: limit, budget.
+110 lines per SKILL.md; topic-named siblings load on demand and carry
+no hard cap. _Avoid_: limit, budget.

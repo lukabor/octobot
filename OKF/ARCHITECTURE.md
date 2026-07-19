@@ -5,15 +5,15 @@
 One module per skill category; the interface of each skill is its
 frontmatter `description` (routing) plus its SKILL.md body (procedure).
 
-- **loop** (`skills/loop/`) — the metaharness spine: scribe-OKF
-  (knowledge), architect (plan). Blueprint, ferry, implement, steer land
+- **loop** (`skills/loop/`) — the metaharness spine: write-OKF
+  (knowledge), architect (plan). Blueprint, ferry, weave, steer land
   per [ROADMAP.md](ROADMAP.md).
 - **engineering** (`skills/engineering/`) — practice skills: bdd,
   diagnose, review axes (review-angles, nuke-review, winnow), sieve,
-  vocabulary (codebase-design, domain-modeling), r-style, dev-* runners,
+  vocabulary (design-codebase, model-domain), style-r, dev-* runners,
   write-readme*.
 - **productivity** (`skills/productivity/`) — session mechanics:
-  jj-atomic, handoff, grill-me, caveman, cavecrew-octobot,
+  commit-atomic-jj, handoff, grill-me, caveman, spawn-cavecrew,
   conjure-a-skill.
 - **scaffold** (`skills/scaffold/`) — project generators: build-py-project,
   build-r-package, build-r-analysis, containerize-project,
@@ -21,8 +21,8 @@ frontmatter `description` (routing) plus its SKILL.md body (procedure).
 
 ## Main flows
 
-1. **The loop** — scribe-OKF → architect → blueprint → ferry → implement
-   → review+verify → jj-atomic; OKF refreshed after implement
+1. **The loop** — write-OKF → architect → blueprint → ferry → weave
+   → review+verify → commit-atomic-jj; OKF refreshed after weave
    (`skills/loop/`, diagram in `README.md`).
 2. **Skill discovery** — Claude Code scans `~/.claude/skills/` one level
    deep; per-skill symlinks point into `skills/<category>/<name>/`

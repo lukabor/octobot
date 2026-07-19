@@ -14,9 +14,12 @@ your task needs. Humans welcome too.
 ## Decisions
 
 - `adr/` — none yet; three-of-three rule applies (see
-  [domain-modeling](../skills/engineering/domain-modeling/ADR-FORMAT.md)).
+  [model-domain](../skills/engineering/model-domain/ADR-FORMAT.md)).
 
-## Specs
+## Blueprints
 
-- [001](specs/001-add-write-readme-r.md) — add write-readme-r skill — draft
-- [ferry-python-siblings](specs/ferry-python-siblings/MAP.md) — Python siblings for bdd/diagnose — 3 open decisions
+- [001](blueprints/001-add-write-readme-r.md) — add write-readme-r skill — draft
+
+## Ferries
+
+- [python-siblings](ferries/python-siblings/MAP.md) — Python siblings for bdd/diagnose — 0/3 resolved

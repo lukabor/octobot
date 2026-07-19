@@ -11,7 +11,7 @@ call; its stance decides what reviews flag.
 
 ## Options
 - **A — facade + DI only**: monkeypatch/patch treated like mockery::stub
-  in R — a smell needing justification. Consistent with codebase-design.
+  in R — a smell needing justification. Consistent with design-codebase.
 - **B — bless monkeypatch at seams**: pragmatic pytest idiom, weaker
   seam discipline.
 

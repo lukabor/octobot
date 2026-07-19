@@ -13,7 +13,7 @@ sketched there: "reading `DESCRIPTION` for packages and `_targets.R` +
 (`build-r-package`, `build-r-analysis`) currently ship without a README
 generator, unlike their Python sibling.
 
-## Spec
+## Contract
 A skill `skills/engineering/write-readme-r/` that:
 - Detects project type: `DESCRIPTION` → r-package (fields: Package,
   Title, Description, License, Authors@R); `_targets.R` → r-analysis

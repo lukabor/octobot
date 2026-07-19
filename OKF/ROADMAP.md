@@ -1,7 +1,7 @@
 # octobot Roadmap
 
 Octobot becomes a loop-engineering metaharness: the loop
-(scribe-OKF → architect → blueprint → ferry → implement) over an OKF
+(write-OKF → architect → blueprint → ferry → weave) over an OKF
 substrate, alongside the existing practice/scaffold skills. Vocabulary:
 [CONTEXT.md](CONTEXT.md).
 
@@ -9,9 +9,9 @@ substrate, alongside the existing practice/scaffold skills. Vocabulary:
 
 | repo | has | lacks |
 |---|---|---|
-| mattpocock/skills | spec/ticket pipeline, tracker-backed | file-based substrate, jj, R/Py ecosystem, debloat/review axes |
+| mattpocock/skills | blueprint/ticket pipeline, tracker-backed | file-based substrate, jj, R/Py ecosystem, debloat/review axes |
 | obra/superpowers | subagent execution, verification gate | persistent wiki memory, ecosystem scaffolds |
-| octobot pre-2026-07 | review axes, scaffolds, jj discipline | plan→spec→implement spine, knowledge substrate |
+| octobot pre-2026-07 | review axes, scaffolds, jj discipline | plan→blueprint→weave spine, knowledge substrate |
 
 Octobot's slot: file-based loop over OKF (open-knowledge-format), jj-native.
 
@@ -21,10 +21,10 @@ Octobot's slot: file-based loop over OKF (open-knowledge-format), jj-native.
    (it's files). Karpathy-LLM-wiki style; OpenWiki-inspired, dependency-free.
 2. architect replaces plan-project + update-project (mode-routed) —
    reversible by re-splitting.
-3. Specs are files with status frontmatter, not tracker issues — the
+3. Blueprints are files with status frontmatter, not tracker issues — the
    "tracker" is grep. Reversible via export.
 4. One canonical glossary per bounded context, never per issue.
-5. Handoff gate: no mutating subagent without a brief (goal, OKF/spec
+5. Handoff gate: no mutating subagent without a brief (goal, OKF/blueprint
    refs, verify command); read-only lookups exempt.
 6. New skill names: imperative-verb-first; legacy names grandfathered.
 
@@ -34,21 +34,21 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
 
 ## Phases
 
-1. **OKF foundation** — scribe-OKF, architect, path retargets, octobot's
+1. **OKF foundation** — write-OKF, architect, path retargets, octobot's
    own OKF. **Verify:** scaffold produces layout-conformant tree in an
    empty dir; refresh on octobot yields sane OKF/; zero stale
    plan-project/update-project refs. ✅ verified 2026-07-19 (scratch-dir
    scaffold + this OKF + grep).
-2. **blueprint + review-blueprint** — spec skill with spec-format.md;
-   fourth review axis (diff vs spec). **Verify:** blueprint a real
-   roadmap item into a well-formed spec; review-blueprint flags an
-   injected scope-creep diff. ✅ verified 2026-07-19 (spec 001 drafted;
+2. **blueprint + review-blueprint** — blueprint skill with blueprint-format.md;
+   fourth review axis (diff vs blueprint). **Verify:** blueprint a real
+   roadmap item into a well-formed blueprint; review-blueprint flags an
+   injected scope-creep diff. ✅ verified 2026-07-19 (blueprint 001 drafted;
    scratch fixture: CONTAINED ✗ on planted logging + stray function).
-3. **ferry + implement** — decision maps; spec-driven execution with the
+3. **ferry + weave** — decision maps; blueprint-driven execution with the
    verify gate and handoff-gated subagent dispatch. **Verify:** ferry a
    multi-session feature into ≥3 edged decisions; implement one locked
-   spec end-to-end with pasted Verify output. ✅ verified 2026-07-19
-   (ferry-python-siblings D-1..D-3; scratch implement run, Verify "OK").
+   blueprint end-to-end with pasted Verify output. ✅ verified 2026-07-19
+   (ferries/python-siblings D-1..D-3; scratch weave run, Verify "OK").
 4. **Upstream pulls** — tautological-test + pre-agreed seams into bdd;
    handoff redaction/reference rules; resolve-conflicts (jj port).
    **Verify:** resolve-conflicts replayed on a synthetic two-sided
@@ -57,7 +57,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
 5. **Invocation audit + steer** — disable-model-invocation on
    orchestrators/rituals; steer router; conjure imperative-verb
    enforcement; README regen. **Verify:** fresh session lists only the
-   ~~8~~ 11 model-invoked descriptions (superseded: cavecrew-octobot,
+   ~~8~~ 11 model-invoked descriptions (superseded: spawn-cavecrew,
    review-blueprint, resolve-conflicts must fire from natural phrasing);
    steer names every skill; conjure rejects a noun-first name.
    ✅ verified 2026-07-19 (16 flagged / 11 model-invoked by grep; steer
@@ -77,7 +77,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
 
 ## Out of scope
 
-- Issue-tracker backends (GitHub/GitLab) for specs — files only.
+- Issue-tracker backends (GitHub/GitLab) for blueprints — files only.
 - OpenWiki CLI dependency — import-compat at most.
 - Renaming grandfathered non-verb skills.
 - Matt's writing-* / teach / wizard / obsidian skill families.

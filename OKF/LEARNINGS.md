@@ -7,7 +7,7 @@
   True: without `-m` / `--use-destination-message` they open an editor
   and hang headless sessions; backgrounded jj mutations race the
   working-copy snapshot. Source:
-  `skills/productivity/jj-atomic/anti-patterns.md`, session 2026-07-19.
+  `skills/productivity/commit-atomic-jj/anti-patterns.md`, session 2026-07-19.
 - Believed: Claude Code scans `~/.claude/skills/` recursively.
   True: one level deep only — hence per-skill symlinks, not one repo
   symlink. Source: `README.md` §Install.
