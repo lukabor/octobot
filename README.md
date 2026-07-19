@@ -41,16 +41,26 @@ skill list.
 
 ## Skills
 
+### loop — the metaharness spine
+Octobot's core: a loop-engineering metaharness over an **OKF**
+(open-knowledge-format) wiki at each project's `./OKF/`.
+
+```
+scribe-OKF → architect → blueprint → ferry → implement → review+verify → jj-atomic
+(knowledge)   (plan)      (specs)   (decompose) (execute)                  (seal)
+     ▲                                              │
+     └────────────── OKF refreshed ◀────────────────┘
+```
+
+- **scribe-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
+  every agent reads `OKF/INDEX.md` before code.
+- **architect** — plan a project or revise its plan (`OKF/ROADMAP.md`);
+  greenfield and revision modes (replaces plan-project + update-project).
+
 ### productivity
 - **conjure-a-skill** — meta-skill that scaffolds new skills consistently.
 - **handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
-- **plan-project** — research-backed Socratic interview that kicks off a
-  greenfield project; writes `docs/Roadmap.md` with phased, verifiable plan.
-  Pairs with `update-project`.
-- **update-project** — revise `docs/Roadmap.md` as the project teaches you
-  things; mark phases verified, supersede locked decisions, keep `CONTEXT.md`
-  in sync. Pairs with `plan-project`.
 - **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
 - **cavecrew-octobot** — how to invoke the plugin `caveman:cavecrew-*` agents
   (investigator / builder / reviewer) without the agent-type error; octobot
@@ -121,9 +131,10 @@ Common ways the skills chain together. Each recipe is a *sequence*, not a
 script — read the relevant SKILL.md as you enter each step.
 
 ### Project lifecycle
-- **Greenfield project** — `/plan-project` (Socratic kickoff → `docs/Roadmap.md`)
+- **Greenfield project** — `/scribe-OKF` (knowledge scaffold) → `/architect`
+  (Socratic kickoff → `OKF/ROADMAP.md`)
   → `/build-py-project` | `/build-r-package` | `/build-r-analysis` (scaffold)
-  → feature loops below → `/update-project` (revise Roadmap as you learn).
+  → feature loops below → `/architect` (revision mode as you learn).
 - **Feature on an existing codebase** — `/grill-with-docs` if the design needs
   pinning → `/bdd` (red-green-refactor) → post-green review (next recipe)
   → `/jj-atomic` (seal).
@@ -144,7 +155,7 @@ script — read the relevant SKILL.md as you enter each step.
   module / interface / seam / adapter / depth) + `/domain-modeling`
   (problem-domain vocab: `CONTEXT.md`, ADRs on the three-of-three rule).
 - **Stress-test a plan against the codebase** — `/grill-with-docs`
-  (Socratic interview against `CONTEXT.md` and `docs/adr/`).
+  (Socratic interview against `OKF/CONTEXT.md` and `OKF/adr/`).
 
 ### Meta
 - **Author a new skill in this repo** — `/conjure-a-skill` → `/jj-atomic`.
@@ -192,7 +203,7 @@ afternoon.
 ### Socratic spine (toward a harness)
 
 The library is being organized around a Socratic lifecycle —
-**Question** (grill-me, grill-with-docs, plan-project) → **Gate** (sieve) →
+**Question** (grill-me, grill-with-docs, architect) → **Gate** (sieve) →
 **Build** (bdd) → **Refute** (review-angles, winnow, refute.md) →
 **Seal** (jj-atomic). Done so far: the three-sieve spine in `CLAUDE.md §2`
 and the shared `refute.md` elenchus doctrine. Remaining, **in order — don't
