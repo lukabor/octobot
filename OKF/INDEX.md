@@ -19,3 +19,4 @@ your task needs. Humans welcome too.
 ## Specs
 
 - [001](specs/001-add-write-readme-r.md) — add write-readme-r skill — draft
+- [ferry-python-siblings](specs/ferry-python-siblings/MAP.md) — Python siblings for bdd/diagnose — 3 open decisions
