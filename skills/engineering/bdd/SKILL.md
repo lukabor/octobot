@@ -16,20 +16,16 @@ description: Drive implementation with a strict red-green-refactor loop where ev
 Before step 1, anchor on [../codebase-design/SKILL.md](../codebase-design/SKILL.md) —
 module, interface, seam, adapter, depth, leverage, locality.
 
-## Language references — Python
-Pytest only — `@pytest.fixture`, `parametrize`, scenario as docstring.
-- [tests-py.md](tests-py.md) — paired good/bad examples.
-- [interface-design-py.md](interface-design-py.md) — DI, pure functions, typing. *Before step 1.*
-- [mocking-py.md](mocking-py.md) — seams only, façade + DI over patching. *Before `patch` / `monkeypatch`.*
-- [docstrings-py.md](docstrings-py.md) — Google style, types in annotations not prose.
-
-## Language references — R
-Testthat ed. 3+, `box::use`, `describe`/`it`.
-- [tests-r.md](tests-r.md) — paired good/bad examples.
-- [interface-design-r.md](interface-design-r.md) — DI, pure functions, minimal surface. *Before step 1.*
-- [deep-modules-r.md](deep-modules-r.md) — small interface, large impl.
-- [mocking-r.md](mocking-r.md) — seams only. *Before `mockery::stub` / `local_mocked_bindings`.*
-- [refactoring-r.md](refactoring-r.md) — what to look for in step 3.
+## Language references
+**Python** (pytest only — fixtures, `parametrize`, scenario as docstring):
+[tests-py.md](tests-py.md), [interface-design-py.md](interface-design-py.md)
+(*before step 1*), [mocking-py.md](mocking-py.md) (*before `patch` /
+`monkeypatch`* — seams only, façade + DI), [docstrings-py.md](docstrings-py.md).
+**R** (testthat ed. 3+, `box::use`, `describe`/`it`):
+[tests-r.md](tests-r.md), [interface-design-r.md](interface-design-r.md)
+(*before step 1*), [deep-modules-r.md](deep-modules-r.md),
+[mocking-r.md](mocking-r.md) (*before `mockery::stub`* — seams only),
+[refactoring-r.md](refactoring-r.md) (*step 3*).
 
 ## Process
 
@@ -47,6 +43,13 @@ Testthat ed. 3+, `box::use`, `describe`/`it`.
 - Show the scenarios to the user and get a yes before writing code.
 - The scenarios are a **plan**, not a batch of tests to write upfront. See
   the horizontal-slicing anti-pattern below.
+
+### 0.5 Agree the seams
+- Write down the **seams under test** and confirm them with the user
+  before any test exists — no test at an unconfirmed seam. Up-front
+  agreement puts effort on critical paths, not every edge. Inside
+  [implement](../../loop/implement/SKILL.md), the spec's *Seams touched*
+  pre-answers this — reuse it.
 
 ### 1. Red — one scenario at a time
 - Translate **only the first** scenario into the project's native test
@@ -94,9 +97,12 @@ each finding ([refute.md](../review-angles/refute.md)); fix red-test-first.
 
 ## Guardrails
 - **Never** skip red, write >1 failing test at once, or refactor while red.
+- **Never** test at a seam the user hasn't confirmed (step 0.5).
 - A scenario untestable at the chosen level gets surfaced, not dropped.
+- Refactor stays **inside** the loop (step 3) — deliberate divergence
+  from upstream tdd; octobot's reviews are a separate post-green pass.
 See [anti-patterns.md](anti-patterns.md) — horizontal slicing, passing on
-first run, refactoring while red, dropping an untestable scenario.
+first run, tautological tests, refactoring while red, dropped scenarios.
 
 ## See also
 - [../diagnose/SKILL.md](../diagnose/SKILL.md) — chasing an existing bug?

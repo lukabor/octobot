@@ -24,6 +24,22 @@ test is testing the wrong thing — the behavior was already present, or the
 assertion is a tautology. Fix the test before continuing. Never let a green
 bar on a brand-new test go unchallenged.
 
+## Tautological tests
+
+An assertion that recomputes the expected value the way the code does can
+never disagree with the code — it passes by construction:
+
+```python
+assert add(a, b) == a + b            # recomputed the same way — tautology
+assert config == load_config()       # snapshot derived by the code itself
+```
+
+Expected values come from an **independent source of truth**: a
+known-good literal, a worked example done by hand, the spec's stated
+semantics (`OKF/specs/NNN`). If you can't produce the expectation without
+running the code under test, you don't have a test yet. (Adapted from
+mattpocock/skills tdd.)
+
 ## Refactoring while red
 
 If the suite is red, fix the test or fix the code — do not "tidy while
