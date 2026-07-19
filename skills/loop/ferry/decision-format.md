@@ -3,6 +3,10 @@
 ## MAP.md — `OKF/ferries/<topic>/MAP.md`
 
 ```markdown
+---
+type: Ferry Map
+---
+
 # ferry — <topic>
 
 Destination: <one sentence — what "the way is clear" means>.
@@ -18,6 +22,7 @@ Destination: <one sentence — what "the way is clear" means>.
 
 ```markdown
 ---
+type: Decision
 status: open | resolved | superseded-by-D-<m>
 blocked-by: [D-1, D-2]   # empty list if unblocked
 ---
@@ -42,6 +47,8 @@ Append-only — a changed mind is a new decision superseding this one.>
 ## Rules
 
 - One genuine decision per file; a compound question splits.
+- `type:` frontmatter (`Ferry Map` / `Decision`) is the OKF-v0.1
+  conformance field — always first.
 - `blocked-by` edges must be acyclic — check when adding, not when stuck.
 - Status flips only with a filled Resolution; Resolution never edited
   after — supersede with a new decision instead.

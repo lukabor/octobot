@@ -8,7 +8,8 @@ disable-model-invocation: true
 
 The OKF is a Karpathy-LLM-wiki-style knowledge substrate: dense synthesis,
 not raw dumps; agents read it *before* code; every page inspectable,
-versioned, agent-maintained. Layout contract: [okf-layout.md](okf-layout.md).
+versioned, agent-maintained. Layout and Google-OKF-v0.1 conformance
+contract: [okf-layout.md](okf-layout.md).
 
 ## When to use
 - User says "scribe OKF", "/write-OKF", "set up the knowledge folder",
@@ -26,9 +27,10 @@ versioned, agent-maintained. Layout contract: [okf-layout.md](okf-layout.md).
 ## Scaffold mode
 1. **Confirm the first write** — creating `OKF/` in a repo is a new
    convention; get a yes before writing anything.
-2. Materialise the skeleton from [templates/](templates/) — headers and
-   `TODO(scribe)` markers only. **Never invent facts**: an empty section
-   with a TODO beats a fabricated architecture claim.
+2. Materialise the skeleton from [templates/](templates/) — headers,
+   `type` frontmatter, and `TODO(scribe)` markers only. **Never invent
+   facts**: an empty section with a TODO beats a fabricated architecture
+   claim.
 3. Fill only what is *derivable from disk right now*: SUMMARY from an
    existing README, ARCHITECTURE bones from the directory tree and
    manifests, ROADMAP/CONTEXT stay TODO until
@@ -49,13 +51,13 @@ versioned, agent-maintained. Layout contract: [okf-layout.md](okf-layout.md).
    [architect/revise.md](../architect/revise.md) discipline.
 4. Every ARCHITECTURE.md claim must be **traceable to a file** — cite
    `path` (or `path:line`) inline. A claim you can't cite doesn't go in.
-5. Keep `INDEX.md` complete: every page and every `blueprints/` entry
+5. Keep `index.md` complete: every page and every `blueprints/` entry
    listed, one line each (`NNN — title — status`); every ferry one line
    (`<topic> — n/m resolved → MAP.md`) — decisions stay in MAP.md only.
 
 ## Output / done criteria
-- `OKF/` matches [okf-layout.md](okf-layout.md); `INDEX.md` links every
-  page that exists.
+- `OKF/` matches [okf-layout.md](okf-layout.md) including its
+  conformance block; `index.md` links every page that exists.
 - `AGENTS.md` carries the hook block.
 - Scaffold: no fabricated content — unfillable sections carry
   `TODO(scribe)`.

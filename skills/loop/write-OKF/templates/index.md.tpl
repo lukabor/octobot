@@ -1,3 +1,7 @@
+---
+okf_version: "0.1"
+---
+
 # <project> — OKF index
 
 Open-knowledge-format wiki. Agents: read this page first, then the pages
@@ -15,7 +19,12 @@ your task needs. Humans welcome too.
 
 - `adr/` — TODO(scribe): list ADRs here as they land.
 
-## Specs
+## Blueprints
 
-- `specs/` — TODO(scribe): list specs here as blueprint writes them
-  (`NNN — title — status`).
+- `blueprints/` — TODO(scribe): list blueprints here as blueprint writes
+  them (`NNN — title — status`).
+
+## Ferries
+
+- `ferries/` — TODO(scribe): one line per ferry
+  (`<topic> — n/m resolved → MAP.md`).

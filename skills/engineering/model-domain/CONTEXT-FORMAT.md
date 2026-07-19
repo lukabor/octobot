@@ -44,7 +44,7 @@ _Avoid_: Client, buyer, account.
 **Single context (most repos):** one `OKF/CONTEXT.md`.
 
 **Multi-context:** glossaries split into `OKF/context/<subroot>.md` —
-one per bounded context — with a Contexts section in `OKF/INDEX.md`
+one per bounded context — with a Contexts section in `OKF/index.md`
 listing them and how they relate:
 
 ```md
@@ -64,7 +64,7 @@ listing them and how they relate:
 ```
 
 Decision rule:
-- If `OKF/context/` exists → multi-context. Read INDEX.md to find contexts.
+- If `OKF/context/` exists → multi-context. Read index.md to find contexts.
 - Else if `OKF/CONTEXT.md` exists → single-context.
 - Else (neither) → create `OKF/CONTEXT.md` lazily when the first term
   is resolved. Switch to multi-context only on observing ≥ 2 obvious

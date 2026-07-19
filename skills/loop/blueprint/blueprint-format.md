@@ -2,6 +2,7 @@
 
 ```markdown
 ---
+type: Blueprint
 status: draft | locked | implemented | superseded-by-NNN
 traces-to: ROADMAP.md phase N | ferries/<topic>/D-<n> | user request <date>
 ---
@@ -36,6 +37,8 @@ up in the diff.>
 ## Rules
 
 - Title is imperative — a blueprint names a change, not a state.
+- `type: Blueprint` is the OKF-v0.1 conformance field (see
+  [write-OKF/okf-layout.md](../write-OKF/okf-layout.md)) — always first.
 - `traces-to` is mandatory; a blueprint that traces to nothing fails
   [sieve](../../engineering/sieve/SKILL.md)'s Real test by definition.
 - Locked blueprint's Contract/Verify sections are immutable — supersede, don't

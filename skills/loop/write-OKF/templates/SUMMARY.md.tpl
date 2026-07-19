@@ -1,3 +1,7 @@
+---
+type: Summary
+---
+
 # <project> — summary
 
 <!-- ≤1 screen. The cold-start page: an agent that reads only this should

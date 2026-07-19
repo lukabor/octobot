@@ -35,7 +35,7 @@ blueprint with justification. The interview happened upstream
      done-gate runs exactly this.
 4. **Show the blueprint**; iterate. On explicit user yes → flip status to
    `locked`. No yes, no lock.
-5. **Index it** — add `NNN — <title> — <status>` to `OKF/INDEX.md`
+5. **Index it** — add `NNN — <title> — <status>` to `OKF/index.md`
    Blueprints section.
 6. **Seal** via [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md):
    `docs(blueprint): add NNN <slug>`.
@@ -47,7 +47,7 @@ with a new number instead. The "tracker" is
 `grep -r "^status:" OKF/blueprints/`.
 
 ## Output / done criteria
-- Blueprint exists, matches blueprint-format.md, indexed in INDEX.md.
+- Blueprint exists, matches blueprint-format.md, indexed in index.md.
 - Justification traces to a real source; Verify is runnable.
 - Locked only on explicit user approval.
 

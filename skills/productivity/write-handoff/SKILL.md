@@ -31,7 +31,7 @@ subagent spawn (the handoff-gate brief —
   will focus on and tailor the doc.
 
 ## Process
-1. Skim the task list, recent edits, `OKF/INDEX.md`, any active ferry.
+1. Skim the task list, recent edits, `OKF/index.md`, any active ferry.
 2. Write the doc (template below). File exit: `./HANDOFF.md` unless the
    user names a path or asks for the temp dir. Subagent exit: same
    sections as the spawn prompt, plus the gate's verify command.

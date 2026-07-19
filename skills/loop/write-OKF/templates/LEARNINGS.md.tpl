@@ -1,3 +1,7 @@
+---
+type: Learnings
+---
+
 # <project> — learnings
 
 <!-- Append-only. Format per entry: what was believed / what is true /

@@ -48,7 +48,7 @@ habit any skill can do; that's not this skill.
 OKF/                       # open-knowledge-format wiki (see write-OKF)
 ├── CONTEXT.md             # single-context default — THE canonical glossary
 ├── context/               # multi-context mode: one <subroot>.md per
-│   └── <subroot>.md       #   bounded context, indexed from OKF/INDEX.md
+│   └── <subroot>.md       #   bounded context, indexed from OKF/index.md
 └── adr/
     └── 0001-<slug>.md
 ```
@@ -64,7 +64,7 @@ Default is single-context. Switch to **multi-context mode** only on
 observing **≥ 2 obvious sub-roots** (e.g. `R/ingest/`, `R/analysis/`;
 `src/ordering/`, `src/billing/`) *and* a second resolved term clearly
 belonging to one of them — then propose `OKF/context/<subroot>.md` files
-indexed from `OKF/INDEX.md`. **The split axis is the bounded context
+indexed from `OKF/index.md`. **The split axis is the bounded context
 (stable), never the issue (transient)** — issue-local terms live in their
 `OKF/blueprints/` entry until they recur, then get promoted here.
 

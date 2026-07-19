@@ -1,3 +1,7 @@
+---
+type: Architecture
+---
+
 # <project> — architecture
 
 <!-- Every claim cites a file path. Vocabulary: module / interface / seam /

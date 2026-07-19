@@ -18,7 +18,7 @@ superpowers' subagent-driven-development, jj-native.
 ## Preconditions (check, don't assume)
 - The blueprint exists and `status: locked` — `draft` → back to blueprint for
   the user's lock; none named → list locked blueprints, ask which.
-- `OKF/INDEX.md` read; the OKF pages the blueprint references read.
+- `OKF/index.md` read; the OKF pages the blueprint references read.
 
 ## Process
 1. **Frame** — restate the blueprint's Contract section in one sentence; list its
@@ -40,7 +40,7 @@ superpowers' subagent-driven-development, jj-native.
    message body cites `blueprint NNN`. Fix + regression test in the same
    change.
 6. **Close the loop** — flip blueprint status to `implemented`; update its
-   INDEX.md line; tick the roadmap item via
+   index.md line; tick the roadmap item via
    [architect](../architect/SKILL.md) revise mode; wiki-worthy learnings
    → `OKF/LEARNINGS.md` ([write-OKF](../write-OKF/SKILL.md) refresh if
    pages went stale).
