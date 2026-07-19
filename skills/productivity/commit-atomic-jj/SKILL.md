@@ -71,20 +71,32 @@ The same `jj describe` must include any of:
 
 ```
 jj diff                              # 1. read every line
-# bad? --> fix or:
-jj split  <paths-for-second-change>  # 2. one concern per change
-jj describe -m '...'                 # 3. semantic message
-jj diff   --revision @-              # 4. verify the message matches what shipped
-jj new   -m 'WIP'                    # 5. open a fresh empty @ for the next unit
+jj describe -m 'type(scope): ...'    # 2. one concern? seal it (foreground)
+jj diff   --revision @-              # 3. verify the message matches what shipped
+jj new   -m 'WIP'                    # 4. open a fresh empty @ for the next unit
 ```
 
-**Step 5 is not optional.** Without `jj new`, edits accumulate into the
+Mixed diff (more than one concern) → split **before** describing. `jj split`
+extracts the **selected paths into the FIRST (parent) commit** and leaves the
+rest in `@` (the child) — the selected paths are *not* the second change:
+
+```
+# -m sets the FIRST/parent (selected) commit; @ keeps the original message.
+# JJ_EDITOR=true guards against any editor step hanging a headless shell.
+JJ_EDITOR=true jj split -m 'type(scope): parent msg' <paths-for-parent>
+jj describe -m 'type(scope): msg for @'   # message the remaining @ explicitly
+jj new -m 'WIP'
+```
+
+**The `jj new` step is not optional.** Without it, edits accumulate into the
 sealed change and its message rots into a lie — open a fresh empty `@`
 immediately.
 
 **Run every `jj` mutation in the foreground** (split/describe/new rewrite the
-working copy; backgrounding races the snapshot and aborts). See
-[anti-patterns.md](anti-patterns.md) *"Backgrounding a `jj` mutation"*.
+working copy; backgrounding races the snapshot and aborts, exit 144). And
+never let one spawn an editor headlessly — always pass `-m`, guard with
+`JJ_EDITOR=true`. See [anti-patterns.md](anti-patterns.md) *"Backgrounding a
+`jj` mutation"* and *"Letting a `jj` op spawn an editor headlessly"*.
 
 ## Anti-patterns
 
