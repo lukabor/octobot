@@ -28,11 +28,17 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
 
 ## Process
 1. **Gather** — ask the user (one message, grouped):
-   - kebab-case name and which category (`productivity`, `engineering`,
-     `misc`)
-   - name is a **verb-first action phrase** (`build-py-project`,
-     `conjure-a-skill`) — the **leading word** that anchors invocation;
-     never a vague noun (`helper`, `utils`)
+   - kebab-case name and which category (`loop`, `productivity`,
+     `engineering`, `scaffold`)
+   - name **must** open with an imperative verb (`build-py-project`,
+     `steer`). Test: prefix with "please" — still a command? No → reject.
+     No new-skill exceptions; legacy non-verb names (bdd, jj-atomic,
+     r-style, caveman, sieve, handoff, …) are grandfathered, not
+     precedent.
+   - **invocation**: default `disable-model-invocation: true` + a
+     [`steer`](../../loop/steer/SKILL.md) row; model-invoked only when
+     the agent must fire it from natural mid-work phrasing (then the
+     description carries "Use when" triggers).
    - one-line purpose
    - concrete trigger phrases ("Use when ...")
    - **completion criteria** — checkable, exhaustive (see PRINCIPLES.md)
@@ -43,8 +49,10 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
 3. **Draft** `~/code/octobot/skills/<category>/<name>/SKILL.md` using the
    template below.
 4. **Review** — show the draft to the user; iterate until approved. Verify:
-   - `name:` matches the folder name
-   - `description:` contains "Use when" and is ≤ 1024 chars
+   - `name:` matches the folder name **and opens with an imperative
+     verb** — a noun-first name fails review outright
+   - `description:` ≤ 1024 chars; "Use when" triggers only if
+     model-invoked (user-invoked descriptions are one human-facing line)
    - **every file ≤ 110 lines** — octobot's house cap on **sprawl**. If
      SKILL.md is too long, use **progressive disclosure**: push
      **reference** into **topic-named siblings** (`tests-r.md`,
@@ -70,16 +78,8 @@ description: <what it does>. Use when <concrete trigger>.
 
 # <kebab-name>
 
-## When to use
-- <trigger 1>
-- <trigger 2>
-
-## Process
-1. ...
-2. ...
-
-## Output / done criteria
-- ...
+## When to use / Process / Output-done criteria
+(as in any sibling SKILL.md)
 ```
 
 ## Output / done criteria
@@ -90,7 +90,10 @@ description: <what it does>. Use when <concrete trigger>.
 
 ## Guardrails
 - Never invent a category — ask if unsure.
-- Never write a skill whose description lacks "Use when".
+- Never accept a name that doesn't open with an imperative verb.
+- Never write a model-invoked skill whose description lacks "Use when".
+- Never finish without adding the skill's row to
+  [`steer`](../../loop/steer/SKILL.md).
 - **Never let a file in the skill folder exceed 110 lines** (GLOSSARY.md
   excepted). Split before committing.
 - Reject any line that fails the **no-op** test (PRINCIPLES.md §pruning).
