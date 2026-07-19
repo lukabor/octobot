@@ -19,7 +19,7 @@ inside pytest, fixtures become Given steps), never behave.
 ## Test-file conventions
 
 - Files: `tests/test_<module>.py`; functions: `test_<behavior>` — the name
-  reads like a spec line, not mechanics.
+  reads like a blueprint line, not mechanics.
 - Layout: tests outside `src/` (the `/build-py-project` scaffold already
   does this); pytest docs strongly suggest src layout + `importlib` mode.
 - Every test carries its scenario as the docstring:

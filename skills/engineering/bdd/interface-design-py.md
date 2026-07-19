@@ -1,6 +1,6 @@
 # Interface design for testability (Python)
 
-Vocabulary lives in [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) —
+Vocabulary lives in [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md) —
 module, interface, seam, adapter, depth. This file is the Python-flavored leaf.
 
 Rules to apply before writing the test, not after. A deep module is the goal;

@@ -7,7 +7,7 @@ disable-model-invocation: true
 # grill-with-docs
 
 User-invoked router. Run [grill-me](../../productivity/grill-me/SKILL.md)
-(the Socratic interview) **using** [domain-modeling](../domain-modeling/SKILL.md)
+(the Socratic interview) **using** [model-domain](../model-domain/SKILL.md)
 (the active glossary / ADR discipline) — interview the user about the
 plan, and update `OKF/CONTEXT.md` and `OKF/adr/` as terms and decisions
 crystallise.

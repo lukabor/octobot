@@ -31,7 +31,7 @@ For a project with no real roadmap yet. Formerly `plan-project`.
    `OKF/CONTEXT.md` edit (confirm the first write).
 6. **Write `OKF/ROADMAP.md`** when answers stop moving decisions, using
    the skeleton in [SKILL.md](SKILL.md). If `OKF/` is missing, run
-   [scribe-OKF](../scribe-OKF/SKILL.md) scaffold first.
+   [write-OKF](../write-OKF/SKILL.md) scaffold first.
 7. **Hand forward**: name the Phase-0 items ready for
    [blueprint](../blueprint/SKILL.md), and the scaffold skill
    ([build-py-project](../../scaffold/build-py-project/SKILL.md) /

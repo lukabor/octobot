@@ -62,7 +62,7 @@ re-routes via description matching — explicit, observable, debuggable.
 4. **Validate** — end at `just validate --changed`; interpret its errors.
 5. **Hand off** — name the next skill (or declare done) and stop.
 
-## Frontmatter spec (matches GitHub's docs)
+## Frontmatter blueprint (matches GitHub's docs)
 
 | Field | Requirement | Notes |
 |---|---|---|

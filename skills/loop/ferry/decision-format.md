@@ -1,13 +1,13 @@
 # Ferry decision format
 
-## MAP.md — `OKF/specs/ferry-<topic>/MAP.md`
+## MAP.md — `OKF/ferries/<topic>/MAP.md`
 
 ```markdown
 # ferry — <topic>
 
 Destination: <one sentence — what "the way is clear" means>.
 
-| id | decision | status | blocked-by | spec |
+| id | decision | status | blocked-by | blueprint |
 |---|---|---|---|---|
 | D-1 | <title> | open | — | |
 | D-2 | <title> | open | D-1 | |
@@ -45,5 +45,5 @@ Append-only — a changed mind is a new decision superseding this one.>
 - `blocked-by` edges must be acyclic — check when adding, not when stuck.
 - Status flips only with a filled Resolution; Resolution never edited
   after — supersede with a new decision instead.
-- The `spec` column in MAP.md fills as [blueprint](../blueprint/SKILL.md)
-  crystallises resolutions into `OKF/specs/NNN`.
+- The `blueprint` column in MAP.md fills as [blueprint](../blueprint/SKILL.md)
+  crystallises resolutions into `OKF/blueprints/NNN`.

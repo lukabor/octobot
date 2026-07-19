@@ -29,10 +29,12 @@ disable-model-invocation: true
      Docker section.
    - `justfile` exists without a `build-dev` recipe → append the
      Docker section.
-   - `build-dev` already present → leave the justfile alone.
+   - `build-dev` already present → leave the justfile alone, but read the
+     recipe and confirm it actually builds the dev image; a same-named
+     recipe with different semantics → surface it, don't assume.
 4. **Stop. Do not run `jj describe`.** Tell the user:
    > "Review with `jj diff`. Then `just build-dev` to verify the
-   > toolchain. Describe with `/jj-atomic` when satisfied."
+   > toolchain. Describe with `/commit-atomic-jj` when satisfied."
 
 ## Placeholders
 - python: `<project-name>` (kebab-case), `<package_name>` (snake_case).

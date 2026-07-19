@@ -1,6 +1,6 @@
 # Deep modules in R
 
-Vocabulary and principles in [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md).
+Vocabulary and principles in [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md).
 This file shows what deep / shallow look like with `box::use` — the R lever
 for controlling the interface.
 

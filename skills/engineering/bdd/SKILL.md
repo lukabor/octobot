@@ -13,7 +13,7 @@ description: Drive implementation with a strict red-green-refactor loop where ev
   change, side effect) — pure refactors are out of scope.
 
 ## Vocabulary
-Before step 1, anchor on [../codebase-design/SKILL.md](../codebase-design/SKILL.md) —
+Before step 1, anchor on [../design-codebase/SKILL.md](../design-codebase/SKILL.md) —
 module, interface, seam, adapter, depth, leverage, locality.
 
 ## Language references
@@ -48,7 +48,7 @@ module, interface, seam, adapter, depth, leverage, locality.
 - Write down the **seams under test** and confirm them with the user
   before any test exists — no test at an unconfirmed seam. Up-front
   agreement puts effort on critical paths, not every edge. Inside
-  [implement](../../loop/implement/SKILL.md), the spec's *Seams touched*
+  [weave](../../loop/weave/SKILL.md), the blueprint's *Seams touched*
   pre-answers this — reuse it.
 
 ### 1. Red — one scenario at a time
@@ -90,7 +90,7 @@ caller ordering, stale data, or the shape the real producer emits (see
 [anti-patterns.md](anti-patterns.md) *"Fixtures that don't match what the
 producer emits"*). After the loop is green, **budget a review pass** across
 four axes: correctness ([`../review-angles/SKILL.md`](../review-angles/SKILL.md)),
-spec fidelity ([`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md)),
+blueprint fidelity ([`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md)),
 structural quality ([`../nuke-review/SKILL.md`](../nuke-review/SKILL.md)),
 mechanical debloat ([`../winnow/SKILL.md`](../winnow/SKILL.md)). Refute
 each finding ([refute.md](../review-angles/refute.md)); fix red-test-first.
@@ -107,4 +107,4 @@ first run, tautological tests, refactoring while red, dropped scenarios.
 ## See also
 - [../diagnose/SKILL.md](../diagnose/SKILL.md) — chasing an existing bug?
   Run `/diagnose` first; phase 5 hands back here for the regression test.
-- [../domain-modeling/SKILL.md](../domain-modeling/SKILL.md) — run before step 0 so scenarios use canonical `CONTEXT.md` vocabulary.
+- [../model-domain/SKILL.md](../model-domain/SKILL.md) — run before step 0 so scenarios use canonical `CONTEXT.md` vocabulary.

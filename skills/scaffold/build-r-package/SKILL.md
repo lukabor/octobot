@@ -38,7 +38,7 @@ disable-model-invocation: true
    > "Review with `jj diff`. Then run `just build-dev` → `just up` → `R
    > -e 'renv::init()'` to lock dependencies; then `just document` and
    > `just check`. Describe the change with
-   > [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md) when satisfied."
+   > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
 5. **Suggest** `/write-readme-py`'s R counterpart once it exists (not
    yet — see octobot/README.md *Out of scope*).
 
@@ -62,7 +62,7 @@ disable-model-invocation: true
 ## See also
 - [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
   — owns the Docker templates and the three-stage pattern rationale.
-- [`../../engineering/dev-r/SKILL.md`](../../engineering/dev-r/SKILL.md)
+- [`../../engineering/develop-r/SKILL.md`](../../engineering/develop-r/SKILL.md)
   — workflow auto-detects DESCRIPTION → R-package loop.
-- [`../../engineering/r-style/SKILL.md`](../../engineering/r-style/SKILL.md)
+- [`../../engineering/style-r/SKILL.md`](../../engineering/style-r/SKILL.md)
   — coding standards every function in `R/` must follow.

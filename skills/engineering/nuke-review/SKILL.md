@@ -102,6 +102,6 @@ Don't approve because behaviour is correct. Each is a presumptive blocker unless
 ## See also
 - [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — the *correctness* axis: stale refs, TOCTOU, ordering, durability.
 - [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *mechanical debloat* axis: single-tag findings, `net: -N lines` scoreboard. Pairs naturally — nuke-review judges shape; winnow clears chaff.
-- [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) — the vocabulary nuke-review applies (deep modules, seams, leverage, locality).
-- [`../../productivity/cavecrew-octobot/SKILL.md`](../../productivity/cavecrew-octobot/SKILL.md) — how to spawn `caveman:cavecrew-reviewer` to *execute* this axis on a diff.
-- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *spec-fidelity* axis (diff vs OKF/specs/NNN).
+- [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md) — the vocabulary nuke-review applies (deep modules, seams, leverage, locality).
+- [`../../productivity/spawn-cavecrew/SKILL.md`](../../productivity/spawn-cavecrew/SKILL.md) — how to spawn `caveman:cavecrew-reviewer` to *execute* this axis on a diff.
+- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *blueprint-fidelity* axis (diff vs OKF/blueprints/NNN).

@@ -46,7 +46,7 @@ Two modules that always travel together, each exporting one thin function?
 Merge them. A module that exports eight helpers users always call in the
 same order? Deepen — collapse them behind one entry point. See
 [`deep-modules-r.md`](deep-modules-r.md) for the R shape, and
-[`../codebase-design/DEEPENING.md`](../codebase-design/DEEPENING.md) for the
+[`../design-codebase/DEEPENING.md`](../design-codebase/DEEPENING.md) for the
 dependency-aware strategy (replace, don't layer — old tests on the shallow
 modules become waste once the deepened interface has its own tests).
 

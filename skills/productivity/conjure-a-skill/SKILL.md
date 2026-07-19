@@ -32,9 +32,8 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
      `engineering`, `scaffold`)
    - name **must** open with an imperative verb (`build-py-project`,
      `steer`). Test: prefix with "please" — still a command? No → reject.
-     No new-skill exceptions; legacy non-verb names (bdd, jj-atomic,
-     r-style, caveman, sieve, handoff, …) are grandfathered, not
-     precedent.
+     No new-skill exceptions; `bdd` is the single grandfathered non-verb
+     name (initialism, trigger muscle memory), not precedent.
    - **invocation**: default `disable-model-invocation: true` + a
      [`steer`](../../loop/steer/SKILL.md) row; model-invoked only when
      the agent must fire it from natural mid-work phrasing (then the
@@ -53,19 +52,19 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
      verb** — a noun-first name fails review outright
    - `description:` ≤ 1024 chars; "Use when" triggers only if
      model-invoked (user-invoked descriptions are one human-facing line)
-   - **every file ≤ 110 lines** — octobot's house cap on **sprawl**. If
-     SKILL.md is too long, use **progressive disclosure**: push
-     **reference** into **topic-named siblings** (`tests-r.md`,
-     `mocking-r.md`, `feedback-loops-r.md`, `anti-patterns.md`,
-     `examples.md`). One topic per file, named for the topic. `GLOSSARY.md`
-     is the documented exception (flat dictionary; splitting breaks lookup).
+   - **`SKILL.md` ≤ 110 lines** — octobot's house cap on **sprawl**. If it
+     grows past that, use **progressive disclosure**: push **reference**
+     into **topic-named siblings** (`tests-r.md`, `mocking-r.md`,
+     `feedback-loops-r.md`, `anti-patterns.md`, `examples.md`). One topic
+     per file, named for the topic. Siblings carry no hard cap — they load
+     on demand — but keep one topic per file.
    - no time-sensitive content
    - every line passes the **no-op** test (PRINCIPLES.md §pruning)
 5. **Link** — Claude Code only scans one level deep under
    `~/.claude/skills/`, so create a per-skill symlink:
    `ln -s ~/code/octobot/skills/<category>/<name> ~/.claude/skills/<name>`
 6. **Commit** — from the octobot repo, following the `type(scope):
-   imperative` format from [`../jj-atomic/SKILL.md`](../jj-atomic/SKILL.md):
+   imperative` format from [`../commit-atomic-jj/SKILL.md`](../commit-atomic-jj/SKILL.md):
    `jj describe -m "feat(skills): add <name> skill"`
    (and `jj git push` if a remote exists).
 
@@ -84,7 +83,7 @@ description: <what it does>. Use when <concrete trigger>.
 
 ## Output / done criteria
 - New `SKILL.md` exists at the right path, passes the checks in step 4.
-- Every file in the skill folder is ≤ 110 lines (GLOSSARY.md excepted).
+- `SKILL.md` is ≤ 110 lines.
 - User has been told the exact `jj describe` command to run.
 - Skill appears in the skill list on next Claude Code session start.
 
@@ -94,11 +93,11 @@ description: <what it does>. Use when <concrete trigger>.
 - Never write a model-invoked skill whose description lacks "Use when".
 - Never finish without adding the skill's row to
   [`steer`](../../loop/steer/SKILL.md).
-- **Never let a file in the skill folder exceed 110 lines** (GLOSSARY.md
-  excepted). Split before committing.
+- **Never let `SKILL.md` exceed 110 lines.** Split into topic-named
+  siblings before committing.
 - Reject any line that fails the **no-op** test (PRINCIPLES.md §pruning).
 
 ## See also
 - [PRINCIPLES.md](PRINCIPLES.md) — the design playbook this skill applies.
 - [GLOSSARY.md](GLOSSARY.md) — definitions for every bold term above.
-- [`../jj-atomic/SKILL.md`](../jj-atomic/SKILL.md) — commit format.
+- [`../commit-atomic-jj/SKILL.md`](../commit-atomic-jj/SKILL.md) — commit format.

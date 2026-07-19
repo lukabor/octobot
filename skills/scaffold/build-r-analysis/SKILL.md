@@ -38,7 +38,7 @@ disable-model-invocation: true
    > "Review with `jj diff`. Then `just build-dev` → `just up` → `R -e
    > 'renv::init()'` to lock dependencies. Then `just run` to execute
    > the pipeline. Describe with
-   > [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md) when satisfied."
+   > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
 
 ## Placeholders used by templates
 - `<project-name>` — snake_case project name.
@@ -50,16 +50,16 @@ disable-model-invocation: true
 - **Never** invoke `renv::init()` for the user.
 - **`R/functions/` and `R/pipeline/` follow `box::use` rules** —
   no `library()`, no `source()`. See
-  [`../../engineering/r-style/box.md`](../../engineering/r-style/box.md).
+  [`../../engineering/style-r/box.md`](../../engineering/style-r/box.md).
 - **Skeleton `_targets.R` has two demo targets** (`raw`, `processed`)
   showing the box-imported pipeline pattern. Replace, don't extend.
 
 ## See also
 - [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
   — owns the Docker templates and the three-stage pattern rationale.
-- [`../../engineering/dev-r/SKILL.md`](../../engineering/dev-r/SKILL.md)
+- [`../../engineering/develop-r/SKILL.md`](../../engineering/develop-r/SKILL.md)
   — workflow auto-detects `_targets.R` → R-analysis loop.
-- [`../../engineering/r-style/SKILL.md`](../../engineering/r-style/SKILL.md)
+- [`../../engineering/style-r/SKILL.md`](../../engineering/style-r/SKILL.md)
   — every function in `R/functions/` and `R/pipeline/` follows these.
 - [`../../engineering/bdd/SKILL.md`](../../engineering/bdd/SKILL.md)
   — `tests/testthat/` opens with the standard `box::use(testthat[...])`

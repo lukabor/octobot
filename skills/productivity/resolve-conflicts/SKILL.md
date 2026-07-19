@@ -25,7 +25,7 @@ conflicts are **first-class committed objects** — no mid-merge limbo, no
    commit descriptions; jj's conflict markers carry them — the
    `+++++++ <rev> "<desc>" (rebase destination)` header and the
    `%%%%%%% diff from:` / `to:` lines name both intents. Deeper intent:
-   `jj diff -r` each side; check specs/PRs/issues if cited.
+   `jj diff -r` each side; check blueprints/PRs/issues if cited.
 
 4. **Resolve each hunk — preserve both intents.** Apply the *semantic
    change* of the rebased side onto the destination's evolved text, not
@@ -37,7 +37,7 @@ conflicts are **first-class committed objects** — no mid-merge limbo, no
    commit (or `jj new <conflicted>` first); edit markers out; then
    `jj squash --use-destination-message` — plain `jj squash` opens an
    editor and **hangs a headless session**
-   ([jj-atomic anti-patterns](../jj-atomic/anti-patterns.md)). Foreground
+   ([commit-atomic-jj anti-patterns](../commit-atomic-jj/anti-patterns.md)). Foreground
    only; backgrounded jj mutations race the snapshot.
 
 6. **Verify.** Conflicted chains skip your checks while red — run the
@@ -69,7 +69,7 @@ conflicts are **first-class committed objects** — no mid-merge limbo, no
   or reject it explicitly.
 
 ## See also
-- [../jj-atomic/SKILL.md](../jj-atomic/SKILL.md) — sealing discipline
+- [../commit-atomic-jj/SKILL.md](../commit-atomic-jj/SKILL.md) — sealing discipline
   after resolution; foreground-only rule.
 - [../../engineering/review-angles/SKILL.md](../../engineering/review-angles/SKILL.md)
   — a resolved merge is a diff like any other; review it.

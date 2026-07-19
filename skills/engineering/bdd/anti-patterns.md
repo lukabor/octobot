@@ -35,8 +35,8 @@ assert config == load_config()       # snapshot derived by the code itself
 ```
 
 Expected values come from an **independent source of truth**: a
-known-good literal, a worked example done by hand, the spec's stated
-semantics (`OKF/specs/NNN`). If you can't produce the expectation without
+known-good literal, a worked example done by hand, the blueprint's stated
+semantics (`OKF/blueprints/NNN`). If you can't produce the expectation without
 running the code under test, you don't have a test yet. (Adapted from
 mattpocock/skills tdd.)
 

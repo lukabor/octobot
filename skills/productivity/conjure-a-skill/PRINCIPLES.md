@@ -61,7 +61,7 @@ concept's definition, rules, and caveats under one heading.
   another skill must reach it.
 - **By sequence** — split a run of **steps** when **post-completion steps**
   tempt the agent to rush the current one (**premature completion**).
-- **By the octobot 110-line cap** — when a file exceeds 110 lines, split.
+- **By the octobot 110-line cap** — when `SKILL.md` exceeds 110 lines, split reference into topic-named siblings.
   House enforcement of **sprawl**. `GLOSSARY.md` is the documented exception.
 
 ## Pruning

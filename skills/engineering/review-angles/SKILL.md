@@ -68,8 +68,8 @@ angle is worth more than a green suite.
 ## See also
 - [`../bdd/SKILL.md`](../bdd/SKILL.md) — the green pass these angles
   sit *after*; fixes land as new red-first scenarios here.
-- [`../background-work/SKILL.md`](../background-work/SKILL.md) — the threading
+- [`../harden-background-work/SKILL.md`](../harden-background-work/SKILL.md) — the threading
   / lock / readiness angles, split out because they share a setup.
 - [`../nuke-review/SKILL.md`](../nuke-review/SKILL.md) — the *structural-quality* review axis (code-judo). Different axis from these angles' correctness focus.
 - [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *mechanical debloat* axis (what to delete). Different again.
-- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *spec-fidelity* axis: diff vs what was asked (OKF/specs/NNN).
+- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *blueprint-fidelity* axis: diff vs what was asked (OKF/blueprints/NNN).

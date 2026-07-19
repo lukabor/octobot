@@ -18,7 +18,7 @@ Owns `OKF/ROADMAP.md`. Planning only, never implementation.
 ## Mode detection
 | State | Mode |
 |---|---|
-| no `./OKF/` | run [scribe-OKF](../scribe-OKF/SKILL.md) scaffold first |
+| no `./OKF/` | run [write-OKF](../write-OKF/SKILL.md) scaffold first |
 | `OKF/ROADMAP.md` absent or all-TODO | **Greenfield** → [greenfield.md](greenfield.md) |
 | `OKF/ROADMAP.md` has real content | **Revision** → [revise.md](revise.md) |
 | code exists but user wants plan-vs-code stress-test only | hand to [grill-with-docs](../../engineering/grill-with-docs/SKILL.md) |
@@ -41,12 +41,12 @@ fill the missing sections as deltas, don't restart.
 ## Shared rules (both modes)
 - **One question per message** during any grilling; wait for the answer.
 - **Vocabulary sync**: one resolved term → one inline `OKF/CONTEXT.md`
-  edit, per [domain-modeling](../../engineering/domain-modeling/SKILL.md).
+  edit, per [model-domain](../../engineering/model-domain/SKILL.md).
   Roadmap and glossary must use identical canonical terms.
 - **ADRs** only by the three-of-three rule (hard to reverse ∧ surprising
   ∧ real trade-off). Default no.
 - Roadmap phases feed [blueprint](../blueprint/SKILL.md) — write phases
-  concrete enough that a spec can trace to them.
+  concrete enough that a blueprint can trace to them.
 
 ## Output / done criteria
 - `OKF/ROADMAP.md` matches the skeleton; every phase has a verify step;
@@ -64,9 +64,9 @@ fill the missing sections as deltas, don't restart.
 
 ## See also
 - [greenfield.md](greenfield.md) / [revise.md](revise.md) — the loops.
-- [../scribe-OKF/SKILL.md](../scribe-OKF/SKILL.md) — scaffolds the OKF
+- [../write-OKF/SKILL.md](../write-OKF/SKILL.md) — scaffolds the OKF
   this skill writes into.
 - [../blueprint/SKILL.md](../blueprint/SKILL.md) — decomposes roadmap
-  phases into specs.
+  phases into blueprints.
 - [../../productivity/grill-me/SKILL.md](../../productivity/grill-me/SKILL.md)
   — the interview engine.

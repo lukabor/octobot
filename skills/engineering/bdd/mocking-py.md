@@ -43,7 +43,7 @@ class EntrezClient:
 ```
 
 ```python
-# in tests — spec'd mock of the façade, or a fake
+# in tests — blueprint'd mock of the façade, or a fake
 client = Mock(spec_set=EntrezClient)
 client.fetch_summary.return_value = {"name": "TP53"}
 assert annotate(["7157"], entrez=client)[0].name == "TP53"
@@ -98,7 +98,7 @@ asserted by *state* survives refactors that call-count assertions break.
 - **Hand-rolled `module.attr = fake`** without teardown — leaks into
   later tests; use `monkeypatch`, which undoes itself.
 - **Mocking `pandas.read_sql` / cursors** — wrap data access in an owned
-  repository class; fake or spec-mock the wrapper.
+  repository class; fake or blueprint-mock the wrapper.
 
 ## The single-sentence test
 

@@ -63,7 +63,7 @@ disable-model-invocation: true
 
 6. **Stop. Do not commit.** Tell the user:
    > "Review with `jj diff`. Check that the Installation and Usage blocks
-   > match how you actually run this. Describe with `/jj-atomic` when
+   > match how you actually run this. Describe with `/commit-atomic-jj` when
    > satisfied."
 
 ## Guardrails
@@ -77,5 +77,5 @@ disable-model-invocation: true
   worked python example and `readme-py.template.md` this skill generalizes.
 - [`../../scaffold/containerize-project/SKILL.md`](../../scaffold/containerize-project/SKILL.md)
   — same marker-file ecosystem detection.
-- [`../../productivity/jj-atomic/SKILL.md`](../../productivity/jj-atomic/SKILL.md)
+- [`../../productivity/commit-atomic-jj/SKILL.md`](../../productivity/commit-atomic-jj/SKILL.md)
   — the commit step this skill hands off to.

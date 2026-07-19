@@ -66,7 +66,7 @@ below are concrete instances of these rules in R.
 - **One logical assertion per `it`.** Multiple `expect_*()` calls are fine
   if they describe one outcome (e.g. a returned data.frame's class *and*
   its columns); two unrelated outcomes belong in two `it` blocks.
-- **The test name reads like a spec line.** A reader who sees only the
+- **The test name reads like a blueprint line.** A reader who sees only the
   `describe` + `it` titles understands the contract.
 
 ### Bad tests (anti-patterns)

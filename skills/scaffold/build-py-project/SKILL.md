@@ -40,7 +40,7 @@ disable-model-invocation: true
 4. **Stop. Do not run `jj describe`.** Tell the user:
    > "Review with `jj diff` (or `git status` + `git diff`). Then run
    > `just build-dev` to verify the toolchain. Describe the change with
-   > [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md) when satisfied."
+   > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
 5. **Suggest** running [`/write-readme-py`](../../engineering/write-readme-py/SKILL.md)
    after the first successful build to generate the README.
 
@@ -63,7 +63,7 @@ disable-model-invocation: true
 ## See also
 - [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
   — owns the Docker templates and the three-stage pattern rationale.
-- [`../../engineering/dev-python/SKILL.md`](../../engineering/dev-python/SKILL.md)
+- [`../../engineering/develop-python/SKILL.md`](../../engineering/develop-python/SKILL.md)
   — workflow that this scaffold sets up.
 - [`../../engineering/write-readme-py/SKILL.md`](../../engineering/write-readme-py/SKILL.md)
   — README generator that reads the scaffolded `pyproject.toml` and

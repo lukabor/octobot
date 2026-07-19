@@ -58,7 +58,7 @@ disable-model-invocation: true
    > match `project.optional-dependencies`; the License block defaults to
    > Apache 2.0 wording only when `project.license` says so. Drop a
    > `assets/<name>.png` if you want the logo to render. When satisfied,
-   > describe with [`/jj-atomic`](../../productivity/jj-atomic/SKILL.md)."
+   > describe with [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md)."
 
 ## Guardrails
 - **Never** invent dependency versions, recipe descriptions, author
@@ -79,5 +79,5 @@ disable-model-invocation: true
   Saduko reference and parameterised.
 - [`../../scaffold/build-py-project/SKILL.md`](../../scaffold/build-py-project/SKILL.md)
   — produces the `pyproject.toml` + `justfile` this skill reads.
-- [`../dev-python/SKILL.md`](../dev-python/SKILL.md) — the workflow
+- [`../develop-python/SKILL.md`](../develop-python/SKILL.md) — the workflow
   whose `just check` commands this README documents.
