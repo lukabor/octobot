@@ -2,10 +2,10 @@
 
 ## Knowledge — read before you code
 
-This project keeps an agent-first wiki at [`OKF/`](OKF/INDEX.md)
+This project keeps an agent-first wiki at [`OKF/`](OKF/index.md)
 (open-knowledge-format). Before extending or modifying octobot:
 
-1. Read [`OKF/INDEX.md`](OKF/INDEX.md), then the pages it flags for your
+1. Read [`OKF/index.md`](OKF/index.md), then the pages it flags for your
    task — at minimum `SUMMARY.md`; `ARCHITECTURE.md` before structural
    work.
 2. Use the canonical vocabulary from [`OKF/CONTEXT.md`](OKF/CONTEXT.md)

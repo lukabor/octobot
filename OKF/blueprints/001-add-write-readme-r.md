@@ -1,4 +1,5 @@
 ---
+type: Blueprint
 status: draft
 traces-to: README.md §Roadmap ("write-readme-r" gap); write-readme-py/SKILL.md §Out of scope
 ---

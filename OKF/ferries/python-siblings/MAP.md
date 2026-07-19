@@ -1,3 +1,7 @@
+---
+type: Ferry Map
+---
+
 # ferry — python-siblings
 
 Destination: bdd and diagnose carry Python reference siblings of the

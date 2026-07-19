@@ -1,4 +1,5 @@
 ---
+type: Decision
 status: open
 blocked-by: [D-1]
 ---

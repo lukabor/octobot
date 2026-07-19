@@ -1,3 +1,7 @@
+---
+okf_version: "0.1"
+---
+
 # octobot — OKF index
 
 Open-knowledge-format wiki. Agents: read this page first, then the pages

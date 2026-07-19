@@ -53,7 +53,7 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
 ```
 
 - **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
-  every agent reads `OKF/INDEX.md` before code.
+  every agent reads `OKF/index.md` before code.
 - **architect** — plan a project or revise its plan (`OKF/ROADMAP.md`);
   greenfield and revision modes (replaces plan-project + update-project).
 - **blueprint** — synthesize discussed work into a justified, verifiable

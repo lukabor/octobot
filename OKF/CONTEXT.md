@@ -1,3 +1,7 @@
+---
+type: Glossary
+---
+
 # octobot — context
 
 Vocabulary for octobot itself. Skill-authoring terms (leading word,

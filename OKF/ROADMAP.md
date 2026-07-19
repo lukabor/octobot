@@ -1,3 +1,7 @@
+---
+type: Roadmap
+---
+
 # octobot Roadmap
 
 Octobot becomes a loop-engineering metaharness: the loop

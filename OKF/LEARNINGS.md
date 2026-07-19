@@ -1,3 +1,7 @@
+---
+type: Learnings
+---
+
 # octobot — learnings
 
 <!-- Append-only. Format: believed / true / source. Supersede, never

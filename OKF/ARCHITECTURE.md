@@ -1,3 +1,7 @@
+---
+type: Architecture
+---
+
 # octobot — architecture
 
 ## Module map

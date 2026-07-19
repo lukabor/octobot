@@ -7,7 +7,7 @@ instructions as needed.
 **The loop.** Octobot is a loop-engineering metaharness over an OKF
 (open-knowledge-format) wiki: `write-OKF → architect → blueprint →
 ferry → weave → review+verify → commit-atomic-jj`. This repo dogfoods it —
-knowledge in [`OKF/`](OKF/INDEX.md), agent directions in
+knowledge in [`OKF/`](OKF/index.md), agent directions in
 [`AGENTS.md`](AGENTS.md), skill index in
 [`skills/loop/steer/`](skills/loop/steer/SKILL.md).
 

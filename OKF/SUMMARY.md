@@ -1,3 +1,7 @@
+---
+type: Summary
+---
+
 # octobot — summary
 
 **What**: Personal, reusable Claude Code skills — a loop-engineering
