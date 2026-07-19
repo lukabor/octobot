@@ -85,3 +85,4 @@ it sharp.
   architectural follow-ups a winnow surfaces; don't auto-cut them mid-pass.
 - [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — the *correctness*
   axis winnow deliberately does not touch.
+- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *spec-fidelity* axis winnow also does not touch.

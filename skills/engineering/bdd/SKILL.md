@@ -86,7 +86,8 @@ A green suite is a *claim*, not a proof: it never exercised thread death,
 caller ordering, stale data, or the shape the real producer emits (see
 [anti-patterns.md](anti-patterns.md) *"Fixtures that don't match what the
 producer emits"*). After the loop is green, **budget a review pass** across
-three axes: correctness ([`../review-angles/SKILL.md`](../review-angles/SKILL.md)),
+four axes: correctness ([`../review-angles/SKILL.md`](../review-angles/SKILL.md)),
+spec fidelity ([`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md)),
 structural quality ([`../nuke-review/SKILL.md`](../nuke-review/SKILL.md)),
 mechanical debloat ([`../winnow/SKILL.md`](../winnow/SKILL.md)). Refute
 each finding ([refute.md](../review-angles/refute.md)); fix red-test-first.

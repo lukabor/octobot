@@ -104,3 +104,4 @@ Don't approve because behaviour is correct. Each is a presumptive blocker unless
 - [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *mechanical debloat* axis: single-tag findings, `net: -N lines` scoreboard. Pairs naturally — nuke-review judges shape; winnow clears chaff.
 - [`../codebase-design/SKILL.md`](../codebase-design/SKILL.md) — the vocabulary nuke-review applies (deep modules, seams, leverage, locality).
 - [`../../productivity/cavecrew-octobot/SKILL.md`](../../productivity/cavecrew-octobot/SKILL.md) — how to spawn `caveman:cavecrew-reviewer` to *execute* this axis on a diff.
+- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *spec-fidelity* axis (diff vs OKF/specs/NNN).

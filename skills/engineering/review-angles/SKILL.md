@@ -72,3 +72,4 @@ angle is worth more than a green suite.
   / lock / readiness angles, split out because they share a setup.
 - [`../nuke-review/SKILL.md`](../nuke-review/SKILL.md) — the *structural-quality* review axis (code-judo). Different axis from these angles' correctness focus.
 - [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *mechanical debloat* axis (what to delete). Different again.
+- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *spec-fidelity* axis: diff vs what was asked (OKF/specs/NNN).

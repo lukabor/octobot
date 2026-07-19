@@ -75,3 +75,4 @@ fan out concurrently.
 - [`../../engineering/review-angles/SKILL.md`](../../engineering/review-angles/SKILL.md) — *correctness*.
 - [`../../engineering/nuke-review/SKILL.md`](../../engineering/nuke-review/SKILL.md) — *structural quality* (code-judo).
 - [`../../engineering/winnow/SKILL.md`](../../engineering/winnow/SKILL.md) — *mechanical debloat*.
+- [`../../engineering/review-blueprint/SKILL.md`](../../engineering/review-blueprint/SKILL.md) — *spec fidelity* (diff vs OKF/specs/NNN).
