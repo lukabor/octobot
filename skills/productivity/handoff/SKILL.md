@@ -1,24 +1,42 @@
 ---
 name: handoff
-description: Produce a structured handoff document so a fresh Claude Code session (or a teammate) can pick up where this one left off without re-deriving context. Use when the user says "handoff", "wrap up", "summarize for next session", or is about to /clear or end the session on unfinished work.
+description: Produce a structured handoff so a fresh session, a teammate, or a spawned subagent can pick up without re-deriving context. Use when the user says "handoff", "wrap up", "summarize for next session", is about to /clear on unfinished work, or a mutating subagent needs its brief.
 ---
 
 # handoff
 
+One format, two exits: a **file** (`./HANDOFF.md`, or the OS temp dir on
+request) for the next session or a human; a **prompt payload** for a
+subagent spawn (the handoff-gate brief —
+[cavecrew-octobot](../cavecrew-octobot/SKILL.md)).
+
 ## When to use
-- User says "handoff", "/handoff", "wrap up", or "prep a handoff doc".
-- User is about to end a session on unfinished work.
-- Context window is near full and work must continue in a fresh session.
+- User says "handoff", "/handoff", "wrap up", "prep a handoff doc".
+- Session ending / context near full on unfinished work.
+- A mutating subagent needs a brief and no locked spec covers the work
+  (a locked `OKF/specs/NNN` **is** the brief — don't duplicate it;
+  see [implement](../../loop/implement/SKILL.md)).
+
+## Rules (both exits)
+- **Reference, don't duplicate.** Anything already captured in an
+  artifact — OKF pages, `OKF/specs/NNN`, a ferry `MAP.md`, ADRs, jj
+  change-ids, diffs — is cited by path/id, never restated. Ferried work:
+  point at `OKF/specs/ferry-<topic>/MAP.md` and stop.
+- **Redact secrets.** No API keys, tokens, passwords, or PII — name
+  where a credential lives (`.env`, secret store), never its value.
+- **Concrete or nothing.** Paths with line numbers; one unambiguous
+  next action; a verify command that proves the work landed.
+- If the user passed arguments, treat them as what the next session
+  will focus on and tailor the doc.
 
 ## Process
-1. Skim the current todo list, recent edits, and any active plan file.
-2. Write a handoff document to `./HANDOFF.md` (or the path the user names)
-   containing the sections below. Be concrete — paths with line numbers, not
-   vague references.
-3. Show the doc to the user and ask if anything is missing before they
-   `/clear`.
+1. Skim the task list, recent edits, `OKF/INDEX.md`, any active ferry.
+2. Write the doc (template below). File exit: `./HANDOFF.md` unless the
+   user names a path or asks for the temp dir. Subagent exit: same
+   sections as the spawn prompt, plus the gate's verify command.
+3. Show it; ask what's missing before the user clears.
 
-## Handoff template
+## Template
 ```markdown
 # Handoff — <YYYY-MM-DD> — <one-line topic>
 
@@ -26,10 +44,10 @@ description: Produce a structured handoff document so a fresh Claude Code sessio
 <what we are ultimately trying to achieve>
 
 ## Status
-<what is done; what is in progress; what is blocked>
+<done / in progress / blocked — cite jj change-ids and spec numbers>
 
 ## Decisions made this session
-- <decision> — <one-line reason>
+- <decision> — <one-line reason> (or: see OKF/adr/NNNN, ferry D-n)
 
 ## Open questions
 - <question> — <who/what would answer it>
@@ -37,15 +55,23 @@ description: Produce a structured handoff document so a fresh Claude Code sessio
 ## Next concrete step
 <the very first action the next session should take>
 
-## Key files
-- `path/to/file.ext:42` — <why it matters>
-- `path/to/other.ext:10-25` — <why>
+## Key references
+- `OKF/specs/NNN` — <why it matters>
+- `path/to/file.ext:42` — <why>
+
+## Suggested skills
+- /<skill> — <why the next session should invoke it>
 
 ## How to verify when done
 <command or check that proves the work landed>
 ```
 
 ## Output / done criteria
-- `HANDOFF.md` exists and every section is filled.
-- File paths include line numbers where relevant.
-- "Next concrete step" is a single, unambiguous action.
+- Every section filled or explicitly `n/a`; no artifact content
+  restated; no secret values; "Next concrete step" is one action.
+
+## See also
+- [../../loop/ferry/SKILL.md](../../loop/ferry/SKILL.md) — multi-session
+  *design* work rides the ferry, not the handoff.
+- [../cavecrew-octobot/SKILL.md](../cavecrew-octobot/SKILL.md) — the
+  handoff gate this format serves.
