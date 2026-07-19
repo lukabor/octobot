@@ -46,22 +46,22 @@ Octobot's core: a loop-engineering metaharness over an **OKF**
 (open-knowledge-format) wiki at each project's `./OKF/`.
 
 ```
-scribe-OKF → architect → blueprint → ferry → implement → review+verify → jj-atomic
-(knowledge)   (plan)      (specs)   (decompose) (execute)                  (seal)
+write-OKF → architect → blueprint → ferry → weave → review+verify → commit-atomic-jj
+(knowledge)   (plan)      (blueprints)   (decompose) (execute)                  (seal)
      ▲                                              │
      └────────────── OKF refreshed ◀────────────────┘
 ```
 
-- **scribe-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
+- **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
   every agent reads `OKF/INDEX.md` before code.
 - **architect** — plan a project or revise its plan (`OKF/ROADMAP.md`);
   greenfield and revision modes (replaces plan-project + update-project).
 - **blueprint** — synthesize discussed work into a justified, verifiable
-  spec at `OKF/specs/NNN-<slug>.md` (status: draft → locked → implemented).
+  blueprint at `OKF/blueprints/NNN-<slug>.md` (status: draft → locked → implemented).
 - **ferry** — work too big for one session becomes a directory of small,
   edge-declared decision files; resolve one per sitting.
-- **implement** — execute one locked spec: bdd at its seams, four-axis
-  review, run its Verify with pasted output, seal citing the spec.
+- **weave** — execute one locked blueprint: bdd at its seams, four-axis
+  review, run its Verify with pasted output, seal citing the blueprint.
 - **steer** — router over every skill; most are user-invoked, steer is
   the index.
 
@@ -69,15 +69,15 @@ All loop skills are user-invoked (`disable-model-invocation: true`).
 
 ### productivity
 - **conjure-a-skill** — meta-skill that scaffolds new skills consistently.
-- **handoff** — produce a structured handoff doc for a fresh session.
+- **write-handoff** — produce a structured handoff doc for a fresh session.
 - **grill-me** — Socratic loop to remove ambiguity before implementing.
 - **resolve-conflicts** — jj conflict discipline: topology first, both
   intents preserved, headless-safe squash.
-- **caveman** — terse-mode: no preamble, no summaries, code + one-line why.
-- **cavecrew-octobot** — how to invoke the plugin `caveman:cavecrew-*` agents
+- **talk-caveman** — terse-mode: no preamble, no summaries, code + one-line why.
+- **spawn-cavecrew** — how to invoke the plugin `caveman:cavecrew-*` agents
   (investigator / builder / reviewer) without the agent-type error; octobot
-  defaults (`jj diff` review, `jj-atomic` commit).
-- **jj-atomic** — atomic-commit discipline: `jj diff` → split → semantic
+  defaults (`jj diff` review, `commit-atomic-jj` commit).
+- **commit-atomic-jj** — atomic-commit discipline: `jj diff` → split → semantic
   message; docs / docstrings / READMEs ship in the same change.
 
 ### engineering
@@ -86,12 +86,12 @@ All loop skills are user-invoked (`disable-model-invocation: true`).
   `winnow`.
 - **winnow** — blunt after-the-fact debloat audit; `delete/stdlib/native/
   yagni/shrink` tags, `net: -N lines`. Only ever removes. Pairs with `sieve`.
-- **background-work** — rules for daemon threads, trigger loops, shared
+- **harden-background-work** — rules for daemon threads, trigger loops, shared
   locks, readiness surfaces — the failures a green unit suite misses.
 - **review-angles** — recall-biased correctness checklist for the post-green
   review pass (stale refs, TOCTOU, ordering state, durability, invalidation).
-- **review-blueprint** — the spec-fidelity axis: diff vs `OKF/specs/NNN` —
-  complete, contained, verified (output pasted). implement's done-gate.
+- **review-blueprint** — the blueprint-fidelity axis: diff vs `OKF/blueprints/NNN` —
+  complete, contained, verified (output pasted). weave's done-gate.
 - **nuke-review** — exceptionally strict structural-quality review for code
   judo moves; ported from cursor/plugins thermo-nuclear-code-quality-review.
   Pairs with `review-angles` (correctness) and `winnow` (debloat) as the
@@ -101,19 +101,19 @@ All loop skills are user-invoked (`disable-model-invocation: true`).
 - **diagnose** — six-phase bug hunt: feedback loop → reproduce →
   hypothesise → instrument → fix with regression test → cleanup.
 - **grill-with-docs** — user-invoked router that runs `grill-me` using
-  `domain-modeling` on an existing codebase.
-- **domain-modeling** — actively build / sharpen a project's domain
+  `model-domain` on an existing codebase.
+- **model-domain** — actively build / sharpen a project's domain
   model — challenge terms, update `CONTEXT.md` inline, offer ADRs only
   on the three-of-three rule.
-- **codebase-design** — shared vocabulary for designing deep modules
+- **design-codebase** — shared vocabulary for designing deep modules
   (module, interface, seam, adapter, depth, leverage, locality);
   `DEEPENING.md` for dependency-aware seam strategy, `DESIGN-IT-TWICE.md`
   for parallel-sub-agent interface exploration.
-- **r-style** — Tidyverse + `box::use` + `dtplyr` standards with
+- **style-r** — Tidyverse + `box::use` + `dtplyr` standards with
   paired good/bad sibling docs (`box.md`, `tidyverse.md`, `dtplyr.md`).
-- **dev-python** — orchestrate the full Python workflow (implement →
+- **develop-python** — orchestrate the full Python workflow (implement →
   lint → typecheck → test → commit). Explicit trigger only.
-- **dev-r** — orchestrate the full R workflow; auto-detects package
+- **develop-r** — orchestrate the full R workflow; auto-detects package
   (`DESCRIPTION`) vs analysis (`_targets.R`).
 - **write-readme** — generate `README.md` for any project via ecosystem
   detection (python / R / node / rust / generic).
@@ -147,15 +147,15 @@ Common ways the skills chain together. Each recipe is a *sequence*, not a
 script — read the relevant SKILL.md as you enter each step.
 
 ### Project lifecycle
-- **Greenfield project** — `/scribe-OKF` (knowledge scaffold) → `/architect`
+- **Greenfield project** — `/write-OKF` (knowledge scaffold) → `/architect`
   (Socratic kickoff → `OKF/ROADMAP.md`)
   → `/build-py-project` | `/build-r-package` | `/build-r-analysis` (scaffold)
   → feature loops below → `/architect` (revision mode as you learn).
 - **Feature on an existing codebase** — `/grill-with-docs` if the design needs
   pinning → `/bdd` (red-green-refactor) → post-green review (next recipe)
-  → `/jj-atomic` (seal).
+  → `/commit-atomic-jj` (seal).
 - **Bug hunt** — `/diagnose` (six phases; hands to `/bdd` at phase 5 for the
-  regression test) → post-green review → `/jj-atomic`.
+  regression test) → post-green review → `/commit-atomic-jj`.
 
 ### Post-green review (the four axes)
 - `/review-angles` — correctness / robustness (stale refs, TOCTOU, ordering,
@@ -163,30 +163,30 @@ script — read the relevant SKILL.md as you enter each step.
 - `/nuke-review` — structural quality / code judo. Pushes for code that
   *deletes* moving pieces, not rearranges them. User-invoked.
 - `/winnow` — mechanical debloat with a `net: −N lines` scoreboard.
-- `/review-blueprint` — spec fidelity: everything asked, nothing beyond,
+- `/review-blueprint` — blueprint fidelity: everything asked, nothing beyond,
   Verify output pasted.
-- Spawn any axis as a sub-agent via `/cavecrew-octobot`
+- Spawn any axis as a sub-agent via `/spawn-cavecrew`
   (the `caveman:cavecrew-reviewer` invocation cheatsheet).
 
 ### Architecture & vocabulary
-- **Design conversation** — `/codebase-design` (solution-structure vocab:
-  module / interface / seam / adapter / depth) + `/domain-modeling`
+- **Design conversation** — `/design-codebase` (solution-structure vocab:
+  module / interface / seam / adapter / depth) + `/model-domain`
   (problem-domain vocab: `CONTEXT.md`, ADRs on the three-of-three rule).
 - **Stress-test a plan against the codebase** — `/grill-with-docs`
   (Socratic interview against `OKF/CONTEXT.md` and `OKF/adr/`).
 
 ### Meta
-- **Author a new skill in this repo** — `/conjure-a-skill` → `/jj-atomic`.
-- **End of session, fresh context next time** — `/handoff`.
+- **Author a new skill in this repo** — `/conjure-a-skill` → `/commit-atomic-jj`.
+- **End of session, fresh context next time** — `/write-handoff`.
 
 ### Orthogonal modes
 These overlay any workflow above:
-- **Language harnesses** — `/dev-r` or `/dev-python` orchestrate the full
+- **Language harnesses** — `/develop-r` or `/develop-python` orchestrate the full
   per-language loop (implement → lint → test → commit). Explicit trigger
   only; don't auto-invoke for individual tasks.
-- **Intensity** — `/caveman` switches the session into terse mode
+- **Intensity** — `/talk-caveman` switches the session into terse mode
   (no preamble, no summaries). `sieve` and others document `lite / full / ultra`.
-- **Agent dispatch** — `/cavecrew-octobot` is the "how to call
+- **Agent dispatch** — `/spawn-cavecrew` is the "how to call
   `caveman:cavecrew-{investigator,builder,reviewer}` in this repo without
   the agent-type error" cheatsheet.
 
@@ -201,18 +201,18 @@ repo.
 Known gaps tracked here. Pick one off the list when you have a quiet
 afternoon.
 
-- **`handoff` needs a filled example.** The SKILL.md ships a template but
-  no worked instance. Add `handoff/example.md` — a one-page fictional but
+- **`write-handoff` needs a filled example.** The SKILL.md ships a template but
+  no worked instance. Add `write-handoff/example.md` — a one-page fictional but
   realistic filled handoff doc — so a reader sees the format in motion
-  (matches the strength of `jj-atomic/examples.md`).
+  (matches the strength of `commit-atomic-jj/examples.md`).
 - **`grill-me` needs a filled dialogue.** Add `grill-me/example.md` —
   a short Q-by-Q transcript on a vague task that resolves into a
-  one-paragraph statement, mirroring `domain-modeling/examples-r.md`.
+  one-paragraph statement, mirroring `model-domain/examples-r.md`.
   Makes the plan-only vs docs-anchored distinction obvious at a glance.
 - **Python siblings for `bdd` / `diagnose`.** R has `tests-r.md`,
   `mocking-r.md`, `feedback-loops-r.md`, etc. Python equivalents
   (`tests-py.md`, `mocking-py.md`, `feedback-loops-py.md`) are
-  acknowledged as missing in [`dev-python/SKILL.md`](skills/engineering/dev-python/SKILL.md).
+  acknowledged as missing in [`develop-python/SKILL.md`](skills/engineering/develop-python/SKILL.md).
 - **`write-readme-r`.** The R counterpart to `write-readme-py` (read
   `DESCRIPTION` for packages and `_targets.R` + `index.qmd` for
   analyses) is noted as out of scope in
@@ -223,16 +223,16 @@ afternoon.
 The library is being organized around a Socratic lifecycle —
 **Question** (grill-me, grill-with-docs, architect) → **Gate** (sieve) →
 **Build** (bdd) → **Refute** (review-angles, winnow, refute.md) →
-**Seal** (jj-atomic). Done so far: the three-sieve spine in `CLAUDE.md §2`
+**Seal** (commit-atomic-jj). Done so far: the three-sieve spine in `CLAUDE.md §2`
 and the shared `refute.md` elenchus doctrine. Remaining, **in order — don't
 build the harness before the leaves are proven by real use**:
 
-- **Generalize `dev-python` / `dev-r` into one Socratic harness.** Both are
+- **Generalize `develop-python` / `develop-r` into one Socratic harness.** Both are
   already proto-harnesses (implement → lint → test → commit). Extract one
   language-agnostic loop — *grill → plan → per-slice(bdd red/green → sieve at
-  seal → jj-atomic) → review-angles + winnow → handoff* — with `dev-python` /
-  `dev-r` as the language-flavored leaves. This is the harness target.
-- **Shared `## Intensity` convention.** `caveman` and `sieve` both have
+  seal → commit-atomic-jj) → review-angles + winnow → write-handoff* — with `develop-python` /
+  `develop-r` as the language-flavored leaves. This is the harness target.
+- **Shared `## Intensity` convention.** `talk-caveman` and `sieve` both have
   lite/full/ultra; standardize a one-line intensity block so the harness can
   run the whole spine at one setting (ultra = aggressive end-to-end).
 - **Recategorize skills by lifecycle phase** (`question/gate/build/refute/

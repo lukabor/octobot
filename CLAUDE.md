@@ -5,8 +5,8 @@ conventions for editing octobot itself. Merge with project-specific
 instructions as needed.
 
 **The loop.** Octobot is a loop-engineering metaharness over an OKF
-(open-knowledge-format) wiki: `scribe-OKF → architect → blueprint →
-ferry → implement → review+verify → jj-atomic`. This repo dogfoods it —
+(open-knowledge-format) wiki: `write-OKF → architect → blueprint →
+ferry → weave → review+verify → commit-atomic-jj`. This repo dogfoods it —
 knowledge in [`OKF/`](OKF/INDEX.md), agent directions in
 [`AGENTS.md`](AGENTS.md), skill index in
 [`skills/loop/steer/`](skills/loop/steer/SKILL.md).
@@ -99,9 +99,11 @@ This repo holds Claude Code skills. When editing here:
 
 - Every skill lives at `skills/<category>/<kebab-name>/SKILL.md`.
 - `name:` in frontmatter must match the folder name exactly.
-- `description:` must contain an explicit "Use when ..." trigger and stay
-  under 1024 characters. The description is the *only* thing the agent sees
-  when deciding to load the skill — make triggers concrete.
+- `description:` stays under 1024 characters. Model-invoked skills need an
+  explicit "Use when ..." trigger — the description is the *only* thing the
+  agent sees when deciding to load the skill, so make triggers concrete.
+  User-invoked skills (`disable-model-invocation: true`) get one
+  human-facing line instead; no "Use when" boilerplate.
 - Keep `SKILL.md` ≤ 110 lines. Split into `REFERENCE.md` / `EXAMPLES.md` if
   it grows.
 - No time-sensitive content (dates, "current" model names).
