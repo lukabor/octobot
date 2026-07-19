@@ -40,7 +40,8 @@ directory is what crosses the session boundary.
    `OKF/CONTEXT.md` per model-domain.
 6. **Arrive**: every decision resolved → update `MAP.md` with the blueprint
    numbers produced; the ferry directory stays as the decision record
-   (supersede, don't delete).
+   (supersede, don't delete). Once the spawned blueprints are woven and
+   sealed, close out with [moor](../moor/SKILL.md).
 
 ## Session boundary
 End of sitting → `MAP.md` *is* the handoff for this work: next session
@@ -68,3 +69,5 @@ state into HANDOFF.md — reference the directory
   resolution.
 - [../architect/SKILL.md](../architect/SKILL.md) — phases too big to
   blueprint directly get ferried.
+- [../moor/SKILL.md](../moor/SKILL.md) — closes out the ferry after its
+  blueprints ship.

@@ -46,10 +46,10 @@ Octobot's core: a loop-engineering metaharness over an **OKF**
 (open-knowledge-format) wiki at each project's `./OKF/`.
 
 ```
-write-OKF → architect → blueprint → ferry → weave → review+verify → commit-atomic-jj
-(knowledge)   (plan)      (blueprints)   (decompose) (execute)                  (seal)
-     ▲                                              │
-     └────────────── OKF refreshed ◀────────────────┘
+write-OKF → architect → blueprint → ferry → weave → review+verify → commit-atomic-jj → moor
+(knowledge)   (plan)      (blueprints)   (decompose) (execute)                  (seal)  (close out)
+     ▲                                                                                    │
+     └────────────────────────────── OKF refreshed ◀──────────────────────────────────────┘
 ```
 
 - **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
@@ -62,6 +62,9 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
   edge-declared decision files; resolve one per sitting.
 - **weave** — execute one locked blueprint: bdd at its seams, four-axis
   review, run its Verify with pasted output, seal citing the blueprint.
+- **moor** — close out a delivered ferry: reconcile the wiki with what
+  shipped, extract loose ends into new blueprints/ferries, shrink
+  index.md; status flips, nothing deleted.
 - **steer** — router over every skill; most are user-invoked, steer is
   the index.
 
