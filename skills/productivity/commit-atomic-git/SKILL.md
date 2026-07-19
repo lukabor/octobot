@@ -92,3 +92,6 @@ hangs the session.
   examples.md translates 1:1 (staging instead of `jj split`).
 - [../resolve-conflicts-git/SKILL.md](../resolve-conflicts-git/SKILL.md)
   — sealing a resolved merge lands here.
+- [../../scaffold/setup-git-guardrails/SKILL.md](../../scaffold/setup-git-guardrails/SKILL.md)
+  — installs a PreToolUse hook that mechanically backstops the force-push
+  and destructive-command rules; prose can drift, hooks cannot.
