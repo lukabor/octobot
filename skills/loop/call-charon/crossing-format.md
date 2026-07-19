@@ -103,7 +103,7 @@ Re-run `<Verify command>` after fixes; paste output.
   builders → run `jj workspace update-stale` in the main workspace
   first. Conflicts → resolve-conflicts skill.
 - **git**: merge the builder's worktree branch into the mainline, then
-  `git worktree remove` it.
+  `git worktree remove` it. Conflicts → resolve-conflicts-git skill.
 - Either mode: run the blueprint's Verify in the **main workspace
   after integrating** — pre-integration green does not count.
 - Conflicts (winnow "delete" vs angles "keep"): sieve's always-pass

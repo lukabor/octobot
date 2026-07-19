@@ -75,8 +75,9 @@ holds no state in his head.
    output — post-integration, so what's verified is what ships. A
    builder's "tests pass" is never trusted. Seal via
    [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md)
-   (git mode: same message discipline, plain commit) citing the
-   blueprint, flip its status.
+   (git mode:
+   [commit-atomic-git](../../productivity/commit-atomic-git/SKILL.md))
+   citing the blueprint, flip its status.
 7. **LOG** — update the Passage line: status, axes run, rounds,
    commit, ISO date. Blocked mid-crossing → log that instead; the
    reason is the handoff.
