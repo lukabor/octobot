@@ -30,25 +30,37 @@ holds no state in his head.
 
 ## Process
 1. **ORIENT** — read `MAP.md` + the statuses of every blueprint it
-   names. First run: add a `## Passage` section to `MAP.md`, one line
-   per blueprint ([crossing-format.md](crossing-format.md)). Edges come
+   names. Detect the VCS mode once: `[ -d .jj ]` → jj, else git;
+   record it in the Passage header. First run: add a `## Passage`
+   section to `MAP.md`, one line per blueprint
+   ([crossing-format.md](crossing-format.md)). Edges come
    from the decisions' `blocked-by` and the blueprints' `traces-to`;
    no edge, no ordering claim (ferry's rule).
 2. **PICK** — the next `locked` blueprint whose blocked-by set is all
    implemented. None unblocked → record why in Passage, report
    blocked, stop.
-3. **DISPATCH** — spawn a builder (general-purpose agent, worktree
-   isolation) with a brief per weave's handoff gate: blueprint path,
-   OKF refs by path, constraints, Verify command
+3. **DISPATCH** — isolate per mode (crossing-format.md §isolation):
+   jj → `jj workspace add ../charon-NNN`, spawn a general-purpose
+   builder *without* the isolation flag, brief points at the
+   workspace dir (jj can't run inside git worktrees, so the Agent
+   tool's `isolation: worktree` is git-mode only). Git → spawn with
+   `isolation: worktree`; the brief must end with a commit, or the
+   work can't be merged. Brief per weave's handoff gate: blueprint
+   path, OKF refs by path, constraints, Verify command
    (crossing-format.md §builder-brief). `cavecrew-builder` refuses this
    scope — wrong tool. Serial by default; parallel builders only when
    blocked-by frontiers are clear AND Seams-touched are disjoint.
-4. **REVIEW FLOTILLA** — builder done → spawn read-only reviewers in
-   parallel, one per axis: review-blueprint + review-angles **always**;
-   nuke-review + winnow when the diff is non-trivial (Charon's call —
-   record it). Each brief names the axis's SKILL.md path — subagents
-   don't auto-load skills. The builder never self-reviews; the
-   orchestrator never reviews inline.
+4. **REVIEW FLOTILLA** — builder done → spawn read-only
+   general-purpose reviewers in parallel, one per axis:
+   review-blueprint + review-angles **always**; nuke-review + winnow
+   when the diff is non-trivial (Charon's call — record it). The
+   orchestrator reads each axis's SKILL.md *itself* (once per
+   sitting) and **inlines the criteria verbatim** into the brief
+   (crossing-format.md §reviewer-brief) — subagents can't be trusted
+   to resolve skill paths (worktrees, remote runners, several axes
+   `disable-model-invocation`), and a self-contained brief always
+   travels. The builder never self-reviews; the orchestrator never
+   reviews inline.
 5. **MERGE + FIX** — Charon dedupes findings, arbitrates conflicts
    (sieve's always-pass exceptions win: validation, data-loss
    handling, security), and sends **one** consolidated brief via
@@ -56,11 +68,15 @@ holds no state in his head.
    restart. Max 2 fix rounds, re-running failed axes only
    (review-blueprint always re-runs last); still red → escalate to
    the user.
-6. **GATE** — reviews clean → the orchestrator runs the blueprint's
-   Verify *itself* and pastes the output. A builder's "tests pass" is
-   never trusted. Then merge the worktree, seal via
+6. **GATE** — reviews clean → integrate first
+   (crossing-format.md §integration: jj `jj squash --from charon-NNN@`,
+   git merge the builder's branch), then the orchestrator runs the
+   blueprint's Verify *itself* in the main workspace and pastes the
+   output — post-integration, so what's verified is what ships. A
+   builder's "tests pass" is never trusted. Seal via
    [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md)
-   citing the blueprint, flip its status.
+   (git mode: same message discipline, plain commit) citing the
+   blueprint, flip its status.
 7. **LOG** — update the Passage line: status, axes run, rounds,
    commit, ISO date. Blocked mid-crossing → log that instead; the
    reason is the handoff.
@@ -86,8 +102,9 @@ holds no state in his head.
 - **Never** seal on agent claims — orchestrator-run Verify output only.
 - **Never** exceed 2 fix rounds — escalate.
 - **Never** dispatch past a blocked-by edge.
-- **Never** edit decisions or blueprints mid-crossing — supersede via
-  ferry/blueprint.
+- **Never** edit decision or blueprint *content* mid-crossing —
+  supersede via ferry/blueprint. Status frontmatter flips are the
+  crossing's job, not an edit.
 - **Never** moor from here.
 
 ## See also
