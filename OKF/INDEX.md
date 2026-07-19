@@ -18,5 +18,4 @@ your task needs. Humans welcome too.
 
 ## Specs
 
-- `specs/` — none yet; blueprint (phase 2) writes here
-  (`NNN — title — status`).
+- [001](specs/001-add-write-readme-r.md) — add write-readme-r skill — draft
