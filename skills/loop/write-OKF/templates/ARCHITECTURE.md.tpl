@@ -1,5 +1,9 @@
 ---
 type: Architecture
+purpose: Map the modules, their seams, and the flows that explain most behaviour.
+answers:
+  - "What are this project's modules and seams, and how does behaviour flow through them?"
+# cites: one path per claim, added as the TODOs below are filled.
 ---
 
 # <project> — architecture

@@ -27,14 +27,19 @@ contract: [okf-layout.md](okf-layout.md).
 ## Scaffold mode
 1. **Confirm the first write** — creating `OKF/` in a repo is a new
    convention; get a yes before writing anything.
-2. Materialise the skeleton from [templates/](templates/) — headers,
-   `type` frontmatter, and `TODO(scribe)` markers only. **Never invent
-   facts**: an empty section with a TODO beats a fabricated architecture
-   claim.
-3. Fill only what is *derivable from disk right now*: SUMMARY from an
-   existing README, ARCHITECTURE bones from the directory tree and
-   manifests, ROADMAP/CONTEXT stay TODO until
-   [architect](../architect/SKILL.md) / model-domain produce them.
+2. **Propose the page plan, don't assume one** — run
+   `scripts/okf-scan <repo-root>`, show the candidate lines, and let the
+   user cut, rename, and add the spine pages no tree walk can see. What
+   survives becomes `index.md`, from [templates/](templates/). Contract:
+   [taxonomy-scan.md](taxonomy-scan.md).
+3. **Materialise what the plan lists *and* a producer can fill.** A page
+   is listed when planned, written when its producer has something to
+   say: SUMMARY from an existing README, ARCHITECTURE bones from the
+   directory tree and manifests, while ROADMAP and CONTEXT stay
+   listed-not-written until [architect](../architect/SKILL.md) /
+   model-domain produce them. **Never invent facts** — an empty section
+   with a TODO beats a fabricated architecture claim, and an unwritten
+   page beats an empty one.
 4. Wire `AGENTS.md`: insert the block from
    [agents-md-hook.md](agents-md-hook.md) (create the file if absent;
    append if it exists — never overwrite prose).

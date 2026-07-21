@@ -21,8 +21,16 @@ OKF/
 ├── blueprints/       # NNN-<slug>.md only — flat, grep-able namespace
 ├── ferries/          # open: <topic>/ — MAP.md + D-<n>-<slug>.md files
 │                     #   moored: <topic>.md, pinned with sealed:
+├── modules/          # proposable, never mandatory: <name>.md per code
+├── analyses/         #   directory / analysis directory a scan found
 └── LEARNINGS.md      # debunked claims, gotchas — append-only, sourced
 ```
+
+The spine above is a diagram, not a required page set — `okf-check`
+demands no particular page, only reachability, type, and warrant.
+`modules/` and `analyses/` are *proposed* from a repo's shape by
+[taxonomy-scan.md](taxonomy-scan.md); the rest have producers in the
+loop, not on disk.
 
 ## Conformance (OKF v0.1)
 

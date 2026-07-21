@@ -15,6 +15,14 @@ your task needs. Humans welcome too.
 - [ROADMAP.md](ROADMAP.md) — phased plan with verify steps.
 - [LEARNINGS.md](LEARNINGS.md) — gotchas and debunked claims.
 
+A page is listed when planned, written when its producer has something to
+say — CONTEXT and ROADMAP wait for model-domain and architect.
+
+## Modules & analyses
+
+- TODO(scribe): the locked page plan from the taxonomy scan, one line
+  each — `modules/<name>.md`, `analyses/<name>.md`.
+
 ## Decisions
 
 - `decisions/index.md` — TODO(scribe): the why-register; link it here

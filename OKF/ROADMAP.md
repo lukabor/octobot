@@ -74,7 +74,9 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
    the warranted scope — `OKF/*.md` plus `decisions/` — returns only
    `index.md`; after moving a cited symbol, `okf-check` reports the
    broken cite and refresh leaves every judgement zone byte-identical.
-   Ships as 004 (cites + fences) then 005 (taxonomy scan).
+   Shipped as 004 (cites + fences) then 005 (taxonomy scan).
+   ✅ verified 2026-07-22 (004, then 005 — two fixtures, two different
+   non-empty plans; scaffolded OKF passes okf-check, ROADMAP unwritten).
 7. **Why-register + ferry collapse** — `OKF/decisions/` indexed by
    question with warrant frontmatter; moor gains the graduation and
    collapse steps with the `sealed:` pin. **Verify:** every decision
@@ -91,9 +93,7 @@ into a contract for other repos. Numbers stay as issued — append-only.
 
 ## Risks & gotchas
 
-- Open, for phase 6's blueprint: `cites:` pinned at `path:line` churns on
-  every refactor — the staleness detector is also the maintenance bill.
-  Candidate mitigation `path:symbol` where the language allows.
+None open — 004's `path:symbol` cite shape spent phase 6's churn risk.
 
 ## Out of scope
 

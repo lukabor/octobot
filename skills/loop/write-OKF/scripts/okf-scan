@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+"""Propose OKF page candidates from a repo's shape. Usage: okf-scan <repo-root>
+
+One candidate per line on stdout, index.md-ready:
+
+    <dir>/<name>.md — <evidence path>
+
+Every line names the disk evidence that warranted it; no evidence, no
+line. The scan proposes only — it never writes a page, never edits
+index.md, never culls or ranks. Contract: ../taxonomy-scan.md
+"""
+import sys
+from pathlib import Path
+
+NOTEBOOKS = {".ipynb", ".Rmd", ".qmd"}
+CODE = {".py", ".R", ".r", ".js", ".jsx", ".ts", ".tsx", ".go", ".rs",
+        ".java", ".rb", ".c", ".h", ".cc", ".cpp", ".hpp", ".sh", ".sql"}
+SOURCE_ROOTS = ("src", "lib", "R")
+
+
+def directories(root):
+    """Every directory under root, minus dot-directories and its own OKF/."""
+    for path in sorted(root.rglob("*")):
+        parts = path.relative_to(root).parts
+        if not path.is_dir() or parts[0] == "OKF":
+            continue
+        if any(part.startswith(".") for part in parts):
+            continue
+        yield path
+
+
+def analysis_evidence(directory):
+    """A directory holding a notebook, or one named analysis/analyses.
+
+    The notebook wins as evidence when both hold — a file is the more
+    concrete warrant.
+    """
+    for entry in sorted(directory.iterdir()):
+        if entry.is_file() and entry.suffix in NOTEBOOKS:
+            return entry
+    return directory if directory.name in ("analysis", "analyses") else None
+
+
+def module_evidence(directory, root):
+    """A directory holding code, one level under the root or a source root."""
+    if str(directory.relative_to(root).parent) not in (".", *SOURCE_ROOTS):
+        return None
+    for entry in sorted(directory.iterdir()):
+        if entry.is_file() and entry.suffix in CODE:
+            return entry
+    return None
+
+
+def main(argv):
+    if len(argv) != 2:
+        print("usage: okf-scan <repo-root>", file=sys.stderr)
+        return 2
+    root = Path(argv[1]).resolve()
+    if not root.is_dir():
+        print(f"not a directory: {root}", file=sys.stderr)
+        return 2
+
+    plan = {}
+    for directory in directories(root):
+        evidence, page = analysis_evidence(directory), "analyses"
+        if evidence is None:
+            evidence, page = module_evidence(directory, root), "modules"
+        if evidence is None:
+            continue
+        page = f"{page}/{directory.name}.md"
+        if page in plan:
+            continue
+        rel = evidence.relative_to(root)
+        plan[page] = f"{rel}/" if evidence.is_dir() else str(rel)
+
+    for page in sorted(plan):
+        print(f"{page} — {plan[page]}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

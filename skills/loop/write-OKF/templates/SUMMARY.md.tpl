@@ -1,5 +1,9 @@
 ---
 type: Summary
+purpose: Say what this project is and where to read next, for an agent landing cold.
+answers:
+  - "What is this project, and where should an agent start reading?"
+# cites: one path per claim, added as the TODOs below are filled.
 ---
 
 # <project> — summary
