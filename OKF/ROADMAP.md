@@ -1,5 +1,11 @@
 ---
 type: Roadmap
+purpose: Carry only what is still ahead — phases, their verify steps, and live risk.
+answers:
+  - "What is octobot building next, and how is each phase verified?"
+cites:
+  - OKF/decisions/index.md
+status: live
 ---
 
 # octobot Roadmap
@@ -11,79 +17,16 @@ substrate, alongside the existing practice/scaffold skills. Vocabulary:
 
 ## Why (gap vs prior art)
 
-| repo | has | lacks |
-|---|---|---|
-| mattpocock/skills | blueprint/ticket pipeline, tracker-backed | file-based substrate, jj, R/Py ecosystem, debloat/review axes |
-| obra/superpowers | subagent execution, verification gate | persistent wiki memory, ecosystem scaffolds |
-| octobot pre-2026-07 | review axes, scaffolds, jj discipline | plan→blueprint→weave spine, knowledge substrate |
-| langchain-ai/openwiki | OKF v0.1 emitter, CI auto-refresh, doc Q&A | durable-synthesis caps, human-locked page plan, loop wiring |
-| Cognition DeepWiki | declared page plan (`.devin/wiki.json`), page hierarchy | local/file-based, OKF conformance, warrant checks |
-| natsu1211/deepwiki-skill | TOC-first generation, line-level cites, `--update` | taxonomy adapted per repo shape, judgement/derived split |
-
-Sources: <https://github.com/langchain-ai/openwiki>,
-<https://docs.devin.ai/work-with-devin/deepwiki>,
-<https://github.com/natsu1211/deepwiki-skill> (scanned 2026-07-21).
-
-Octobot's slot: file-based loop over OKF (open-knowledge-format), jj-native.
+Octobot's slot: a file-based loop over OKF (open-knowledge-format),
+jj-native. mattpocock/skills has the blueprint pipeline but no substrate;
+obra/superpowers has subagent execution but no persistent wiki; neither
+carries the R/Py scaffolds or the debloat/review axes. The prior-art scan
+behind that claim, and what it debunked: [LEARNINGS.md](LEARNINGS.md).
 
 ## Locked decisions
 
-1. OKF = open-knowledge-format at target project's `./OKF/` — reversible
-   (it's files). Karpathy-LLM-wiki style; OpenWiki-inspired, dependency-free.
-2. architect replaces plan-project + update-project (mode-routed) —
-   reversible by re-splitting.
-3. Blueprints are files with status frontmatter, not tracker issues — the
-   "tracker" is grep. Reversible via export.
-4. One canonical glossary per bounded context, never per issue.
-5. Handoff gate: no mutating subagent without a brief (goal, OKF/blueprint
-   refs, verify command); read-only lookups exempt.
-6. New skill names: imperative-verb-first; legacy names grandfathered.
-7. Page taxonomy is **derived per repo, never fixed** — write-OKF scans
-   disk, proposes a page plan, user locks it. A fixed layout yields empty
-   ceremonial pages: analysis repos keep analyses in directories and may
-   have no plotting module; libraries have neither. Reversible — collapse
-   to a fixed list in okf-layout.md.
-8. Every page carries a **warrant** after `type`: `purpose`, `answers[]`,
-   `cites[]`. Zero `answers`, or answers another page owns → inadmissible;
-   unresolved `cites` → drift. Doubles as routing index
-   (`grep -r "answers:" OKF/`). Reversible — OKF v0.1 permits
-   producer-defined fields after `type`.
-9. `index.md` **is** the locked page plan; no TOC file, which would
-   duplicate index.md's job. Absent from index.md → inadmissible.
-   Reversible by extracting TOC.md.
-10. Module and analysis pages are **two-zone**: `<!-- okf:derived -->`
-    fences the scan-regenerated seam, everything outside is judgement —
-    append/supersede only, never scan-edited. Reversible — drop fences,
-    fall back to the existing whole-page supersede rule.
-11. Code-reference layer stays **inside write-OKF** as siblings
-    (`taxonomy-scan.md`, `page-warrant.md`), not a new skill — one
-    trigger, one mental model. Reversible by extraction if the router
-    breaches the house cap.
-12. **One why-register**: `OKF/decisions/NNN-<slug>.md`, indexed by the
-    question each settles. Absorbs this section and `adr/` (empty at
-    absorption — zero migration cost, and evidence three-of-three was
-    unusable); the warrant replaces the three-of-three rule. Reversible
-    by re-splitting.
-13. ROADMAP is a **plan, not an archive** — decisions move to the
-    register, debunked claims to LEARNINGS.md (which already duplicates
-    them by instruction), §Risks keeps only forward-looking risk.
-14. Ferry decisions **graduate at moor** into the register; MAP.md keeps
-    a pointer, never a copy.
-15. Moor **collapses** `ferries/<topic>/` into `ferries/<topic>.md` —
-    problem shape, rejected alternatives, decision pointers. Directory
-    means open, file means moored, so `ls` answers what's in flight.
-    Deliberation stays recoverable via `sealed:` (jj change id + git
-    hash + date) pinned to the **parent** (`@-` at moor) — the sealing
-    commit cannot name itself, and the parent is where the D-n files
-    still exist. Unresolvable pin = drift. Reversible: OKF is not the
-    archive of record, history is.
-16. **One `okf-check` validator** at `write-OKF/scripts/`, built to the
-    existing doctrine in
-    [add-copilot-project-skill/project-validator.md](../skills/engineering/add-copilot-project-skill/project-validator.md);
-    write-OKF and moor both gate on its pasted output, so the done-gate
-    is a run, not a claim. Per that doctrine it must pass clean on
-    octobot today — over-cap pages are a **warning** until phase 7, never
-    an error. Reversible by inlining the checks as prose.
+16 live, in the why-register: [decisions/index.md](decisions/index.md).
+Each line is the question its decision settles. Cite by number.
 
 ## Architecture
 
@@ -146,27 +89,8 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
 and makes octobot's own OKF *run* the register before phase 6 freezes it
 into a contract for other repos. Numbers stay as issued — append-only.
 
-> ROADMAP is over the 110-line cap until phase 7 lands. Tracked, not
-> ignored — closing it is that phase's first verify clause.
-
 ## Risks & gotchas
 
-- Believed: skills can cross-invoke via description matching. True:
-  cross-links are file paths, so disable-model-invocation is safe for
-  linked skills; only description routing dies. Source: Claude Code
-  skill mechanics, README §Install.
-- Trigger collisions with co-installed plugins (superpowers, caveman)
-  — the invocation audit (phase 5) is the mitigation.
-- `jj` mutations backgrounded hang on the headless editor — always
-  foreground, use `-m`/`--use-destination-message`
-  ([LEARNINGS.md](LEARNINGS.md)).
-- Believed: OKF was an octobot coinage. True: OKF v0.1 is also what
-  OpenWiki emits, so import-compat is nearly free — but its output model
-  (hundreds of generated files, CI-refreshed) is opposite pressure to
-  OKF's ≤110-line durable synthesis. Source: langchain-ai/openwiki.
-- Declared page plans are convergent prior art, not invention — DeepWiki
-  `pages[]{title, purpose, parent}` and deepwiki-skill's `toc.yaml`.
-  Decision 9 is the same move minus a config format.
 - Open, for phase 6's blueprint: `cites:` pinned at `path:line` churns on
   every refactor — the staleness detector is also the maintenance bill.
   Candidate mitigation `path:symbol` where the language allows.

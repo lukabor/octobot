@@ -1,5 +1,12 @@
 ---
 type: Glossary
+purpose: Fix octobot's own vocabulary — one canonical name per concept, with what to avoid.
+answers:
+  - "What is the canonical name for this concept in octobot?"
+cites:
+  - skills/productivity/conjure-a-skill/GLOSSARY.md
+  - skills/loop/write-OKF/okf-layout.md
+status: live
 ---
 
 # octobot — context

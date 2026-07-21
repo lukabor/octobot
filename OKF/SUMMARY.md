@@ -1,5 +1,12 @@
 ---
 type: Summary
+purpose: Orient an agent landing cold — what octobot is, how it runs, what to read next.
+answers:
+  - "What is octobot and how do I run it?"
+cites:
+  - README.md
+  - skills
+status: live
 ---
 
 # octobot — summary

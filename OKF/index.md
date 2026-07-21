@@ -17,8 +17,8 @@ your task needs. Humans welcome too.
 
 ## Decisions
 
-- `adr/` — none yet; three-of-three rule applies (see
-  [model-domain](../skills/engineering/model-domain/ADR-FORMAT.md)).
+- [decisions/index.md](decisions/index.md) — the why-register, indexed by
+  the question each decision settles. 16 live.
 
 ## Blueprints
 

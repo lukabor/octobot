@@ -1,5 +1,13 @@
 ---
 type: Architecture
+purpose: Map the skill categories, the seams between them, and the flows that cross them.
+answers:
+  - "Which module owns a given skill, and where are the seams?"
+cites:
+  - skills/loop
+  - skills/engineering/bdd/SKILL.md
+  - skills/productivity/conjure-a-skill/PRINCIPLES.md
+status: live
 ---
 
 # octobot — architecture
