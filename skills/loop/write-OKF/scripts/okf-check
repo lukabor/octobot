@@ -1,0 +1,179 @@
+#!/usr/bin/env python3
+"""Validate an OKF bundle. Usage: okf-check <okf-dir>
+
+Errors (exit 1): missing type, missing warrant, duplicate answer,
+unresolvable cite, page unreachable from index.md, register index line
+disagreeing with its decision file. Warnings (exit 0): page over the
+110-line cap, page with no cites.
+"""
+import re
+import sys
+from pathlib import Path
+
+CAP = 110
+
+
+def frontmatter(text):
+    """Parse the leading --- block. Returns {} when absent.
+
+    Handles scalars, inline lists (`answers: [a, b]`) and block lists
+    (`answers:` followed by indented `- ` items).
+    """
+    if not text.startswith("---\n"):
+        return {}
+    end = text.find("\n---", 3)
+    if end == -1:
+        return {}
+    fields, key = {}, None
+    for line in text[4:end].splitlines():
+        item = re.match(r"\s+-\s+(.*)", line)
+        if item and key:
+            fields[key].append(unquote(item.group(1)))
+            continue
+        pair = re.match(r"([A-Za-z_-]+):\s*(.*)", line)
+        if not pair:
+            continue
+        key, raw = pair.group(1), pair.group(2).strip()
+        if raw.startswith("[") and raw.endswith("]"):
+            fields[key] = [unquote(v) for v in raw[1:-1].split(",") if v.strip()]
+        elif raw:
+            fields[key] = unquote(raw)
+            key = None
+        else:
+            fields[key] = []
+    return fields
+
+
+def unquote(value):
+    value = value.strip()
+    if len(value) > 1 and value[0] == value[-1] and value[0] in "\"'":
+        return value[1:-1]
+    return value
+
+
+def links(text):
+    """Markdown link targets, minus anchors and external URLs."""
+    out = []
+    for target in re.findall(r"\]\(([^)]+)\)", text):
+        target = target.split("#")[0].strip()
+        if target and "://" not in target:
+            out.append(target)
+    return out
+
+
+def reachable(okf, pages):
+    """Pages reachable from index.md, transitively through index pages.
+
+    A ferry's decision files are covered by their MAP.md, which is the
+    single home for them by layout contract.
+    """
+    seen, frontier = set(), [okf / "index.md"]
+    while frontier:
+        page = frontier.pop()
+        if page in seen or not page.exists():
+            continue
+        seen.add(page)
+        if page.name not in ("index.md", "MAP.md"):
+            continue
+        for target in links(page.read_text()):
+            frontier.append((page.parent / target).resolve())
+    for page in pages:
+        parent_map = page.parent / "MAP.md"
+        if parent_map in seen:
+            seen.add(page)
+    return seen
+
+
+def cite_resolves(cite, page, okf):
+    path = cite.split("#")[0].split(":")[0].strip()
+    if not path:
+        return False
+    roots = [page.parent, okf, okf.parent]
+    return any((root / path).exists() for root in roots)
+
+
+def check_register(okf, warrants, errors):
+    """Register index lines must quote their decision's own question."""
+    index = okf / "decisions" / "index.md"
+    if not index.exists():
+        return
+    for line in index.read_text().splitlines():
+        if not line.startswith("- "):
+            continue
+        target = links(line)
+        fields = line.split(" — ")
+        if not target or len(fields) < 2:
+            errors.append(f"{index}: malformed register line: {line}")
+            continue
+        page = (index.parent / target[0]).resolve()
+        answers = warrants.get(page, {}).get("answers") or []
+        if not answers:
+            errors.append(f"{index}: line points at a page with no answers: {target[0]}")
+        elif fields[1].strip() != answers[0]:
+            errors.append(
+                f"{index}: line question disagrees with {target[0]}: "
+                f"{fields[1].strip()!r} vs {answers[0]!r}"
+            )
+
+
+def main(argv):
+    if len(argv) != 2:
+        print("usage: okf-check <okf-dir>", file=sys.stderr)
+        return 2
+    okf = Path(argv[1]).resolve()
+    if not okf.is_dir():
+        print(f"not a directory: {okf}", file=sys.stderr)
+        return 2
+
+    pages = sorted(p.resolve() for p in okf.rglob("*.md"))
+    index = okf / "index.md"
+    errors, warnings, warrants, answered = [], [], {}, {}
+    seen = reachable(okf, pages)
+
+    for page in pages:
+        text = page.read_text()
+        fields = frontmatter(text)
+        warrants[page] = fields
+        rel = page.relative_to(okf.parent)
+
+        if page not in seen:
+            errors.append(f"{rel}: not reachable from index.md")
+        if page == index:
+            continue
+        if not fields.get("type"):
+            errors.append(f"{rel}: missing type:")
+        if len(text.splitlines()) > CAP:
+            warnings.append(f"{rel}: over the {CAP}-line cap")
+
+        # The warrant contract covers durable synthesis pages; blueprints
+        # and ferries carry their own frontmatter contracts.
+        if {"blueprints", "ferries"} & set(rel.parts) or page.name == "index.md":
+            continue
+        if not fields.get("purpose"):
+            errors.append(f"{rel}: missing purpose:")
+        if not fields.get("answers"):
+            errors.append(f"{rel}: missing answers:")
+        for answer in fields.get("answers") or []:
+            if answer in answered:
+                errors.append(f"{rel}: answers a question {answered[answer]} owns: {answer}")
+            else:
+                answered[answer] = rel
+        cites = fields.get("cites") or []
+        if not cites:
+            warnings.append(f"{rel}: no cites:")
+        for cite in cites:
+            if not cite_resolves(cite, page, okf):
+                errors.append(f"{rel}: unresolvable cite: {cite}")
+
+    check_register(okf, warrants, errors)
+
+    for line in warnings:
+        print(f"WARN  {line}")
+    for line in errors:
+        print(f"ERROR {line}")
+    print(f"{len(errors)} error(s), {len(warnings)} warning(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
