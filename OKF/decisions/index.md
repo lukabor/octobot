@@ -28,3 +28,4 @@ Format: `NNN — <question it settles> — <verdict> — <status>`.
 - [014](014-ferry-decisions-graduate-at-moor.md) — What happens to a resolved ferry decision at moor? — it graduates here — live
 - [015](015-moor-collapses-ferry-directory.md) — What shape does a ferry take once it is moored? — one page, pinned with `sealed:` — live
 - [016](016-one-okf-check-validator.md) — How is OKF conformance enforced? — `okf-check`, output pasted — live
+- [017](017-pin-drift-splits-by-visibility.md) — Why doesn't `okf-check` verify that a `sealed:` pin resolves? — it cannot see the repo; refresh owns resolution — live

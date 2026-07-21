@@ -36,31 +36,64 @@ the wiki so the next cold-start agent reads reality, not history.
    - terms that recurred beyond the ferry → `CONTEXT.md` per
      model-domain; the delivered phase → checked off in `ROADMAP.md`;
    - relative dates → ISO 8601; dead cross-links fixed.
-4. **PRUNE + INDEX** — sweep the arrived ferry for unextracted
+4. **GRADUATE** — every resolved `D-<n>` that passes model-domain's
+   warrant test becomes `decisions/NNN-<slug>.md` at the next free
+   number, carrying the frontmatter of
+   [DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md)
+   plus a question-shaped `decisions/index.md` line. The `Resolution`
+   body moves **verbatim** — one home, never two copies; `Options` and
+   `Why it must be decided` stay behind for step 5. `blocked-by` edges
+   drop; the register is not a dependency graph. A resolution that
+   fails the warrant test graduates nowhere and stays in the collapsed
+   page — graduation is the default, not an obligation.
+5. **COLLAPSE** — `ferries/<topic>/` becomes `ferries/<topic>.md`:
+   problem shape, rejected alternatives, pointers to the numbers that
+   graduated. Directory means open, file means moored, so `ls
+   OKF/ferries/` answers what deliberation is still in flight. The page
+   opens `type: Ferry Map`, then the pin — read off `@-`, because the
+   sealing commit cannot name itself and the parent is where the
+   `D-<n>` files still exist
+   (`jj log -r @- --no-graph -T 'change_id ++ " " ++ commit_id'`):
+   ```yaml
+   sealed:
+     change: <jj change id>
+     commit: <git hash>
+     date: <ISO date>
+   ```
+   Then remove the directory. History is the archive of record; the pin
+   is the way back into it.
+6. **PRUNE + INDEX** — sweep the arrived ferry for unextracted
    follow-ups; every open thread gets a home + backlink:
    - small and implementable → new blueprint `NNN-<slug>.md` with
      `traces-to` citing the source decision;
    - big or multi-session → a new ferry, or a `ROADMAP.md` entry;
    - neither → a `LEARNINGS.md` note, so it stays findable.
-   Then rebuild the touched `index.md` lines (`<topic> — arrived →
-   MAP.md`; blueprint status lines) and run the conformance check:
-   `grep -rL "^type:" OKF/ --include='*.md'` returns only `index.md`.
+   Then rebuild the touched `index.md` lines — the ferry's changes shape
+   with its state, `<topic> — moored <date> → <topic>.md`, which is what
+   keeps the collapsed page reachable once its `MAP.md` is gone; the
+   register gains its new lines; blueprint statuses go current.
 
 ## Output / done criteria
+- **`write-OKF/scripts/okf-check OKF/` run and its output pasted**,
+  exiting 0. A claim of conformance is not a gate.
 - The arrived ferry contains no forward-looking work — every follow-up
   has a new home with a backlink.
-- `index.md` matches reality: ferry marked arrived, blueprint statuses
-  current, no dangling links.
-- Ferry directory and blueprints intact — status flipped, zero deletions.
+- `index.md` matches reality: the ferry line moored and pointing at the
+  collapsed page, blueprint statuses current, no dangling links.
+- `ferries/<topic>/` is gone, `ferries/<topic>.md` carries the pin, and
+  every graduated number is reachable from `decisions/index.md`.
 
 ## Guardrails
-- **Never delete** a ferry directory, decision file, or blueprint — they
-  are the why-record. Supersede, don't delete.
+- **Never collapse without a resolvable pin** — `jj show <change>` must
+  resolve *before* the directory goes. The pin is what makes the removal
+  recoverable; without it the deliberation is simply deleted.
+- **Never delete** a blueprint or a graduated decision file — they are
+  the why-record. Supersede, don't delete.
 - **OKF files only** — moor never touches source code, configs, or
   skills.
-- **Never auto-promote a decision** — an architecturally load-bearing
-  decision is only *flagged* as a candidate; model-domain's warrant test
-  gates `OKF/decisions/`.
+- **Never graduate a decision that fails the warrant test** — a
+  resolution answering no question another page lacks stays in the
+  collapsed page; model-domain's test gates `OKF/decisions/`.
 - **Never moor a ferry with open decisions** — that's resolving by
   neglect. Go back to the ferry skill.
 

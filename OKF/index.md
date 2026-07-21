@@ -18,14 +18,17 @@ your task needs. Humans welcome too.
 ## Decisions
 
 - [decisions/index.md](decisions/index.md) — the why-register, indexed by
-  the question each decision settles. 16 live.
+  the question each decision settles. 17 live.
 
 ## Blueprints
 
 - [001](blueprints/001-add-write-readme-r.md) — add write-readme-r skill — draft
 - [002](blueprints/002-extract-why-register.md) — extract the why-register from ROADMAP — implemented
-- [003](blueprints/003-graduate-and-collapse-ferries.md) — graduate ferry decisions and collapse the moored ferry — locked
+- [003](blueprints/003-graduate-and-collapse-ferries.md) — graduate ferry decisions and collapse the moored ferry — implemented
 
 ## Ferries
+
+Open ferries link their `MAP.md`; moored ones link the collapsed page
+that replaced it — `<topic> — moored <date> → <topic>.md`.
 
 - [python-siblings](ferries/python-siblings/MAP.md) — Python siblings for bdd/diagnose — 0/3 resolved

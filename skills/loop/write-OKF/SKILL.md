@@ -52,8 +52,12 @@ contract: [okf-layout.md](okf-layout.md).
 4. Every ARCHITECTURE.md claim must be **traceable to a file** — cite
    `path` (or `path:line`) inline. A claim you can't cite doesn't go in.
 5. Keep `index.md` complete: every page and every `blueprints/` entry
-   listed, one line each (`NNN — title — status`); every ferry one line
-   (`<topic> — n/m resolved → MAP.md`) — decisions stay in MAP.md only.
+   listed, one line each (`NNN — title — status`); every ferry one line,
+   in the shape its state calls for per
+   [okf-layout.md](okf-layout.md).
+6. **Resolve the pins**: for each moored `ferries/<topic>.md`, check its
+   `sealed:` change id against the repo and report DRIFT if it is gone.
+   `okf-check` validates the pin's shape; only refresh can resolve it.
 
 ## Output / done criteria
 - **`scripts/okf-check <okf-dir>` run and its output pasted**, exiting 0.

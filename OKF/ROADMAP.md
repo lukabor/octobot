@@ -25,7 +25,7 @@ behind that claim, and what it debunked: [LEARNINGS.md](LEARNINGS.md).
 
 ## Locked decisions
 
-16 live, in the why-register: [decisions/index.md](decisions/index.md).
+17 live, in the why-register: [decisions/index.md](decisions/index.md).
 Each line is the question its decision settles. Cite by number.
 
 ## Architecture
@@ -73,18 +73,15 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
    plans with zero empty ceremonial pages; `grep -rL "^purpose:"` over
    `OKF/**.md` returns only `index.md`; after moving a cited symbol,
    refresh reports DRIFT and leaves every judgement zone byte-identical.
-7. **Why-register + ferry collapse** — create `OKF/decisions/` (indexed
-   by question, warrant frontmatter); migrate decisions 1–15 in, retire
-   empty `adr/`, shed debunked claims to LEARNINGS.md. moor gains the
-   graduation and collapse steps with the `sealed:` pin; refresh resolves
-   pins. **Verify:** ROADMAP ≤110 lines and every decision reachable from
-   `decisions/index.md`; `grep -rL "^type:" OKF/` still returns only
-   `index.md`; moor a fixture ferry → directory becomes one page,
-   decisions numbered, `jj show <change>` resolves; corrupt the pin →
-   refresh reports DRIFT. Ships in two blueprints — register first, ferry
-   collapse second (graduation needs the register to exist). Both close
-   on `okf-check` exiting 0 with output pasted. Register ✅ verified
-   2026-07-21 (blueprint 002; okf-check clean, ROADMAP under the cap).
+7. **Why-register + ferry collapse** — `OKF/decisions/` indexed by
+   question with warrant frontmatter; moor gains the graduation and
+   collapse steps with the `sealed:` pin. **Verify:** every decision
+   reachable from `decisions/index.md`; moor a fixture ferry → directory
+   becomes one pinned page, decisions numbered, `jj show <change>`
+   resolves, a shape-broken pin fails `okf-check`. ✅ verified 2026-07-21
+   (blueprint 002) and 2026-07-22 (003; fixture moored by hand, okf-check
+   clean there and on OKF/, caps hold). Refresh's DRIFT rule is prose —
+   no runner, per 003's out-of-scope.
 
 **Execution order: 7 → 6.** Phase 7 is small, closes the cap breach now,
 and makes octobot's own OKF *run* the register before phase 6 freezes it

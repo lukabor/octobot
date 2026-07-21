@@ -3,8 +3,13 @@
 
 Errors (exit 1): missing type, missing warrant, duplicate answer,
 unresolvable cite, page unreachable from index.md, register index line
-disagreeing with its decision file. Warnings (exit 0): page over the
+disagreeing with its decision file, moored ferry with a malformed
+`sealed:` pin or a surviving directory. Warnings (exit 0): page over the
 110-line cap, page with no cites.
+
+Pin *shape* only — whether the change id still resolves needs the repo in
+hand, which is write-OKF refresh's job, not a validator that must exit 0
+on an OKF tree copied outside its jj repo.
 """
 import re
 import sys
@@ -92,6 +97,33 @@ def cite_resolves(cite, page, okf):
     return any((root / path).exists() for root in roots)
 
 
+def pin(text):
+    """Fields of `sealed:`, the one nested block the frontmatter carries."""
+    head = text.partition("\n---")[0] if text.startswith("---\n") else ""
+    block = re.search(r"^sealed:\n((?:[ \t]+.*\n?)+)", head, re.M)
+    return dict(re.findall(r"([a-z]+):\s*(\S+)", block.group(1))) if block else {}
+
+
+def check_ferries(okf, errors):
+    """A page directly under ferries/ is a moored ferry: pinned, collapsed."""
+    ferries = okf / "ferries"
+    if not ferries.is_dir():
+        return
+    for page in sorted(ferries.glob("*.md")):
+        rel = page.relative_to(okf.parent)
+        if (ferries / page.stem).is_dir():
+            errors.append(f"{rel}: coexists with ferries/{page.stem}/ — open or moored, never both")
+        fields = pin(page.read_text())
+        missing = [f for f in ("change", "commit", "date") if f not in fields]
+        if missing:
+            errors.append(f"{rel}: sealed: missing {', '.join(missing)}")
+            continue
+        if not re.fullmatch(r"[0-9a-f]{8,64}", fields["commit"]):
+            errors.append(f"{rel}: sealed: commit is not a hex hash: {fields['commit']}")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", fields["date"]):
+            errors.append(f"{rel}: sealed: date is not ISO 8601: {fields['date']}")
+
+
 def check_register(okf, warrants, errors):
     """Register index lines must quote their decision's own question."""
     index = okf / "decisions" / "index.md"
@@ -165,6 +197,7 @@ def main(argv):
             if not cite_resolves(cite, page, okf):
                 errors.append(f"{rel}: unresolvable cite: {cite}")
 
+    check_ferries(okf, errors)
     check_register(okf, warrants, errors)
 
     for line in warnings:

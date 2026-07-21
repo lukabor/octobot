@@ -19,7 +19,8 @@ OKF/
 ├── ROADMAP.md        # phased plan — architect owns content
 ├── decisions/        # the why-register — index.md + NNN-<slug>.md
 ├── blueprints/       # NNN-<slug>.md only — flat, grep-able namespace
-├── ferries/          # <topic>/ — MAP.md + D-<n>-<slug>.md decision files
+├── ferries/          # open: <topic>/ — MAP.md + D-<n>-<slug>.md files
+│                     #   moored: <topic>.md, pinned with sealed:
 └── LEARNINGS.md      # debunked claims, gotchas — append-only, sourced
 ```
 
@@ -63,9 +64,29 @@ OKF/
 - **blueprints/** — blueprint output; status lives in frontmatter, so the
   "tracker" is `grep -r "^status:" OKF/blueprints/`. index.md lists one
   line per blueprint: `NNN — title — status`.
-- **ferries/** — one directory per ferry; MAP.md is the per-ferry index.
-  index.md lists one line per ferry: `<topic> — n/m resolved → MAP.md`;
-  decisions are never listed in index.md (single source: MAP.md).
+- **ferries/** — **directory means open, file means moored.** An open
+  ferry is `<topic>/` with MAP.md as its per-ferry index; index.md lists
+  `<topic> — n/m resolved → MAP.md` and never its decisions (single
+  source: MAP.md). [moor](../moor/SKILL.md) graduates the resolved
+  decisions into `decisions/` and collapses the directory into
+  `<topic>.md` — problem shape, rejected alternatives, graduated
+  numbers — indexed `<topic> — moored <date> → <topic>.md`. The two
+  shapes may never coexist. A moored page carries `sealed:` after its
+  `type`, pinning the deliberation it dropped to the commit *before* the
+  collapse:
+
+  ```yaml
+  sealed:
+    change: <jj change id>
+    commit: <git hash>
+    date: <ISO date>
+  ```
+
+  Pin drift splits by what each tool can see: `okf-check` validates the
+  **shape** (all three fields, hex hash, ISO date), because it must exit
+  0 on a tree copied outside its jj repo; **refresh** has the repo in
+  hand and validates **resolution**, reporting DRIFT when the change id
+  no longer resolves.
 - **LEARNINGS.md** — what was believed / what is true / source. Never
   edited retroactively, only appended or superseded.
 
