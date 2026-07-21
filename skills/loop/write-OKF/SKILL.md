@@ -50,7 +50,9 @@ contract: [okf-layout.md](okf-layout.md).
    pointer to the replacement, mirroring
    [architect/revise.md](../architect/revise.md) discipline.
 4. Every ARCHITECTURE.md claim must be **traceable to a file** — cite
-   `path` (or `path:line`) inline. A claim you can't cite doesn't go in.
+   `path:symbol` when a symbol carries the claim, `path` or `path:line`
+   otherwise; grammar in [okf-layout.md](okf-layout.md). A claim you
+   can't cite doesn't go in.
 5. Keep `index.md` complete: every page and every `blueprints/` entry
    listed, one line each (`NNN — title — status`); every ferry one line,
    in the shape its state calls for per
@@ -58,6 +60,12 @@ contract: [okf-layout.md](okf-layout.md).
 6. **Resolve the pins**: for each moored `ferries/<topic>.md`, check its
    `sealed:` change id against the repo and report DRIFT if it is gone.
    `okf-check` validates the pin's shape; only refresh can resolve it.
+   DRIFT stops at pins — a cite needs no repo, so `okf-check` owns cite
+   drift whole.
+7. **Regenerate inside the fences only**: a page's `okf:derived` region
+   is rewritten wholesale, and every byte outside it is judgement zone —
+   append or supersede, never scan-edit. An unfenced page is all
+   judgement.
 
 ## Output / done criteria
 - **`scripts/okf-check <okf-dir>` run and its output pasted**, exiting 0.

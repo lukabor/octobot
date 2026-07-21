@@ -2,10 +2,10 @@
 """Validate an OKF bundle. Usage: okf-check <okf-dir>
 
 Errors (exit 1): missing type, missing warrant, duplicate answer,
-unresolvable cite, page unreachable from index.md, register index line
-disagreeing with its decision file, moored ferry with a malformed
-`sealed:` pin or a surviving directory. Warnings (exit 0): page over the
-110-line cap, page with no cites.
+unresolvable cite, malformed `okf:derived` fence, page unreachable from
+index.md, register index line disagreeing with its decision file, moored
+ferry with a malformed `sealed:` pin or a surviving directory. Warnings
+(exit 0): page over the 110-line cap, page with no cites.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
 hand, which is write-OKF refresh's job, not a validator that must exit 0
@@ -90,11 +90,39 @@ def reachable(okf, pages):
 
 
 def cite_resolves(cite, page, okf):
-    path = cite.split("#")[0].split(":")[0].strip()
+    """`path` and `path:line` need the path; `path:symbol` needs both.
+
+    The symbol is matched as a literal substring — no language awareness,
+    no tags file. A `:suffix` that parses as an integer is a reading aid,
+    never validated: a check that cannot fail is not a check.
+    """
+    path, _, symbol = cite.split("#")[0].partition(":")
+    path, symbol = path.strip(), symbol.strip()
     if not path:
         return False
-    roots = [page.parent, okf, okf.parent]
-    return any((root / path).exists() for root in roots)
+    if symbol.isdigit():
+        symbol = ""
+    for root in (page.parent, okf, okf.parent):
+        target = root / path
+        if not target.exists():
+            continue
+        if not symbol:
+            return True
+        if target.is_file() and symbol in target.read_text():
+            return True
+    return False
+
+
+def fence_error(text):
+    """Shape of the derived zone: at most one region, begin before end.
+
+    A fence owns its whole line, so a page that merely *mentions* the
+    markers in prose or in a command is not fenced.
+    """
+    marks = re.findall(r"^<!-- okf:derived (begin|end) -->$", text, re.M)
+    if marks and marks != ["begin", "end"]:
+        return f"malformed okf:derived fence: {' '.join(marks)}"
+    return None
 
 
 def pin(text):
@@ -170,6 +198,9 @@ def main(argv):
 
         if page not in seen:
             errors.append(f"{rel}: not reachable from index.md")
+        fence = fence_error(text)
+        if fence:
+            errors.append(f"{rel}: {fence}")
         if page == index:
             continue
         if not fields.get("type"):

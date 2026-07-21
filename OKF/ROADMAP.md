@@ -71,8 +71,10 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
    against two fixtures — an analysis repo (`analysis/` dirs, no plotting
    module) and a plain library repo — yields two different non-empty page
    plans with zero empty ceremonial pages; `grep -rL "^purpose:"` over
-   `OKF/**.md` returns only `index.md`; after moving a cited symbol,
-   refresh reports DRIFT and leaves every judgement zone byte-identical.
+   the warranted scope — `OKF/*.md` plus `decisions/` — returns only
+   `index.md`; after moving a cited symbol, `okf-check` reports the
+   broken cite and refresh leaves every judgement zone byte-identical.
+   Ships as 004 (cites + fences) then 005 (taxonomy scan).
 7. **Why-register + ferry collapse** — `OKF/decisions/` indexed by
    question with warrant frontmatter; moor gains the graduation and
    collapse steps with the `sealed:` pin. **Verify:** every decision

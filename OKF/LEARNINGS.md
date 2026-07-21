@@ -41,6 +41,12 @@ status: live
   deepwiki-skill's `toc.yaml`; decision 9 is the same move minus a config
   format. Source: <https://docs.devin.ai/work-with-devin/deepwiki>,
   <https://github.com/natsu1211/deepwiki-skill> (scanned 2026-07-21).
+- Believed: a marker-shape check can match its markers anywhere in the
+  page. True: octobot's own blueprint 004 *documents* the `okf:derived`
+  markers, so an unanchored match read them as a third fence and failed
+  the repo's own OKF. A delimiter must be anchored to its whole line, or
+  the page that specifies it becomes invalid. Source: weave of blueprint
+  004.
 - Believed: shedding both registers would bring ROADMAP under the 110-line
   cap. True: the warrant `okf-check` requires costs ~7 frontmatter lines a
   page, which the blueprint's arithmetic (184 − 58 − 16 = 110) did not

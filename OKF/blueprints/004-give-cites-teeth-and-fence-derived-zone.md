@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 6, part A (decision 017)
 ---
 

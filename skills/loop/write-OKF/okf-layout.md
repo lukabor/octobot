@@ -33,11 +33,19 @@ OKF/
 - Page types: `Summary`, `Architecture`, `Glossary` (CONTEXT and
   `context/*`), `Roadmap`, `Learnings`, `Decision`, `Index`, `Blueprint`,
   `Ferry Map`. New page kinds coin a new type — types are producer-defined.
-- **Warrant** — durable pages carry `purpose`, `answers[]`, `cites[]`
-  after `type`. Zero `answers`, or a question another page owns, makes the
-  page inadmissible; an unresolvable `cites` path is drift. Scope: the
-  root pages and `decisions/`. `blueprints/` and `ferries/` carry their
-  own frontmatter contracts and are exempt.
+- **Warrant and pins** — `purpose`, `answers[]`, `cites[]`, their scope,
+  and the moored-ferry `sealed:` block: [page-warrant.md](page-warrant.md).
+- **Cite grammar** — a `cites:` entry is `path`, `path:line`, or
+  `path:symbol`; all three resolve only if the path exists. `path:symbol`
+  additionally needs the symbol as a literal substring of the file — that
+  is the shape that breaks when the thing it cites moves. A `path:line`
+  number is a reading aid, never validated.
+- **Derived zone** — a page carries at most one region delimited by
+  `<!-- okf:derived begin -->` and `<!-- okf:derived end -->`, each marker
+  alone on its line. Refresh regenerates the inside wholesale and may not
+  touch a byte outside it; outside is the judgement zone, append/supersede
+  only. `okf-check` validates the fence's *shape* — balanced, `begin`
+  first, at most one pair — never its content.
 - Conformance check: `scripts/okf-check <okf-dir>` — reach for it from
   this skill's own base directory, never a repo-relative path. Exit 1 on
   any error; over-cap pages and pages with no `cites` are warnings.
@@ -73,20 +81,8 @@ OKF/
   numbers — indexed `<topic> — moored <date> → <topic>.md`. The two
   shapes may never coexist. A moored page carries `sealed:` after its
   `type`, pinning the deliberation it dropped to the commit *before* the
-  collapse:
-
-  ```yaml
-  sealed:
-    change: <jj change id>
-    commit: <git hash>
-    date: <ISO date>
-  ```
-
-  Pin drift splits by what each tool can see: `okf-check` validates the
-  **shape** (all three fields, hex hash, ISO date), because it must exit
-  0 on a tree copied outside its jj repo; **refresh** has the repo in
-  hand and validates **resolution**, reporting DRIFT when the change id
-  no longer resolves.
+  collapse — fields and drift rule in
+  [page-warrant.md](page-warrant.md).
 - **LEARNINGS.md** — what was believed / what is true / source. Never
   edited retroactively, only appended or superseded.
 
