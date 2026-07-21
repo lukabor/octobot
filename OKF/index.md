@@ -27,6 +27,7 @@ your task needs. Humans welcome too.
 - [003](blueprints/003-graduate-and-collapse-ferries.md) — graduate ferry decisions and collapse the moored ferry — implemented
 - [004](blueprints/004-give-cites-teeth-and-fence-derived-zone.md) — give cites teeth and fence the derived zone — implemented
 - [005](blueprints/005-propose-the-page-plan-from-a-repo-scan.md) — propose the page plan from a repo scan — implemented
+- [006](blueprints/006-rescan-the-page-plan-on-refresh.md) — rescan the page plan on refresh — locked
 
 ## Ferries
 
