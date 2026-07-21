@@ -43,6 +43,8 @@ old file's body.
 
 The question is *derived* from the file's first `answers:` entry, never
 written twice; `okf-check` errors when a line and its source disagree.
+` — ` is the field delimiter, so a question may not contain one — use a
+colon (`Where do blueprints live: files or a tracker?`).
 Question-shaped is a requirement, not a style note — it is what makes the
 index answer a query instead of listing titles.
 

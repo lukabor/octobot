@@ -83,7 +83,8 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
    decisions numbered, `jj show <change>` resolves; corrupt the pin →
    refresh reports DRIFT. Ships in two blueprints — register first, ferry
    collapse second (graduation needs the register to exist). Both close
-   on `okf-check` exiting 0 with output pasted.
+   on `okf-check` exiting 0 with output pasted. Register ✅ verified
+   2026-07-21 (blueprint 002; okf-check clean, ROADMAP under the cap).
 
 **Execution order: 7 → 6.** Phase 7 is small, closes the cap breach now,
 and makes octobot's own OKF *run* the register before phase 6 freezes it

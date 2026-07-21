@@ -41,3 +41,8 @@ status: live
   deepwiki-skill's `toc.yaml`; decision 9 is the same move minus a config
   format. Source: <https://docs.devin.ai/work-with-devin/deepwiki>,
   <https://github.com/natsu1211/deepwiki-skill> (scanned 2026-07-21).
+- Believed: shedding both registers would bring ROADMAP under the 110-line
+  cap. True: the warrant `okf-check` requires costs ~7 frontmatter lines a
+  page, which the blueprint's arithmetic (184 − 58 − 16 = 110) did not
+  budget — §Why had to be compressed as well. A page-cap plan must price
+  the frontmatter it also mandates. Source: weave of blueprint 002.
