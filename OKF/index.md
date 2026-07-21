@@ -23,6 +23,7 @@ your task needs. Humans welcome too.
 ## Blueprints
 
 - [001](blueprints/001-add-write-readme-r.md) — add write-readme-r skill — draft
+- [002](blueprints/002-extract-why-register.md) — extract the why-register from ROADMAP — locked
 
 ## Ferries
 
