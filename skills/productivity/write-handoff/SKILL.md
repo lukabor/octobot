@@ -20,8 +20,8 @@ subagent spawn (the handoff-gate brief —
 
 ## Rules (both exits)
 - **Reference, don't duplicate.** Anything already captured in an
-  artifact — OKF pages, `OKF/blueprints/NNN`, a ferry `MAP.md`, ADRs, jj
-  change-ids, diffs — is cited by path/id, never restated. Ferried work:
+  artifact — OKF pages, `OKF/blueprints/NNN`, a ferry `MAP.md`, register
+  decisions, jj change-ids, diffs — is cited by path/id, never restated. Ferried work:
   point at `OKF/ferries/<topic>/MAP.md` and stop.
 - **Redact secrets.** No API keys, tokens, passwords, or PII — name
   where a credential lives (`.env`, secret store), never its value.
@@ -48,7 +48,7 @@ subagent spawn (the handoff-gate brief —
 <done / in progress / blocked — cite jj change-ids and blueprint numbers>
 
 ## Decisions made this session
-- <decision> — <one-line reason> (or: see OKF/adr/NNNN, ferry D-n)
+- <decision> — <one-line reason> (or: see OKF/decisions/NNN, ferry D-n)
 
 ## Open questions
 - <question> — <who/what would answer it>

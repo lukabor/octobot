@@ -17,7 +17,8 @@ your task needs. Humans welcome too.
 
 ## Decisions
 
-- `adr/` — TODO(scribe): list ADRs here as they land.
+- `decisions/index.md` — TODO(scribe): the why-register; link it here
+  once the first decision lands.
 
 ## Blueprints
 

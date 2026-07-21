@@ -1,6 +1,6 @@
 ---
 name: model-domain
-description: Actively build and sharpen a project's domain model — challenge fuzzy terms, propose canonical names, update CONTEXT.md inline as terms resolve, and offer ADRs only on the three-of-three rule. Use when the user says "domain model", "/model-domain", "pin down vocabulary", "canonical name for X", "is my language right", "what should this term be", "record this as an ADR", or another skill needs to maintain the domain model.
+description: Actively build and sharpen a project's domain model — challenge fuzzy terms, propose canonical names, update CONTEXT.md inline as terms resolve, and offer decision files only on the warrant test. Use when the user says "domain model", "/model-domain", "pin down vocabulary", "canonical name for X", "is my language right", "what should this term be", "record this as an ADR", or another skill needs to maintain the domain model.
 ---
 
 # model-domain
@@ -8,7 +8,7 @@ description: Actively build and sharpen a project's domain model — challenge f
 ## When to use
 - User says "domain model", "/model-domain", "pin down vocabulary",
   "canonical name", "is my language right", "what should this term be",
-  "record an ADR".
+  "record an ADR" (they land in the why-register).
 - A non-trivial design conversation is *changing* the model — proposing
   new terms, retiring old ones, recording a hard-to-reverse decision.
 - A sibling skill (`diagnose` hypothesis names, `bdd` Given/When/Then
@@ -39,8 +39,8 @@ habit any skill can do; that's not this skill.
    that contradicts the parquet write you just described."*
 6. **Update `CONTEXT.md` inline.** One term resolved → one edit. Never
    batched. Format: see [CONTEXT-FORMAT.md](CONTEXT-FORMAT.md).
-7. **Offer ADRs sparingly** (three-of-three rule, see
-   [ADR-FORMAT.md](ADR-FORMAT.md)). Default is *no*.
+7. **Offer decision files sparingly** (the warrant test, see
+   [DECISION-FORMAT.md](DECISION-FORMAT.md)). Default is *no*.
 
 ## File layout the skill expects
 
@@ -49,16 +49,18 @@ OKF/                       # open-knowledge-format wiki (see write-OKF)
 ├── CONTEXT.md             # single-context default — THE canonical glossary
 ├── context/               # multi-context mode: one <subroot>.md per
 │   └── <subroot>.md       #   bounded context, indexed from OKF/index.md
-└── adr/
-    └── 0001-<slug>.md
+└── decisions/            # the why-register
+    ├── index.md          #   question-shaped, one line per decision
+    └── NNN-<slug>.md
 ```
 
 Create files **lazily** — only when there's a real first thing to write.
 No `OKF/CONTEXT.md` yet? Create it when the first term is resolved (run
 [write-OKF](../../loop/write-OKF/SKILL.md) scaffold if `OKF/` itself is
-missing). No `OKF/adr/`? Create it when the first ADR is needed. Confirm
-the *first* write to any new file in the repo before proceeding. A legacy
-root `CONTEXT.md` or `docs/adr/` → offer to migrate into `OKF/`.
+missing). No `OKF/decisions/`? Create it when the first decision is
+settled. Confirm the *first* write to any new file in the repo before
+proceeding. A legacy root `CONTEXT.md` or `docs/adr/` → offer to migrate
+into `OKF/` (`docs/adr/` entries become register files).
 
 Default is single-context. Switch to **multi-context mode** only on
 observing **≥ 2 obvious sub-roots** (e.g. `R/ingest/`, `R/analysis/`;
@@ -79,10 +81,10 @@ indexed from `OKF/index.md`. **The split axis is the bounded context
   utility patterns, language idioms). Only domain-specific terms.
 - **Never** write implementation details into `CONTEXT.md`. It's a
   glossary, not a blueprint.
-- **Never** open an ADR unless all three of {hard to reverse, surprising
-  without context, real trade-off} are true. When in doubt, don't.
-- **Never** create an `OKF/CONTEXT.md` / `OKF/adr/` in the repo without
-  confirming the first such write.
+- **Never** open a decision file whose question another page already
+  answers — a duplicate warrant is inadmissible. When in doubt, don't.
+- **Never** create an `OKF/CONTEXT.md` / `OKF/decisions/` in the repo
+  without confirming the first such write.
 - **Never** create a per-issue glossary — one canonical glossary per
   bounded context, full stop.
 

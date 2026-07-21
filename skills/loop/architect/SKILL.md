@@ -43,8 +43,10 @@ fill the missing sections as deltas, don't restart.
 - **Vocabulary sync**: one resolved term → one inline `OKF/CONTEXT.md`
   edit, per [model-domain](../../engineering/model-domain/SKILL.md).
   Roadmap and glossary must use identical canonical terms.
-- **ADRs** only by the three-of-three rule (hard to reverse ∧ surprising
-  ∧ real trade-off). Default no.
+- **Decision files** only by the warrant test — the decision answers a
+  question no other page answers, and you can name the `cites:` it binds
+  ([DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md)).
+  Default no.
 - Roadmap phases feed [blueprint](../blueprint/SKILL.md) — write phases
   concrete enough that a blueprint can trace to them.
 

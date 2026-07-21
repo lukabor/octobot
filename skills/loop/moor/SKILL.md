@@ -58,9 +58,9 @@ the wiki so the next cold-start agent reads reality, not history.
   are the why-record. Supersede, don't delete.
 - **OKF files only** — moor never touches source code, configs, or
   skills.
-- **Never auto-promote to ADR** — an architecturally load-bearing
-  decision is only *flagged* as a candidate; model-domain's
-  three-of-three rule gates `OKF/adr/`.
+- **Never auto-promote a decision** — an architecturally load-bearing
+  decision is only *flagged* as a candidate; model-domain's warrant test
+  gates `OKF/decisions/`.
 - **Never moor a ferry with open decisions** — that's resolving by
   neglect. Go back to the ferry skill.
 

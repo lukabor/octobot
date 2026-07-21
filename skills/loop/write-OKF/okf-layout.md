@@ -17,7 +17,7 @@ OKF/
 ├── context/          # only in multi-context repos: <subroot>.md per
 │                     #   bounded context, indexed from index.md
 ├── ROADMAP.md        # phased plan — architect owns content
-├── adr/              # 0001-<slug>.md — three-of-three rule (model-domain)
+├── decisions/        # the why-register — index.md + NNN-<slug>.md
 ├── blueprints/       # NNN-<slug>.md only — flat, grep-able namespace
 ├── ferries/          # <topic>/ — MAP.md + D-<n>-<slug>.md decision files
 └── LEARNINGS.md      # debunked claims, gotchas — append-only, sourced
@@ -30,10 +30,16 @@ OKF/
 - `index.md` carries **only** `okf_version: "0.1"` in its frontmatter —
   the one field the spec permits there. Reserved name, lowercase.
 - Page types: `Summary`, `Architecture`, `Glossary` (CONTEXT and
-  `context/*`), `Roadmap`, `Learnings`, `ADR`, `Blueprint`, `Decision`,
+  `context/*`), `Roadmap`, `Learnings`, `Decision`, `Index`, `Blueprint`,
   `Ferry Map`. New page kinds coin a new type — types are producer-defined.
-- Conformance check: `grep -rL "^type:" OKF/ --include='*.md'` returns
-  only `index.md`.
+- **Warrant** — durable pages carry `purpose`, `answers[]`, `cites[]`
+  after `type`. Zero `answers`, or a question another page owns, makes the
+  page inadmissible; an unresolvable `cites` path is drift. Scope: the
+  root pages and `decisions/`. `blueprints/` and `ferries/` carry their
+  own frontmatter contracts and are exempt.
+- Conformance check: `scripts/okf-check <okf-dir>` — reach for it from
+  this skill's own base directory, never a repo-relative path. Exit 1 on
+  any error; over-cap pages and pages with no `cites` are warnings.
 
 ## Page contracts (one line each in index.md)
 
@@ -48,6 +54,12 @@ OKF/
   Issue-local terms live in their blueprint until they recur.
 - **ROADMAP.md** — architect's skeleton (locked decisions, phases with
   verify steps, risks, out-of-scope).
+- **decisions/** — the why-register: one file per settled decision,
+  permanent numbers, format in
+  [model-domain/DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md).
+  `decisions/index.md` carries one **question-shaped** line per decision,
+  the question derived from the file's first `answers:` entry — index.md
+  lists the register, not its members.
 - **blueprints/** — blueprint output; status lives in frontmatter, so the
   "tracker" is `grep -r "^status:" OKF/blueprints/`. index.md lists one
   line per blueprint: `NNN — title — status`.

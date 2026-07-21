@@ -40,7 +40,7 @@ contract: [okf-layout.md](okf-layout.md).
    append if it exists — never overwrite prose).
 5. Migrate legacy artifacts *with consent*: root `CONTEXT.md` →
    `OKF/CONTEXT.md`, `docs/Roadmap.md` → `OKF/ROADMAP.md`,
-   `docs/adr/` → `OKF/adr/`. Offer, show the move, wait for yes.
+   `docs/adr/` → `OKF/decisions/`. Offer, show the move, wait for yes.
 
 ## Refresh mode
 1. **Diff wiki against reality**: code and manifests on disk, `jj log`
@@ -56,6 +56,9 @@ contract: [okf-layout.md](okf-layout.md).
    (`<topic> — n/m resolved → MAP.md`) — decisions stay in MAP.md only.
 
 ## Output / done criteria
+- **`scripts/okf-check <okf-dir>` run and its output pasted**, exiting 0.
+  Invoke it by this skill's own base directory — `skills/loop/...`
+  resolves only inside octobot. A claim of conformance is not a gate.
 - `OKF/` matches [okf-layout.md](okf-layout.md) including its
   conformance block; `index.md` links every page that exists.
 - `AGENTS.md` carries the hook block.

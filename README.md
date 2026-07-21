@@ -109,8 +109,8 @@ All loop skills are user-invoked (`disable-model-invocation: true`).
 - **grill-with-docs** — user-invoked router that runs `grill-me` using
   `model-domain` on an existing codebase.
 - **model-domain** — actively build / sharpen a project's domain
-  model — challenge terms, update `CONTEXT.md` inline, offer ADRs only
-  on the three-of-three rule.
+  model — challenge terms, update `CONTEXT.md` inline, offer decision
+  files only on the warrant test.
 - **design-codebase** — shared vocabulary for designing deep modules
   (module, interface, seam, adapter, depth, leverage, locality);
   `DEEPENING.md` for dependency-aware seam strategy, `DESIGN-IT-TWICE.md`
@@ -183,9 +183,9 @@ script — read the relevant SKILL.md as you enter each step.
 ### Architecture & vocabulary
 - **Design conversation** — `/design-codebase` (solution-structure vocab:
   module / interface / seam / adapter / depth) + `/model-domain`
-  (problem-domain vocab: `CONTEXT.md`, ADRs on the three-of-three rule).
+  (problem-domain vocab: `CONTEXT.md`, decisions on the warrant test).
 - **Stress-test a plan against the codebase** — `/grill-with-docs`
-  (Socratic interview against `OKF/CONTEXT.md` and `OKF/adr/`).
+  (Socratic interview against `OKF/CONTEXT.md` and `OKF/decisions/`).
 
 ### Meta
 - **Author a new skill in this repo** — `/conjure-a-skill` → `/commit-atomic-jj`.
