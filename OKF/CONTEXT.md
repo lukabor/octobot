@@ -41,6 +41,40 @@ the brief. _Avoid_: prompt (ambiguous).
 The commit-atomic-jj describe step where scratch becomes artifact; the sieve
 fires here. _Avoid_: commit (mechanics), merge.
 
+**Page plan**:
+The locked set of admissible OKF pages, recorded as `index.md`'s
+one-line-per-page list. write-OKF proposes it from a repo scan; the user
+edits and locks it. A page absent from the plan is inadmissible.
+_Avoid_: TOC, sitemap, nav, wiki.json.
+
+**Warrant**:
+The frontmatter fields that justify a page's existence — `purpose`,
+`answers[]`, `cites[]`, after the required `type`. No `answers` entry, or
+one another page already answers, culls the page; an unresolved `cites`
+path is drift. _Avoid_: metadata, header, justification.
+
+**Derived zone**:
+The `<!-- okf:derived begin/end -->` region of a page, regenerated on
+every refresh. Everything outside it is the **judgement zone** —
+append/supersede only, never scan-edited. _Avoid_: generated block,
+managed section.
+
+**Register**:
+An append-only OKF directory or page that is the single home for one
+kind of durable fact — `decisions/` (why we chose), `LEARNINGS.md` (what
+we got wrong), `blueprints/` (what we built). ROADMAP holds only what is
+still ahead. _Avoid_: log, archive, history.
+
+**Graduate**:
+Moving a resolved ferry decision out of `ferries/<topic>/D-n-*.md` into
+the decisions register at moor, leaving a pointer in MAP.md. _Avoid_:
+promote, publish, merge.
+
+**Sealed pin**:
+The `sealed:` frontmatter on a moored ferry — jj change id, git hash,
+date — naming the **parent** commit where the dissolved D-n files still
+exist. Makes "recoverable from history" cashable. _Avoid_: ref, anchor.
+
 **House cap**:
 110 lines per SKILL.md; topic-named siblings load on demand and carry
 no hard cap. _Avoid_: limit, budget.
