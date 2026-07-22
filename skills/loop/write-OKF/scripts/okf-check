@@ -5,7 +5,8 @@ Errors (exit 1): missing type, missing warrant, duplicate answer,
 unresolvable cite, malformed `okf:derived` fence, page unreachable from
 index.md, register index line disagreeing with its decision file, moored
 ferry with a malformed `sealed:` pin or a surviving directory. Warnings
-(exit 0): page over the 110-line cap, page with no cites.
+(exit 0): page over the 110-line cap, page with no cites, blueprint
+locked without a `sounded:` stamp.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
 hand, which is write-OKF refresh's job, not a validator that must exit 0
@@ -207,6 +208,12 @@ def main(argv):
             errors.append(f"{rel}: missing type:")
         if len(text.splitlines()) > CAP:
             warnings.append(f"{rel}: over the {CAP}-line cap")
+
+        # Sounding is a precondition of lock. Only at `locked`: `draft` is
+        # not-yet-sounded, and `implemented` would retro-flag 002-006.
+        if ("blueprints" in rel.parts and fields.get("status") == "locked"
+                and not fields.get("sounded")):
+            warnings.append(f"{rel}: locked without sounded:")
 
         # The warrant contract covers durable synthesis pages; blueprints
         # and ferries carry their own frontmatter contracts.

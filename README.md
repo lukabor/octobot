@@ -58,6 +58,8 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
   greenfield and revision modes (replaces plan-project + update-project).
 - **blueprint** — synthesize discussed work into a justified, verifiable
   blueprint at `OKF/blueprints/NNN-<slug>.md` (status: draft → locked → implemented).
+- **sound** — verified recon before a lock: OKF, then the nostos MCP
+  server when configured, then live code; stamps `sounded:`.
 - **ferry** — work too big for one session becomes a directory of small,
   edge-declared decision files; resolve one per sitting.
 - **weave** — execute one locked blueprint: bdd at its seams, four-axis
@@ -71,7 +73,8 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
 - **steer** — router over every skill; most are user-invoked, steer is
   the index.
 
-All loop skills are user-invoked (`disable-model-invocation: true`).
+Every loop skill is user-invoked (`disable-model-invocation: true`)
+except **sound**, which only reads — see `OKF/decisions/019`.
 
 ### productivity
 - **conjure-a-skill** — meta-skill that scaffolds new skills consistently.

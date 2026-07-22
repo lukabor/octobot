@@ -59,6 +59,9 @@ append-only.
    once and continues; a self-fired run leaves the blueprint
    byte-identical; and in a fresh session on a repo with no `OKF/`, ten
    ordinary code questions fire sound zero times; caps hold.
+   ✅ script leg verified 2026-07-22 (blueprint 007 — `draft: 0`
+   `locked: 1` `implemented: 0`, `okf-check OKF/` clean, caps hold). The
+   four session checks need fresh sessions and stay open.
 
 ## Risks & gotchas
 

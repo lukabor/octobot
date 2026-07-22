@@ -33,18 +33,22 @@ blueprint with justification. The interview happened upstream
      pre-agreed seam list.
    - *Verify* is a runnable command or observable check — weave's
      done-gate runs exactly this.
-4. **Show the blueprint**; iterate. On explicit user yes → flip status to
+4. **Sound it** — call [sound](../sound/SKILL.md) by name on the draft:
+   it verifies what the blueprint rests on and stamps `sounded: <date>`.
+   Unsounded, there is nothing to lock against.
+5. **Show the blueprint**; iterate. On explicit user yes → flip status to
    `locked`. No yes, no lock.
-5. **Index it** — add `NNN — <title> — <status>` to `OKF/index.md`
+6. **Index it** — add `NNN — <title> — <status>` to `OKF/index.md`
    Blueprints section.
-6. **Seal** via [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md):
+7. **Seal** via [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md):
    `docs(blueprint): add NNN <slug>`.
 
 ## Status discipline
 `draft → locked → implemented`, or `→ superseded-by-NNN` from any state.
 Never backwards; never edit a locked blueprint's Contract section — supersede
-with a new number instead. The "tracker" is
-`grep -r "^status:" OKF/blueprints/`.
+with a new number instead. **A lock has a precondition: a `sounded:`
+stamp** — `okf-check` warns on a `locked` blueprint without one. The
+"tracker" is `grep -r "^status:" OKF/blueprints/`.
 
 ## Output / done criteria
 - Blueprint exists, matches blueprint-format.md, indexed in index.md.

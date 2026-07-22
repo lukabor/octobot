@@ -5,6 +5,7 @@
 type: Blueprint
 status: draft | locked | implemented | superseded-by-NNN
 traces-to: ROADMAP.md phase N | ferries/<topic>/D-<n> | user request <date>
+sounded: YYYY-MM-DD
 ---
 
 # NNN — <imperative title, completes "this change will…">
@@ -41,6 +42,8 @@ up in the diff.>
   [write-OKF/okf-layout.md](../write-OKF/okf-layout.md)) — always first.
 - `traces-to` is mandatory; a blueprint that traces to nothing fails
   [sieve](../../engineering/sieve/SKILL.md)'s Real test by definition.
+- `sounded:` is the date [sound](../sound/SKILL.md) verified what the
+  blueprint rests on; absent until then, and required to lock.
 - Locked blueprint's Contract/Verify sections are immutable — supersede, don't
   edit. Justification may gain references; status may advance.
 - A blueprint grows into `NNN-<slug>/` (blueprint.md + notes) when one file won't

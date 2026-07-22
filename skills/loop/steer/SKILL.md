@@ -21,6 +21,7 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
 | project has no `OKF/` knowledge folder, or wiki is stale | `/write-OKF` |
 | starting a project / roadmap needs creating or revising | `/architect` |
 | discussed work needs a justified, verifiable blueprint | `/blueprint` |
+| a blueprint is about to lock on unverified knowledge | `/sound` |
 | feature too big for one session — map decisions | `/ferry` |
 | a locked blueprint is ready to execute | `/weave` |
 | ferry's blueprints locked — agent-orchestrated crossing | `/call-charon` |

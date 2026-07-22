@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 9; decision 019
 sounded: 2026-07-22
 ---
