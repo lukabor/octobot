@@ -47,6 +47,13 @@ status: live
   the repo's own OKF. A delimiter must be anchored to its whole line, or
   the page that specifies it becomes invalid. Source: weave of blueprint
   004.
+- Believed: a model-invoked skill's zero-fire test can run in whatever
+  order the checks are listed. True: naming the skill loads its
+  description, so every question after that measures a primed router,
+  not a cold one — 007's check 4 (ten ordinary questions, zero fires)
+  had to precede check 1 (`/sound` by name), and the session running it
+  could not be the session that built it. A self-fire test is spoiled by
+  the very context that motivates it. Source: weave of blueprint 007.
 - Believed: shedding both registers would bring ROADMAP under the 110-line
   cap. True: the warrant `okf-check` requires costs ~7 frontmatter lines a
   page, which the blueprint's arithmetic (184 − 58 − 16 = 110) did not
