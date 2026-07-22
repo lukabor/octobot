@@ -59,9 +59,11 @@ append-only.
    once and continues; a self-fired run leaves the blueprint
    byte-identical; and in a fresh session on a repo with no `OKF/`, ten
    ordinary code questions fire sound zero times; caps hold.
-   ✅ script leg verified 2026-07-22 (blueprint 007 — `draft: 0`
-   `locked: 1` `implemented: 0`, `okf-check OKF/` clean, caps hold). The
-   four session checks need fresh sessions and stay open.
+   ✅ verified 2026-07-22 (007 — script leg: `draft: 0` `locked: 1`
+   `implemented: 0`, `okf-check OKF/` clean, caps hold; session checks 1
+   and 4 in a no-OKF fixture: zero self-fires over ten ordinary code
+   questions, and `/sound` stopped at one line naming `/write-OKF` after
+   a single directory listing). Checks 2 and 3 ride the next sounding.
 
 ## Risks & gotchas
 
