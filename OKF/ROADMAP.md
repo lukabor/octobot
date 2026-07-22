@@ -25,7 +25,7 @@ behind that claim, and what it debunked: [LEARNINGS.md](LEARNINGS.md).
 
 ## Locked decisions
 
-18 live, in the why-register: [decisions/index.md](decisions/index.md).
+19 live, in the why-register: [decisions/index.md](decisions/index.md).
 Each line is the question its decision settles. Cite by number.
 
 ## Architecture
@@ -34,68 +34,39 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
 
 ## Phases
 
-1. **OKF foundation** — write-OKF, architect, path retargets, octobot's
-   own OKF. **Verify:** scaffold produces layout-conformant tree in an
-   empty dir; refresh on octobot yields sane OKF/; zero stale
-   plan-project/update-project refs. ✅ verified 2026-07-19 (scratch-dir
-   scaffold + this OKF + grep).
-2. **blueprint + review-blueprint** — blueprint skill with blueprint-format.md;
-   fourth review axis (diff vs blueprint). **Verify:** blueprint a real
-   roadmap item into a well-formed blueprint; review-blueprint flags an
-   injected scope-creep diff. ✅ verified 2026-07-19 (blueprint 001 drafted;
-   scratch fixture: CONTAINED ✗ on planted logging + stray function).
-3. **ferry + weave** — decision maps; blueprint-driven execution with the
-   verify gate and handoff-gated subagent dispatch. **Verify:** ferry a
-   multi-session feature into ≥3 edged decisions; implement one locked
-   blueprint end-to-end with pasted Verify output. ✅ verified 2026-07-19
-   (ferries/python-siblings D-1..D-3; scratch weave run, Verify "OK").
-4. **Upstream pulls** — tautological-test + pre-agreed seams into bdd;
-   handoff redaction/reference rules; resolve-conflicts-jj (jj port).
-   **Verify:** resolve-conflicts-jj replayed on a synthetic two-sided
-   conflict; house caps hold. ✅ verified 2026-07-19 (rc-test replay,
-   both intents merged, chain clean; bdd at 110).
-5. **Invocation audit + steer** — disable-model-invocation on
-   orchestrators/rituals; steer router; conjure imperative-verb
-   enforcement; README regen. **Verify:** fresh session lists only the
-   ~~8~~ 11 model-invoked descriptions (superseded: spawn-cavecrew,
-   review-blueprint, resolve-conflicts-jj must fire from natural phrasing);
-   steer names every skill; conjure rejects a noun-first name.
-   ✅ verified 2026-07-19 (16 flagged / 11 model-invoked by grep; steer
-   table covers all 34; conjure gather+review reject noun-first).
-6. **Adaptive taxonomy + page warrants** — write-OKF gains a taxonomy
-   scan (scan → propose page plan → user locks it into `index.md`), the
-   warrant frontmatter contract, `okf:derived` two-zone fences, and drift
-   reporting on refresh. New siblings `taxonomy-scan.md` and
-   `page-warrant.md`; `okf-layout.md` gains `modules/` and `analyses/` as
-   *proposable*, never mandatory, directories. **Verify:** scaffold
-   against two fixtures — an analysis repo (`analysis/` dirs, no plotting
-   module) and a plain library repo — yields two different non-empty page
-   plans with zero empty ceremonial pages; `grep -rL "^purpose:"` over
-   the warranted scope — `OKF/*.md` plus `decisions/` — returns only
-   `index.md`; after moving a cited symbol, `okf-check` reports the
-   broken cite and refresh leaves every judgement zone byte-identical.
-   Shipped as 004 (cites + fences) then 005 (taxonomy scan).
-   ✅ verified 2026-07-22 (004, then 005 — two fixtures, two different
-   non-empty plans; scaffolded OKF passes okf-check, ROADMAP unwritten).
-7. **Why-register + ferry collapse** — `OKF/decisions/` indexed by
-   question with warrant frontmatter; moor gains the graduation and
-   collapse steps with the `sealed:` pin. **Verify:** every decision
-   reachable from `decisions/index.md`; moor a fixture ferry → directory
-   becomes one pinned page, decisions numbered, `jj show <change>`
-   resolves, a shape-broken pin fails `okf-check`. ✅ verified 2026-07-21
-   (blueprint 002) and 2026-07-22 (003; fixture moored by hand, okf-check
-   clean there and on OKF/, caps hold). Refresh's DRIFT rule is prose —
-   no runner, per 003's out-of-scope.
-8. **Rescan on refresh** — refresh proposes a plan delta (new / standing
-   / unwarranted) the user locks; removal per 018. **Verify:** 006's
-   fixture — a wholly derived unwarranted page goes, a judgement-bearing
-   one is superseded, a container proposes nothing. ✅ verified 2026-07-22.
+Phases 1–8 closed between 2026-07-19 and 2026-07-22 and left this page
+per [013](decisions/013-roadmap-is-a-plan.md): what they shipped is in
+[blueprints/](blueprints/) and [decisions/index.md](decisions/index.md),
+how each verified is in jj history. Numbers stay as issued —
+append-only.
 
-**Executed 7 → 6.** Numbers stay as issued — append-only.
+9. **sound — verified recon before lock** — new `skills/loop/sound/`: a
+   recon spine that reads the OKF, then the nostos MCP server when one is
+   configured, then confirms both against live code, because either can
+   have gone stale. A claim with no internal owner is followed to its
+   primary source; nothing else leaves the repo. Runs inline, never in a
+   subagent. **Reached by name** — by the user or by `blueprint` — it
+   refines the blueprint it sounds and stamps `sounded: <date>` in its
+   frontmatter; **self-fired it reports and writes nothing**, per 019.
+   Sounding becomes a precondition of lock, enforced by an `okf-check`
+   warning on a `locked` blueprint carrying no `sounded:`. The loop's
+   only model-invoked skill, per
+   [019](decisions/019-recon-may-self-fire.md). **Verify:** on a fixture
+   blueprint, `status: locked` without `sounded:` yields exactly one new
+   `okf-check` warning where `draft` and `implemented` yield none;
+   `okf-check OKF/` still reports 0 errors; a sound run in a repo with no
+   `OKF/` stops and names write-OKF, and one with no nostos MCP says so
+   once and continues; a self-fired run leaves the blueprint
+   byte-identical; and in a fresh session on a repo with no `OKF/`, ten
+   ordinary code questions fire sound zero times; caps hold.
 
 ## Risks & gotchas
 
-None open — 004's `path:symbol` cite shape spent phase 6's churn risk.
+- **A self-firing skill fires when nobody asked.** Believed: every loop
+  skill must be user-invoked. True: that holds for orchestrators and
+  rituals, which interrupt a person mid-ritual; recon only reads, so
+  [019](decisions/019-recon-may-self-fire.md) carves it out. The risk
+  moves to sound's triggers — vague ones make it fire on every question.
 
 ## Out of scope
 

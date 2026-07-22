@@ -30,3 +30,4 @@ Format: `NNN — <question it settles> — <verdict> — <status>`.
 - [016](016-one-okf-check-validator.md) — How is OKF conformance enforced? — `okf-check`, output pasted — live
 - [017](017-pin-drift-splits-by-visibility.md) — Why doesn't `okf-check` verify that a `sealed:` pin resolves? — it cannot see the repo; refresh owns resolution — live
 - [018](018-rescan-deletes-only-derived-pages.md) — What happens to a page a rescan no longer proposes? — deleted if wholly derived, else superseded — live
+- [019](019-recon-may-self-fire.md) — Which skills may fire without the user asking? — orchestrators never, read-only recon may — live

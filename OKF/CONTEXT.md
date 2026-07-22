@@ -82,6 +82,12 @@ The `sealed:` frontmatter on a moored ferry — jj change id, git hash,
 date — naming the **parent** commit where the dissolved D-n files still
 exist. Makes "recoverable from history" cashable. _Avoid_: ref, anchor.
 
+**Sounding**:
+The recon pass `sound` runs before a blueprint locks — the OKF, then the
+nostos MCP server when configured, then live code, which is what catches
+the first two going stale. Its mark is `sounded:` in the blueprint's
+frontmatter. _Avoid_: research, investigation, spike.
+
 **House cap**:
 110 lines per SKILL.md; topic-named siblings load on demand and carry
 no hard cap. _Avoid_: limit, budget.
