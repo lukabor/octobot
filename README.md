@@ -228,10 +228,6 @@ afternoon.
   `mocking-r.md`, `feedback-loops-r.md`, etc. Python equivalents
   (`tests-py.md`, `mocking-py.md`, `feedback-loops-py.md`) are
   acknowledged as missing in [`develop-python/SKILL.md`](skills/engineering/develop-python/SKILL.md).
-- **`write-readme-r`.** The R counterpart to `write-readme-py` (read
-  `DESCRIPTION` for packages and `_targets.R` + `index.qmd` for
-  analyses) is noted as out of scope in
-  [`write-readme-py/SKILL.md`](skills/engineering/write-readme-py/SKILL.md).
 
 ### Socratic spine (toward a harness)
 

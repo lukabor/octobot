@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: draft
+status: dropped
 traces-to: README.md §Roadmap ("write-readme-r" gap); write-readme-py/SKILL.md §Out of scope
 sounded: 2026-07-22
 ---
@@ -78,3 +78,31 @@ file carries.
   See-also line.
 - R README generation for non-scaffolded (arbitrary) R repos — generic
   `write-readme` keeps those.
+
+## Why dropped
+Failed all three sieves against its own Justification's bar — "must earn
+its place against that generic path, or fold into it".
+
+- **Real.** The need was self-asserted: `README.md` §Roadmap and
+  `write-readme-py/SKILL.md` §Out of scope, both written here. A "do it
+  properly" item must prove the current way *wrong*, not improvable. The
+  one genuinely wrong thing — a README telling an R reader to
+  `renv::restore()` on the host — was fixed in
+  `write-readme/REFERENCE.md:40-44` **without** this skill. That fix is
+  the disproof.
+- **Good.** Eight of the ten Contract bullets are already generic
+  behaviour: both R types detected (`write-readme/SKILL.md:24-25`),
+  fields extracted (`REFERENCE.md:22-46`), evidence-derived install,
+  justfile usage, refuse-to-invent, README guard, stop-on-diff, Saduko
+  two-column layout. The residue is a logo block and an Apache-aware
+  license block — neither R-shaped. A skill named for R would improve
+  one of four non-python ecosystems and open a fourth home for the
+  refuse-to-invent rules.
+- **Minimal.** A folder, a template, a symlink and seven seams, against
+  two substitutions in `readme.template.md` reusing the existing
+  `saduko-license-block.md`.
+
+The residue is real but **untriggered** — no repo has yet wanted a logo
+or the rich attribution block outside python. Folding it now would build
+the alternative on the same speculative footing this blueprint died of.
+This file is the record; when a repo asks, a new blueprint takes it.

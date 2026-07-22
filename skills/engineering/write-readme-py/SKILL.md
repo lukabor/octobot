@@ -69,9 +69,10 @@ disable-model-invocation: true
   attribution block for Apache 2.0; other licenses get the one-liner.
 
 ## Out of scope
-- R projects. The R counterpart (`write-readme-r`) is not yet written.
-  Reading `DESCRIPTION` for packages and `_targets.R` + `index.qmd` for
-  analyses is the planned interface.
+- R projects. Generic [`../write-readme/SKILL.md`](../write-readme/SKILL.md)
+  covers them — it detects `DESCRIPTION` (r-package) and `_targets.R`
+  (r-analysis) and reads their fields. No R counterpart to this skill is
+  planned.
 
 ## See also
 - [`saduko-license-block.md`](saduko-license-block.md) — the Apache 2.0
