@@ -59,3 +59,10 @@ status: live
   page, which the blueprint's arithmetic (184 − 58 − 16 = 110) did not
   budget — §Why had to be compressed as well. A page-cap plan must price
   the frontmatter it also mandates. Source: weave of blueprint 002.
+- Believed: the cite/pin split earns its own register entry, since 004
+  states it as prose only. True: the warrant is a duplicate —
+  `page-warrant.md:36` already answers who owns cite drift, and
+  [017](decisions/017-pin-drift-splits-by-visibility.md) supplies the
+  visibility principle it follows from. A decision that *extends* a live
+  one without changing it is that one applied, not a new one. Source:
+  warrant test, session 2026-07-22; 020 stays unspent.
