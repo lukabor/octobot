@@ -28,6 +28,7 @@ your task needs. Humans welcome too.
 - [004](blueprints/004-give-cites-teeth-and-fence-derived-zone.md) — give cites teeth and fence the derived zone — implemented
 - [005](blueprints/005-propose-the-page-plan-from-a-repo-scan.md) — propose the page plan from a repo scan — implemented
 - [006](blueprints/006-rescan-the-page-plan-on-refresh.md) — rescan the page plan on refresh — implemented
+- [007](blueprints/007-add-sound.md) — add sound, the recon that precedes a lock — locked
 
 ## Ferries
 
