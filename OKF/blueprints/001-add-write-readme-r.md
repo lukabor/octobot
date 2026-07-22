@@ -30,11 +30,12 @@ A skill `skills/engineering/write-readme-r/` that:
   sections, license block — Apache-aware rich block, one-liner
   otherwise).
 - **Derives the install block from the project, never from a default.**
-  Both R scaffolds run every recipe through `docker compose run --rm
-  dev` and ship no `renv.lock`, so `renv::restore()` is wrong for them;
-  `write-readme/REFERENCE.md:38` prescribing it is drift this blueprint
-  corrects rather than copies. Read the justfile and the presence of a
-  lockfile; no evidence → omit the section and say so.
+  Scaffolded R projects run through `docker compose`, and their
+  `renv::restore()` happens at image build
+  (`containerize-project/Dockerfile.r-*.tpl`), so a README telling a
+  reader to restore on the host is wrong — the entry point is
+  `just build-dev` → `just up`. Read the justfile, the Dockerfile and
+  the lockfile; no evidence → omit the section.
 - Refuses to invent: empty Description → ask; no fabricated deps,
   recipes, authors, or URLs. Omits sections lacking source data.
 - Guards an existing README.md (diff + explicit confirmation).
@@ -46,11 +47,10 @@ A skill `skills/engineering/write-readme-r/` that:
   symlink — discovery is one level deep.
 - `write-readme-py/SKILL.md:72` — the "not yet written" note, the only
   live instance of that string.
-- `write-readme/SKILL.md` §See also — one line; and `REFERENCE.md:38`,
-  whose `renv::restore()` default is wrong for scaffolded analyses.
-- `build-r-package/SKILL.md:42-43` — its suggestion fires "once it
-  exists", and its pointer to README *Out of scope* is already broken;
-  README has no such heading.
+- `write-readme/SKILL.md` §See also — one line. Its `REFERENCE.md`
+  install rule was corrected ahead of this blueprint; inherit it.
+- `build-r-package/SKILL.md:42-44` — its suggestion now points at
+  generic write-readme and at this blueprint; it becomes the R skill.
 - `build-r-analysis/SKILL.md` — mentions no README at all today; gains
   the suggestion its sibling already has.
 - `skills/loop/steer/SKILL.md` — one row, per its own closing rule.
@@ -75,6 +75,6 @@ file carries.
 ## Out of scope
 - Quarto rendering, pkgdown sites, badges.
 - Changes to write-readme-py, and to generic write-readme beyond the
-  See-also line and the `REFERENCE.md:38` install correction.
+  See-also line.
 - R README generation for non-scaffolded (arbitrary) R repos — generic
   `write-readme` keeps those.

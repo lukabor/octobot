@@ -39,8 +39,9 @@ disable-model-invocation: true
    > -e 'renv::init()'` to lock dependencies; then `just document` and
    > `just check`. Describe the change with
    > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
-5. **Suggest** `/write-readme-py`'s R counterpart once it exists (not
-   yet — see octobot/README.md *Out of scope*).
+5. **Suggest** [`/write-readme`](../../engineering/write-readme/SKILL.md),
+   which already covers r-package; its dedicated R counterpart is
+   blueprint 001, still a draft.
 
 ## Placeholders used by templates
 - `<package-name>` — R package name (validated above).

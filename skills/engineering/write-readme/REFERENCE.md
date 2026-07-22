@@ -35,8 +35,14 @@ header comment. Pipeline targets from `_targets.R`.
 
 ```
 ## Installation
-renv::restore()   # reproduce the recorded library
+just build-dev && just up   # renv::restore() runs in the image build
 ```
+Read the install path from evidence, never from a default: a `justfile`
+with Docker recipes means the container is the entry point (a
+`Dockerfile` restoring `renv.lock` does the library work). Bare
+`renv::restore()` is right only for a repo with a committed `renv.lock`
+and no container. Neither → omit the section.
+
 Usage = `targets::tar_make()` plus the `justfile` recipes that wrap it.
 
 ## node (`package.json`)
