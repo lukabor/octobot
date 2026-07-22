@@ -50,6 +50,12 @@ contract: [okf-layout.md](okf-layout.md).
 ## Refresh mode
 1. **Diff wiki against reality**: code and manifests on disk, `jj log`
    (or `git log`) since the last scribe commit, session learnings.
+   **Rescan the page plan** — `scripts/okf-scan <repo-root>`, sorted
+   against `index.md`'s `modules/`/`analyses/` lines into new / standing
+   / unwarranted, and locked by the user as at scaffold; nothing is added
+   or removed unasked. An unwarranted page is deleted only when wholly
+   derived, else superseded per step 3. Contract:
+   [taxonomy-scan.md](taxonomy-scan.md).
 2. **Smallest edit per delta** — never rewrite a page wholesale.
 3. **Supersede, don't delete**: outdated claims get struck with a
    pointer to the replacement, mirroring

@@ -25,7 +25,7 @@ behind that claim, and what it debunked: [LEARNINGS.md](LEARNINGS.md).
 
 ## Locked decisions
 
-17 live, in the why-register: [decisions/index.md](decisions/index.md).
+18 live, in the why-register: [decisions/index.md](decisions/index.md).
 Each line is the question its decision settles. Cite by number.
 
 ## Architecture
@@ -86,10 +86,12 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
    (blueprint 002) and 2026-07-22 (003; fixture moored by hand, okf-check
    clean there and on OKF/, caps hold). Refresh's DRIFT rule is prose —
    no runner, per 003's out-of-scope.
+8. **Rescan on refresh** — refresh proposes a plan delta (new / standing
+   / unwarranted) the user locks; removal per 018. **Verify:** 006's
+   fixture — a wholly derived unwarranted page goes, a judgement-bearing
+   one is superseded, a container proposes nothing. ✅ verified 2026-07-22.
 
-**Execution order: 7 → 6.** Phase 7 is small, closes the cap breach now,
-and makes octobot's own OKF *run* the register before phase 6 freezes it
-into a contract for other repos. Numbers stay as issued — append-only.
+**Executed 7 → 6.** Numbers stay as issued — append-only.
 
 ## Risks & gotchas
 

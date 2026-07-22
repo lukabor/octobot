@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: 005's Out of scope (rescan on refresh); ROADMAP.md phase 8, added by this change
 ---
 

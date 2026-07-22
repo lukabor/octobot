@@ -29,13 +29,21 @@ def directories(root):
         yield path
 
 
+def entries(directory):
+    """Files and directories inside, or none — a permission bit is not a plan."""
+    try:
+        return sorted(directory.iterdir())
+    except OSError:
+        return []
+
+
 def analysis_evidence(directory):
     """A directory holding a notebook, or one named analysis/analyses.
 
     The notebook wins as evidence when both hold — a file is the more
     concrete warrant.
     """
-    for entry in sorted(directory.iterdir()):
+    for entry in entries(directory):
         if entry.is_file() and entry.suffix in NOTEBOOKS:
             return entry
     return directory if directory.name in ("analysis", "analyses") else None
@@ -45,7 +53,7 @@ def module_evidence(directory, root):
     """A directory holding code, one level under the root or a source root."""
     if str(directory.relative_to(root).parent) not in (".", *SOURCE_ROOTS):
         return None
-    for entry in sorted(directory.iterdir()):
+    for entry in entries(directory):
         if entry.is_file() and entry.suffix in CODE:
             return entry
     return None
@@ -60,7 +68,7 @@ def main(argv):
         print(f"not a directory: {root}", file=sys.stderr)
         return 2
 
-    plan = {}
+    plan, containers, warranted = {}, {}, []
     for directory in directories(root):
         evidence, page = analysis_evidence(directory), "analyses"
         if evidence is None:
@@ -70,8 +78,18 @@ def main(argv):
         page = f"{page}/{directory.name}.md"
         if page in plan:
             continue
+        # Matched by name alone: a container, warranted only until a
+        # member speaks for itself.
+        if evidence is directory:
+            containers[page] = directory
+        else:
+            warranted.append(directory)
         rel = evidence.relative_to(root)
         plan[page] = f"{rel}/" if evidence.is_dir() else str(rel)
+
+    for page, container in containers.items():
+        if any(container in member.parents for member in warranted):
+            del plan[page]
 
     for page in sorted(plan):
         print(f"{page} — {plan[page]}")
