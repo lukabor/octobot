@@ -63,7 +63,9 @@ append-only.
    `implemented: 0`, `okf-check OKF/` clean, caps hold; session checks 1
    and 4 in a no-OKF fixture: zero self-fires over ten ordinary code
    questions, and `/sound` stopped at one line naming `/write-OKF` after
-   a single directory listing). Checks 2 and 3 ride the next sounding.
+   a single directory listing; check 2 discharged by the 001 sounding —
+   no nostos MCP, one line, run continued).
+   Check 3 alone must ride the next sounding.
 
 ## Risks & gotchas
 
