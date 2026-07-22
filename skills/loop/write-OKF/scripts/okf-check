@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 CAP = 110
+LINE_SUFFIX = re.compile(r"\d+(-\d+)?")
 
 
 def frontmatter(text):
@@ -94,14 +95,14 @@ def cite_resolves(cite, page, okf):
     """`path` and `path:line` need the path; `path:symbol` needs both.
 
     The symbol is matched as a literal substring — no language awareness,
-    no tags file. A `:suffix` that parses as an integer is a reading aid,
-    never validated: a check that cannot fail is not a check.
+    no tags file. A `:suffix` that is a line number or a line range is a
+    reading aid, never validated: a check that cannot fail is not a check.
     """
     path, _, symbol = cite.split("#")[0].partition(":")
     path, symbol = path.strip(), symbol.strip()
     if not path:
         return False
-    if symbol.isdigit():
+    if LINE_SUFFIX.fullmatch(symbol):
         symbol = ""
     for root in (page.parent, okf, okf.parent):
         target = root / path

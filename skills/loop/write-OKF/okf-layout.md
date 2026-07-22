@@ -47,7 +47,8 @@ loop, not on disk.
   `path:symbol`; all three resolve only if the path exists. `path:symbol`
   additionally needs the symbol as a literal substring of the file — that
   is the shape that breaks when the thing it cites moves. A `path:line`
-  number is a reading aid, never validated.
+  suffix — one number or a `92-97` range — is a reading aid, never
+  validated.
 - **Derived zone** — a page carries at most one region delimited by
   `<!-- okf:derived begin -->` and `<!-- okf:derived end -->`, each marker
   alone on its line. Refresh regenerates the inside wholesale and may not
