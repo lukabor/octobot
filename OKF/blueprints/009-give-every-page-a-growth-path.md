@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: draft
+status: implemented
 traces-to: user request 2026-07-24
 ---
 

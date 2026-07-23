@@ -23,7 +23,8 @@ OKF/
 │                     #   moored: <topic>.md, pinned with sealed:
 ├── modules/          # proposable, never mandatory: <name>.md per code
 ├── analyses/         #   directory / analysis directory a scan found
-└── LEARNINGS.md      # debunked claims, gotchas — append-only, sourced
+└── LEARNINGS.md      # debunked claims, gotchas — append-only, sourced;
+                      #   splits into learnings/<theme>.md at the cap
 ```
 
 The spine above is a diagram, not a required page set — `okf-check`
@@ -57,7 +58,7 @@ loop, not on disk.
   first, at most one pair — never its content.
 - Conformance check: `scripts/okf-check <okf-dir>` — reach for it from
   this skill's own base directory, never a repo-relative path. Exit 1 on
-  any error; over-cap pages and pages with no `cites` are warnings.
+  any error; pages with no `cites` are warnings.
 
 ## Page contracts (one line each in index.md)
 
@@ -67,11 +68,18 @@ loop, not on disk.
   reading. The cold-start page.
 - **ARCHITECTURE.md** — module map with seams; every claim cites a file
   path. Uses design-codebase vocabulary (module, interface, seam, adapter).
+  At the cap it **sheds**, keeping the map, seams and flows and moving
+  per-module prose into the `modules/`/`analyses/` pages that repo's scan
+  proposed — outside their derived fences, which refresh regenerates.
 - **CONTEXT.md** — glossary per model-domain's CONTEXT-FORMAT.md.
   **One canonical glossary per bounded context — never per issue.**
-  Issue-local terms live in their blueprint until they recur.
+  Issue-local terms live in their blueprint until they recur. Splits into
+  `context/<subroot>.md` only when multi-context; over the cap in a
+  single-context repo is that rule already broken.
 - **ROADMAP.md** — architect's skeleton (locked decisions, phases with
-  verify steps, risks, out-of-scope).
+  verify steps, risks, out-of-scope). At the cap it **prunes**, never
+  splits: a discharged phase collapses to one line naming what shipped
+  and its blueprint numbers, which hold the detail.
 - **decisions/** — the why-register: one file per settled decision,
   permanent numbers, format in
   [model-domain/DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md).
@@ -93,13 +101,22 @@ loop, not on disk.
   collapse — fields and drift rule in
   [page-warrant.md](page-warrant.md).
 - **LEARNINGS.md** — what was believed / what is true / source. Never
-  edited retroactively, only appended or superseded.
+  edited retroactively, only appended or superseded. At the cap it splits
+  into `learnings/<theme>.md` and becomes their index; both contracts hold
+  per page, and supersession then works **across** pages —
+  [split-page.md](split-page.md).
 
 ## Rules
 
 - Durable knowledge only — no session state, no high-frequency logs
   (that's [write-handoff](../../productivity/write-handoff/SKILL.md) territory).
 - One fact, one home; cross-link with relative paths.
-- Every page ≤110 lines; grow by splitting + indexing, not by scrolling.
+- Every page ≤110 lines, a blueprint ≤150; grow by splitting + indexing,
+  not by scrolling. Over cap is an **error**, not a warning, because every
+  kind above has a move at cap+1 — [split-page.md](split-page.md).
+- A growth-path directory is created **lazily** — when the cap forces it,
+  never scaffolded empty at init.
 - Blueprints may grow from `NNN-<slug>.md` into `NNN-<slug>/` directories
-  (blueprint.md + notes) — the glossary never moves in there.
+  (blueprint.md + notes) — the glossary never moves in there. Over 150
+  lines reads as **scope** first: two blueprints, or a
+  [ferry](../ferry/SKILL.md).

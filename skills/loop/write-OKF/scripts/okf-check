@@ -3,9 +3,9 @@
 
 Errors (exit 1): missing type, missing warrant, duplicate answer,
 unresolvable cite, malformed `okf:derived` fence, page unreachable from
-index.md, register index line disagreeing with its decision file, moored
-ferry with a malformed `sealed:` pin or a surviving directory. Warnings
-(exit 0): page over the 110-line cap, page with no cites, blueprint
+index.md, page over its line cap, register index line disagreeing with
+its decision file, moored ferry with a malformed `sealed:` pin or a
+surviving directory. Warnings (exit 0): page with no cites, blueprint
 locked without a `sounded:` stamp.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 CAP = 110
+BLUEPRINT_CAP = 150
 LINE_SUFFIX = re.compile(r"\d+(-\d+)?")
 
 
@@ -207,8 +208,11 @@ def main(argv):
             continue
         if not fields.get("type"):
             errors.append(f"{rel}: missing type:")
-        if len(text.splitlines()) > CAP:
-            warnings.append(f"{rel}: over the {CAP}-line cap")
+        # Every page kind has a growth path at cap+1, so the cap is an
+        # error: a legal move always exists. See split-page.md.
+        cap = BLUEPRINT_CAP if "blueprints" in rel.parts else CAP
+        if len(text.splitlines()) > cap:
+            errors.append(f"{rel}: over the {cap}-line cap")
 
         # Sounding is a precondition of lock. Only at `locked`: `draft` is
         # not-yet-sounded, and `implemented` would retro-flag 002-006.

@@ -56,7 +56,8 @@ contract: [okf-layout.md](okf-layout.md).
    or removed unasked. An unwarranted page is deleted only when wholly
    derived, else superseded per step 3. Contract:
    [taxonomy-scan.md](taxonomy-scan.md).
-2. **Smallest edit per delta** — never rewrite a page wholesale.
+2. **Smallest edit per delta** — never rewrite a page wholesale; a page
+   over its cap splits per [split-page.md](split-page.md), alone.
 3. **Supersede, don't delete**: outdated claims get struck with a
    pointer to the replacement, mirroring
    [architect/revise.md](../architect/revise.md) discipline.
@@ -99,7 +100,7 @@ contract: [okf-layout.md](okf-layout.md).
   cross-link the rest.
 - **Never** write raw logs, transcripts, or scratch into OKF — durable
   synthesis only.
-- **Never** exceed 110 lines per page — split and index instead.
+- **Never** exceed a page's cap — split per [split-page.md](split-page.md).
 - **Never** move legacy files without explicit consent.
 
 ## See also
