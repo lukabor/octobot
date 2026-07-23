@@ -66,3 +66,10 @@ status: live
   visibility principle it follows from. A decision that *extends* a live
   one without changing it is that one applied, not a new one. Source:
   warrant test, session 2026-07-22; 020 stays unspent.
+- Believed: a confirm-against-the-code step is what catches a stale
+  index, so it must run for every claim. True: an index that returns
+  **source** rather than metadata makes that step a re-read of bytes
+  already in hand — its value survives only at the gaps where the index
+  cannot answer (nothing indexed, and the working copy). A verification
+  step earns its cost only where the step before it is blind. Source:
+  weave of blueprint 008.

@@ -59,7 +59,7 @@ write-OKF → architect → blueprint → ferry → weave → review+verify → 
 - **blueprint** — synthesize discussed work into a justified, verifiable
   blueprint at `OKF/blueprints/NNN-<slug>.md` (status: draft → locked → implemented).
 - **sound** — verified recon before a lock: OKF, then the nostos MCP
-  server when configured, then live code; stamps `sounded:`.
+  server, then files only where nostos cannot answer; stamps `sounded:`.
 - **ferry** — work too big for one session becomes a directory of small,
   edge-declared decision files; resolve one per sitting.
 - **weave** — execute one locked blueprint: bdd at its seams, four-axis

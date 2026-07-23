@@ -29,7 +29,7 @@ your task needs. Humans welcome too.
 - [005](blueprints/005-propose-the-page-plan-from-a-repo-scan.md) — propose the page plan from a repo scan — implemented
 - [006](blueprints/006-rescan-the-page-plan-on-refresh.md) — rescan the page plan on refresh — implemented
 - [007](blueprints/007-add-sound.md) — add sound, the recon that precedes a lock — implemented
-- [008](blueprints/008-make-nostos-primary-and-files-the-fallback.md) — make nostos primary and file reads the fallback — locked
+- [008](blueprints/008-make-nostos-primary-and-files-the-fallback.md) — make nostos primary and file reads the fallback — implemented
 
 ## Ferries
 

@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: user request 2026-07-23
 sounded: 2026-07-23
 ---

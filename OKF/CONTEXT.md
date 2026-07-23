@@ -84,9 +84,9 @@ exist. Makes "recoverable from history" cashable. _Avoid_: ref, anchor.
 
 **Sounding**:
 The recon pass `sound` runs before a blueprint locks — the OKF, then the
-nostos MCP server when configured, then live code, which is what catches
-the first two going stale. Its mark is `sounded:` in the blueprint's
-frontmatter. _Avoid_: research, investigation, spike.
+nostos MCP server, then a file read only where nostos cannot answer: an
+empty result, or a path with uncommitted changes. Its mark is `sounded:`
+in the blueprint's frontmatter. _Avoid_: research, investigation, spike.
 
 **House cap**:
 110 lines per SKILL.md; topic-named siblings load on demand and carry
