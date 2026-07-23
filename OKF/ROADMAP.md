@@ -25,7 +25,7 @@ behind that claim, and what it debunked: [LEARNINGS.md](LEARNINGS.md).
 
 ## Locked decisions
 
-19 live, in the why-register: [decisions/index.md](decisions/index.md).
+20 live, in the why-register: [decisions/index.md](decisions/index.md).
 Each line is the question its decision settles. Cite by number.
 
 ## Architecture

@@ -18,7 +18,7 @@ your task needs. Humans welcome too.
 ## Decisions
 
 - [decisions/index.md](decisions/index.md) — the why-register, indexed by
-  the question each decision settles. 19 live.
+  the question each decision settles. 20 live.
 
 ## Blueprints
 
