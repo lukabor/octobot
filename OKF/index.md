@@ -34,6 +34,7 @@ your task needs. Humans welcome too.
 - [010](blueprints/010-add-muster-the-human-review-gate.md) — add muster, the opt-in human review gate on the loop's close — superseded-by-011
 - [011](blueprints/011-add-blueprint-level-muster.md) — add blueprint-level muster, the opt-in human review gate in weave — implemented
 - [012](blueprints/012-add-ferry-level-muster.md) — add ferry-level muster, the human review gate at moor — implemented
+- [013](blueprints/013-split-moor-into-skill-and-reference.md) — split moor into SKILL.md + REFERENCE.md to hold the line cap — locked
 
 ## Ferries
 
