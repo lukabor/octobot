@@ -48,29 +48,16 @@ the wiki so the next cold-start agent reads reality, not history.
    - relative dates → ISO 8601; dead cross-links fixed.
 5. **GRADUATE** — every resolved `D-<n>` that passes model-domain's
    warrant test becomes `decisions/NNN-<slug>.md` at the next free
-   number, carrying the frontmatter of
-   [DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md)
-   plus a question-shaped `decisions/index.md` line. The `Resolution`
-   body moves **verbatim** — one home, never two copies; `Options` and
-   `Why it must be decided` stay behind for step 6. `blocked-by` edges
-   drop; the register is not a dependency graph. A resolution that
-   fails the warrant test graduates nowhere and stays in the collapsed
-   page — graduation is the default, not an obligation.
+   number, plus a question-shaped `decisions/index.md` line; a
+   resolution that fails the test graduates nowhere and stays in the
+   collapsed page. Frontmatter, the verbatim `Resolution` move, and the
+   `blocked-by` drop: [REFERENCE.md](REFERENCE.md#graduate).
 6. **COLLAPSE** — `ferries/<topic>/` becomes `ferries/<topic>.md`:
-   problem shape, rejected alternatives, pointers to the numbers that
-   graduated. The page opens `type: Ferry Map`, then the pin — read off
-   `@-`, because the sealing commit cannot name itself and the parent is
-   where the `D-<n>` files still exist
-   (`jj log -r @- --no-graph -T 'change_id ++ " " ++ commit_id'`):
-   ```yaml
-   sealed:
-     change: <jj change id>
-     commit: <git hash>
-     date: <ISO date>
-   ```
-   A ferry that mustered (step 3) also carries `review-base: <changeid>`
-   here. Then remove the directory — history is the archive, the pin the
-   way back in.
+   problem shape, rejected alternatives, pointers to the graduated
+   numbers. Opens `type: Ferry Map`, then the `sealed:` pin (and
+   `review-base:` if it mustered), read off `@-` — the pin block and its
+   `jj log` template: [REFERENCE.md](REFERENCE.md#collapse). Then remove
+   the directory — history is the archive, the pin the way back in.
 7. **PRUNE + INDEX** — sweep the arrived ferry for unextracted
    follow-ups; every open thread gets a home + backlink:
    - small and implementable → new blueprint `NNN-<slug>.md` with
