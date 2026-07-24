@@ -31,7 +31,9 @@ your task needs. Humans welcome too.
 - [007](blueprints/007-add-sound.md) — add sound, the recon that precedes a lock — implemented
 - [008](blueprints/008-make-nostos-primary-and-files-the-fallback.md) — make nostos primary and file reads the fallback — implemented
 - [009](blueprints/009-give-every-page-a-growth-path.md) — give every page a growth path so the line cap can be enforced — implemented
-- [010](blueprints/010-add-muster-the-human-review-gate.md) — add muster, the opt-in human review gate on the loop's close — locked
+- [010](blueprints/010-add-muster-the-human-review-gate.md) — add muster, the opt-in human review gate on the loop's close — superseded-by-011
+- [011](blueprints/011-add-blueprint-level-muster.md) — add blueprint-level muster, the opt-in human review gate in weave — implemented
+- [012](blueprints/012-add-ferry-level-muster.md) — add ferry-level muster, the human review gate at moor — draft
 
 ## Ferries
 

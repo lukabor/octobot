@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: superseded-by-011
 traces-to: user request 2026-07-24
 sounded: 2026-07-24
 ---
@@ -8,6 +8,13 @@ sounded: 2026-07-24
 # 010 — add muster, the opt-in human review gate on the loop's close
 
 ## Justification
+
+**Superseded 2026-07-24 — split per growth-doctrine
+[020](../decisions/020-every-page-has-a-growth-path.md): the blueprint-level
+gate ships as [011](011-add-blueprint-level-muster.md) (implemented); the
+ferry-level gate — which needs the `ferry` skill as a seam this blueprint
+never declared — becomes [012](012-add-ferry-level-muster.md). The
+justification and sounding below stand for both.**
 
 The loop reviews before it seals — [review-angles](../../engineering/review-angles/SKILL.md),
 [review-blueprint](../../engineering/review-blueprint/SKILL.md),
