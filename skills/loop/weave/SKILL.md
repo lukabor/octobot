@@ -23,7 +23,9 @@ superpowers' subagent-driven-development, jj-native.
 ## Process
 1. **Frame** — restate the blueprint's Contract section in one sentence; list its
    Seams touched as the pre-agreed test surfaces. Mismatch with what you
-   find on disk → stop, surface it (blueprint may need superseding).
+   find on disk → stop, surface it (blueprint may need superseding). If the
+   blueprint carries `muster: true`, record `review-base:` on it now — `@-`
+   (jj) or `git rev-parse HEAD` (git), the parent of where Build begins.
 2. **Build** — hand to [bdd](../../engineering/bdd/SKILL.md): scenarios
    from the Contract section, tests only at the listed seams, red→green one
    scenario at a time.
@@ -39,7 +41,14 @@ superpowers' subagent-driven-development, jj-native.
 5. **Seal** — [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md); the
    message body cites `blueprint NNN`. Fix + regression test in the same
    change.
-6. **Close the loop** — flip blueprint status to `implemented`; update its
+6. **Muster (only if `muster: true`)** — halt before closing: pipe the whole
+   change to hunk — `jj diff --from <review-base> --to @ --git | hunk patch -`
+   (git: `git diff <review-base>..HEAD | hunk patch -`; no hunk → show the
+   range raw). Record the `tally:` block on the blueprint
+   ([blueprint-format.md](../blueprint/blueprint-format.md)). `matches: no` →
+   stay halted for a fix + re-muster; never flip on a known miss. No
+   `muster:` field → skip entirely.
+7. **Close the loop** — flip blueprint status to `implemented`; update its
    index.md line; tick the roadmap item via
    [architect](../architect/SKILL.md) revise mode; wiki-worthy learnings
    → `OKF/LEARNINGS.md` ([write-OKF](../write-OKF/SKILL.md) refresh if

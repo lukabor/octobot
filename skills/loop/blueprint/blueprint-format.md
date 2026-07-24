@@ -6,6 +6,12 @@ type: Blueprint
 status: draft | locked | implemented | superseded-by-NNN
 traces-to: ROADMAP.md phase N | ferries/<topic>/D-<n> | user request <date>
 sounded: YYYY-MM-DD
+muster: true              # optional — opt into the human review gate
+review-base: <changeid>   # set when muster is on: parent of where weave begins
+tally:                    # recorded at the muster halt; required to reach implemented
+  intent: <what the change was meant to do>
+  matches: yes | no
+  note: <optional>
 ---
 
 # NNN — <imperative title, completes "this change will…">
@@ -44,6 +50,10 @@ up in the diff.>
   [sieve](../../engineering/sieve/SKILL.md)'s Real test by definition.
 - `sounded:` is the date [sound](../sound/SKILL.md) verified what the
   blueprint rests on; absent until then, and required to lock.
+- `muster: true` (optional) opts into the human review gate: weave halts
+  after the seal, shows the whole `review-base..@` diff in hunk, and records
+  a `tally:` block. `okf-check` errors on a `muster` blueprint reaching
+  `implemented` without one. Absent → weave runs unchanged.
 - Locked blueprint's Contract/Verify sections are immutable — supersede, don't
   edit. Justification may gain references; status may advance.
 - A blueprint grows into `NNN-<slug>/` (blueprint.md + notes) when one file won't

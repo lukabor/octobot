@@ -88,7 +88,9 @@ loop, not on disk.
   lists the register, not its members.
 - **blueprints/** — blueprint output; status lives in frontmatter, so the
   "tracker" is `grep -r "^status:" OKF/blueprints/`. index.md lists one
-  line per blueprint: `NNN — title — status`.
+  line per blueprint: `NNN — title — status`. A blueprint may opt into the
+  human review gate with `muster: true` (+ `review-base:`, and a `tally:`
+  block once mustered); `okf-check` requires the tally at `implemented`.
 - **ferries/** — **directory means open, file means moored.** An open
   ferry is `<topic>/` with MAP.md as its per-ferry index; index.md lists
   `<topic> — n/m resolved → MAP.md` and never its decisions (single

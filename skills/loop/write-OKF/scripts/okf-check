@@ -135,6 +135,17 @@ def pin(text):
     return dict(re.findall(r"([a-z]+):\s*(\S+)", block.group(1))) if block else {}
 
 
+def tally(text):
+    """Fields of `tally:`, muster's verdict block — parsed like `pin`.
+
+    The generic frontmatter parser flattens a nested block to an empty
+    list, so a dedicated grab is the only way to see it.
+    """
+    head = text.partition("\n---")[0] if text.startswith("---\n") else ""
+    block = re.search(r"^tally:\n((?:[ \t]+.*\n?)+)", head, re.M)
+    return dict(re.findall(r"([a-z]+):\s*(\S+)", block.group(1))) if block else {}
+
+
 def check_ferries(okf, errors):
     """A page directly under ferries/ is a moored ferry: pinned, collapsed."""
     ferries = okf / "ferries"
@@ -219,6 +230,15 @@ def main(argv):
         if ("blueprints" in rel.parts and fields.get("status") == "locked"
                 and not fields.get("sounded")):
             warnings.append(f"{rel}: locked without sounded:")
+
+        # muster is opt-in: a blueprint carrying `muster: true` may not
+        # reach `implemented` without its `tally:` — the human verdict the
+        # gate exists to force. Blueprints without the field are untouched.
+        if ("blueprints" in rel.parts
+                and str(fields.get("muster", "")).lower() == "true"
+                and fields.get("status") == "implemented"
+                and not tally(text)):
+            errors.append(f"{rel}: muster: true, implemented without tally:")
 
         # The warrant contract covers durable synthesis pages; blueprints
         # and ferries carry their own frontmatter contracts.
