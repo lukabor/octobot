@@ -79,3 +79,10 @@ status: live
   match neither its list nor its scalar branch — so a block check needs a
   dedicated regex grab, the way `pin()` handles `sealed:`. Source: weave of
   blueprint 011.
+- Believed: a mandated new process step drops into a skill's leftover
+  headroom under the ≤110-line cap. True: `moor` sat at 106 (4 spare), but
+  the ferry-muster step is irreducibly ~10 lines — two VCS command examples
+  carry it — so 012 lands `moor` at 115; the step cannot be absorbed without
+  a SKILL/REFERENCE split, which exceeds the blueprint's two declared seams.
+  A blueprint adding a step to a near-cap skill must price the split into its
+  scope. Source: weave of blueprint 012.

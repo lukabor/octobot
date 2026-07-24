@@ -94,14 +94,18 @@ loop, not on disk.
 - **ferries/** — **directory means open, file means moored.** An open
   ferry is `<topic>/` with MAP.md as its per-ferry index; index.md lists
   `<topic> — n/m resolved → MAP.md` and never its decisions (single
-  source: MAP.md). [moor](../moor/SKILL.md) graduates the resolved
+  source: MAP.md). A multi-blueprint MAP may opt into moor's human review
+  gate with `muster: true`; moor derives `review-base` (parent of the
+  earliest commit citing a ferry blueprint) and persists it on the
+  collapsed page — prose-enforced in [moor](../moor/SKILL.md), never
+  `okf-check`. [moor](../moor/SKILL.md) graduates the resolved
   decisions into `decisions/` and collapses the directory into
   `<topic>.md` — problem shape, rejected alternatives, graduated
   numbers — indexed `<topic> — moored <date> → <topic>.md`. The two
   shapes may never coexist. A moored page carries `sealed:` after its
-  `type`, pinning the deliberation it dropped to the commit *before* the
-  collapse — fields and drift rule in
-  [page-warrant.md](page-warrant.md).
+  `type` (plus `review-base:` when the ferry mustered), pinning the
+  deliberation it dropped to the commit *before* the collapse — fields
+  and drift rule in [page-warrant.md](page-warrant.md).
 - **LEARNINGS.md** — what was believed / what is true / source. Never
   edited retroactively, only appended or superseded. At the cap it splits
   into `learnings/<theme>.md` and becomes their index; both contracts hold
