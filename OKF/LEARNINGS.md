@@ -73,3 +73,9 @@ status: live
   cannot answer (nothing indexed, and the working copy). A verification
   step earns its cost only where the step before it is blind. Source:
   weave of blueprint 008.
+- Believed: `okf-check` can read a new nested frontmatter block (like
+  `tally:`) through its generic `frontmatter()` parser. True: that parser
+  flattens a nested block to an empty list — its indented `key: value` lines
+  match neither its list nor its scalar branch — so a block check needs a
+  dedicated regex grab, the way `pin()` handles `sealed:`. Source: weave of
+  blueprint 011.
