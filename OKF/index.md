@@ -37,6 +37,8 @@ your task needs. Humans welcome too.
 - [013](blueprints/013-split-moor-into-skill-and-reference.md) — split moor into SKILL.md + REFERENCE.md to hold the line cap — implemented
 - [014](blueprints/014-unify-skill-sibling-file-naming.md) — unify skill sibling-file naming on lowercase-kebab topic names — implemented
 - [015](blueprints/015-record-session-check-discharges-on-the-blueprint.md) — record session-check discharges on the blueprint — implemented
+- [016](blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md) — pull two skills under the line cap and level the commit twins — locked
+
 ## Ferries
 
 Open ferries link their `MAP.md`; moored ones link the collapsed page
