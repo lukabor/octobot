@@ -6,6 +6,8 @@ type: Blueprint
 status: draft | locked | implemented | superseded-by-NNN
 traces-to: ROADMAP.md phase N | ferries/<topic>/D-<n> | user request <date>
 sounded: YYYY-MM-DD
+cites:                    # optional — what the blueprint rests on
+  - path | path:line | path:symbol
 muster: true              # optional — opt into the human review gate
 review-base: <changeid>   # set when muster is on: parent of where weave begins
 tally:                    # recorded at the muster halt; required to reach implemented
@@ -50,6 +52,11 @@ up in the diff.>
   [sieve](../../engineering/sieve/SKILL.md)'s Real test by definition.
 - `sounded:` is the date [sound](../sound/SKILL.md) verified what the
   blueprint rests on; absent until then, and required to lock.
+- `cites:` (optional) pins what the blueprint rests on — one entry per
+  line, grammar owned by
+  [write-OKF/okf-layout.md](../write-OKF/okf-layout.md) §Conformance, not
+  restated here. Optional because a blueprint may rest on nothing on disk:
+  B-015 carries none.
 - `muster: true` (optional) opts into the human review gate: weave halts
   after the seal, shows the whole `review-base..@` diff in hunk, and records
   a `tally:` block. `okf-check` errors on a `muster` blueprint reaching
