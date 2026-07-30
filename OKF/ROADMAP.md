@@ -21,7 +21,8 @@ Octobot's slot: a file-based loop over OKF (open-knowledge-format),
 jj-native. mattpocock/skills has the blueprint pipeline but no substrate;
 obra/superpowers has subagent execution but no persistent wiki; neither
 carries the R/Py scaffolds or the debloat/review axes. The prior-art scan
-behind that claim, and what it debunked: [LEARNINGS.md](LEARNINGS.md).
+behind that claim, and what it debunked:
+[learnings/index.md](learnings/index.md).
 
 ## Locked decisions
 

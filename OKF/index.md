@@ -13,7 +13,8 @@ your task needs. Humans welcome too.
 - [ARCHITECTURE.md](ARCHITECTURE.md) — skill categories, seams, the loop.
 - [CONTEXT.md](CONTEXT.md) — canonical domain glossary.
 - [ROADMAP.md](ROADMAP.md) — metaharness build-out, phased with verify steps.
-- [LEARNINGS.md](LEARNINGS.md) — gotchas and debunked claims.
+- [learnings/index.md](learnings/index.md) — gotchas and debunked claims,
+  by the layer each forces to change.
 
 ## Decisions
 

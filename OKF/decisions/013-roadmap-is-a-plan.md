@@ -5,7 +5,7 @@ answers:
   - "What may ROADMAP.md hold?"
 cites:
   - OKF/ROADMAP.md
-  - OKF/LEARNINGS.md
+  - OKF/learnings/index.md
 status: live
 reversible: yes — fold the registers back in
 ---
