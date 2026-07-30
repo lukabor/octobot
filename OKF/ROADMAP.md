@@ -81,8 +81,17 @@ indexed in [index.md](index.md).
   Believed: [020](decisions/020-every-page-has-a-growth-path.md)'s prune
   keeps this page a plan. True: the prune triggers at cap+1, and the page
   sat at 83 of 110 — so phase 9 kept a 20-line body while 013, 020 and
-  021 each required one line. The trigger belongs on `✅ verified`, and
-  nothing validates it yet (this session).
+  021 each required one line. The trigger belongs on `✅ verified`; still
+  unvalidated, and owed a lint.
+- **A live decision can be contradicted by the skill that owns the file,
+  and by the validator that checks it.** Believed: `020`'s prune-to-one-
+  line settles what a discharged phase keeps. True: it does, but
+  [architect](../skills/loop/architect/SKILL.md) still tells its own
+  revision loop to keep the verify line and mark the tick *on* it
+  (`SKILL.md:36`, `:54`, `revise.md:15`); and `okf-check:245` skips
+  `blueprints`/`ferries` before its cite loop, so no blueprint's cites
+  are checked at all. Neither drift had anything to catch it. Source:
+  sounding blueprint 019, 2026-07-30.
 
 ## Out of scope
 
