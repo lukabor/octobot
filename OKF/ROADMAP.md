@@ -58,17 +58,8 @@ indexed in [index.md](index.md).
     decision, or NO with its reason — and `grep -rn '\bADR\b' skills/
     OKF/` returns only the trigger-alias uses `CONTEXT.md` preserves.
 
-11. **the loop's shape stops being a hand-copied string** — the spine is
-    written out in six sites in three divergent forms, and a flat string
-    cannot state cadence: write-OKF fires on drift, a request routes
-    through architect, `moor` closes only a ferry-traced chain.
-    [ARCHITECTURE.md](ARCHITECTURE.md) flow 1 becomes the single owner
-    of the shape, `CONTEXT.md`'s entry points at it, and `steer` renders
-    the routing fork instead of a list — paired with a lint so the
-    copies cannot diverge again. **Verify:** every site rendering the
-    spine either matches the declared rendering byte-for-byte or is a
-    pointer to flow 1, checked by script; `okf-check OKF/` 0 errors;
-    caps hold.
+11. **the loop's shape stops being a hand-copied string** — ✅ verified
+    2026-07-30, [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md).
 
 ## Risks & gotchas
 

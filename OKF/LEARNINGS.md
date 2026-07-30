@@ -103,3 +103,8 @@ status: live
   **target** exists (does `### 6` resolve?), not pattern-match the citing
   text, and must range over every file that cites, not only the ones being
   edited. Source: weave of blueprint 016.
+- Believed: a blueprint whose Contract fixes a byte-exact artifact keeps
+  room for its own defects. True: 018 crossed the 150-line cap five times
+  in drafting — every fix prose, never the artifact — and then had no room
+  to absorb the false-green in its own Verify; 019 carries it. Price the
+  cap before writing the artifact in. Source: weave of blueprint 019.

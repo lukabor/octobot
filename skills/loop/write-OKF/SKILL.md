@@ -80,9 +80,9 @@ contract: [okf-layout.md](okf-layout.md).
    judgement.
 
 ## Output / done criteria
-- **`scripts/okf-check <okf-dir>` run and its output pasted**, exiting 0.
-  Invoke it by this skill's own base directory — `skills/loop/...`
-  resolves only inside octobot. A claim of conformance is not a gate.
+- **`scripts/okf-check <okf-dir>` and `scripts/render-check <repo-root>`
+  run and output pasted**, exiting 0 — invoke by this skill's own base
+  directory, `skills/loop/...` being octobot-only. Claims are not gates.
 - `OKF/` matches [okf-layout.md](okf-layout.md) including its
   conformance block; `index.md` links every page that exists.
 - `AGENTS.md` carries the hook block.

@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+"""Validate the rendered loop shape. Usage: render-check <repo-root>
+
+Errors (exit 1): the owner page carrying no loop block or more than one,
+a render site diverging from the owner, the retired flat form surviving.
+Nothing warns yet; the tally keeps the siblings' shape.
+
+`OKF/ARCHITECTURE.md` flow 1 is the sole owner of the shape; every other
+site is a byte-copy of it or a pointer to it, and a pointer is legal. A
+missing owner block is an error rather than a silent pass because a check
+that cannot fail is not a check: comparing two copies against a vacuum
+matches them both.
+
+`OKF/blueprints/` is skipped. A locked blueprint's Contract is immutable,
+so a rule that could turn one red would be unfixable by design, and
+blueprints quote retired forms as record.
+"""
+import sys
+from pathlib import Path
+
+OWNER = "OKF/ARCHITECTURE.md"
+SENTINEL = "substrate (rare)  write-OKF — scaffold, or refresh when stale"
+RETIRED = "architect → blueprint"
+SKIP = ("OKF/blueprints/",)
+
+
+def render_sites(text):
+    """Fenced blocks opening on the sentinel, as (line number, lines).
+
+    The line number is the fence's, 1-based, so an error reads as a cite.
+    """
+    sites, start, block = [], 0, None
+    for number, line in enumerate(text.splitlines(), 1):
+        if line.startswith("```"):
+            if block is None:
+                start, block = number, []
+            else:
+                if block and block[0].rstrip() == SENTINEL:
+                    sites.append((start, block))
+                block = None
+        elif block is not None:
+            block.append(line)
+    return sites
+
+
+def diverges(site, canon):
+    """First 1-based line at which a copy departs from the owner.
+
+    Trailing whitespace is stripped per line and nothing else is
+    normalised: the block is box-drawing art whose column positions carry
+    the fork, so a reflowed copy is a broken diagram, not a variant.
+    """
+    site = [line.rstrip() for line in site]
+    canon = [line.rstrip() for line in canon]
+    for number, (copied, owned) in enumerate(zip(site, canon), 1):
+        if copied != owned:
+            return number
+    return min(len(site), len(canon)) + 1 if len(site) != len(canon) else 0
+
+
+def pages(root):
+    """Every `*.md` under the root, dot-directories and blueprints out."""
+    for page in sorted(root.rglob("*.md")):
+        rel = page.relative_to(root)
+        if any(part.startswith(".") for part in rel.parts):
+            continue
+        if rel.as_posix().startswith(SKIP):
+            continue
+        yield page, rel
+
+
+def main(argv):
+    if len(argv) != 2:
+        print("usage: render-check <repo-root>", file=sys.stderr)
+        return 2
+    root = Path(argv[1]).resolve()
+    if not root.is_dir():
+        print(f"not a directory: {root}", file=sys.stderr)
+        return 2
+
+    errors = []
+    owner = root / OWNER
+    owned = render_sites(owner.read_text()) if owner.exists() else []
+    if len(owned) != 1:
+        errors.append(f"{OWNER}: {len(owned)} loop blocks, expected 1")
+
+    for page, rel in pages(root):
+        text = page.read_text()
+        if RETIRED in text:
+            errors.append(f"{rel}: retired flat form: {RETIRED}")
+        if len(owned) != 1 or page == owner:
+            continue
+        for number, site in render_sites(text):
+            line = diverges(site, owned[0][1])
+            if line:
+                errors.append(f"{rel}:{number}: diverges from {OWNER} at block line {line}")
+
+    for line in errors:
+        print(f"ERROR {line}")
+    print(f"{len(errors)} error(s), 0 warning(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
