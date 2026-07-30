@@ -2,11 +2,11 @@
 """Validate an OKF bundle. Usage: okf-check <okf-dir>
 
 Errors (exit 1): missing type, missing warrant, duplicate answer,
-unresolvable cite, malformed `okf:derived` fence, page unreachable from
-index.md, page over its line cap, register index line disagreeing with
-its decision file, moored ferry with a malformed `sealed:` pin or a
-surviving directory. Warnings (exit 0): page with no cites, blueprint
-locked without a `sounded:` stamp.
+unresolvable cite, unprefixed register cite in prose, malformed
+`okf:derived` fence, page unreachable from index.md, page over its line
+cap, register index line disagreeing with its decision file, moored ferry
+with a malformed `sealed:` pin or a surviving directory. Warnings
+(exit 0): page with no cites, blueprint locked without a `sounded:` stamp.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
 hand, which is write-OKF refresh's job, not a validator that must exit 0
@@ -116,6 +116,32 @@ def cite_resolves(cite, page, okf):
     return False
 
 
+def register_numbers(okf):
+    """Three-digit numbers naming a live file in either register."""
+    return {p.name[:3] for register in ("blueprints", "decisions")
+            for p in (okf / register).glob("[0-9][0-9][0-9]-*.md")}
+
+
+def prose_cites(text, numbers):
+    """Bare register numbers standing in a page's prose.
+
+    Blueprints and the why-register number independently, so a bare `019`
+    names two unrelated pages and a reader resolves it by guessing. The
+    exclusions are the rule's hard half and all mechanical: frontmatter,
+    fenced blocks, code spans, whole markdown links (text and target
+    both — the path already says which register), and the page's own H1.
+    A number touching `/`, `-`, `.` or a word character is part of a path,
+    a date or a `superseded-by-NNN`, never a cite.
+    """
+    body = text.partition("\n---")[2] if text.startswith("---\n") else text
+    body = re.sub(r"^```.*?^```", " ", body, flags=re.M | re.S)
+    body = re.sub(r"`[^`]*`", " ", body)
+    body = re.sub(r"\[[^\]]*\]\([^)]*\)", " ", body)
+    body = re.sub(r"^#.*$", " ", body, flags=re.M)
+    found = re.findall(r"(?<![\w/.-])\d{3}(?![\w/.-])", body)
+    return sorted({n for n in found if n in numbers})
+
+
 def fence_error(text):
     """Shape of the derived zone: at most one region, begin before end.
 
@@ -203,6 +229,7 @@ def main(argv):
     index = okf / "index.md"
     errors, warnings, warrants, answered = [], [], {}, {}
     seen = reachable(okf, pages)
+    numbers = register_numbers(okf)
 
     for page in pages:
         text = page.read_text()
@@ -259,6 +286,14 @@ def main(argv):
         for cite in cites:
             if not cite_resolves(cite, page, okf):
                 errors.append(f"{rel}: unresolvable cite: {cite}")
+
+        # A prose cite carries its register's prefix. Learnings pages are
+        # exempt — append-only by their own header, so their bare numbers
+        # stand as written. Typing the exemption is what survives the
+        # LEARNINGS.md → learnings/<theme>.md split.
+        if fields.get("type") != "Learnings":
+            for number in prose_cites(text, numbers):
+                errors.append(f"{rel}: unprefixed register cite: {number}")
 
     check_ferries(okf, errors)
     check_register(okf, warrants, errors)

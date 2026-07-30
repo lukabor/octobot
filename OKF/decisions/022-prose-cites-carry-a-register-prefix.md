@@ -15,8 +15,8 @@ reversible: yes — drop the prefixes; numbers, filenames and links never moved
 # 022 — a prose cite carries its register's prefix
 
 Blueprints and the why-register number independently, so the same three
-digits already name two unrelated pages three times over: 013, 017 and
-019 each exist in both. A markdown link is safe — its path says which —
+digits already name two unrelated pages three times over: `013`, `017`
+and `019` each exist in both. A markdown link is safe — its path says which —
 but a bare number in prose is not, and `B-019` (the render lint) against
 `R-019` (recon may self-fire) is the kind of collision a reader resolves
 wrongly without noticing. **In prose: `B-NNN` for a blueprint, `R-NNN`
