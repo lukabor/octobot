@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: decision 021
 sounded: 2026-07-30
 ---

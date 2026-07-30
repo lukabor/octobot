@@ -59,13 +59,7 @@ append-only.
    once and continues; a self-fired run leaves the blueprint
    byte-identical; and in a fresh session on a repo with no `OKF/`, ten
    ordinary code questions fire sound zero times; caps hold.
-   ✅ verified 2026-07-22 (007 — script leg: `draft: 0` `locked: 1`
-   `implemented: 0`, `okf-check OKF/` clean, caps hold; session checks 1
-   and 4 in a no-OKF fixture: zero self-fires over ten ordinary code
-   questions, and `/sound` stopped at one line naming `/write-OKF` after
-   a single directory listing; check 2 discharged by the 001 sounding —
-   no nostos MCP, one line, run continued).
-   Check 3 alone must ride the next sounding.
+   ✅ verified 2026-07-22 — [007](blueprints/007-add-sound.md).
 
 ## Risks & gotchas
 

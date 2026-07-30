@@ -55,7 +55,11 @@ up in the diff.>
   a `tally:` block. `okf-check` errors on a `muster` blueprint reaching
   `implemented` without one. Absent → weave runs unchanged.
 - Locked blueprint's Contract/Verify sections are immutable — supersede, don't
-  edit. Justification may gain references; status may advance.
+  edit. Justification may gain references; status may advance. Replacing a
+  session check's state marker (`⏳ pending` → `✅ <date> (<what discharged
+  it> — <what was observed>)`, per
+  [021](../../../OKF/decisions/021-session-checks-discharge-on-the-blueprint.md))
+  is not an edit to the check: the stamp records that unchanged text was run.
 - A blueprint grows into `NNN-<slug>/` (blueprint.md + notes) when one file won't
   hold it — the format above moves to `blueprint.md` unchanged.
 - Issue-local vocabulary lives here until it recurs; then promote to

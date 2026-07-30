@@ -36,8 +36,7 @@ your task needs. Humans welcome too.
 - [012](blueprints/012-add-ferry-level-muster.md) — add ferry-level muster, the human review gate at moor — implemented
 - [013](blueprints/013-split-moor-into-skill-and-reference.md) — split moor into SKILL.md + REFERENCE.md to hold the line cap — implemented
 - [014](blueprints/014-unify-skill-sibling-file-naming.md) — unify skill sibling-file naming on lowercase-kebab topic names — implemented
-- [015](blueprints/015-record-session-check-discharges-on-the-blueprint.md) — record session-check discharges on the blueprint — locked
-
+- [015](blueprints/015-record-session-check-discharges-on-the-blueprint.md) — record session-check discharges on the blueprint — implemented
 ## Ferries
 
 Open ferries link their `MAP.md`; moored ones link the collapsed page

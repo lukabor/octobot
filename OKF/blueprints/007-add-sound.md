@@ -94,11 +94,17 @@ Expect `draft: 0` `locked: 1` `implemented: 0`, then `0 error(s)` live.
 Four session checks the script cannot make, run once each:
 
 1. A repo with no `OKF/` — sound stops and names `/write-OKF`.
+   ✅ 2026-07-22 (no-OKF fixture — one line naming `/write-OKF` after a
+   single directory listing, nothing else run)
 2. A repo with no nostos MCP — one line naming `nostos install`, then
    the run continues.
+   ✅ 2026-07-22 (the 001 sounding — one line, the run continued)
 3. A self-fired run leaves its blueprint byte-identical (`jj diff`).
+   ⏳ pending
 4. Fresh session, repo with no `OKF/`, ten ordinary code questions —
    sound fires zero times.
+   ✅ 2026-07-22 (no-OKF fixture, fresh session — zero self-fires over ten
+   ordinary code questions)
 
 ## Out of scope
 
