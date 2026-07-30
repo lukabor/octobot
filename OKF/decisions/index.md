@@ -32,3 +32,4 @@ Format: `NNN — <question it settles> — <verdict> — <status>`.
 - [018](018-rescan-deletes-only-derived-pages.md) — What happens to a page a rescan no longer proposes? — deleted if wholly derived, else superseded — live
 - [019](019-recon-may-self-fire.md) — Which skills may fire without the user asking? — orchestrators never, read-only recon may — live
 - [020](020-every-page-has-a-growth-path.md) — What happens to a page at cap+1? — one named move per page kind, enforced as an error — live
+- [021](021-session-checks-discharge-on-the-blueprint.md) — Where is a discharged-session check recorded? — stamped on its own blueprint's Verify check — live
