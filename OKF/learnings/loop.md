@@ -50,3 +50,11 @@ status: live
   in drafting — every fix prose, never the artifact — and then had no room
   to absorb the false-green in its own Verify; 019 carries it. Price the
   cap before writing the artifact in. Source: weave of blueprint 019.
+- Believed: a locked blueprint's Verify stays runnable until it weaves.
+  True: B-020's Verify runs `wc -l` over `OKF/LEARNINGS.md`, a path B-021
+  then deleted, so B-021 stranded it before it had ever run — and the
+  immutability that protects a Contract from drift is exactly what forbids
+  repairing it. A Verify naming a path is a claim on the tree's shape that
+  any later blueprint can invalidate; supersession is the only exit, so a
+  blueprint that moves a path owes a check of which locked Verify already
+  names it. Source: weave of B-021.

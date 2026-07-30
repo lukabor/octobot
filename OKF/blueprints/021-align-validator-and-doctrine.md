@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: user request 2026-07-30 (the split drift); B-020 §Out of scope
 sounded: 2026-07-30
 cites:
