@@ -10,10 +10,10 @@ status: live
 
 # octobot Roadmap
 
-Octobot becomes a loop-engineering metaharness: the loop
-(write-OKF → architect → blueprint → ferry → weave) over an OKF
-substrate, alongside the existing practice/scaffold skills. Vocabulary:
-[CONTEXT.md](CONTEXT.md).
+Octobot becomes a loop-engineering metaharness: the loop (write-OKF →
+architect → blueprint → ferry → weave → review+verify →
+commit-atomic-jj) over an OKF substrate, alongside the existing
+practice/scaffold skills. Vocabulary: [CONTEXT.md](CONTEXT.md).
 
 ## Why (gap vs prior art)
 
@@ -40,26 +40,35 @@ per [013](decisions/013-roadmap-is-a-plan.md): what they shipped is in
 how each verified is in jj history. Numbers stay as issued —
 append-only.
 
-9. **sound — verified recon before lock** — new `skills/loop/sound/`: a
-   recon spine that reads the OKF, then the nostos MCP server when one is
-   configured, then confirms both against live code, because either can
-   have gone stale. A claim with no internal owner is followed to its
-   primary source; nothing else leaves the repo. Runs inline, never in a
-   subagent. **Reached by name** — by the user or by `blueprint` — it
-   refines the blueprint it sounds and stamps `sounded: <date>` in its
-   frontmatter; **self-fired it reports and writes nothing**, per 019.
-   Sounding becomes a precondition of lock, enforced by an `okf-check`
-   warning on a `locked` blueprint carrying no `sounded:`. The loop's
-   only model-invoked skill, per
-   [019](decisions/019-recon-may-self-fire.md). **Verify:** on a fixture
-   blueprint, `status: locked` without `sounded:` yields exactly one new
-   `okf-check` warning where `draft` and `implemented` yield none;
-   `okf-check OKF/` still reports 0 errors; a sound run in a repo with no
-   `OKF/` stops and names write-OKF, and one with no nostos MCP says so
-   once and continues; a self-fired run leaves the blueprint
-   byte-identical; and in a fresh session on a repo with no `OKF/`, ten
-   ordinary code questions fire sound zero times; caps hold.
-   ✅ verified 2026-07-22 — [007](blueprints/007-add-sound.md).
+Blueprints 008–017 traced to `user request <date>`, a declared
+`traces-to` value — a phase is opened for an arc spanning more than one
+blueprint or session, not for a single request. What they shipped is
+indexed in [index.md](index.md).
+
+9. **sound — verified recon before lock** — ✅ verified 2026-07-22,
+   [007](blueprints/007-add-sound.md).
+
+10. **skills-consistency hardening — the review's remainder** — the
+    2026-07-24 skills review (`~/skills-review-2026-07-24.md`, outside
+    the repo) left F5 (the loop-spine string hand-copied), F6 (two
+    user-invoked skills carrying model-invoked trigger lists), F7
+    (`grill-with-docs`, no `## ` sections) and F8 (two heading dialects)
+    untriaged, plus F11 ruled in `CONTEXT.md` but never swept.
+    **Verify:** each of F5–F8 reaches a recorded ruling — a blueprint, a
+    decision, or NO with its reason — and `grep -rn '\bADR\b' skills/
+    OKF/` returns only the trigger-alias uses `CONTEXT.md` preserves.
+
+11. **the loop's shape stops being a hand-copied string** — the spine is
+    written out in six sites in three divergent forms, and a flat string
+    cannot state cadence: write-OKF fires on drift, a request routes
+    through architect, `moor` closes only a ferry-traced chain.
+    [ARCHITECTURE.md](ARCHITECTURE.md) flow 1 becomes the single owner
+    of the shape, `CONTEXT.md`'s entry points at it, and `steer` renders
+    the routing fork instead of a list — paired with a lint so the
+    copies cannot diverge again. **Verify:** every site rendering the
+    spine either matches the declared rendering byte-for-byte or is a
+    pointer to flow 1, checked by script; `okf-check OKF/` 0 errors;
+    caps hold.
 
 ## Risks & gotchas
 
@@ -68,6 +77,12 @@ append-only.
   rituals, which interrupt a person mid-ritual; recon only reads, so
   [019](decisions/019-recon-may-self-fire.md) carves it out. The risk
   moves to sound's triggers — vague ones make it fire on every question.
+- **A rule bound to pressure that never arrives is not enforced.**
+  Believed: [020](decisions/020-every-page-has-a-growth-path.md)'s prune
+  keeps this page a plan. True: the prune triggers at cap+1, and the page
+  sat at 83 of 110 — so phase 9 kept a 20-line body while 013, 020 and
+  021 each required one line. The trigger belongs on `✅ verified`, and
+  nothing validates it yet (this session).
 
 ## Out of scope
 
