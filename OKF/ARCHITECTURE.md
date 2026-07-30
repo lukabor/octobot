@@ -33,9 +33,30 @@ frontmatter `description` (routing) plus its SKILL.md body (procedure).
 
 ## Main flows
 
-1. **The loop** — write-OKF → architect → blueprint → ferry → weave
-   → review+verify → commit-atomic-jj; OKF refreshed after weave
-   (`skills/loop/`, diagram in `README.md`).
+1. **The loop** — the metaharness spine, canonically rendered here
+   (`skills/loop/`). Two byte-copies: `README.md` §loop, `steer`
+   §The loop.
+
+```
+substrate (rare)  write-OKF — scaffold, or refresh when stale
+                      ↓
+per request       architect — a phase only for an arc over >1 blueprint
+                      ↓
+                 know what to do?
+        ┌──── yes ────┴──── no ────┐
+  blueprint → sound          ferry — decisions + blocking edges,
+    → weave                  resolve one per sitting
+    (weave closes it)                ↓
+                             blueprint per cleared decision → sound
+                                     ↓
+                             1 left → weave
+                             N left → call-charon (agent per blueprint)
+                                     ↓
+                                   moor
+
+weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
+```
+
 2. **Skill discovery** — Claude Code scans `~/.claude/skills/` one level
    deep; per-skill symlinks point into `skills/<category>/<name>/`
    (`README.md` §Install).

@@ -10,10 +10,10 @@ status: live
 
 # octobot Roadmap
 
-Octobot becomes a loop-engineering metaharness: the loop (write-OKF →
-architect → blueprint → ferry → weave → review+verify →
-commit-atomic-jj) over an OKF substrate, alongside the existing
-practice/scaffold skills. Vocabulary: [CONTEXT.md](CONTEXT.md).
+Octobot becomes a loop-engineering metaharness: the loop
+([ARCHITECTURE.md](ARCHITECTURE.md) flow 1) over an OKF substrate,
+alongside the existing practice/scaffold skills. Vocabulary:
+[CONTEXT.md](CONTEXT.md).
 
 ## Why (gap vs prior art)
 
@@ -30,7 +30,7 @@ Each line is the question its decision settles. Cite by number.
 
 ## Architecture
 
-See [ARCHITECTURE.md](ARCHITECTURE.md); loop diagram in `README.md`.
+See [ARCHITECTURE.md](ARCHITECTURE.md); the loop is its flow 1.
 
 ## Phases
 

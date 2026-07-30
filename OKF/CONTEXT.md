@@ -23,9 +23,8 @@ One folder under `skills/<category>/<name>/` with a SKILL.md router and
 optional topic-named siblings. _Avoid_: command, plugin, prompt.
 
 **The loop**:
-The metaharness cycle write-OKF → architect → blueprint → ferry →
-weave → review+verify → commit-atomic-jj. _Avoid_: pipeline, workflow (those
-describe the develop-* orchestrators).
+The metaharness cycle; shape in [ARCHITECTURE.md](ARCHITECTURE.md) flow 1.
+_Avoid_: pipeline, workflow (those describe the develop-* orchestrators).
 
 **OKF**:
 Open-knowledge-format — the agent-first wiki at a target project's

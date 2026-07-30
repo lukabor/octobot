@@ -39,7 +39,7 @@ your task needs. Humans welcome too.
 - [015](blueprints/015-record-session-check-discharges-on-the-blueprint.md) — record session-check discharges on the blueprint — implemented
 - [016](blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md) — pull two skills under the line cap and level the commit twins — implemented
 - [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — implemented
-- [018](blueprints/018-own-the-loop-shape-in-flow-1.md) — own the loop's shape in ARCHITECTURE flow 1 — locked
+- [018](blueprints/018-own-the-loop-shape-in-flow-1.md) — own the loop's shape in ARCHITECTURE flow 1 — implemented
 
 ## Ferries
 

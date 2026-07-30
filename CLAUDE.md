@@ -5,8 +5,8 @@ conventions for editing octobot itself. Merge with project-specific
 instructions as needed.
 
 **The loop.** Octobot is a loop-engineering metaharness over an OKF
-(open-knowledge-format) wiki: `write-OKF → architect → blueprint →
-ferry → weave → review+verify → commit-atomic-jj → moor`. This repo dogfoods it —
+(open-knowledge-format) wiki; its shape is
+[`OKF/ARCHITECTURE.md`](OKF/ARCHITECTURE.md) flow 1. This repo dogfoods it —
 knowledge in [`OKF/`](OKF/index.md), agent directions in
 [`AGENTS.md`](AGENTS.md), skill index in
 [`skills/loop/steer/`](skills/loop/steer/SKILL.md).

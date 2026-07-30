@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 11
 sounded: 2026-07-30
 cites:

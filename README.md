@@ -46,10 +46,23 @@ Octobot's core: a loop-engineering metaharness over an **OKF**
 (open-knowledge-format) wiki at each project's `./OKF/`.
 
 ```
-write-OKF → architect → blueprint → ferry → weave → review+verify → commit-atomic-jj → moor
-(knowledge)   (plan)      (blueprints)   (decompose) (execute)                  (seal)  (close out)
-     ▲                                                                                    │
-     └────────────────────────────── OKF refreshed ◀──────────────────────────────────────┘
+substrate (rare)  write-OKF — scaffold, or refresh when stale
+                      ↓
+per request       architect — a phase only for an arc over >1 blueprint
+                      ↓
+                 know what to do?
+        ┌──── yes ────┴──── no ────┐
+  blueprint → sound          ferry — decisions + blocking edges,
+    → weave                  resolve one per sitting
+    (weave closes it)                ↓
+                             blueprint per cleared decision → sound
+                                     ↓
+                             1 left → weave
+                             N left → call-charon (agent per blueprint)
+                                     ↓
+                                   moor
+
+weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
 ```
 
 - **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so

@@ -6,14 +6,30 @@ disable-model-invocation: true
 
 # steer
 
-Most octobot skills are user-invoked (zero context load) — this router
-is the index you'd otherwise have to be. Ask "/steer <situation>" or
-just read the table.
+Most octobot skills are user-invoked (they fire when named, not when a
+description matches) — this router is the index you'd otherwise have to
+be. Ask "/steer <situation>" or just read the table.
 
 ## The loop (the metaharness spine)
 
 ```
-write-OKF → architect → blueprint → ferry → weave → review+verify → commit-atomic-jj → moor
+substrate (rare)  write-OKF — scaffold, or refresh when stale
+                      ↓
+per request       architect — a phase only for an arc over >1 blueprint
+                      ↓
+                 know what to do?
+        ┌──── yes ────┴──── no ────┐
+  blueprint → sound          ferry — decisions + blocking edges,
+    → weave                  resolve one per sitting
+    (weave closes it)                ↓
+                             blueprint per cleared decision → sound
+                                     ↓
+                             1 left → weave
+                             N left → call-charon (agent per blueprint)
+                                     ↓
+                                   moor
+
+weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
 ```
 
 | Situation | Skill |
