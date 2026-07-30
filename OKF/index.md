@@ -40,6 +40,7 @@ your task needs. Humans welcome too.
 - [016](blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md) — pull two skills under the line cap and level the commit twins — implemented
 - [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — implemented
 - [018](blueprints/018-own-the-loop-shape-in-flow-1.md) — own the loop's shape in ARCHITECTURE flow 1 — implemented
+- [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md) — add a render lint over the loop's shape — locked
 
 ## Ferries
 
