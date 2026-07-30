@@ -72,10 +72,21 @@ kind of durable fact — `decisions/` (why we chose), `LEARNINGS.md` (what
 we got wrong), `blueprints/` (what we built). ROADMAP holds only what is
 still ahead. _Avoid_: log, archive, history.
 
+**Why-register**:
+The `OKF/decisions/` register — why we chose what we chose, indexed
+question-shaped by `index.md`. _Avoid_: ADR log, decision log.
+
+**Decision file**:
+One why-register entry, `OKF/decisions/NNN-<slug>.md`. Numbers permanent
+— supersede, never renumber. _Avoid_: ADR, decision record, register file.
+
+**Ferry decision**:
+An open question at `ferries/<topic>/D-<n>-<slug>.md` — settled by the
+user, then graduated into a decision file. _Avoid_: ADR, ticket, blocker.
+
 **Graduate**:
-Moving a resolved ferry decision out of `ferries/<topic>/D-n-*.md` into
-the decisions register at moor, leaving a pointer in MAP.md. _Avoid_:
-promote, publish, merge.
+Moving a resolved ferry decision into the why-register at moor, leaving a
+pointer in MAP.md. _Avoid_: promote, publish, merge.
 
 **Sealed pin**:
 The `sealed:` frontmatter on a moored ferry — jj change id, git hash,
@@ -88,6 +99,11 @@ nostos MCP server, then a file read only where nostos cannot answer: an
 empty result, or a path with uncommitted changes. Its mark is `sounded:`
 in the blueprint's frontmatter. _Avoid_: research, investigation, spike.
 
+**Line cap**:
+The per-file limit a page kind carries — 110 for SKILL.md and OKF pages,
+150 for blueprints. Over it errors: a legal move always exists.
+_Avoid_: limit, budget.
+
 **House cap**:
-110 lines per SKILL.md; topic-named siblings load on demand and carry
-no hard cap. _Avoid_: limit, budget.
+The 110 itself — the line cap SKILL.md and OKF pages share. Topic-named
+siblings load on demand and carry no cap.
