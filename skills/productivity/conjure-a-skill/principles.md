@@ -1,7 +1,7 @@
 # Principles — what makes a conjured skill predictable
 
 The design playbook [`conjure-a-skill`](SKILL.md) applies. **Bold terms** are
-defined in [`GLOSSARY.md`](GLOSSARY.md).
+defined in [`glossary.md`](glossary.md).
 
 A skill wrangles determinism out of a stochastic system. **Predictability** —
 same *process* every run, not same output — is the root virtue.
@@ -62,7 +62,7 @@ concept's definition, rules, and caveats under one heading.
 - **By sequence** — split a run of **steps** when **post-completion steps**
   tempt the agent to rush the current one (**premature completion**).
 - **By the octobot 110-line cap** — when `SKILL.md` exceeds 110 lines, split reference into topic-named siblings.
-  House enforcement of **sprawl**. `GLOSSARY.md` is the documented exception.
+  House enforcement of **sprawl**. `glossary.md` is the documented exception.
 
 ## Pruning
 

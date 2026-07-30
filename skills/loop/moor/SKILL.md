@@ -51,12 +51,12 @@ the wiki so the next cold-start agent reads reality, not history.
    number, plus a question-shaped `decisions/index.md` line; a
    resolution that fails the test graduates nowhere and stays in the
    collapsed page. Frontmatter, the verbatim `Resolution` move, and the
-   `blocked-by` drop: [REFERENCE.md](REFERENCE.md#graduate).
+   `blocked-by` drop: [graduate.md](graduate.md).
 6. **COLLAPSE** — `ferries/<topic>/` becomes `ferries/<topic>.md`:
    problem shape, rejected alternatives, pointers to the graduated
    numbers. Opens `type: Ferry Map`, then the `sealed:` pin (and
    `review-base:` if it mustered), read off `@-` — the pin block and its
-   `jj log` template: [REFERENCE.md](REFERENCE.md#collapse). Then remove
+   `jj log` template: [collapse.md](collapse.md). Then remove
    the directory — history is the archive, the pin the way back in.
 7. **PRUNE + INDEX** — sweep the arrived ferry for unextracted
    follow-ups; every open thread gets a home + backlink:

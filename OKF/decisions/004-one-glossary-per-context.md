@@ -4,7 +4,7 @@ purpose: Stop per-issue glossaries fragmenting the domain vocabulary.
 answers:
   - "How many glossaries may a bounded context have?"
 cites:
-  - skills/engineering/model-domain/CONTEXT-FORMAT.md
+  - skills/engineering/model-domain/context-format.md
 status: live
 reversible: yes — split the glossary again
 ---

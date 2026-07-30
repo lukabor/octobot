@@ -116,7 +116,7 @@ except **sound**, which only reads — see `OKF/decisions/019`.
   files only on the warrant test.
 - **design-codebase** — shared vocabulary for designing deep modules
   (module, interface, seam, adapter, depth, leverage, locality);
-  `DEEPENING.md` for dependency-aware seam strategy, `DESIGN-IT-TWICE.md`
+  `deepening.md` for dependency-aware seam strategy, `design-it-twice.md`
   for parallel-sub-agent interface exploration.
 - **style-r** — Tidyverse + `box::use` + `dtplyr` standards with
   paired good/bad sibling docs (`box.md`, `tidyverse.md`, `dtplyr.md`).

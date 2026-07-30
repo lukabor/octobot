@@ -97,4 +97,4 @@ Mutating in place hides the effect and couples every test to caller state.
 - **"Interface" = the TypeScript `interface` keyword or a class's public methods**: too narrow — interface here is every fact a caller must know.
 - **"Boundary"**: overloaded with DDD's bounded context. Say **seam** or **interface**.
 
-[DEEPENING.md](DEEPENING.md) — dependency categories, seam discipline, replace-don't-layer testing. [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md) — parallel sub-agents to design the interface several radically different ways; compare on depth, locality, seam placement.
+[deepening.md](deepening.md) — dependency categories, seam discipline, replace-don't-layer testing. [design-it-twice.md](design-it-twice.md) — parallel sub-agents to design the interface several radically different ways; compare on depth, locality, seam placement.

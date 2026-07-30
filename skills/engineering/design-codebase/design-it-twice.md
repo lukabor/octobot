@@ -16,7 +16,7 @@ space for the chosen candidate:
 
 - The constraints any new interface would need to satisfy.
 - The dependencies it would rely on, and which category they fall into
-  (see [DEEPENING.md](DEEPENING.md)).
+  (see [deepening.md](deepening.md)).
 - A rough illustrative code sketch to ground the constraints — not a
   proposal, just a way to make the constraints concrete.
 
@@ -31,7 +31,7 @@ multiple Agent tool uses** so they run concurrently. Each must produce a
 `subagent_type: claude` (general-purpose) so each has full read + search.
 
 Prompt each sub-agent with a separate technical brief (file paths, coupling
-details, dependency category from [DEEPENING.md](DEEPENING.md), what sits
+details, dependency category from [deepening.md](deepening.md), what sits
 behind the seam). The brief is independent of the user-facing problem-space
 explanation in Step 1. Give each agent a different design constraint:
 
@@ -52,7 +52,7 @@ Each sub-agent outputs:
 1. Interface (types, methods, params — plus invariants, ordering, error modes).
 2. Usage example showing how callers use it.
 3. What the implementation hides behind the seam.
-4. Dependency strategy and adapters (see [DEEPENING.md](DEEPENING.md)).
+4. Dependency strategy and adapters (see [deepening.md](deepening.md)).
 5. Trade-offs — where leverage is high, where it's thin.
 
 ### 3. Present and compare

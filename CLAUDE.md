@@ -104,8 +104,11 @@ This repo holds Claude Code skills. When editing here:
   agent sees when deciding to load the skill, so make triggers concrete.
   User-invoked skills (`disable-model-invocation: true`) get one
   human-facing line instead; no "Use when" boilerplate.
-- Keep `SKILL.md` ≤ 110 lines. Split into `REFERENCE.md` / `EXAMPLES.md` if
-  it grows.
+- Keep `SKILL.md` ≤ 110 lines. If it grows, push detail into **topic-named
+  siblings** in lowercase-kebab (`deepening.md`, `anti-patterns.md`) — one
+  topic per file, named for the topic. Never a generic catch-all name, and
+  never uppercase: `SKILL.md` is the only uppercase file in a skill
+  directory.
 - No time-sensitive content (dates, "current" model names).
 - `scripts/` is only for deterministic helpers, not prose.
 - Claude Code only scans one level deep under `~/.claude/skills/`; new

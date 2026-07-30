@@ -45,7 +45,7 @@ fill the missing sections as deltas, don't restart.
   Roadmap and glossary must use identical canonical terms.
 - **Decision files** only by the warrant test — the decision answers a
   question no other page answers, and you can name the `cites:` it binds
-  ([DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md)).
+  ([decision-format.md](../../engineering/model-domain/decision-format.md)).
   Default no.
 - Roadmap phases feed [blueprint](../blueprint/SKILL.md) — write phases
   concrete enough that a blueprint can trace to them.

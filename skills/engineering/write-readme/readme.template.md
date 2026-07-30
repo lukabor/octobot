@@ -25,7 +25,7 @@
 <project.overview>
 
 <!-- Installation: the ecosystem block. Pick ONE and delete the rest.
-     See REFERENCE.md for what each ecosystem reads and emits. -->
+     See ecosystems.md for what each ecosystem reads and emits. -->
 ## Installation
 
 <install-block>

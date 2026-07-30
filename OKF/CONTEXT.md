@@ -4,7 +4,7 @@ purpose: Fix octobot's own vocabulary — one canonical name per concept, with w
 answers:
   - "What is the canonical name for this concept in octobot?"
 cites:
-  - skills/productivity/conjure-a-skill/GLOSSARY.md
+  - skills/productivity/conjure-a-skill/glossary.md
   - skills/loop/write-OKF/okf-layout.md
 status: live
 ---
@@ -13,7 +13,7 @@ status: live
 
 Vocabulary for octobot itself. Skill-authoring terms (leading word,
 context load, progressive disclosure, sprawl, no-op) live in
-[conjure-a-skill/GLOSSARY.md](../skills/productivity/conjure-a-skill/GLOSSARY.md)
+[conjure-a-skill/glossary.md](../skills/productivity/conjure-a-skill/glossary.md)
 — not duplicated here.
 
 ## Language

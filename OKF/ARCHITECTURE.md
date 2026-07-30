@@ -6,7 +6,7 @@ answers:
 cites:
   - skills/loop
   - skills/engineering/bdd/SKILL.md
-  - skills/productivity/conjure-a-skill/PRINCIPLES.md
+  - skills/productivity/conjure-a-skill/principles.md
 status: live
 ---
 
@@ -50,6 +50,6 @@ frontmatter `description` (routing) plus its SKILL.md body (procedure).
   may go without ([decisions/019](decisions/019-recon-may-self-fire.md)).
 - **Progressive disclosure** — SKILL.md bodies point to topic-named
   sibling files; swapping a sibling changes behaviour without touching
-  the router (`skills/productivity/conjure-a-skill/PRINCIPLES.md`).
+  the router (`skills/productivity/conjure-a-skill/principles.md`).
 - **Cross-links** — skills reference each other by relative path;
   category moves are renames across these links (grep before moving).

@@ -24,7 +24,7 @@ pointer** so the top of the **information hierarchy** stays legible),
 Failure modes to hunt: **premature completion**, **duplication**,
 **sediment**, **no-op**.
 
-Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PRINCIPLES.md).
+Full vocabulary: [glossary.md](glossary.md). Design playbook: [principles.md](principles.md).
 
 ## Process
 1. **Gather** — ask the user (one message, grouped):
@@ -40,7 +40,7 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
      description carries "Use when" triggers).
    - one-line purpose
    - concrete trigger phrases ("Use when ...")
-   - **completion criteria** — checkable, exhaustive (see PRINCIPLES.md)
+   - **completion criteria** — checkable, exhaustive (see principles.md)
    - any deterministic helpers needed (scripts? reference docs?)
 2. **Check for overlap** — `ls ~/code/octobot/skills/*/` and grep
    descriptions; a near-match is **duplication** — propose extending the
@@ -56,10 +56,12 @@ Full vocabulary: [GLOSSARY.md](GLOSSARY.md). Design playbook: [PRINCIPLES.md](PR
      grows past that, use **progressive disclosure**: push **reference**
      into **topic-named siblings** (`tests-r.md`, `mocking-r.md`,
      `feedback-loops-r.md`, `anti-patterns.md`, `examples.md`). One topic
-     per file, named for the topic. Siblings carry no hard cap — they load
+     per file, named for the topic, in **lowercase-kebab** — a generic
+     catch-all name or an uppercase one fails review; `SKILL.md` is the only
+     uppercase file in the directory. Siblings carry no hard cap — they load
      on demand — but keep one topic per file.
    - no time-sensitive content
-   - every line passes the **no-op** test (PRINCIPLES.md §pruning)
+   - every line passes the **no-op** test (principles.md §pruning)
 5. **Link** — Claude Code only scans one level deep under
    `~/.claude/skills/`, so create a per-skill symlink:
    `ln -s ~/code/octobot/skills/<category>/<name> ~/.claude/skills/<name>`
@@ -95,9 +97,9 @@ description: <what it does>. Use when <concrete trigger>.
   [`steer`](../../loop/steer/SKILL.md).
 - **Never let `SKILL.md` exceed 110 lines.** Split into topic-named
   siblings before committing.
-- Reject any line that fails the **no-op** test (PRINCIPLES.md §pruning).
+- Reject any line that fails the **no-op** test (principles.md §pruning).
 
 ## See also
-- [PRINCIPLES.md](PRINCIPLES.md) — the design playbook this skill applies.
-- [GLOSSARY.md](GLOSSARY.md) — definitions for every bold term above.
+- [principles.md](principles.md) — the design playbook this skill applies.
+- [glossary.md](glossary.md) — definitions for every bold term above.
 - [`../commit-atomic-jj/SKILL.md`](../commit-atomic-jj/SKILL.md) — commit format.

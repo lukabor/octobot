@@ -5,7 +5,7 @@ answers:
   - "Where do settled decisions live?"
 cites:
   - OKF/decisions/index.md
-  - skills/engineering/model-domain/DECISION-FORMAT.md
+  - skills/engineering/model-domain/decision-format.md
 status: live
 reversible: by re-splitting
 ---

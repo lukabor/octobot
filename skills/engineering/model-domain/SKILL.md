@@ -38,9 +38,9 @@ habit any skill can do; that's not this skill.
    code, name file and line. *"`_targets.R:14` sets `format = 'qs2'` —
    that contradicts the parquet write you just described."*
 6. **Update `CONTEXT.md` inline.** One term resolved → one edit. Never
-   batched. Format: see [CONTEXT-FORMAT.md](CONTEXT-FORMAT.md).
+   batched. Format: see [context-format.md](context-format.md).
 7. **Offer decision files sparingly** (the warrant test, see
-   [DECISION-FORMAT.md](DECISION-FORMAT.md)). Default is *no*.
+   [decision-format.md](decision-format.md)). Default is *no*.
 
 ## File layout the skill expects
 

@@ -71,7 +71,7 @@ loop, not on disk.
   At the cap it **sheds**, keeping the map, seams and flows and moving
   per-module prose into the `modules/`/`analyses/` pages that repo's scan
   proposed — outside their derived fences, which refresh regenerates.
-- **CONTEXT.md** — glossary per model-domain's CONTEXT-FORMAT.md.
+- **CONTEXT.md** — glossary per model-domain's context-format.md.
   **One canonical glossary per bounded context — never per issue.**
   Issue-local terms live in their blueprint until they recur. Splits into
   `context/<subroot>.md` only when multi-context; over the cap in a
@@ -82,7 +82,7 @@ loop, not on disk.
   and its blueprint numbers, which hold the detail.
 - **decisions/** — the why-register: one file per settled decision,
   permanent numbers, format in
-  [model-domain/DECISION-FORMAT.md](../../engineering/model-domain/DECISION-FORMAT.md).
+  [model-domain/decision-format.md](../../engineering/model-domain/decision-format.md).
   `decisions/index.md` carries one **question-shaped** line per decision,
   the question derived from the file's first `answers:` entry — index.md
   lists the register, not its members.

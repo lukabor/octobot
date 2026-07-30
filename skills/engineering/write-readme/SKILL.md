@@ -28,7 +28,7 @@ disable-model-invocation: true
    | *(none of the above)* | generic | scripts, `Makefile`/`justfile`, repo files |
 
    Field-by-field extraction per ecosystem lives in
-   [REFERENCE.md](REFERENCE.md).
+   [ecosystems.md](ecosystems.md).
 
 2. **Read sources, never memory.** Pull `name`, `description`, `license`,
    dependencies, and runnable commands from the files above. For a generic
@@ -52,7 +52,7 @@ disable-model-invocation: true
    [`readme.template.md`](readme.template.md):
    - `<project.name>`, `<project.description>`, `<project.overview>`,
      `<project.license.text>`.
-   - `<install-block>` — the ecosystem's install snippet (REFERENCE.md).
+   - `<install-block>` — the ecosystem's install snippet (ecosystems.md).
    - `<usage-block>` — task-runner recipes (grouped by section comment),
      CLI invocation, or setup steps for a config/script repo.
    - `<usage-lang>` — the fence language for the usage block (`bash` for

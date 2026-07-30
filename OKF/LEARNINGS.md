@@ -86,3 +86,11 @@ status: live
   a SKILL/REFERENCE split, which exceeds the blueprint's two declared seams.
   A blueprint adding a step to a near-cap skill must price the split into its
   scope. Source: weave of blueprint 012.
+- Believed: a Verify that greps for the old names is a sound gate for a
+  rename sweep. True: it collides with the sweep's own doctrine — a rule
+  banning a filename has to be able to *say* that filename, so prose listing
+  the banned names trips the very grep meant to prove the sweep finished.
+  014's locked Verify forced both the doctrine and this note to state the rule
+  positively, naming no offender. A bare-filename grep cannot separate a
+  *reference* from a *prohibition*; scope it to link syntax, or exempt the
+  files that carry the rule. Source: weave of blueprint 014.

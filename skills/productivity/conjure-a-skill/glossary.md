@@ -3,7 +3,7 @@
 The domain model for what makes a skill great. A skill exists to wrangle
 determinism out of a stochastic system; every term below is a lever on that
 goal. This is the disclosed reference for [`conjure-a-skill`](SKILL.md) and
-[`PRINCIPLES.md`](PRINCIPLES.md).
+[`principles.md`](principles.md).
 
 **Bold terms** in any definition are themselves defined in this glossary;
 find them by their heading.
