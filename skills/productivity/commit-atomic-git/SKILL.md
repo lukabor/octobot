@@ -9,6 +9,13 @@ git-native counterpart of [commit-atomic-jj](../commit-atomic-jj/SKILL.md).
 Same principles; the staging area replaces `jj split`, and there is no
 `jj new` step — but git has its own traps (blind `-a`, `add .`).
 
+## When to use
+- User says "commit", "atomic commit", "stage this", "what should the
+  commit message be" — in a repo where `[ -d .jj ]` fails.
+- A working tree contains changes that touch more than one concern.
+- A public function signature, CLI flag, env var, or config key changed
+  and the docs haven't.
+
 ## Principles
 
 ### 1. Inspect first — all three states

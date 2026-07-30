@@ -27,13 +27,20 @@ greppable and the change's footprint visible at a glance.
 
 "I'll update the README after." You won't. Docstrings, README sections,
 CLAUDE.md updates for a new flag or env var — same change or it doesn't
-ship. See SKILL.md §5 *"Docs travel with the code"*.
+ship. See SKILL.md §6 *"Docs travel with the code"*.
 
 ## Skipping `jj new` after describe
 
 Edits land in the just-described change; its message rots into a lie. Always
-open a fresh `@` immediately after `jj describe`. See SKILL.md *"Workflow"*
-step 5.
+open a fresh `@` immediately after `jj describe` — SKILL.md §Workflow, the
+`jj new -m 'WIP'` step.
+
+## Assuming `jj split` puts the selected paths in the child
+
+It puts them in the **first (parent)** commit and leaves the rest in `@`.
+Select the paths for the change you want *underneath*, not the one you want
+to keep working on — `-m` names that parent, and `@` inherits the original
+message until you describe it explicitly.
 
 ## Backgrounding a `jj` mutation
 

@@ -39,28 +39,17 @@ holds no state in his head.
 2. **PICK** — the next `locked` blueprint whose blocked-by set is all
    implemented. None unblocked → record why in Passage, report
    blocked, stop.
-3. **DISPATCH** — isolate per mode (crossing-format.md §isolation):
-   jj → `jj workspace add ../charon-NNN`, spawn a general-purpose
-   builder *without* the isolation flag, brief points at the
-   workspace dir (jj can't run inside git worktrees, so the Agent
-   tool's `isolation: worktree` is git-mode only). Git → spawn with
-   `isolation: worktree`; the brief must end with a commit, or the
-   work can't be merged. Brief per weave's handoff gate: blueprint
-   path, OKF refs by path, constraints, Verify command
-   (crossing-format.md §builder-brief). `cavecrew-builder` refuses this
-   scope — wrong tool. Serial by default; parallel builders only when
-   blocked-by frontiers are clear AND Seams-touched are disjoint.
+3. **DISPATCH** — isolation and builder brief per crossing-format.md
+   §isolation and §builder-brief; both branch on the mode recorded at
+   ORIENT. `cavecrew-builder` refuses this scope — wrong tool. Serial
+   by default; parallel builders only when blocked-by frontiers are
+   clear AND Seams-touched are disjoint.
 4. **REVIEW FLOTILLA** — builder done → spawn read-only
    general-purpose reviewers in parallel, one per axis:
    review-blueprint + review-angles **always**; nuke-review + winnow
-   when the diff is non-trivial (Charon's call — record it). The
-   orchestrator reads each axis's SKILL.md *itself* (once per
-   sitting) and **inlines the criteria verbatim** into the brief
-   (crossing-format.md §reviewer-brief) — subagents can't be trusted
-   to resolve skill paths (worktrees, remote runners, several axes
-   `disable-model-invocation`), and a self-contained brief always
-   travels. The builder never self-reviews; the orchestrator never
-   reviews inline.
+   when the diff is non-trivial (Charon's call — record it). Briefs
+   per crossing-format.md §reviewer-brief. The builder never
+   self-reviews; the orchestrator never reviews inline.
 5. **MERGE + FIX** — Charon dedupes findings, arbitrates conflicts
    (sieve's always-pass exceptions win: validation, data-loss
    handling, security), and sends **one** consolidated brief via

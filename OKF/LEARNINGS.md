@@ -94,3 +94,12 @@ status: live
   positively, naming no offender. A bare-filename grep cannot separate a
   *reference* from a *prohibition*; scope it to link syntax, or exempt the
   files that carry the rule. Source: weave of blueprint 014.
+- Believed: grepping a file for the stale form is a sound gate for "every
+  cross-reference resolves". True: grep is line-based and a gate only sees
+  the files it names, so 016's locked Verify reported one stale back-ref
+  where two existed — the second had wrapped between `*"Workflow"*` and
+  `step 5` — and was blind to the identical off-by-one in `examples.md`,
+  a sibling its Seams list did not name. A reference gate must assert the
+  **target** exists (does `### 6` resolve?), not pattern-match the citing
+  text, and must range over every file that cites, not only the ones being
+  edited. Source: weave of blueprint 016.
