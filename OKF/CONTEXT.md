@@ -14,7 +14,8 @@ status: live
 Vocabulary for octobot itself. Skill-authoring terms (leading word,
 context load, progressive disclosure, sprawl, no-op) live in
 [conjure-a-skill/glossary.md](../skills/productivity/conjure-a-skill/glossary.md)
-— not duplicated here.
+— not duplicated here. Prose cites take a register prefix: `B-`
+blueprint, `R-` why-register, `D-` ferry (R-022); links need none.
 
 ## Language
 

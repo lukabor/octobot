@@ -40,7 +40,7 @@ per [013](decisions/013-roadmap-is-a-plan.md): what they shipped is in
 how each verified is in jj history. Numbers stay as issued —
 append-only.
 
-Blueprints 008–017 traced to `user request <date>`, a declared
+B-008–B-017 traced to `user request <date>`, a declared
 `traces-to` value — a phase is opened for an arc spanning more than one
 blueprint or session, not for a single request. What they shipped is
 indexed in [index.md](index.md).
@@ -80,18 +80,18 @@ indexed in [index.md](index.md).
 - **A rule bound to pressure that never arrives is not enforced.**
   Believed: [020](decisions/020-every-page-has-a-growth-path.md)'s prune
   keeps this page a plan. True: the prune triggers at cap+1, and the page
-  sat at 83 of 110 — so phase 9 kept a 20-line body while 013, 020 and
-  021 each required one line. The trigger belongs on `✅ verified`; still
-  unvalidated, and owed a lint.
+  sat at 83 of 110 — so phase 9 kept a 20-line body while R-013, R-020
+  and R-021 each required one line. The trigger belongs on `✅ verified`;
+  still unvalidated, and owed a lint.
 - **A live decision can be contradicted by the skill that owns the file,
-  and by the validator that checks it.** Believed: `020`'s prune-to-one-
+  and by the validator that checks it.** Believed: `R-020`'s prune-to-one-
   line settles what a discharged phase keeps. True: it does, but
   [architect](../skills/loop/architect/SKILL.md) still tells its own
   revision loop to keep the verify line and mark the tick *on* it
   (`SKILL.md:36`, `:54`, `revise.md:15`); and `okf-check:245` skips
   `blueprints`/`ferries` before its cite loop, so no blueprint's cites
   are checked at all. Neither drift had anything to catch it. Source:
-  sounding blueprint 019, 2026-07-30.
+  sounding B-019, 2026-07-30.
 
 ## Out of scope
 

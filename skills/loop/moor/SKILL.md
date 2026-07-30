@@ -33,7 +33,7 @@ the wiki so the next cold-start agent reads reality, not history.
    `git diff <review-base>..HEAD | hunk patch -`; no hunk → raw). The human
    records a `tally:` block; `matches: no` stays halted for a fix, never
    mutates on a known miss. COLLAPSE persists `review-base:`; 1-blueprint
-   ferry → use blueprint muster (011), not this.
+   ferry → use blueprint muster (B-011), not this.
 4. **CONSOLIDATE** — promote durable knowledge out of the ferry into its
    one home, cross-linked back:
    - spawned blueprints → `status: done` (or `superseded`);

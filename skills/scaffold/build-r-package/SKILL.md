@@ -41,7 +41,7 @@ disable-model-invocation: true
    > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
 5. **Suggest** [`/write-readme`](../../engineering/write-readme/SKILL.md),
    which already covers r-package; its dedicated R counterpart is
-   blueprint 001, still a draft.
+   B-001, still a draft.
 
 ## Placeholders used by templates
 - `<package-name>` — R package name (validated above).

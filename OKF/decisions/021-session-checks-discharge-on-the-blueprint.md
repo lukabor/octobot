@@ -29,7 +29,7 @@ stamp records that an unchanged check was run.
 
 ## Considered options
 
-Leaving the record in `ROADMAP.md`, where 007's already sat, was
+Leaving the record in `ROADMAP.md`, where B-007's already sat, was
 rejected on two counts. [013](013-roadmap-is-a-plan.md) makes ROADMAP a
 plan, and a discharge is past-tense; worse,
 [020](020-every-page-has-a-growth-path.md) prunes a discharged phase to
