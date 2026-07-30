@@ -85,7 +85,7 @@ description: <what it does>. Use when <concrete trigger>.
 
 ## Output / done criteria
 - New `SKILL.md` exists at the right path, passes the checks in step 4.
-- `SKILL.md` is ≤ 110 lines.
+- **`scripts/skill-check skills/` run and its output pasted**, exiting 0.
 - User has been told the exact `jj describe` command to run.
 - Skill appears in the skill list on next Claude Code session start.
 

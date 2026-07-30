@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""Validate skill line counts. Usage: skill-check <skills-dir>
+
+Errors (exit 1): a SKILL.md over the 110-line house cap. Warnings
+(exit 0): a SKILL.md in the 101-110 headroom band — legal, but with
+nowhere left to grow, so the next edit needs a topic-named sibling
+rather than more lines.
+
+The cap errors rather than warns because a legal move always exists:
+push reference into a sibling. Only `<category>/<name>/SKILL.md` is
+read — siblings load on demand and carry no cap.
+"""
+import sys
+from pathlib import Path
+
+CAP = 110
+WARN_AT = 100
+
+
+def main(argv):
+    if len(argv) != 2:
+        print("usage: skill-check <skills-dir>", file=sys.stderr)
+        return 2
+    root = Path(argv[1]).resolve()
+    if not root.is_dir():
+        print(f"not a directory: {root}", file=sys.stderr)
+        return 2
+
+    errors, warnings = [], []
+    for page in sorted(root.glob("*/*/SKILL.md")):
+        rel = page.relative_to(root.parent)
+        lines = page.read_text().count("\n")  # `wc -l`, the count the cap is stated in
+        if lines > CAP:
+            errors.append(f"{rel}: {lines} lines, over the {CAP}-line cap")
+        elif lines > WARN_AT:
+            warnings.append(f"{rel}: {lines} lines, {CAP - lines} under the cap")
+
+    for line in warnings:
+        print(f"WARN  {line}")
+    for line in errors:
+        print(f"ERROR {line}")
+    print(f"{len(errors)} error(s), {len(warnings)} warning(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

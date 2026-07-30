@@ -38,7 +38,7 @@ your task needs. Humans welcome too.
 - [014](blueprints/014-unify-skill-sibling-file-naming.md) — unify skill sibling-file naming on lowercase-kebab topic names — implemented
 - [015](blueprints/015-record-session-check-discharges-on-the-blueprint.md) — record session-check discharges on the blueprint — implemented
 - [016](blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md) — pull two skills under the line cap and level the commit twins — implemented
-- [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — locked
+- [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — implemented
 
 ## Ferries
 
