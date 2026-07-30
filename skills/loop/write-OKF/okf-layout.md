@@ -24,7 +24,7 @@ OKF/
 ├── modules/          # proposable, never mandatory: <name>.md per code
 ├── analyses/         #   directory / analysis directory a scan found
 └── LEARNINGS.md      # debunked claims, gotchas — append-only, sourced;
-                      #   splits into learnings/<theme>.md at the cap
+                      #   splits into learnings/ (index.md + <theme>.md)
 ```
 
 The spine above is a diagram, not a required page set — `okf-check`
@@ -108,8 +108,9 @@ loop, not on disk.
   and drift rule in [page-warrant.md](page-warrant.md).
 - **LEARNINGS.md** — what was believed / what is true / source. Never
   edited retroactively, only appended or superseded. At the cap it splits
-  into `learnings/<theme>.md` and becomes their index; both contracts hold
-  per page, and supersession then works **across** pages —
+  into `learnings/`: the page itself moves to `learnings/index.md` and the
+  themes land beside it as `learnings/<theme>.md`; both contracts hold per
+  page, and supersession then works **across** pages —
   [split-page.md](split-page.md).
 
 ## Rules

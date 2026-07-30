@@ -33,9 +33,19 @@ repo's layers as they actually are.
 
 ## Rewiring the index
 
-The parent becomes an index of its subpages, and `index.md` keeps its
-single line to the parent. Subpages are **not** listed in `index.md` — it
-is capped too, and would grow with every theme added.
+**The parent moves.** `PAGE.md` becomes `<theme-dir>/index.md`, the
+subpages land beside it, and `index.md`'s single line repoints at the new
+parent. Subpages are **not** listed in `index.md` — it is capped too, and
+would grow with every theme added.
+
+The rename is what keeps the bundle reachable: `okf-check`'s `reachable()`
+walks on through pages named `index.md` or `MAP.md` and no others, so a
+parent that kept its old name would strand every subpage. Widening the
+walk was rejected — the narrow rule is what buys the spine guarantee
+(every page hangs off the map), and a split is rare enough to pay a rename.
+
+Links pointing at the old path are repointed in the same change, and a
+relative link *inside* the moved page gains the `../` its new depth needs.
 
 Three frontmatter obligations, all enforced by `okf-check`:
 
