@@ -41,6 +41,7 @@ your task needs. Humans welcome too.
 - [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — implemented
 - [018](blueprints/018-own-the-loop-shape-in-flow-1.md) — own the loop's shape in ARCHITECTURE flow 1 — implemented
 - [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md) — add a render lint over the loop's shape — locked
+- [020](blueprints/020-enforce-the-prune-and-validate-every-cite.md) — enforce the roadmap prune and validate every page's cites — locked
 
 ## Ferries
 
