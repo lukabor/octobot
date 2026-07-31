@@ -84,6 +84,13 @@ single request traces to `user request <date>` instead, as B-008–B-017 did.
   prunes a discharged phase to one line, so the *reason* evaporates and the
   question reopens as drift. A convention must land where its next reader
   looks — F8's ruling went to `conjure-a-skill`. Source: phase 10, 2026-07-31.
+- **A lint that walks the filesystem gates on files the repo does not own.**
+  Believed: a repo-wide walk's scope is the repo. True: it is the working
+  directory, so one gitignored page can red a repo-wide gate — it already cost
+  [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md) a run
+  condition, and two of the four lints carry that walk byte for byte. Ruled by
+  [026](blueprints/026-walk-only-what-git-does-not-ignore.md). Source:
+  2026-07-31.
 
 ## Out of scope
 
