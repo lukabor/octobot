@@ -47,6 +47,7 @@ your task needs. Humans welcome too.
 - [022](blueprints/022-validate-every-cite-at-every-status.md) — enforce the roadmap prune and validate every cite at every status — implemented
 - [023](blueprints/023-add-a-link-lint-over-relative-md-links.md) — add a link lint over relative markdown links — implemented
 - [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md) — rename the spine to chart and rig, and give chart its ferry edge — implemented
+- [025](blueprints/025-rule-muster-on-every-blueprint.md) — rule muster on every blueprint — locked
 
 ## Ferries
 
