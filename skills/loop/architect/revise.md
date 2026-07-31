@@ -12,8 +12,8 @@ For a roadmap that exists and reality that moved. Formerly
    gotchas, scope changes. Ambiguous delta → grill, one question at a
    time.
 3. **Apply, smallest edit per delta:**
-   - Phase done → mark `✅ verified <how>` on its verify line — never
-     without naming the observable check that passed.
+   - Phase done → *replace* its verify line with `✅ verified <date>,
+     [NNN](blueprints/…)`, R-020's prune — never a tick beside a live step.
    - Verify failed → record what failed under the phase; do not delete
      the phase. Re-plan it only if the user agrees.
    - New gotcha/learning → append to *Risks & gotchas* (and mirror to

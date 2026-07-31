@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: superseded-by-022
 traces-to: user request 2026-07-30
 sounded: 2026-07-30
 cites:
@@ -13,7 +13,7 @@ cites:
   - skills/loop/write-OKF/split-page.md
   - skills/loop/architect/SKILL.md
   - skills/loop/architect/revise.md
-  - OKF/LEARNINGS.md:Append-only
+  - OKF/learnings/index.md:Append-only
 ---
 
 # 020 — enforce the roadmap prune and validate every page's cites

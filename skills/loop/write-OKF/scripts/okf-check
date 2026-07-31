@@ -2,10 +2,11 @@
 """Validate an OKF bundle. Usage: okf-check <okf-dir>
 
 Errors (exit 1): missing type, missing warrant, duplicate answer,
-unresolvable cite, unprefixed register cite in prose, malformed
-`okf:derived` fence, page unreachable from index.md, page over its line
-cap, register index line disagreeing with its decision file, moored ferry
-with a malformed `sealed:` pin or a surviving directory. Warnings
+unresolvable cite, unprefixed register cite in prose, discharged roadmap
+phase keeping a verify step, malformed `okf:derived` fence, page
+unreachable from index.md, page over its line cap, register index line
+disagreeing with its decision file, moored ferry with a malformed
+`sealed:` pin or a surviving directory. Warnings
 (exit 0): page with no cites, blueprint locked without a `sounded:` stamp.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
@@ -172,6 +173,30 @@ def tally(text):
     return dict(re.findall(r"([a-z]+):\s*(\S+)", block.group(1))) if block else {}
 
 
+def check_roadmap(text, rel, errors):
+    """A discharged phase keeps no verify step — R-020's prune, mechanised.
+
+    A phase entry runs from its `^\\d+\\. ` line to the next such line or the
+    next `## ` heading, so a wrapped `**Verify:**` still belongs to the phase
+    above it. The tick says the step ran; where it ran is jj history.
+    """
+    entry = []
+
+    def close():
+        block = "\n".join(entry)
+        if entry and "✅" in block and "**Verify:**" in block:
+            errors.append(f"{rel}: discharged phase keeps a verify step: {entry[0][:40]}")
+
+    for line in text.splitlines():
+        phase = re.match(r"\d+\. ", line)
+        if phase or line.startswith("## "):
+            close()
+            entry = [line] if phase else []
+        elif entry:
+            entry.append(line)
+    close()
+
+
 def check_ferries(okf, errors):
     """A page directly under ferries/ is a moored ferry: pinned, collapsed."""
     ferries = okf / "ferries"
@@ -267,6 +292,16 @@ def main(argv):
                 and not tally(text)):
             errors.append(f"{rel}: muster: true, implemented without tally:")
 
+        # A cite is a working pointer, so every page carries the rule at
+        # every status — a blueprint's `cites:` are not frozen by lock.
+        cites = fields.get("cites") or []
+        for cite in cites:
+            if not cite_resolves(cite, page, okf):
+                errors.append(f"{rel}: unresolvable cite: {cite}")
+
+        if fields.get("type") == "Roadmap":
+            check_roadmap(text, rel, errors)
+
         # The warrant contract covers durable synthesis pages; blueprints
         # and ferries carry their own frontmatter contracts.
         if {"blueprints", "ferries"} & set(rel.parts) or page.name == "index.md":
@@ -280,12 +315,8 @@ def main(argv):
                 errors.append(f"{rel}: answers a question {answered[answer]} owns: {answer}")
             else:
                 answered[answer] = rel
-        cites = fields.get("cites") or []
         if not cites:
             warnings.append(f"{rel}: no cites:")
-        for cite in cites:
-            if not cite_resolves(cite, page, okf):
-                errors.append(f"{rel}: unresolvable cite: {cite}")
 
         # A prose cite carries its register's prefix. Learnings pages are
         # exempt — append-only by their own header, so their bare numbers

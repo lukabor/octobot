@@ -4,7 +4,6 @@ status: implemented
 traces-to: ROADMAP.md phase 11
 sounded: 2026-07-30
 cites:
-  - OKF/ROADMAP.md:checked by script
   - OKF/blueprints/018-own-the-loop-shape-in-flow-1.md:**The lint.**
   - OKF/blueprints/017-add-a-line-cap-lint-over-skills.md:Why a sibling script
   - OKF/decisions/016-one-okf-check-validator.md:One `okf-check` validator
@@ -13,9 +12,9 @@ cites:
   - README.md:### loop — the metaharness spine
   - skills/loop/steer/SKILL.md:## The loop
   - skills/loop/write-OKF/scripts/okf-check:a check that cannot fail
-  - skills/loop/write-OKF/SKILL.md:run and its output pasted
+  - skills/loop/write-OKF/SKILL.md:run and output pasted
   - skills/productivity/conjure-a-skill/scripts/skill-check:usage: skill-check
-  - OKF/LEARNINGS.md:Append-only
+  - OKF/learnings/index.md:Append-only
 ---
 
 # 019 — add a render lint over the loop's shape

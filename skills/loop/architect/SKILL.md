@@ -33,7 +33,7 @@ fill the missing sections as deltas, don't restart.
 ## Why <project> (gap vs prior art)   ← gap table with sources
 ## Locked decisions                   ← numbered; rationale + reversibility
 ## Architecture                       ← one ASCII sketch + main flow in words
-## Phases                             ← each ends "**Verify:** <observable check>"
+## Phases                             ← each open one ends "**Verify:** <check>"
 ## Risks & gotchas                    ← debunked claims: believed / true / source
 ## Out of scope                       ← explicit non-goals
 ```
@@ -51,7 +51,8 @@ fill the missing sections as deltas, don't restart.
   concrete enough that a blueprint can trace to them.
 
 ## Output / done criteria
-- `OKF/ROADMAP.md` matches the skeleton; every phase has a verify step;
+- `OKF/ROADMAP.md` matches the skeleton; every *open* phase has a verify
+  step and every discharged one is pruned to `✅ verified <date>, [NNN](…)`;
   every locked decision traces to a user answer or sourced finding.
 - Revision: superseded decisions remain visible; every edit traces to a
   named delta.

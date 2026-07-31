@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: user request 2026-07-31 (B-020 stranded by the learnings/ split)
 sounded: 2026-07-31
 cites:

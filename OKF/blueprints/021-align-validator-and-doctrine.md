@@ -9,7 +9,7 @@ cites:
   - skills/loop/write-OKF/scripts/okf-check
   - skills/loop/blueprint/blueprint-format.md
   - OKF/decisions/022-prose-cites-carry-a-register-prefix.md
-  - OKF/LEARNINGS.md
+  - OKF/learnings/index.md
   - OKF/index.md
   - OKF/decisions/020-every-page-has-a-growth-path.md:alone **splits**
   - OKF/blueprints/020-enforce-the-prune-and-validate-every-cite.md:declaring `cites:`

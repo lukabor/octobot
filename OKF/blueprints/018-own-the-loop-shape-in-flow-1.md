@@ -10,14 +10,12 @@ cites:
   - README.md:### loop — the metaharness spine
   - CLAUDE.md:**The loop.**
   - skills/loop/steer/SKILL.md:## The loop (the metaharness spine)
-  - skills/loop/steer/SKILL.md:zero context load
   - skills/loop/ferry/SKILL.md:more than one agent
   - skills/loop/call-charon/SKILL.md:implementation spans multiple blueprints
   - skills/loop/moor/SKILL.md:a ferry-traced chain
   - skills/loop/weave/SKILL.md:Close the loop
   - skills/loop/blueprint/blueprint-format.md:traces-to:
   - skills/loop/architect/SKILL.md:Owns `OKF/ROADMAP.md`
-  - OKF/ROADMAP.md:loop diagram in
 ---
 
 # 018 — own the loop's shape in ARCHITECTURE flow 1

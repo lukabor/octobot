@@ -42,9 +42,9 @@ your task needs. Humans welcome too.
 - [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — implemented
 - [018](blueprints/018-own-the-loop-shape-in-flow-1.md) — own the loop's shape in ARCHITECTURE flow 1 — implemented
 - [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md) — add a render lint over the loop's shape — implemented
-- [020](blueprints/020-enforce-the-prune-and-validate-every-cite.md) — enforce the roadmap prune and validate every page's cites — locked
+- [020](blueprints/020-enforce-the-prune-and-validate-every-cite.md) — enforce the roadmap prune and validate every page's cites — superseded-by-022
 - [021](blueprints/021-align-validator-and-doctrine.md) — align the validator and the doctrine on splits, prefixes and cites — implemented
-- [022](blueprints/022-validate-every-cite-at-every-status.md) — enforce the roadmap prune and validate every cite at every status — locked
+- [022](blueprints/022-validate-every-cite-at-every-status.md) — enforce the roadmap prune and validate every cite at every status — implemented
 
 ## Ferries
 

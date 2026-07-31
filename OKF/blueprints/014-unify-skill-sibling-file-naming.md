@@ -6,7 +6,6 @@ sounded: 2026-07-30
 cites:
   - skills/productivity/conjure-a-skill/SKILL.md:topic-named siblings
   - skills/loop/write-OKF/scripts/okf-check:cite_resolves
-  - CLAUDE.md:EXAMPLES.md
 ---
 
 # 014 — unify skill sibling-file naming on lowercase-kebab topic names

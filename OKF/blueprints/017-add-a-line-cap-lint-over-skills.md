@@ -9,7 +9,7 @@ cites:
   - OKF/decisions/020-every-page-has-a-growth-path.md:twelve pages
   - OKF/blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md:A line-cap lint
   - skills/productivity/conjure-a-skill/SKILL.md:exceed 110 lines
-  - skills/productivity/conjure-a-skill/SKILL.md:is ≤ 110 lines
+  - skills/productivity/conjure-a-skill/SKILL.md:≤ 110 lines** — octobot's house cap
   - skills/loop/write-OKF/scripts/okf-check:CAP = 110
   - skills/loop/write-OKF/scripts/okf-check:a check that cannot fail
   - skills/loop/write-OKF/SKILL.md:output pasted
