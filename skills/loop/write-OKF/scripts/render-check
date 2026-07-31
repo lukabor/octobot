@@ -13,15 +13,17 @@ matches them both.
 
 `OKF/blueprints/` is skipped. A locked blueprint's Contract is immutable,
 so a rule that could turn one red would be unfixable by design, and
-blueprints quote retired forms as record.
+blueprints quote retired forms as record. A page git ignores is skipped
+too: the walk is `_pages.py`'s.
 """
 import sys
 from pathlib import Path
 
+from _pages import pages
+
 OWNER = "OKF/ARCHITECTURE.md"
 SENTINEL = "substrate (rare)  write-OKF — scaffold, or refresh when stale"
 RETIRED = "chart → blueprint"
-SKIP = ("OKF/blueprints/",)
 
 
 def render_sites(text):
@@ -56,17 +58,6 @@ def diverges(site, canon):
         if copied != owned:
             return number
     return min(len(site), len(canon)) + 1 if len(site) != len(canon) else 0
-
-
-def pages(root):
-    """Every `*.md` under the root, dot-directories and blueprints out."""
-    for page in sorted(root.rglob("*.md")):
-        rel = page.relative_to(root)
-        if any(part.startswith(".") for part in rel.parts):
-            continue
-        if rel.as_posix().startswith(SKIP):
-            continue
-        yield page, rel
 
 
 def main(argv):

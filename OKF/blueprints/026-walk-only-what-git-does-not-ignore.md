@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: user request 2026-07-31
 sounded: 2026-07-31
 cites:
@@ -12,6 +12,10 @@ cites:
   - OKF/blueprints/022-validate-every-cite-at-every-status.md:its Contract and Verify are not touched
   - OKF/ROADMAP.md
 muster: true
+review-base: yommvsuw
+tally:
+  intent: share one git-aware walk so an ignored page cannot redden a gate
+  matches: yes
 ---
 
 # 026 — walk only what git does not ignore
@@ -19,31 +23,28 @@ muster: true
 ## Justification
 
 **A repo-wide gate reddens on a file the repo does not own.** `HANDOFF.md` is
-gitignored, and both `link-check` and `render-check` walk it anyway, so a
-session's scratch prose can fail the tree. The cost is already paid:
-[024](024-rename-the-spine-and-give-chart-its-ferry-edge.md) had to carry
-*clear gitignored `HANDOFF.md` first* as a **run condition** on its own Verify,
-and a handoff must be written around both lints — link-free, quoting no lint
-constant. 024's §Out of scope declines the fix in place *"but that Contract is
-sealed — the fix is a supersession, not a line in a rename."* This is it.
+gitignored, yet both lints walk it, so scratch prose can fail the tree. The
+cost is paid: [024](024-rename-the-spine-and-give-chart-its-ferry-edge.md)
+carries *clear gitignored `HANDOFF.md` first* as a **run condition**, and a
+handoff must be written link-free, quoting no lint constant. 024 §Out of scope
+declines it *"but that Contract is sealed — the fix is a supersession, not a
+line in a rename."*
 
-**The measured census, not the remembered one.** Exactly **one** `.md` in the
-walk is ignored — `HANDOFF.md`; nothing else is ignored, nothing untracked.
-**Zero** of 516 relative links on live pages sit inside inline-code spans. So
-[023](023-add-a-link-lint-over-relative-md-links.md)'s ruling that inline-code
-spans are unreal stays true of every page remaining once the ignored one
-leaves — the only page wanting a link in backticks is the only ignored page.
-The backtick rule is not adopted: it would earn nothing, failing
-[sieve](../../skills/engineering/sieve/SKILL.md)'s Real test as 023 found.
+**The measured census.** Exactly **one** `.md` in the walk is ignored —
+`HANDOFF.md`; nothing untracked. **Zero** of 516 relative links sit inside
+inline-code spans, so [023](023-add-a-link-lint-over-relative-md-links.md)'s
+ruling that inline-code spans are unreal holds for every page left once the
+ignored one goes — the only page wanting one is the only ignored page. The
+backtick rule earns nothing, failing
+[sieve](../../skills/engineering/sieve/SKILL.md)'s Real test.
 
 **Why both lints.** `pages()` is **byte-identical** in the two, `SKIP`
-included, and `render-check` carries a retired-form constant a handoff cannot
-quote either. Ruling the walk for one and leaving its twin is the
-prose-failed-to-hold shape this repo has mechanised three times —
-[017](017-add-a-line-cap-lint-over-skills.md),
-[019](019-add-a-render-lint-over-the-loop-shape.md),
-[020](020-enforce-the-prune-and-validate-every-cite.md). `okf-check` (`OKF/`)
-and `skill-check` (`skills/*/*/SKILL.md`) cannot reach an ignored page.
+included, and `render-check` holds a retired-form constant a handoff cannot
+quote either. Fixing one and leaving its twin is the shape this repo has
+mechanised three times — [017](017-add-a-line-cap-lint-over-skills.md),
+[019](019-add-a-render-lint-over-the-loop-shape.md) and
+[020](020-enforce-the-prune-and-validate-every-cite.md). `okf-check` and
+`skill-check` cannot reach an ignored page.
 
 ## Contract
 

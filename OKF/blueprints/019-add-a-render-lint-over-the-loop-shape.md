@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: implemented
+status: superseded-by-026
 traces-to: ROADMAP.md phase 11
 sounded: 2026-07-30
 cites:

@@ -1,13 +1,13 @@
 ---
 type: Blueprint
-status: implemented
+status: superseded-by-026
 traces-to: ROADMAP.md phase 12
 sounded: 2026-07-31
 cites:
   - OKF/ROADMAP.md
   - OKF/ARCHITECTURE.md:Cross-links
   - OKF/blueprints/002-extract-why-register.md:ADR-FORMAT.md
-  - skills/loop/write-OKF/scripts/render-check:dot-directories and blueprints out
+  - skills/loop/write-OKF/scripts/_pages.py:dot-directories and blueprints out
   - OKF/blueprints/019-add-a-render-lint-over-the-loop-shape.md:Why a third script
   - OKF/blueprints/017-add-a-line-cap-lint-over-skills.md:Why a sibling script
   - OKF/decisions/016-one-okf-check-validator.md:One `okf-check` validator

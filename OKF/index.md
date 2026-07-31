@@ -41,14 +41,14 @@ your task needs. Humans welcome too.
 - [016](blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md) — pull two skills under the line cap and level the commit twins — implemented
 - [017](blueprints/017-add-a-line-cap-lint-over-skills.md) — add a line-cap lint over skills/ — implemented
 - [018](blueprints/018-own-the-loop-shape-in-flow-1.md) — own the loop's shape in ARCHITECTURE flow 1 — implemented
-- [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md) — add a render lint over the loop's shape — implemented
+- [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md) — add a render lint over the loop's shape — superseded-by-026
 - [020](blueprints/020-enforce-the-prune-and-validate-every-cite.md) — enforce the roadmap prune and validate every page's cites — superseded-by-022
 - [021](blueprints/021-align-validator-and-doctrine.md) — align the validator and the doctrine on splits, prefixes and cites — implemented
 - [022](blueprints/022-validate-every-cite-at-every-status.md) — enforce the roadmap prune and validate every cite at every status — implemented
-- [023](blueprints/023-add-a-link-lint-over-relative-md-links.md) — add a link lint over relative markdown links — implemented
+- [023](blueprints/023-add-a-link-lint-over-relative-md-links.md) — add a link lint over relative markdown links — superseded-by-026
 - [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md) — rename the spine to chart and rig, and give chart its ferry edge — implemented
 - [025](blueprints/025-rule-muster-on-every-blueprint.md) — rule muster on every blueprint — implemented
-- [026](blueprints/026-walk-only-what-git-does-not-ignore.md) — walk only what git does not ignore — locked
+- [026](blueprints/026-walk-only-what-git-does-not-ignore.md) — walk only what git does not ignore — implemented
 
 ## Ferries
 

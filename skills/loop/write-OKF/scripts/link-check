@@ -14,14 +14,16 @@ surfaces as a failed read, not an error, so the signal has to be static.
 Fenced blocks are skipped: there a link is illustration, not navigation.
 `OKF/blueprints/` is skipped for its siblings' reason — a locked
 blueprint is append-only, so a rename cannot repair a link inside one.
+A page git ignores is skipped too: the walk is `_pages.py`'s.
 """
 import re
 import sys
 from pathlib import Path
 
+from _pages import pages
+
 LINK = re.compile(r"\]\(([^)]*)\)")
 EXTERNAL = ("http://", "https://", "mailto:", "#")
-SKIP = ("OKF/blueprints/",)
 
 
 def targets(text):
@@ -38,17 +40,6 @@ def targets(text):
             for target in LINK.findall(line):
                 if not target.startswith(EXTERNAL):
                     yield number, target
-
-
-def pages(root):
-    """Every `*.md` under the root, dot-directories and blueprints out."""
-    for page in sorted(root.rglob("*.md")):
-        rel = page.relative_to(root)
-        if any(part.startswith(".") for part in rel.parts):
-            continue
-        if rel.as_posix().startswith(SKIP):
-            continue
-        yield page, rel
 
 
 def main(argv):
