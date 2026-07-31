@@ -4,7 +4,7 @@ status: implemented
 traces-to: ROADMAP.md phase 12
 sounded: 2026-07-31
 cites:
-  - OKF/ROADMAP.md:Precondition:
+  - OKF/ROADMAP.md
   - OKF/ARCHITECTURE.md:Cross-links
   - OKF/blueprints/002-extract-why-register.md:ADR-FORMAT.md
   - skills/loop/write-OKF/scripts/render-check:dot-directories and blueprints out

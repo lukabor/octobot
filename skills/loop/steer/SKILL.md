@@ -15,31 +15,31 @@ be. Ask "/steer <situation>" or just read the table.
 ```
 substrate (rare)  write-OKF — scaffold, or refresh when stale
                       ↓
-per request       architect — a phase only for an arc over >1 blueprint
+per request       chart — a phase only for an arc over >1 blueprint
                       ↓
                  know what to do?
         ┌──── yes ────┴──── no ────┐
   blueprint → sound          ferry — decisions + blocking edges,
-    → weave                  resolve one per sitting
-    (weave closes it)                ↓
+    → rig                    resolve one per sitting
+    (rig closes it)                  ↓
                              blueprint per cleared decision → sound
                                      ↓
-                             1 left → weave
+                             1 left → rig
                              N left → call-charon (agent per blueprint)
                                      ↓
                                    moor
 
-weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
+rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
 ```
 
 | Situation | Skill |
 |---|---|
 | project has no `OKF/` knowledge folder, or wiki is stale | `/write-OKF` |
-| starting a project / roadmap needs creating or revising | `/architect` |
+| starting a project / roadmap needs creating or revising | `/chart` |
 | discussed work needs a justified, verifiable blueprint | `/blueprint` |
 | a blueprint is about to lock on unverified knowledge | `/sound` |
 | feature too big for one session — map decisions | `/ferry` |
-| a locked blueprint is ready to execute | `/weave` |
+| a locked blueprint is ready to execute | `/rig` |
 | ferry's blueprints locked — agent-orchestrated crossing | `/call-charon` |
 | ferry delivered — close it out, consolidate the wiki | `/moor` |
 

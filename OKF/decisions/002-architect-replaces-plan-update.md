@@ -4,7 +4,7 @@ purpose: Settle whether planning is one mode-routed skill or two skills.
 answers:
   - "Which skill owns project planning?"
 cites:
-  - skills/loop/architect/SKILL.md
+  - skills/loop/chart/SKILL.md
 status: live
 reversible: by re-splitting
 ---

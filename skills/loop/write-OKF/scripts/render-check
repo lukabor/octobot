@@ -20,7 +20,7 @@ from pathlib import Path
 
 OWNER = "OKF/ARCHITECTURE.md"
 SENTINEL = "substrate (rare)  write-OKF — scaffold, or refresh when stale"
-RETIRED = "architect → blueprint"
+RETIRED = "chart → blueprint"
 SKIP = ("OKF/blueprints/",)
 
 

@@ -1,6 +1,6 @@
 ---
 name: blueprint
-description: Synthesize the current conversation or a roadmap phase into a justified, verifiable blueprint at OKF/blueprints/NNN-<slug>.md — the unit that weave executes. No interview, pure synthesis.
+description: Synthesize the current conversation or a roadmap phase into a justified, verifiable blueprint at OKF/blueprints/NNN-<slug>.md — the unit that rig executes. No interview, pure synthesis.
 disable-model-invocation: true
 ---
 
@@ -9,17 +9,17 @@ disable-model-invocation: true
 Matt Pocock's to-blueprint, file-based. Turns *already-discussed* work into a
 blueprint with justification. The interview happened upstream
 ([grill-me](../../productivity/grill-me/SKILL.md) /
-[architect](../architect/SKILL.md)); blueprint only crystallises.
+[chart](../chart/SKILL.md)); blueprint only crystallises.
 
 ## When to use
 - User says "blueprint", "/blueprint", "write the blueprint", "blueprint this out".
-- An [architect](../architect/SKILL.md) roadmap phase is ready to
+- A [chart](../chart/SKILL.md) roadmap phase is ready to
   decompose into implementable units.
 - A [ferry](../ferry/SKILL.md) decision resolved and needs its blueprint(s).
 
 ## Process
 1. **Locate the source** — the conversation, a named roadmap phase, or a
-   resolved ferry decision. No source → stop; run grill-me/architect
+   resolved ferry decision. No source → stop; run grill-me/chart
    first. Never invent requirements.
 2. **Number it** — `NNN` = highest existing in `OKF/blueprints/` + 1
    (`grep -ho '^[0-9]\{3\}' <(ls OKF/blueprints/) | sort -n | tail -1`);
@@ -31,7 +31,7 @@ blueprint with justification. The interview happened upstream
    - *Seams touched* lists the interfaces tests will run against —
      [bdd](../../engineering/bdd/SKILL.md) consumes this as its
      pre-agreed seam list.
-   - *Verify* is a runnable command or observable check — weave's
+   - *Verify* is a runnable command or observable check — rig's
      done-gate runs exactly this.
 4. **Sound it** — call [sound](../sound/SKILL.md) by name on the draft:
    it verifies what the blueprint rests on and stamps `sounded: <date>`.
@@ -59,14 +59,14 @@ stamp** — `okf-check` warns on a `locked` blueprint without one. The
 - **Never** interview here — synthesis only.
 - **Never** lock without a user yes.
 - **Never** write implementation code or tests — that's
-  [weave](../weave/SKILL.md).
+  [rig](../rig/SKILL.md).
 - **Never** restate OKF content in the blueprint — reference pages by path.
 - One blueprint = one implementable unit; too big to verify in one
-  weave run → split, or send to [ferry](../ferry/SKILL.md).
+  rig run → split, or send to [ferry](../ferry/SKILL.md).
 
 ## See also
 - [blueprint-format.md](blueprint-format.md) — the format contract.
 - [../../engineering/review-blueprint/SKILL.md](../../engineering/review-blueprint/SKILL.md)
   — reviews a diff *against* a blueprint.
-- [../architect/SKILL.md](../architect/SKILL.md) — phases feed blueprints;
+- [../chart/SKILL.md](../chart/SKILL.md) — phases feed blueprints;
   implemented blueprints tick phases.

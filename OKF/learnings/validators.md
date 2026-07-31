@@ -25,3 +25,9 @@ status: live
   match neither its list nor its scalar branch — so a block check needs a
   dedicated regex grab, the way `pin()` handles `sealed:`. Source: weave of
   blueprint 011.
+- Believed: a lint that proves three renders byte-identical protects the
+  rendered shape. True: it proves identity only. A rename inside the
+  box-drawing block shifts every copy the same way, so a name that shortens
+  by two columns leaves the right-hand column and its arrows misaligned in
+  all three at once and the check still passes. Re-pad the trailing columns
+  by hand. Source: rig of B-024.

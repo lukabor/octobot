@@ -43,20 +43,7 @@ single request traces to `user request <date>` instead, as B-008–B-017 did.
 9. **sound — verified recon before lock** — ✅ 2026-07-22, [007](blueprints/007-add-sound.md).
 10. **skills-consistency hardening** — ✅ 2026-07-31, closed inline; F8's ruling in `conjure-a-skill`.
 11. **the loop's shape stops being a hand-copied string** — ✅ 2026-07-30, [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md).
-
-12. **the spine gets nautical names and one honest fork** — `architect` →
-    `chart`, `weave` → `rig` (frontmatter, directories, symlinks, every
-    cross-link). `chart` gains a handoff edge into `ferry`, opened by chart
-    itself when a phase spans >1 blueprint or session, never by flipping
-    ferry's `disable-model-invocation` (D-019 covers read-only recon only).
-    `sound`, `call-charon` and the 1-vs-N executor fork stay; `chart` documents
-    the single-request terminal as designed, not a gap. **Precondition:** a
-    `link-check` sibling lands first — this rename moves 26 of the 421
-    unvalidated links, and a grep for old names proves absence, not that the
-    new paths resolve. **Verify:** `link-check .`, `render-check .`,
-    `skill-check skills/` and `okf-check OKF/` each 0 errors with output
-    pasted; `grep -rniw 'architect\|weave' skills/ README.md AGENTS.md`
-    returns nothing.
+12. **the spine gets nautical names and one honest fork** — ✅ 2026-07-31, [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md).
 
 13. **the loop learns to carry an analysis** — an analysis blueprint's Contract
     is a pre-registered estimand and its Verify is reproducibility (clean
@@ -88,7 +75,7 @@ single request traces to `user request <date>` instead, as B-008–B-017 did.
   triggered at cap+1, never reached. Moved onto `✅ verified` and mechanised
   ([020](blueprints/020-enforce-the-prune-and-validate-every-cite.md)).
 - **A live decision can be contradicted by the skill that owns the file, and
-  by the validator that checks it** — `architect` and `okf-check` both
+  by the validator that checks it** — `chart` and `okf-check` both
   contradicted R-020 for months, with nothing to catch either. Closed by
   [021](blueprints/021-align-validator-and-doctrine.md) and
   [022](blueprints/022-validate-every-cite-at-every-status.md).

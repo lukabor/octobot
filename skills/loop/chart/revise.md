@@ -1,4 +1,4 @@
-# architect — revision loop
+# chart — revision loop
 
 For a roadmap that exists and reality that moved. Formerly
 `update-project`.
@@ -25,7 +25,7 @@ For a roadmap that exists and reality that moved. Formerly
      Decisions are append-only history, not a wiki page.
    - Scope change → move items between *Phases* and *Out of scope*
      explicitly, never delete.
-   - Blueprint implemented ([weave](../weave/SKILL.md) hand-back) →
+   - Blueprint implemented ([rig](../rig/SKILL.md) hand-back) →
      tick the phase item citing the blueprint number.
 4. **Sync vocabulary.** New or shifted terms → one inline
    `OKF/CONTEXT.md` edit each. Roadmap and glossary keep matching

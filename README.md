@@ -48,26 +48,26 @@ Octobot's core: a loop-engineering metaharness over an **OKF**
 ```
 substrate (rare)  write-OKF — scaffold, or refresh when stale
                       ↓
-per request       architect — a phase only for an arc over >1 blueprint
+per request       chart — a phase only for an arc over >1 blueprint
                       ↓
                  know what to do?
         ┌──── yes ────┴──── no ────┐
   blueprint → sound          ferry — decisions + blocking edges,
-    → weave                  resolve one per sitting
-    (weave closes it)                ↓
+    → rig                    resolve one per sitting
+    (rig closes it)                  ↓
                              blueprint per cleared decision → sound
                                      ↓
-                             1 left → weave
+                             1 left → rig
                              N left → call-charon (agent per blueprint)
                                      ↓
                                    moor
 
-weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
+rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
 ```
 
 - **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
   every agent reads `OKF/index.md` before code.
-- **architect** — plan a project or revise its plan (`OKF/ROADMAP.md`);
+- **chart** — plan a project or revise its plan (`OKF/ROADMAP.md`);
   greenfield and revision modes (replaces plan-project + update-project).
 - **blueprint** — synthesize discussed work into a justified, verifiable
   blueprint at `OKF/blueprints/NNN-<slug>.md` (status: draft → locked → implemented).
@@ -75,7 +75,7 @@ weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF ref
   server, then files only where nostos cannot answer; stamps `sounded:`.
 - **ferry** — work too big for one session becomes a directory of small,
   edge-declared decision files; resolve one per sitting.
-- **weave** — execute one locked blueprint: bdd at its seams, four-axis
+- **rig** — execute one locked blueprint: bdd at its seams, four-axis
   review, run its Verify with pasted output, seal citing the blueprint.
 - **call-charon** — deliver an arrived ferry's blueprints via agents:
   one isolated builder per blueprint, fresh-context review flotilla,
@@ -113,7 +113,7 @@ except **sound**, which only reads — see `OKF/decisions/019`.
 - **review-angles** — recall-biased correctness checklist for the post-green
   review pass (stale refs, TOCTOU, ordering state, durability, invalidation).
 - **review-blueprint** — the blueprint-fidelity axis: diff vs `OKF/blueprints/NNN` —
-  complete, contained, verified (output pasted). weave's done-gate.
+  complete, contained, verified (output pasted). rig's done-gate.
 - **nuke-review** — exceptionally strict structural-quality review for code
   judo moves; ported from cursor/plugins thermo-nuclear-code-quality-review.
   Pairs with `review-angles` (correctness) and `winnow` (debloat) as the
@@ -169,10 +169,10 @@ Common ways the skills chain together. Each recipe is a *sequence*, not a
 script — read the relevant SKILL.md as you enter each step.
 
 ### Project lifecycle
-- **Greenfield project** — `/write-OKF` (knowledge scaffold) → `/architect`
+- **Greenfield project** — `/write-OKF` (knowledge scaffold) → `/chart`
   (Socratic kickoff → `OKF/ROADMAP.md`)
   → `/build-py-project` | `/build-r-package` | `/build-r-analysis` (scaffold)
-  → feature loops below → `/architect` (revision mode as you learn).
+  → feature loops below → `/chart` (revision mode as you learn).
 - **Feature on an existing codebase** — `/grill-with-docs` if the design needs
   pinning → `/bdd` (red-green-refactor) → post-green review (next recipe)
   → `/commit-atomic-jj` (seal).
@@ -181,7 +181,7 @@ script — read the relevant SKILL.md as you enter each step.
 - **Multi-session epic (ferry crossing)** — `/ferry` (map decisions, resolve
   one per sitting) → `/blueprint` (lock the resulting blueprints) →
   `/call-charon` (one builder agent per blueprint, review flotilla,
-  orchestrator-run Verify) or `/weave` per blueprint by hand →
+  orchestrator-run Verify) or `/rig` per blueprint by hand →
   `/moor` (reconcile the wiki with what shipped, extract loose ends,
   hand the ferry its rest).
 
@@ -245,7 +245,7 @@ afternoon.
 ### Socratic spine (toward a harness)
 
 The library is being organized around a Socratic lifecycle —
-**Question** (grill-me, grill-with-docs, architect) → **Gate** (sieve) →
+**Question** (grill-me, grill-with-docs, chart) → **Gate** (sieve) →
 **Build** (bdd) → **Refute** (review-angles, winnow, refute.md) →
 **Seal** (commit-atomic-jj). Done so far: the three-sieve spine in `CLAUDE.md §2`
 and the shared `refute.md` elenchus doctrine. Remaining, **in order — don't

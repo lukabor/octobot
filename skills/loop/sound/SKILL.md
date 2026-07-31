@@ -94,5 +94,5 @@ the user asks, or when a cite no longer resolves.
   gates its lock step.
 - [../write-OKF/SKILL.md](../write-OKF/SKILL.md) — no `OKF/` → there
   first; `okf-check` owns the warning.
-- [../weave/SKILL.md](../weave/SKILL.md) — executes what a sounded
+- [../rig/SKILL.md](../rig/SKILL.md) — executes what a sounded
   blueprint locked.

@@ -11,8 +11,8 @@ cites:
   - skills/loop/write-OKF/page-warrant.md:cite drift does not split the same way
   - skills/loop/write-OKF/scripts/okf-check:carry their own frontmatter contracts
   - skills/loop/write-OKF/split-page.md
-  - skills/loop/architect/SKILL.md
-  - skills/loop/architect/revise.md
+  - skills/loop/chart/SKILL.md
+  - skills/loop/chart/revise.md
   - OKF/learnings/index.md:Append-only
 ---
 

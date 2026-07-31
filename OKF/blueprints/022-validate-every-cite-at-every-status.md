@@ -9,8 +9,8 @@ cites:
   - OKF/learnings/loop.md
   - OKF/index.md
   - skills/loop/write-OKF/scripts/okf-check
-  - skills/loop/architect/SKILL.md
-  - skills/loop/architect/revise.md
+  - skills/loop/chart/SKILL.md
+  - skills/loop/chart/revise.md
   - OKF/ROADMAP.md:A live decision can be contradicted
   - OKF/decisions/020-every-page-has-a-growth-path.md:a discharged phase to one
   - OKF/decisions/017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see

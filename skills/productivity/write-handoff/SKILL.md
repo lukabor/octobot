@@ -16,7 +16,7 @@ subagent spawn (the handoff-gate brief —
 - Session ending / context near full on unfinished work.
 - A mutating subagent needs a brief and no locked blueprint covers the work
   (a locked `OKF/blueprints/NNN` **is** the brief — don't duplicate it;
-  see [weave](../../loop/weave/SKILL.md)).
+  see [rig](../../loop/rig/SKILL.md)).
 
 ## Rules (both exits)
 - **Reference, don't duplicate.** Anything already captured in an

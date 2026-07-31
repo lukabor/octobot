@@ -46,7 +46,7 @@ your task needs. Humans welcome too.
 - [021](blueprints/021-align-validator-and-doctrine.md) — align the validator and the doctrine on splits, prefixes and cites — implemented
 - [022](blueprints/022-validate-every-cite-at-every-status.md) — enforce the roadmap prune and validate every cite at every status — implemented
 - [023](blueprints/023-add-a-link-lint-over-relative-md-links.md) — add a link lint over relative markdown links — implemented
-- [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md) — rename the spine to chart and rig, and give chart its ferry edge — locked
+- [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md) — rename the spine to chart and rig, and give chart its ferry edge — implemented
 
 ## Ferries
 

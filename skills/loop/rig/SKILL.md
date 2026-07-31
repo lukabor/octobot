@@ -1,16 +1,16 @@
 ---
-name: weave
+name: rig
 description: Execute one locked blueprint from OKF/blueprints — bdd loop at the blueprint's seams, four-axis review, run the blueprint's Verify with pasted output, seal citing the blueprint, flip its status. The loop closer.
 disable-model-invocation: true
 ---
 
-# weave
+# rig
 
 Executes exactly **one `locked` blueprint**. Matt Pocock's implement ×
 superpowers' subagent-driven-development, jj-native.
 
 ## When to use
-- User says "weave", "/weave", "implement blueprint NNN", "execute
+- User says "rig", "/rig", "implement blueprint NNN", "execute
   the blueprint".
 - A [blueprint](../blueprint/SKILL.md) blueprint just locked and the user
   says go.
@@ -50,7 +50,7 @@ superpowers' subagent-driven-development, jj-native.
    `muster:` field → skip entirely.
 7. **Close the loop** — flip blueprint status to `implemented`; update its
    index.md line; tick the roadmap item via
-   [architect](../architect/SKILL.md) revise mode; wiki-worthy learnings
+   [chart](../chart/SKILL.md) revise mode; wiki-worthy learnings
    → `OKF/LEARNINGS.md` ([write-OKF](../write-OKF/SKILL.md) refresh if
    pages went stale).
 
@@ -73,7 +73,7 @@ locked blueprint is the default brief. Read-only lookups
   blueprint (supersede) first; review-blueprint will flag it anyway.
 - **Never** flip status without the pasted Verify output.
 - **Never** spawn a mutating subagent without a brief.
-- One blueprint per run — the next blueprint is a fresh weave.
+- One blueprint per run — the next blueprint is a fresh rig.
 
 ## See also
 - [../blueprint/SKILL.md](../blueprint/SKILL.md) — upstream; owns blueprint
@@ -81,5 +81,5 @@ locked blueprint is the default brief. Read-only lookups
 - [../../engineering/review-blueprint/SKILL.md](../../engineering/review-blueprint/SKILL.md)
   — the done-gate axis.
 - [../../engineering/diagnose/SKILL.md](../../engineering/diagnose/SKILL.md)
-  — a bug found mid-weave that isn't this blueprint's scope gets its own
+  — a bug found during a rig that isn't this blueprint's scope gets its own
   loop.

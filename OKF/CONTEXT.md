@@ -35,7 +35,7 @@ _Avoid_: docs folder, wiki (unqualified), knowledge base.
 
 **Blueprint**:
 A blueprint-skill-produced file `OKF/blueprints/NNN-<slug>.md` with
-status frontmatter; the unit weave executes. Its `## Contract` section
+status frontmatter; the unit rig executes. Its `## Contract` section
 states what the change must satisfy. _Avoid_: spec (superseded term —
 renamed for skill↔artifact consistency), ticket, issue, task.
 

@@ -22,12 +22,12 @@ crystallise.
 ## Output / done criteria
 - The plan restates unambiguously (grill-me's bar), and every term or
   decision it settled landed in `OKF/CONTEXT.md` or `OKF/decisions/`.
-- No roadmap written — that is [architect](../../loop/architect/SKILL.md)'s.
+- No roadmap written — that is [chart](../../loop/chart/SKILL.md)'s.
 
 ## See also
 - [../../productivity/grill-me/SKILL.md](../../productivity/grill-me/SKILL.md)
   — the interview engine this composes.
 - [../model-domain/SKILL.md](../model-domain/SKILL.md) — owns the glossary
   and the warrant test this records against.
-- [../../loop/architect/SKILL.md](../../loop/architect/SKILL.md) — delegates
+- [../../loop/chart/SKILL.md](../../loop/chart/SKILL.md) — delegates
   the plan-vs-code stress-test here.

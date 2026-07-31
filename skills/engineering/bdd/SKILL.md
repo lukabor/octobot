@@ -48,7 +48,7 @@ module, interface, seam, adapter, depth, leverage, locality.
 - Write down the **seams under test** and confirm them with the user
   before any test exists — no test at an unconfirmed seam. Up-front
   agreement puts effort on critical paths, not every edge. Inside
-  [weave](../../loop/weave/SKILL.md), the blueprint's *Seams touched*
+  [rig](../../loop/rig/SKILL.md), the blueprint's *Seams touched*
   pre-answers this — reuse it.
 
 ### 1. Red — one scenario at a time

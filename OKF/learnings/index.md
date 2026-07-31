@@ -10,7 +10,7 @@ Append-only per page — supersede, never rewrite. Supersession works
 
 Themed by the layer an entry forces to change.
 
-- [loop.md](loop.md) — blueprint, weave, sound: scoping, Verify design,
+- [loop.md](loop.md) — blueprint, rig, sound: scoping, Verify design,
   the line cap.
 - [okf-format.md](okf-format.md) — page contracts, warrants, prior art.
 - [validators.md](validators.md) — okf-check and what its parsers do not see.

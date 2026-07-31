@@ -16,7 +16,7 @@ your task needs. Humans welcome too.
 - [LEARNINGS.md](LEARNINGS.md) — gotchas and debunked claims.
 
 A page is listed when planned, written when its producer has something to
-say — CONTEXT and ROADMAP wait for model-domain and architect.
+say — CONTEXT and ROADMAP wait for model-domain and chart.
 
 ## Modules & analyses
 

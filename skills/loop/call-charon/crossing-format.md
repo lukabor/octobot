@@ -39,7 +39,7 @@ Goal: implement blueprint NNN exactly — no more, no less.
 Work in: <jj: ../charon-NNN | git: your worktree (already isolated)>.
 Read first: OKF/blueprints/NNN-<slug>.md, OKF/index.md,
   <OKF pages the blueprint references, by path>.
-Process: follow ~/.claude/skills/weave/SKILL.md steps 1–2 (Frame,
+Process: follow ~/.claude/skills/rig/SKILL.md steps 1–2 (Frame,
   Build via ~/.claude/skills/bdd/SKILL.md) for this one blueprint.
   Stop after green — review, seal, and status flips belong to the
   orchestrator.
@@ -79,7 +79,7 @@ No praise, no scope creep. Empty list = pass.
 - Strip only frontmatter, `## When to use`, `## See also`. Everything
   else goes in **verbatim — never summarize**: the axes are
   recall-biased checklists; paraphrase destroys their recall.
-- Builder briefs still reference weave/bdd by path — process skills
+- Builder briefs still reference rig/bdd by path — process skills
   are too long to inline, and the builder always runs on the
   orchestrator's machine.
 

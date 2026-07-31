@@ -4,7 +4,7 @@ purpose: Stop mutating subagents from being spawned on a bare sentence.
 answers:
   - "What must a mutating subagent receive before it is spawned?"
 cites:
-  - skills/loop/weave/SKILL.md
+  - skills/loop/rig/SKILL.md
 status: live
 reversible: yes — drop the gate
 ---

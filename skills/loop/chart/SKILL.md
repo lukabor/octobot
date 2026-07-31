@@ -1,15 +1,15 @@
 ---
-name: architect
+name: chart
 description: Plan a project or revise its plan — one mode-routed skill replacing plan-project and update-project. Greenfield: research-backed Socratic interview producing OKF/ROADMAP.md. Revision: fold reality back into the roadmap with supersede-never-delete discipline.
 disable-model-invocation: true
 ---
 
-# architect
+# chart
 
 Owns `OKF/ROADMAP.md`. Planning only, never implementation.
 
 ## When to use
-- User says "architect", "/architect", "plan project", "plan this with
+- User says "chart", "/chart", "plan project", "plan this with
   me", "update the roadmap", "mark phase done", "we learned something —
   revise the plan".
 - A verify step, `/diagnose` post-mortem, or prior-art change produced
@@ -49,6 +49,11 @@ fill the missing sections as deltas, don't restart.
   Default no.
 - Roadmap phases feed [blueprint](../blueprint/SKILL.md) — write phases
   concrete enough that a blueprint can trace to them.
+- **A phase whose arc spans more than one blueprint or session** hands to
+  [ferry](../ferry/SKILL.md) — chart plans it, ferry carries it.
+- **A lone request opens no phase.** It traces to `user request <date>` and
+  goes straight to blueprint; `OKF/ROADMAP.md` §Phases holds arcs, not
+  errands. The missing phase is the design, not a gap.
 
 ## Output / done criteria
 - `OKF/ROADMAP.md` matches the skeleton; every *open* phase has a verify
@@ -71,5 +76,7 @@ fill the missing sections as deltas, don't restart.
   this skill writes into.
 - [../blueprint/SKILL.md](../blueprint/SKILL.md) — decomposes roadmap
   phases into blueprints.
+- [../ferry/SKILL.md](../ferry/SKILL.md) — carries a phase too big for one
+  blueprint or one sitting.
 - [../../productivity/grill-me/SKILL.md](../../productivity/grill-me/SKILL.md)
   — the interview engine.

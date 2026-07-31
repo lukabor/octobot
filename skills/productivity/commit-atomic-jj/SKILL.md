@@ -52,7 +52,7 @@ If the project uses a ticket prefix (e.g. `DRAKE-42`, `JIRA-101`,
 If the project has no ticket convention, omit. Don't invent a prefix.
 
 ### 5. Blueprint citations
-A change executing an `OKF/blueprints/NNN` blueprint ([weave](../../loop/weave/SKILL.md))
+A change executing an `OKF/blueprints/NNN` blueprint ([rig](../../loop/rig/SKILL.md))
 cites it in the body: `implements blueprint NNN`. Readers trace the diff to
 its justification without leaving the log.
 

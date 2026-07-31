@@ -8,23 +8,23 @@ answers:
 
 # <project> — roadmap
 
-<!-- architect owns this content; scribe only places the page. Carries
+<!-- chart owns this content; scribe only places the page. Carries
      what is *ahead* — a shipped phase keeps its verify evidence, a
      spent risk is deleted. -->
 
 ## Locked decisions
 
-TODO(architect) — the why-register: [decisions/index.md](decisions/index.md).
+TODO(chart) — the why-register: [decisions/index.md](decisions/index.md).
 
 ## Phases
 
-TODO(architect) — numbered, append-only, each with a **Verify:** step
+TODO(chart) — numbered, append-only, each with a **Verify:** step
 concrete enough to run.
 
 ## Risks & gotchas
 
-TODO(architect) — what could still sink a phase, deleted once spent.
+TODO(chart) — what could still sink a phase, deleted once spent.
 
 ## Out of scope
 
-TODO(architect) — what was considered and deliberately left out.
+TODO(chart) — what was considered and deliberately left out.

@@ -9,7 +9,7 @@ sounded: YYYY-MM-DD
 cites:                    # optional — what the blueprint rests on
   - path | path:line | path:symbol
 muster: true              # optional — opt into the human review gate
-review-base: <changeid>   # set when muster is on: parent of where weave begins
+review-base: <changeid>   # set when muster is on: parent of where rig begins
 tally:                    # recorded at the muster halt; required to reach implemented
   intent: <what the change was meant to do>
   matches: yes | no
@@ -35,7 +35,7 @@ them.>
 
 ## Verify
 <ONE runnable command or observable check that proves the blueprint is met.
-weave pastes its output before flipping status. "Tests pass" is not
+rig pastes its output before flipping status. "Tests pass" is not
 a Verify; `just test` on a named suite is.>
 
 ## Out of scope
@@ -57,10 +57,10 @@ up in the diff.>
   [write-OKF/okf-layout.md](../write-OKF/okf-layout.md) §Conformance, not
   restated here. Optional because a blueprint may rest on nothing on disk:
   B-015 carries none.
-- `muster: true` (optional) opts into the human review gate: weave halts
+- `muster: true` (optional) opts into the human review gate: rig halts
   after the seal, shows the whole `review-base..@` diff in hunk, and records
   a `tally:` block. `okf-check` errors on a `muster` blueprint reaching
-  `implemented` without one. Absent → weave runs unchanged.
+  `implemented` without one. Absent → rig runs unchanged.
 - Locked blueprint's Contract/Verify sections are immutable — supersede, don't
   edit. Justification may gain references; status may advance. Replacing a
   session check's state marker (`⏳ pending` → `✅ <date> (<what discharged

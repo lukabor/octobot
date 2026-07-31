@@ -18,8 +18,7 @@ One module per skill category; the interface of each skill is its
 frontmatter `description` (routing) plus its SKILL.md body (procedure).
 
 - **loop** (`skills/loop/`) — the metaharness spine: write-OKF
-  (knowledge), architect (plan). Blueprint, ferry, weave, steer land
-  per [ROADMAP.md](ROADMAP.md).
+  (knowledge), chart (plan), blueprint, ferry, rig, steer.
 - **engineering** (`skills/engineering/`) — practice skills: bdd,
   diagnose, review axes (review-angles, nuke-review, winnow), sieve,
   vocabulary (design-codebase, model-domain), style-r, dev-* runners,
@@ -40,21 +39,21 @@ frontmatter `description` (routing) plus its SKILL.md body (procedure).
 ```
 substrate (rare)  write-OKF — scaffold, or refresh when stale
                       ↓
-per request       architect — a phase only for an arc over >1 blueprint
+per request       chart — a phase only for an arc over >1 blueprint
                       ↓
                  know what to do?
         ┌──── yes ────┴──── no ────┐
   blueprint → sound          ferry — decisions + blocking edges,
-    → weave                  resolve one per sitting
-    (weave closes it)                ↓
+    → rig                    resolve one per sitting
+    (rig closes it)                  ↓
                              blueprint per cleared decision → sound
                                      ↓
-                             1 left → weave
+                             1 left → rig
                              N left → call-charon (agent per blueprint)
                                      ↓
                                    moor
 
-weave = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
+rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
 ```
 
 2. **Skill discovery** — Claude Code scans `~/.claude/skills/` one level

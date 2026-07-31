@@ -14,7 +14,7 @@ directory is what crosses the session boundary.
 ## When to use
 - User says "ferry", "/ferry", "this is too big for one session",
   "map this feature out".
-- An [architect](../architect/SKILL.md) phase or
+- A [chart](../chart/SKILL.md) phase or
   [blueprint](../blueprint/SKILL.md) attempt turns out too large to blueprint
   as one implementable unit.
 - A [write-handoff](../../productivity/write-handoff/SKILL.md) is looming on a
@@ -23,7 +23,7 @@ directory is what crosses the session boundary.
 
 ## Process
 1. **Name the destination** — one sentence: what "the way is clear"
-   means (all decisions resolved → blueprints exist → weave can run).
+   means (all decisions resolved → blueprints exist → rig can run).
 2. **Create `OKF/ferries/<topic>/`** with `MAP.md`: destination
    sentence + decision list (`D-1 — title — status — blocked-by`).
 3. **Write decision files** `D-<n>-<slug>.md` per
@@ -61,13 +61,13 @@ state into HANDOFF.md — reference the directory
   actually grilled, not rubber-stamped.
 - **Never** put implementation or code in ferry files — decisions only.
 - **Never** delete a resolved decision — it's the why-record
-  (append-only history, like architect's locked decisions).
+  (append-only history, like chart's locked decisions).
 
 ## See also
 - [decision-format.md](decision-format.md) — file contract.
 - [../blueprint/SKILL.md](../blueprint/SKILL.md) — downstream of every
   resolution.
-- [../architect/SKILL.md](../architect/SKILL.md) — phases too big to
+- [../chart/SKILL.md](../chart/SKILL.md) — phases too big to
   blueprint directly get ferried.
 - [../moor/SKILL.md](../moor/SKILL.md) — closes out the ferry after its
   blueprints ship.

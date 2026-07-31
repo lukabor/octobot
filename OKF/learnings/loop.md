@@ -5,7 +5,7 @@ answers:
   - "What did we get wrong about the loop's own steps?"
 cites:
   - skills/loop/blueprint/blueprint-format.md
-  - skills/loop/weave/SKILL.md
+  - skills/loop/rig/SKILL.md
 status: live
 ---
 
@@ -59,9 +59,9 @@ status: live
   blueprint that moves a path owes a check of which locked Verify already
   names it. Source: weave of B-021.
 - Believed: validating a blueprint's `cites:` is a cheap lint. True: a
-  blueprint cites the very text it is about to change, so the weave that
+  blueprint cites the very text it is about to change, so the rig that
   lands it breaks its own pointers and must then repair them — B-022 found
   nine stale cites, five of them written by blueprints that had already
-  weaved. The durable practice is to cite a file the blueprint *edits* by
+  landed. The durable practice is to cite a file the blueprint *edits* by
   **path alone**, and spend `:symbol` only on text the change leaves
   standing. Source: weave of B-022.

@@ -19,7 +19,7 @@ holds no state in his head.
 - A [ferry](../ferry/SKILL.md) has arrived (decisions resolved,
   blueprints locked) and implementation spans multiple blueprints.
 - One blueprint, no orchestration worth the cost → plain
-  [weave](../weave/SKILL.md).
+  [rig](../rig/SKILL.md).
 
 ## Preconditions (check, don't assume)
 - `OKF/ferries/<topic>/MAP.md` exists; every decision resolved. Open
@@ -86,7 +86,7 @@ holds no state in his head.
 ## Guardrails
 - **Never** implement or test in the orchestrator session — dispatch
   only.
-- **Never** spawn a builder without a brief (weave's gate).
+- **Never** spawn a builder without a brief (rig's gate).
 - **Never** let a builder self-review; never drop the
   review-blueprint + review-angles floor.
 - **Never** seal on agent claims — orchestrator-run Verify output only.
@@ -101,6 +101,6 @@ holds no state in his head.
 - [crossing-format.md](crossing-format.md) — Passage line, builder
   brief, reviewer brief, finding-merge contract.
 - [../ferry/SKILL.md](../ferry/SKILL.md) — upstream; owns MAP.md.
-- [../weave/SKILL.md](../weave/SKILL.md) — the process each builder
+- [../rig/SKILL.md](../rig/SKILL.md) — the process each builder
   brief encodes for one blueprint.
 - [../moor/SKILL.md](../moor/SKILL.md) — downstream close-out.

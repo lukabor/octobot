@@ -1,13 +1,13 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 12
 sounded: 2026-07-31
 cites:
   - OKF/ROADMAP.md:the spine gets nautical names
   - OKF/ARCHITECTURE.md
-  - skills/loop/architect/SKILL.md
-  - skills/loop/weave/SKILL.md
+  - skills/loop/chart/SKILL.md
+  - skills/loop/rig/SKILL.md
   - skills/loop/ferry/SKILL.md
   - skills/loop/steer/SKILL.md
   - skills/loop/write-OKF/scripts/render-check

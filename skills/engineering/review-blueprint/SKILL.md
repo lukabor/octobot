@@ -1,6 +1,6 @@
 ---
 name: review-blueprint
-description: Review a diff against its originating blueprint (OKF/blueprints/NNN) — everything asked implemented, nothing beyond scope, Verify actually run with pasted output. The fourth review axis and weave's done-gate. Use when the user says "review against the blueprint", "review-blueprint", "does this match the blueprint", or weave reaches its done-gate.
+description: Review a diff against its originating blueprint (OKF/blueprints/NNN) — everything asked implemented, nothing beyond scope, Verify actually run with pasted output. The fourth review axis and rig's done-gate. Use when the user says "review against the blueprint", "review-blueprint", "does this match the blueprint", or rig reaches its done-gate.
 ---
 
 # review-blueprint
@@ -13,7 +13,7 @@ this one judges it against *what was asked*. Adapted from Matt Pocock's
 code-review Spec axis + obra/superpowers' verification-before-completion.
 
 ## When to use
-- [weave](../../loop/weave/SKILL.md) reaches its done-gate.
+- [rig](../../loop/rig/SKILL.md) reaches its done-gate.
 - User says "review against the blueprint", "does this match the blueprint".
 - Any post-green review pass where an `OKF/blueprints/NNN` exists for the diff.
 
@@ -61,7 +61,7 @@ emitting ([refute.md](../review-angles/refute.md)).
 - [../review-angles/SKILL.md](../review-angles/SKILL.md),
   [../nuke-review/SKILL.md](../nuke-review/SKILL.md),
   [../winnow/SKILL.md](../winnow/SKILL.md) — the other three axes.
-- [../../loop/weave/SKILL.md](../../loop/weave/SKILL.md) — runs
+- [../../loop/rig/SKILL.md](../../loop/rig/SKILL.md) — runs
   this axis as its done-gate.
 - [../../productivity/spawn-cavecrew/SKILL.md](../../productivity/spawn-cavecrew/SKILL.md)
   — spawn it as a subagent pass.

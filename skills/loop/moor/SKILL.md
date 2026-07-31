@@ -7,13 +7,13 @@ disable-model-invocation: true
 # moor
 
 What you do when the [ferry](../ferry/SKILL.md) has arrived: tie it up.
-Runs **after** weave + review-blueprint + commit-atomic-jj, once every
+Runs **after** rig + review-blueprint + commit-atomic-jj, once every
 decision is resolved and the spawned blueprints are done. Consolidates
 the wiki so the next cold-start agent reads reality, not history.
 
 ## When to use
 - User says "moor", "/moor", "close out the ferry", "the ferry is done".
-- [weave](../weave/SKILL.md)'s done-gate passes on the last blueprint of
+- [rig](../rig/SKILL.md)'s done-gate passes on the last blueprint of
   a ferry-traced chain.
 
 ## Process
@@ -28,7 +28,7 @@ the wiki so the next cold-start agent reads reality, not history.
    → skip, moor runs unchanged. The human gate on arrival → moor: halts
    after GATHER SIGNAL, before every mutation below. Derive `review-base` =
    parent of the earliest commit citing one of the ferry's blueprints
-   (weave seals cite `blueprint NNN`); pipe the `review-base..@` diff to
+   (rig seals cite `blueprint NNN`); pipe the `review-base..@` diff to
    hunk (`jj diff --from <review-base> --to @ --git | hunk patch -`; git:
    `git diff <review-base>..HEAD | hunk patch -`; no hunk → raw). The human
    records a `tally:` block; `matches: no` stays halted for a fix, never
@@ -96,7 +96,7 @@ the wiki so the next cold-start agent reads reality, not history.
 ## See also
 - [../ferry/SKILL.md](../ferry/SKILL.md) — upstream; its "Arrive" step
   hands off here.
-- [../weave/SKILL.md](../weave/SKILL.md) — moor runs after its
+- [../rig/SKILL.md](../rig/SKILL.md) — moor runs after its
   done-gate on the ferry's last blueprint.
 - [../write-OKF/okf-layout.md](../write-OKF/okf-layout.md) — the page
   contracts moor reconciles against.

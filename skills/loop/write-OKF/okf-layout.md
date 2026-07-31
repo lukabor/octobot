@@ -16,7 +16,7 @@ OKF/
 ├── CONTEXT.md        # canonical domain glossary (model-domain owns content)
 ├── context/          # only in multi-context repos: <subroot>.md per
 │                     #   bounded context, indexed from index.md
-├── ROADMAP.md        # phased plan — architect owns content
+├── ROADMAP.md        # phased plan — chart owns content
 ├── decisions/        # the why-register — index.md + NNN-<slug>.md
 ├── blueprints/       # NNN-<slug>.md only — flat, grep-able namespace
 ├── ferries/          # open: <topic>/ — MAP.md + D-<n>-<slug>.md files
@@ -76,7 +76,7 @@ loop, not on disk.
   Issue-local terms live in their blueprint until they recur. Splits into
   `context/<subroot>.md` only when multi-context; over the cap in a
   single-context repo is that rule already broken.
-- **ROADMAP.md** — architect's skeleton (locked decisions, phases with
+- **ROADMAP.md** — chart's skeleton (locked decisions, phases with
   verify steps, risks, out-of-scope). At the cap it **prunes**, never
   splits: a discharged phase collapses to one line naming what shipped
   and its blueprint numbers, which hold the detail.

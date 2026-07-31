@@ -61,7 +61,7 @@ fan out concurrently.
 A **builder** (or any subagent that edits files) spawns only with a
 written brief: goal, blueprint/OKF references by path (`OKF/blueprints/NNN`, the
 pages it needs), constraints, and the **verify command** for its slice.
-A locked blueprint is the default brief ([weave](../../loop/weave/SKILL.md)).
+A locked blueprint is the default brief ([rig](../../loop/rig/SKILL.md)).
 Read-only lookups (**investigator**) are exempt. No brief, no builder.
 
 ## octobot conventions

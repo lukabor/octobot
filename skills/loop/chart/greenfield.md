@@ -1,4 +1,4 @@
-# architect — greenfield loop
+# chart — greenfield loop
 
 For a project with no real roadmap yet. Formerly `plan-project`.
 
