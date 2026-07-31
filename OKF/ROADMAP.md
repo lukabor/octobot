@@ -17,12 +17,11 @@ alongside the existing practice/scaffold skills. Vocabulary:
 
 ## Why (gap vs prior art)
 
-Octobot's slot: a file-based loop over OKF (open-knowledge-format),
-jj-native. mattpocock/skills has the blueprint pipeline but no substrate;
+Octobot's slot: a file-based loop over OKF (open-knowledge-format), jj-native.
+mattpocock/skills has the blueprint pipeline but no substrate;
 obra/superpowers has subagent execution but no persistent wiki; neither
 carries the R/Py scaffolds or the debloat/review axes. The prior-art scan
-behind that claim, and what it debunked:
-[learnings/index.md](learnings/index.md).
+behind that claim: [learnings/index.md](learnings/index.md).
 
 ## Locked decisions
 
@@ -35,64 +34,77 @@ See [ARCHITECTURE.md](ARCHITECTURE.md); the loop is its flow 1.
 
 ## Phases
 
-Phases 1–8 closed between 2026-07-19 and 2026-07-22 and left this page
-per [013](decisions/013-roadmap-is-a-plan.md): what they shipped is in
-[blueprints/](blueprints/) and [decisions/index.md](decisions/index.md),
-how each verified is in jj history. Numbers stay as issued —
-append-only.
+Numbers stay as issued — append-only. Phases 1–8 closed 2026-07-19/22 and left
+this page per [013](decisions/013-roadmap-is-a-plan.md); what they shipped is
+in [blueprints/](blueprints/) and [decisions/index.md](decisions/index.md). A
+phase is opened for an arc spanning more than one blueprint or session; a
+single request traces to `user request <date>` instead, as B-008–B-017 did.
 
-B-008–B-017 traced to `user request <date>`, a declared
-`traces-to` value — a phase is opened for an arc spanning more than one
-blueprint or session, not for a single request. What they shipped is
-indexed in [index.md](index.md).
+9. **sound — verified recon before lock** — ✅ 2026-07-22, [007](blueprints/007-add-sound.md).
+10. **skills-consistency hardening** — ✅ 2026-07-31, closed inline; F8's ruling in `conjure-a-skill`.
+11. **the loop's shape stops being a hand-copied string** — ✅ 2026-07-30, [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md).
 
-9. **sound — verified recon before lock** — ✅ verified 2026-07-22,
-   [007](blueprints/007-add-sound.md).
+12. **the spine gets nautical names and one honest fork** — `architect` →
+    `chart`, `weave` → `rig` (frontmatter, directories, symlinks, every
+    cross-link). `chart` gains a handoff edge into `ferry`, opened by chart
+    itself when a phase spans >1 blueprint or session, never by flipping
+    ferry's `disable-model-invocation` (D-019 covers read-only recon only).
+    `sound`, `call-charon` and the 1-vs-N executor fork stay; `chart` documents
+    the single-request terminal as designed, not a gap. **Precondition:** a
+    `link-check` sibling lands first — this rename moves 26 of the 421
+    unvalidated links, and a grep for old names proves absence, not that the
+    new paths resolve. **Verify:** `link-check .`, `render-check .`,
+    `skill-check skills/` and `okf-check OKF/` each 0 errors with output
+    pasted; `grep -rniw 'architect\|weave' skills/ README.md AGENTS.md`
+    returns nothing.
 
-10. **skills-consistency hardening — the review's remainder** — the
-    2026-07-24 skills review (`~/skills-review-2026-07-24.md`, outside
-    the repo) left F5 (the loop-spine string hand-copied), F6 (two
-    user-invoked skills carrying model-invoked trigger lists), F7
-    (`grill-with-docs`, no `## ` sections) and F8 (two heading dialects)
-    untriaged, plus F11 ruled in `CONTEXT.md` but never swept.
-    **Verify:** each of F5–F8 reaches a recorded ruling — a blueprint, a
-    decision, or NO with its reason — and `grep -rn '\bADR\b' skills/
-    OKF/` returns only the trigger-alias uses `CONTEXT.md` preserves.
+13. **the loop learns to carry an analysis** — an analysis blueprint's Contract
+    is a pre-registered estimand and its Verify is reproducibility (clean
+    re-run from a pinned snapshot yielding the named artifact), never the
+    result, which cannot be written before it is known. Findings get the
+    register they lack: `OKF/findings/`, append-only, with provenance enough
+    to re-check. A `survey` skill for exploratory sittings waits until a real
+    analysis has one with nowhere to land. **Verify:** `OKF/findings/` holds
+    one finding `okf-check OKF/` validates 0/0; `blueprint` states the rule.
 
-11. **the loop's shape stops being a hand-copied string** — ✅ verified
-    2026-07-30, [019](blueprints/019-add-a-render-lint-over-the-loop-shape.md).
+14. **the skills tree installs into any harness** — cross-skill links assume
+    `skills/<category>/<name>/`, so a flat install (Copilot's
+    `.github/skills/<name>/`, any non-Claude harness) breaks all 288; 7 more
+    escape into `OKF/`. Flatten to `skills/<name>/`: category becomes
+    frontmatter, links become `../<name>/SKILL.md` — resolving in the repo,
+    under symlinks, in a whole-tree copy, and flat; the 7 escapes become
+    prose. Runs after 12, both being mass renames over the same links.
+    **Verify:** `link-check .` 0 errors; `skill-check` reads
+    `skills/*/SKILL.md`; `grep -rn '](\.\./\.\./' skills/` returns nothing.
 
 ## Risks & gotchas
 
-- **A self-firing skill fires when nobody asked.** Believed: every loop
-  skill must be user-invoked. True: that holds for orchestrators and
-  rituals, which interrupt a person mid-ritual; recon only reads, so
-  [019](decisions/019-recon-may-self-fire.md) carves it out. The risk
-  moves to sound's triggers — vague ones make it fire on every question.
-- **A rule bound to pressure that never arrives is not enforced.**
-  Believed: [020](decisions/020-every-page-has-a-growth-path.md)'s prune
-  keeps this page a plan. True: the prune triggers at cap+1, and the page
-  sat at 83 of 110 — so phase 9 kept a 20-line body while R-013, R-020
-  and R-021 each required one line. The trigger belongs on `✅ verified`;
-  still unvalidated, and owed a lint.
-- **A live decision can be contradicted by the skill that owns the file,
-  and by the validator that checks it.** Believed: `R-020`'s prune-to-one-
-  line settles what a discharged phase keeps. True: it does, but
-  [architect](../skills/loop/architect/SKILL.md) still tells its own
-  revision loop to keep the verify line and mark the tick *on* it
-  (`SKILL.md:36`, `:54`, `revise.md:15`); and `okf-check:245` skips
-  `blueprints`/`ferries` before its cite loop, so no blueprint's cites
-  are checked at all. Neither drift had anything to catch it. Source:
-  sounding B-019, 2026-07-30.
+- **A self-firing skill fires when nobody asked.** Believed: every loop skill
+  must be user-invoked. True: that holds for orchestrators and rituals, which
+  interrupt a person mid-ritual; recon only reads, so
+  [019](decisions/019-recon-may-self-fire.md) carves it out. The risk moves to
+  sound's triggers — vague ones make it fire on every question.
+- **A rule bound to pressure that never arrives is not enforced** — the prune
+  triggered at cap+1, never reached. Moved onto `✅ verified` and mechanised
+  ([020](blueprints/020-enforce-the-prune-and-validate-every-cite.md)).
+- **A live decision can be contradicted by the skill that owns the file, and
+  by the validator that checks it** — `architect` and `okf-check` both
+  contradicted R-020 for months, with nothing to catch either. Closed by
+  [021](blueprints/021-align-validator-and-doctrine.md) and
+  [022](blueprints/022-validate-every-cite-at-every-status.md).
+- **A ruling recorded only in a roadmap phase does not outlive the phase.**
+  Believed: settling a question where it was raised is enough. True: R-020
+  prunes a discharged phase to one line, so the *reason* evaporates and the
+  question reopens as drift. A convention must land where its next reader
+  looks — F8's ruling went to `conjure-a-skill`. Source: phase 10, 2026-07-31.
 
 ## Out of scope
 
 - Issue-tracker backends (GitHub/GitLab) for blueprints — files only.
 - OpenWiki CLI dependency — import-compat at most.
-- Full auto-generated API reference (every symbol) — the derived zone
-  carries the public seam a caller needs, nothing more.
+- Full auto-generated API reference (every symbol) — the derived zone carries
+  the public seam a caller needs, nothing more.
 - Diagram generation and mermaid validation — deepwiki-skill territory.
-- Scheduled/CI wiki regeneration (OpenWiki's GitHub Action) — refresh
-  stays human-invoked.
+- Scheduled/CI wiki regeneration (OpenWiki's Action) — refresh stays human.
 - Renaming grandfathered non-verb skills.
 - Matt's writing-* / teach / wizard / obsidian skill families.
