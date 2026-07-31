@@ -45,7 +45,7 @@ your task needs. Humans welcome too.
 - [020](blueprints/020-enforce-the-prune-and-validate-every-cite.md) — enforce the roadmap prune and validate every page's cites — superseded-by-022
 - [021](blueprints/021-align-validator-and-doctrine.md) — align the validator and the doctrine on splits, prefixes and cites — implemented
 - [022](blueprints/022-validate-every-cite-at-every-status.md) — enforce the roadmap prune and validate every cite at every status — implemented
-- [023](blueprints/023-add-a-link-lint-over-relative-md-links.md) — add a link lint over relative markdown links — locked
+- [023](blueprints/023-add-a-link-lint-over-relative-md-links.md) — add a link lint over relative markdown links — implemented
 
 ## Ferries
 

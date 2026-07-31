@@ -13,7 +13,8 @@ For a roadmap that exists and reality that moved. Formerly
    time.
 3. **Apply, smallest edit per delta:**
    - Phase done → *replace* its verify line with `✅ verified <date>,
-     [NNN](blueprints/…)`, R-020's prune — never a tick beside a live step.
+     blueprints/NNN-<slug>.md`, R-020's prune — never a tick beside a
+     live step.
    - Verify failed → record what failed under the phase; do not delete
      the phase. Re-plan it only if the user agrees.
    - New gotcha/learning → append to *Risks & gotchas* (and mirror to

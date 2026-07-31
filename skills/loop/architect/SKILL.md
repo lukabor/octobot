@@ -52,7 +52,7 @@ fill the missing sections as deltas, don't restart.
 
 ## Output / done criteria
 - `OKF/ROADMAP.md` matches the skeleton; every *open* phase has a verify
-  step and every discharged one is pruned to `✅ verified <date>, [NNN](…)`;
+  step and every discharged one is pruned to `✅ verified <date>, NNN`;
   every locked decision traces to a user answer or sourced finding.
 - Revision: superseded decisions remain visible; every edit traces to a
   named delta.

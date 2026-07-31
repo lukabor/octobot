@@ -1,0 +1,77 @@
+#!/usr/bin/env python3
+"""Validate relative markdown links. Usage: link-check <repo-root>
+
+Errors (exit 1): an inline link whose target does not resolve against the
+containing file's directory. Nothing warns: an unresolvable link is always
+a defect, never a judgement call. The tally keeps the siblings' shape.
+
+The links are load-bearing and silent when broken. A skill installs as a
+symlink into `~/.claude/skills/<name>/` and `..` traverses it physically,
+so a link written for the repo layout resolves from the installed base
+directory too — but nothing follows a link automatically. A dangling one
+surfaces as a failed read, not an error, so the signal has to be static.
+
+Fenced blocks are skipped: there a link is illustration, not navigation.
+`OKF/blueprints/` is skipped for its siblings' reason — a locked
+blueprint is append-only, so a rename cannot repair a link inside one.
+"""
+import re
+import sys
+from pathlib import Path
+
+LINK = re.compile(r"\]\(([^)]*)\)")
+EXTERNAL = ("http://", "https://", "mailto:", "#")
+SKIP = ("OKF/blueprints/",)
+
+
+def targets(text):
+    """Link targets outside fenced blocks, as (line number, target).
+
+    The line number is 1-based, so an error reads as a cite. A line
+    opening or closing a fence toggles the skip and is not itself read.
+    """
+    fenced = False
+    for number, line in enumerate(text.splitlines(), 1):
+        if line.startswith("```"):
+            fenced = not fenced
+        elif not fenced:
+            for target in LINK.findall(line):
+                if not target.startswith(EXTERNAL):
+                    yield number, target
+
+
+def pages(root):
+    """Every `*.md` under the root, dot-directories and blueprints out."""
+    for page in sorted(root.rglob("*.md")):
+        rel = page.relative_to(root)
+        if any(part.startswith(".") for part in rel.parts):
+            continue
+        if rel.as_posix().startswith(SKIP):
+            continue
+        yield page, rel
+
+
+def main(argv):
+    if len(argv) != 2:
+        print("usage: link-check <repo-root>", file=sys.stderr)
+        return 2
+    root = Path(argv[1]).resolve()
+    if not root.is_dir():
+        print(f"not a directory: {root}", file=sys.stderr)
+        return 2
+
+    errors = []
+    for page, rel in pages(root):
+        for number, target in targets(page.read_text()):
+            path = target.split("#", 1)[0]  # a fragment names no file
+            if not (page.parent / path).exists():
+                errors.append(f"{rel}:{number}: unresolvable link: {target}")
+
+    for line in errors:
+        print(f"ERROR {line}")
+    print(f"{len(errors)} error(s), 0 warning(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
