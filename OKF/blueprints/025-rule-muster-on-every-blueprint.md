@@ -1,9 +1,14 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: user request 2026-07-31
 sounded: 2026-07-31
 muster: true
+review-base: llookqnr
+tally:
+  intent: blueprint rules muster out loud — true on the form-not-meaning criterion, else an explicit false carrying its reason — and step 5 shows the ruling before the lock
+  matches: yes
+  note: reviewed at the halt over review-base..@, 2 files +7/-2; first muster ever run in this repo
 cites:
   - skills/loop/blueprint/SKILL.md
   - OKF/blueprints/011-add-blueprint-level-muster.md

@@ -65,3 +65,10 @@ status: live
   landed. The durable practice is to cite a file the blueprint *edits* by
   **path alone**, and spend `:symbol` only on text the change leaves
   standing. Source: weave of B-022.
+- Believed: shipping an opt-in gate makes it available. True: it makes it
+  forgettable — blueprint-level muster (B-011) shipped and 24 blueprints in a
+  row left the field absent, so `rig` skipped the halt every time without
+  anyone declining it. A gate reached only by remembering is not reached. The
+  fix that costs nothing is forcing the *ruling*, not the gate: on or an
+  explicit off, written where the reviewer already looks. Source: rig of
+  B-025.

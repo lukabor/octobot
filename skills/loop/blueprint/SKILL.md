@@ -33,11 +33,15 @@ blueprint with justification. The interview happened upstream
      pre-agreed seam list.
    - *Verify* is a runnable command or observable check — rig's
      done-gate runs exactly this.
+   - *Muster* — rule the gate, never leave it silent: `muster: true` when
+     the Verify proves form but not meaning (prose, doctrine, renames),
+     else `muster: false  # <what the Verify does observe>`.
 4. **Sound it** — call [sound](../sound/SKILL.md) by name on the draft:
    it verifies what the blueprint rests on and stamps `sounded: <date>`.
    Unsounded, there is nothing to lock against.
-5. **Show the blueprint**; iterate. On explicit user yes → flip status to
-   `locked`. No yes, no lock.
+5. **Show the blueprint**; iterate. State the muster ruling in one line so
+   an unwanted gate is overruled before the lock. On explicit user yes →
+   flip status to `locked`. No yes, no lock.
 6. **Index it** — add `NNN — <title> — <status>` to `OKF/index.md`
    Blueprints section.
 7. **Seal** via [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md):

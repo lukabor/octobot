@@ -28,3 +28,10 @@ status: live
   had to precede check 1 (`/sound` by name), and the session running it
   could not be the session that built it. A self-fire test is spoiled by
   the very context that motivates it. Source: weave of blueprint 007.
+- Believed: reviewing a muster range needs the piped form,
+  `jj diff --from <review-base> --to @ --git | hunk patch -`. True: in a
+  colocated repo git `HEAD` tracks `@-`, so while the rig is one commit deep
+  `HEAD` *is* the review-base and plain `hunk diff` shows exactly the muster
+  range with full TUI navigation. The pipe stays the general answer — the
+  moment the range spans two commits, `hunk diff` shows only the last slice.
+  Source: rig of B-025.
