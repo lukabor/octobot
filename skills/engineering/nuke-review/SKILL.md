@@ -1,6 +1,6 @@
 ---
 name: nuke-review
-description: Exceptionally strict structural-quality review for code judo moves — restructurings that preserve behaviour while making implementation dramatically simpler. Push for whole branches / helpers / modes to disappear, not just be polished. Flag file-size sprawl past 1k lines, ad-hoc spaghetti conditionals in unrelated flows, type/boundary muddiness, canonical-layer drift, and avoidable sequential orchestration. Use when the user says "nuke-review", "/nuke-review", "thermo-nuclear review", "code judo", "harsh maintainability review", "deep quality audit", or wants the strict structural review that goes beyond review-angles' correctness axis.
+description: Exceptionally strict structural-quality review for code judo — restructurings that preserve behaviour while making the implementation dramatically simpler; pushes for whole branches, helpers and modes to disappear rather than be polished.
 disable-model-invocation: true
 ---
 

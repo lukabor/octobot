@@ -60,7 +60,7 @@ No `OKF/CONTEXT.md` yet? Create it when the first term is resolved (run
 missing). No `OKF/decisions/`? Create it when the first decision is
 settled. Confirm the *first* write to any new file in the repo before
 proceeding. A legacy root `CONTEXT.md` or `docs/adr/` → offer to migrate
-into `OKF/` (`docs/adr/` entries become register files).
+into `OKF/` (`docs/adr/` entries become decision files).
 
 Default is single-context. Switch to **multi-context mode** only on
 observing **≥ 2 obvious sub-roots** (e.g. `R/ingest/`, `R/analysis/`;

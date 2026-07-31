@@ -88,12 +88,12 @@ A MODB bulk dataset identified by `DS<NNN>`, configured under
 _Avoid_: cohort, study, sample set.
 ```
 
-Note: zero implementation details; `CONTEXT.md` is a glossary, design notes belong in ADRs.
+Note: zero implementation details; `CONTEXT.md` is a glossary, design notes belong in decision files.
 
 ## What would *not* get written
 
 - `box::use` for module imports — general R idiom, out.
-- "knits in ~45s" — operational detail; ADR-worthy only if a deliberate
-  trade-off drove it.
-- "we cache targets with `qs2`" — ADR if there was a real choice (qs2 vs
-  RDS vs parquet); glossary if the word "cache" needs disambiguating.
+- "knits in ~45s" — operational detail; worth a decision file only if a
+  deliberate trade-off drove it.
+- "we cache targets with `qs2`" — a decision file if there was a real choice
+  (qs2 vs RDS vs parquet); glossary if the word "cache" needs disambiguating.

@@ -52,6 +52,9 @@ Full vocabulary: [glossary.md](glossary.md). Design playbook: [principles.md](pr
      verb** — a noun-first name fails review outright
    - `description:` ≤ 1024 chars; "Use when" triggers only if
      model-invoked (user-invoked descriptions are one human-facing line)
+   - **headings** — pipeline-stage skills keep the procedural set; spine and
+     router skills may name a section for what it is (`The spine`, `The
+     brake`) when that says more than the generic word
    - **`SKILL.md` ≤ 110 lines** — octobot's house cap on **sprawl**. If it
      grows past that, use **progressive disclosure**: push **reference**
      into **topic-named siblings** (`tests-r.md`, `mocking-r.md`,
