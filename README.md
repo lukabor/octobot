@@ -104,7 +104,15 @@ except **sound**, which only reads — see `OKF/decisions/019`.
   (investigator / builder / reviewer) without the agent-type error; octobot
   defaults (`jj diff` review, `commit-atomic-jj` commit).
 - **commit-atomic-jj** — atomic-commit discipline: `jj diff` → split → semantic
-  message; docs / docstrings / READMEs ship in the same change.
+  message; docs / docstrings / READMEs ship in the same change. Message
+  structure (1-3 blank-line-separated blocks, `type(scope): phrase[;
+  starts|extends|ends REF]`) is checked by `scripts/commit-msg-check` —
+  mandatory pre-`jj describe` step (jj has no hook mechanism), or a real
+  `git commit-msg` hook via `--install-hook` in plain git repos. Works in
+  any repo, not just octobot — resolve the script from this skill's own
+  base directory, not the target repo's cwd. Extend the closed `type`
+  set per repo with an optional `.commit-lint.toml` (`extra_types =
+  [...]`) at that repo's root; no file needed for the default set.
 
 ### engineering
 - **sieve** — Socratic Real / Good / Minimal gate; burden on *keeping*, not
