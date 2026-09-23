@@ -9,17 +9,17 @@ sounded: 2026-07-30
 
 ## Justification
 
-[021](../decisions/021-session-checks-discharge-on-the-blueprint.md)
+[021](../decisions/R-021-session-checks-discharge-on-the-blueprint.md)
 rules where a check the sealing session cannot run is recorded. Nothing
 implements it: 007's four session checks still carry their state as
 prose in `ROADMAP.md` phase 9, where
-[020](../decisions/020-every-page-has-a-growth-path.md)'s prune deletes
+[020](../decisions/R-020-every-page-has-a-growth-path.md)'s prune deletes
 the one still pending the first time that page hits its cap, and
 [blueprint-format.md](../../skills/loop/blueprint/blueprint-format.md)
 still says a locked Verify is immutable with no exemption for a stamp.
 
 Doctrine before files, per
-[014](014-unify-skill-sibling-file-naming.md)'s Justification — the
+[014](B-014-unify-skill-sibling-file-naming.md)'s Justification — the
 exemption lands first, or the next author reads the immutability rule
 and reverts the stamps as an illegal edit.
 
@@ -47,14 +47,14 @@ verified is in jj history).
 
 - `skills/loop/blueprint/blueprint-format.md` — §Rules, the
   immutability bullet gains the stamp exemption.
-- `OKF/blueprints/007-add-sound.md` — §Verify, the four numbered
+- `OKF/blueprints/B-007-add-sound.md` — §Verify, the four numbered
   session checks gain markers.
 - `OKF/ROADMAP.md` — phase 9's `✅ verified` line collapses.
 
 ## Verify
 
 ```sh
-b=OKF/blueprints/007-add-sound.md
+b=OKF/blueprints/B-007-add-sound.md
 printf 'stamped: %s pending: %s\n' \
   "$(grep -c '✅ 20' "$b")" "$(grep -c '⏳ pending' "$b")"
 printf 'roadmap-stale: %s roadmap-verified: %s\n' \

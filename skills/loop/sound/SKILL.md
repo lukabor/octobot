@@ -43,7 +43,7 @@ to its primary source and cited. **Nothing else leaves the repo.**
 ## Two mouths
 
 The same skill, two modes, and which one is decided by *how the run
-started* — see [019](../../../OKF/decisions/019-recon-may-self-fire.md).
+started* — see [019](../../../OKF/decisions/R-019-recon-may-self-fire.md).
 
 | Reached | Behaviour |
 |---|---|

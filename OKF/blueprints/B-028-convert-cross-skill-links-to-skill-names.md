@@ -5,7 +5,7 @@ traces-to: ROADMAP.md phase 14
 sounded: 2026-09-23
 cites:
   - OKF/ROADMAP.md
-  - OKF/decisions/023-cross-skill-references-are-unchecked-skill-names.md
+  - OKF/decisions/R-023-cross-skill-references-are-unchecked-skill-names.md
   - skills/loop/write-OKF/scripts/link-check
   - skills/productivity/conjure-a-skill/scripts/skill-check
   - README.md
@@ -23,7 +23,7 @@ tally:
 ## Justification
 
 [ROADMAP.md phase 14](../ROADMAP.md) — the skills tree must resolve under
-any install (symlink, flat copy, whole-tree). [023](../decisions/023-cross-skill-references-are-unchecked-skill-names.md)
+any install (symlink, flat copy, whole-tree). [023](../decisions/R-023-cross-skill-references-are-unchecked-skill-names.md)
 already locked the mechanism: a cross-skill reference becomes a
 backtick-wrapped `` `/skill-name` ``, never a path — mattpocock/skills'
 own convention, verified upstream. This blueprint is the mechanical

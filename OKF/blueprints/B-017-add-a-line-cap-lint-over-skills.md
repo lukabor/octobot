@@ -6,8 +6,8 @@ sounded: 2026-07-30
 cites:
   - OKF/CONTEXT.md:House cap
   - OKF/CONTEXT.md:optional topic-named siblings
-  - OKF/decisions/020-every-page-has-a-growth-path.md:twelve pages
-  - OKF/blueprints/016-pull-two-skills-under-cap-and-level-commit-twins.md:A line-cap lint
+  - OKF/decisions/R-020-every-page-has-a-growth-path.md:twelve pages
+  - OKF/blueprints/B-016-pull-two-skills-under-cap-and-level-commit-twins.md:A line-cap lint
   - skills/productivity/conjure-a-skill/SKILL.md:exceed 110 lines
   - skills/productivity/conjure-a-skill/SKILL.md:≤ 110 lines** — octobot's house cap
   - skills/loop/write-OKF/scripts/okf-check:CAP = 110
@@ -21,7 +21,7 @@ cites:
 
 ## Justification
 
-[020](../decisions/020-every-page-has-a-growth-path.md) made the cap
+[020](../decisions/R-020-every-page-has-a-growth-path.md) made the cap
 enforceable by naming one legal move per page kind, and `okf-check` errors
 at cap+1 across `OKF/`. `skills/` has both halves of 020 *except* the
 enforcement: the named move exists (topic-named siblings,
@@ -31,8 +31,8 @@ That is precisely the decay 020 measured: twelve pages over cap while the
 one *mechanical* rule held without exception.
 
 Two hand-fixes have already been spent on it —
-[013](013-split-moor-into-skill-and-reference.md) split `moor`,
-[016](016-pull-two-skills-under-cap-and-level-commit-twins.md) deduped
+[013](B-013-split-moor-into-skill-and-reference.md) split `moor`,
+[016](B-016-pull-two-skills-under-cap-and-level-commit-twins.md) deduped
 `call-charon` and `commit-atomic-jj` — and 016 §Out-of-scope reserved this
 blueprint, stating the warrant. The lint is the permanent answer.
 

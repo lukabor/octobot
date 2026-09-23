@@ -4,8 +4,8 @@ status: locked
 traces-to: ROADMAP.md phase 15
 sounded: 2026-09-23
 cites:
-  - OKF/decisions/024-register-filenames-carry-their-prefix.md
-  - OKF/decisions/022-prose-cites-carry-a-register-prefix.md
+  - OKF/decisions/R-024-register-filenames-carry-their-prefix.md
+  - OKF/decisions/R-022-prose-cites-carry-a-register-prefix.md
   - OKF/ROADMAP.md
   - skills/loop/write-OKF/scripts/okf-check
   - skills/loop/blueprint/SKILL.md
@@ -13,19 +13,19 @@ cites:
   - skills/engineering/model-domain/decision-format.md
   - skills/loop/write-OKF/scripts/link-check
 muster: true
-review-base: yqylvwxr
+review-base: tklwumrx
 ---
 
 # 030 — migrate decision and blueprint filenames to their R-/B- prefix
 
 ## Justification
-[024](../decisions/024-register-filenames-carry-their-prefix.md) rules
+[024](../decisions/R-024-register-filenames-carry-their-prefix.md) rules
 that decision and blueprint filenames carry their `R-`/`B-` prefix,
 rejecting a forward-only retrofit as leaving two dialects on disk. Its
 own Consequences name the two callers that read the old bare-`NNN`
 filename shape and would silently misbehave once files are renamed
 without them: `skills/loop/blueprint/SKILL.md`'s numbering step and
-`okf-check`'s `register_numbers()`. [029](029-prefix-register-filenames-and-validate-okf-structure.md)
+`okf-check`'s `register_numbers()`. [029](B-029-prefix-register-filenames-and-validate-okf-structure.md)
 (implemented) deliberately left the actual rename out of scope — this
 blueprint is that second, later piece of
 [ROADMAP.md phase 15](../ROADMAP.md).
@@ -38,7 +38,7 @@ blueprint is that second, later piece of
 - Every `OKF/blueprints/NNN-<slug>.md` is renamed to
   `OKF/blueprints/B-NNN-<slug>.md` — the 29 existing files (`001`–`029`)
   plus this blueprint itself, which becomes
-  `OKF/blueprints/B-030-migrate-register-filenames-to-their-prefix.md`
+  `OKF/blueprints/B-B-030-migrate-register-filenames-to-their-prefix.md`
   once implemented. A locked blueprint's Contract/Verify prose is not
   touched — only its filename — so [blueprint-format.md](../../skills/loop/blueprint/blueprint-format.md)'s
   immutability rule is not in tension with this rename.
@@ -46,7 +46,7 @@ blueprint is that second, later piece of
   `cites:` frontmatter entry — is repointed to the new filename,
   repo-wide. A bare, unlinked prose number in `OKF/LEARNINGS.md` /
   `OKF/learnings/` is not retrofitted, per
-  [022](../decisions/022-prose-cites-carry-a-register-prefix.md)'s
+  [022](../decisions/R-022-prose-cites-carry-a-register-prefix.md)'s
   precedent, carried forward by 024.
 - `skills/loop/blueprint/SKILL.md`'s numbering step computes the next
   blueprint number correctly against `B-NNN-<slug>.md` filenames.
@@ -93,5 +93,5 @@ nothing.
 - Renumbering any decision or blueprint — the number stays permanent;
   only the prefix is added.
 - New doctrine beyond what
-  [024](../decisions/024-register-filenames-carry-their-prefix.md)
+  [024](../decisions/R-024-register-filenames-carry-their-prefix.md)
   already settled — this blueprint is mechanical rename + link repair.

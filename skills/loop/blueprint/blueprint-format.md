@@ -1,4 +1,4 @@
-# Blueprint format — OKF/blueprints/NNN-<slug>.md
+# Blueprint format — OKF/blueprints/B-NNN-<slug>.md
 
 ```markdown
 ---
@@ -64,9 +64,9 @@ up in the diff.>
   edit. Justification may gain references; status may advance. Replacing a
   session check's state marker (`⏳ pending` → `✅ <date> (<what discharged
   it> — <what was observed>)`, per
-  [021](../../../OKF/decisions/021-session-checks-discharge-on-the-blueprint.md))
+  [021](../../../OKF/decisions/R-021-session-checks-discharge-on-the-blueprint.md))
   is not an edit to the check: the stamp records that unchanged text was run.
-- A blueprint grows into `NNN-<slug>/` (blueprint.md + notes) when one file won't
+- A blueprint grows into `B-NNN-<slug>/` (blueprint.md + notes) when one file won't
   hold it — the format above moves to `blueprint.md` unchanged.
 - Issue-local vocabulary lives here until it recurs; then promote to
   `OKF/CONTEXT.md` (model-domain's recurrence rule).

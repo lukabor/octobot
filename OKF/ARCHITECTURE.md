@@ -67,7 +67,7 @@ rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refre
 - **Skill frontmatter** — `disable-model-invocation` flips a skill
   between description-routed and name-only invocation. Orchestrators and
   rituals carry it; a read-only recon whose trigger is a detectable state
-  may go without ([decisions/019](decisions/019-recon-may-self-fire.md)).
+  may go without ([decisions/019](decisions/R-019-recon-may-self-fire.md)).
 - **Progressive disclosure** — SKILL.md bodies point to topic-named
   sibling files; swapping a sibling changes behaviour without touching
   the router (`skills/productivity/conjure-a-skill/principles.md`).

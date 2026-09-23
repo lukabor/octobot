@@ -1,6 +1,6 @@
 # Decision format
 
-Settled decisions live in the why-register: `OKF/decisions/NNN-<slug>.md`,
+Settled decisions live in the why-register: `OKF/decisions/R-NNN-<slug>.md`,
 zero-padded to three digits, indexed by `OKF/decisions/index.md`. Numbers
 are permanent — they are cited from `CONTEXT.md` and commit messages, so
 superseding adds a file, never renumbers one. Create `OKF/decisions/`
@@ -38,7 +38,7 @@ old file's body.
 `index.md` carries one **question-shaped** line per decision:
 
 ```
-- [NNN](NNN-<slug>.md) — {question it settles} — {verdict} — {status}
+- [NNN](R-NNN-<slug>.md) — {question it settles} — {verdict} — {status}
 ```
 
 The question is *derived* from the file's first `answers:` entry, never

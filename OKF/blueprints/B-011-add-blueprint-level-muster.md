@@ -10,11 +10,11 @@ sounded: 2026-07-24
 ## Justification
 
 Splits the blueprint-level half out of
-[010](010-add-muster-the-human-review-gate.md) per growth-doctrine
-[020](../decisions/020-every-page-has-a-growth-path.md); 010 carries the full
+[010](B-010-add-muster-the-human-review-gate.md) per growth-doctrine
+[020](../decisions/R-020-every-page-has-a-growth-path.md); 010 carries the full
 justification and sounding. The ferry-level half —
 which needs the `ferry` skill as a seam 010 never declared — is
-[012](012-add-ferry-level-muster.md).
+[012](B-012-add-ferry-level-muster.md).
 
 The loop's review before it seals is all *agent* eyes; the human running it
 does not read the diff after a weave. Muster is the forced human checkpoint,
@@ -67,7 +67,7 @@ block needs a parser mirroring `okf-check:pin`, because the generic
 `frontmatter()` flattens a nested block to an empty list. Blueprints without
 `muster` never retro-flag. The halt itself is prose in weave: okf-check
 cannot see live behaviour (decision
-[017](../decisions/017-pin-drift-splits-by-visibility.md)).
+[017](../decisions/R-017-pin-drift-splits-by-visibility.md)).
 
 ## Seams touched
 
@@ -97,7 +97,7 @@ Expect: `blueprints/a.md` errors (muster + implemented, no `tally:`),
 ## Out of scope
 
 - **Ferry-level muster** — the moor halt and the ferry's `review-base` writer
-  are [012](012-add-ferry-level-muster.md).
+  are [012](B-012-add-ferry-level-muster.md).
 - **GitHub** — no push, branch, or PR; muster is a local terminal review.
 - **The agent review axes** — muster is a human gate beside them, not a change to them.
 - **Any default-mode behaviour** — mode-off weave stays byte-identical.

@@ -6,10 +6,10 @@ sounded: 2026-07-31
 cites:
   - skills/loop/write-OKF/scripts/link-check
   - skills/loop/write-OKF/scripts/render-check
-  - OKF/blueprints/023-add-a-link-lint-over-relative-md-links.md:What it walks
-  - OKF/blueprints/019-add-a-render-lint-over-the-loop-shape.md:dot-directories skipped
-  - OKF/blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md:that Contract is sealed
-  - OKF/blueprints/022-validate-every-cite-at-every-status.md:its Contract and Verify are not touched
+  - OKF/blueprints/B-023-add-a-link-lint-over-relative-md-links.md:What it walks
+  - OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md:dot-directories skipped
+  - OKF/blueprints/B-024-rename-the-spine-and-give-chart-its-ferry-edge.md:that Contract is sealed
+  - OKF/blueprints/B-022-validate-every-cite-at-every-status.md:its Contract and Verify are not touched
   - OKF/ROADMAP.md
 muster: true
 review-base: yommvsuw
@@ -24,7 +24,7 @@ tally:
 
 **A repo-wide gate reddens on a file the repo does not own.** `HANDOFF.md` is
 gitignored, yet both lints walk it, so scratch prose can fail the tree. The
-cost is paid: [024](024-rename-the-spine-and-give-chart-its-ferry-edge.md)
+cost is paid: [024](B-024-rename-the-spine-and-give-chart-its-ferry-edge.md)
 carries *clear gitignored `HANDOFF.md` first* as a **run condition**, and a
 handoff must be written link-free, quoting no lint constant. 024 §Out of scope
 declines it *"but that Contract is sealed — the fix is a supersession, not a
@@ -32,7 +32,7 @@ line in a rename."*
 
 **The measured census.** Exactly **one** `.md` in the walk is ignored —
 `HANDOFF.md`; nothing untracked. **Zero** of 516 relative links sit inside
-inline-code spans, so [023](023-add-a-link-lint-over-relative-md-links.md)'s
+inline-code spans, so [023](B-023-add-a-link-lint-over-relative-md-links.md)'s
 ruling that inline-code spans are unreal holds for every page left once the
 ignored one goes — the only page wanting one is the only ignored page. The
 backtick rule earns nothing, failing
@@ -41,9 +41,9 @@ backtick rule earns nothing, failing
 **Why both lints.** `pages()` is **byte-identical** in the two, `SKIP`
 included, and `render-check` holds a retired-form constant a handoff cannot
 quote either. Fixing one and leaving its twin is the shape this repo has
-mechanised three times — [017](017-add-a-line-cap-lint-over-skills.md),
-[019](019-add-a-render-lint-over-the-loop-shape.md) and
-[020](020-enforce-the-prune-and-validate-every-cite.md). `okf-check` and
+mechanised three times — [017](B-017-add-a-line-cap-lint-over-skills.md),
+[019](B-019-add-a-render-lint-over-the-loop-shape.md) and
+[020](B-020-enforce-the-prune-and-validate-every-cite.md). `okf-check` and
 `skill-check` cannot reach an ignored page.
 
 ## Contract
@@ -68,14 +68,14 @@ failure mode is the old behaviour, not an empty census.
 
 **Neither lint changes in any other way** — argv shape, `ERROR ` format,
 tallies, exit codes 0/1/2, fence handling, link classification, render-site
-comparison, all as [023](023-add-a-link-lint-over-relative-md-links.md) and
-[019](019-add-a-render-lint-over-the-loop-shape.md) set them.
+comparison, all as [023](B-023-add-a-link-lint-over-relative-md-links.md) and
+[019](B-019-add-a-render-lint-over-the-loop-shape.md) set them.
 
 **Both superseded blueprints flip status only.** 023 and 019 each state the old
 walk in their Contract; that sentence stops being true, so each takes
 `superseded-by-026` in frontmatter and on its `OKF/index.md` line. **Their
 Contract and Verify are not touched**, per
-[022](022-validate-every-cite-at-every-status.md) — every clause not re-ruled
+[022](B-022-validate-every-cite-at-every-status.md) — every clause not re-ruled
 above stands as written there. 019 is superseded although the loop shape, its
 subject, is untouched: the test is whether a Contract sentence stops being
 true, not whether the blueprint's subject moved.
@@ -145,6 +145,6 @@ exactly as the session wrote it.
 - **`okf-check` and `skill-check`.** Neither walk can reach an ignored page;
   changing them would be a fix to nothing.
 - **Absorbing any sibling into one validator** — four scripts sharing one argv
-  contract stays [019](019-add-a-render-lint-over-the-loop-shape.md)'s shape.
+  contract stays [019](B-019-add-a-render-lint-over-the-loop-shape.md)'s shape.
   `_pages.py` is a helper, not a fifth lint: it has no `main`.
 - **Honouring `.jjignore` apart from git** — this colocated repo's are git's.

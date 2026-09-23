@@ -9,7 +9,7 @@ traces-to: ROADMAP.md phase 7 (decisions 14, 15)
 ## Justification
 
 Phase 7's second half. Decisions 14 and 15 settle the behaviour;
-[002](002-extract-why-register.md) built the register they graduate into
+[002](B-002-extract-why-register.md) built the register they graduate into
 and left this in its Out-of-scope block. `ls OKF/ferries/` cannot answer
 what deliberation is in flight — the Real need, and decision 15's purpose.
 

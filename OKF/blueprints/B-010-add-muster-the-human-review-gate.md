@@ -10,10 +10,10 @@ sounded: 2026-07-24
 ## Justification
 
 **Superseded 2026-07-24 — split per growth-doctrine
-[020](../decisions/020-every-page-has-a-growth-path.md): the blueprint-level
-gate ships as [011](011-add-blueprint-level-muster.md) (implemented); the
+[020](../decisions/R-020-every-page-has-a-growth-path.md): the blueprint-level
+gate ships as [011](B-011-add-blueprint-level-muster.md) (implemented); the
 ferry-level gate — which needs the `ferry` skill as a seam this blueprint
-never declared — becomes [012](012-add-ferry-level-muster.md). The
+never declared — becomes [012](B-012-add-ferry-level-muster.md). The
 justification and sounding below stand for both.**
 
 The loop reviews before it seals — [review-angles](../../engineering/review-angles/SKILL.md),
@@ -96,7 +96,7 @@ to an empty list. Existing implemented blueprints carry no `muster` field, so
 the rule never retro-flags them. The **ferry**-level tally is prose-enforced
 at moor — `check_ferries` is shape-only — and the halt itself is prose in
 weave/moor: okf-check cannot see live behaviour (decision
-[017](../decisions/017-pin-drift-splits-by-visibility.md)).
+[017](../decisions/R-017-pin-drift-splits-by-visibility.md)).
 
 ## Seams touched
 

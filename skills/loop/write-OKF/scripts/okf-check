@@ -121,9 +121,13 @@ def cite_resolves(cite, page, okf):
 
 
 def register_numbers(okf):
-    """Three-digit numbers naming a live file in either register."""
-    return {p.name[:3] for register in ("blueprints", "decisions")
-            for p in (okf / register).glob("[0-9][0-9][0-9]-*.md")}
+    """Three-digit numbers naming a live file in either register.
+
+    Filenames carry their register's prefix (R-024's rename) — B- for
+    blueprints, R- for decisions — so the number sits two characters in.
+    """
+    return {p.name[2:5] for prefix, register in (("B", "blueprints"), ("R", "decisions"))
+            for p in (okf / register).glob(f"{prefix}-[0-9][0-9][0-9]-*.md")}
 
 
 def prose_cites(text, numbers):

@@ -5,12 +5,12 @@ traces-to: ROADMAP.md phase 15
 sounded: 2026-09-23
 cites:
   - OKF/ROADMAP.md
-  - OKF/decisions/024-register-filenames-carry-their-prefix.md
-  - OKF/decisions/022-prose-cites-carry-a-register-prefix.md
-  - OKF/decisions/016-one-okf-check-validator.md
-  - OKF/decisions/009-index-is-the-page-plan.md
-  - OKF/decisions/015-moor-collapses-ferry-directory.md
-  - OKF/decisions/020-every-page-has-a-growth-path.md
+  - OKF/decisions/R-024-register-filenames-carry-their-prefix.md
+  - OKF/decisions/R-022-prose-cites-carry-a-register-prefix.md
+  - OKF/decisions/R-016-one-okf-check-validator.md
+  - OKF/decisions/R-009-index-is-the-page-plan.md
+  - OKF/decisions/R-015-moor-collapses-ferry-directory.md
+  - OKF/decisions/R-020-every-page-has-a-growth-path.md
   - skills/loop/write-OKF/scripts/okf-check
   - OKF/index.md
   - OKF/decisions/index.md
@@ -29,16 +29,16 @@ tally:
 
 ## Justification
 [ROADMAP.md phase 15](../ROADMAP.md) opens this arc; this blueprint is its
-first piece. [024](../decisions/024-register-filenames-carry-their-prefix.md)
+first piece. [024](../decisions/R-024-register-filenames-carry-their-prefix.md)
 rules that decision and blueprint filenames carry their `R-`/`B-` prefix
 going forward, superseding
-[022](../decisions/022-prose-cites-carry-a-register-prefix.md)'s
+[022](../decisions/R-022-prose-cites-carry-a-register-prefix.md)'s
 bare-filename ruling. That decision's own Consequences note the gap this
 blueprint closes: `blueprints/` and `ferries/` have no `index.md` today —
 `OKF/index.md` inlines their listings directly instead — so a
 filename-search workflow (`ls OKF/blueprints/ | grep B-`) has nowhere
 directory-local to land for those two, unlike `decisions/` and
-`learnings/`, which already delegate. [016](../decisions/016-one-okf-check-validator.md)
+`learnings/`, which already delegate. [016](../decisions/R-016-one-okf-check-validator.md)
 rules a single `okf-check` validator carries OKF conformance, so the two
 new checks this blueprint adds extend it rather than starting a sibling
 script. The retroactive rename of existing `NNN-<slug>.md` files to
@@ -52,7 +52,7 @@ keeps its `SKILL.md` entry-point convention untouched):
 1. **Missing directory entry point.** Every directory under `OKF/` that
    contains at least one `.md` file must itself contain an `index.md` —
    *except* an open ferry topic directory (`OKF/ferries/<topic>/`, per
-   [015](../decisions/015-moor-collapses-ferry-directory.md)), which
+   [015](../decisions/R-015-moor-collapses-ferry-directory.md)), which
    satisfies this with `MAP.md` instead; a moored ferry is a single file,
    not a directory, so it never triggers this check.
 2. **Incomplete `index.md`.** Every `index.md` (not `MAP.md`, which has

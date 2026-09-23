@@ -9,8 +9,8 @@ traces-to: ROADMAP.md phase 6, part B (decisions 007, 009, 010)
 ## Justification
 
 Phase 6's second half, the last thing owed before it ticks.
-[007](../decisions/007-taxonomy-derived-per-repo.md) settled that the page
-taxonomy is derived per repo; [009](../decisions/009-index-is-the-page-plan.md)
+[007](../decisions/R-007-taxonomy-derived-per-repo.md) settled that the page
+taxonomy is derived per repo; [009](../decisions/R-009-index-is-the-page-plan.md)
 settled where the plan is recorded. Neither has a producer — scaffold
 still materialises a fixed four-template skeleton (`write-OKF/SKILL.md:32`),
 the exact layout 007 rejects. The Real need: a scan turning a repo's shape
@@ -38,7 +38,7 @@ ranking, no language awareness — a threshold is a decision to make.
 are read off disk; the spine — `SUMMARY`, `ARCHITECTURE`, `CONTEXT`,
 `ROADMAP`, `LEARNINGS`, `decisions/` — is written by loop skills out of
 conversation, and no tree walk finds a glossary. `SKILL.md:34-37` draws
-that producer seam already; [010](../decisions/010-two-zone-pages.md)
+that producer seam already; [010](../decisions/R-010-two-zone-pages.md)
 draws it from the other side, module and analysis pages being the only
 ones with a derived zone at all.
 
@@ -61,7 +61,7 @@ fill, unmaterialised — no pre-warranted shell slips past the check.
 - `skills/loop/write-OKF/scripts/okf-scan` — **new**. CLI
   `okf-scan <repo-root>`, candidates on stdout, exit 0 whatever it finds
   (2 on usage) — a scanner is not a validator, so
-  [016](../decisions/016-one-okf-check-validator.md) holds.
+  [016](../decisions/R-016-one-okf-check-validator.md) holds.
 - `skills/loop/write-OKF/taxonomy-scan.md` — **new**. The scan contract:
   two signals, the evidence rule, the producer seam, the propose-never-
   write boundary, and how a proposal becomes a locked plan.
@@ -100,7 +100,7 @@ S=$SCRATCH && A=$S/fx-analysis && L=$S/fx-lib && W=skills/loop/write-OKF \
 
 - Rescanning on refresh — the standing keep/expand criterion and the
   remove-if-wholly-derived rule are 006, on 010's grant and
-  [015](../decisions/015-moor-collapses-ferry-directory.md)'s doctrine.
+  [015](../decisions/R-015-moor-collapses-ferry-directory.md)'s doctrine.
 - Recording the producer seam as a decision — settle at moor.
 - `context/<subroot>.md` proposals — a bounded context has no disk
   signal; model-domain owns it.

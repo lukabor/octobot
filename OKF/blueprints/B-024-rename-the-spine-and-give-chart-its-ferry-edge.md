@@ -11,9 +11,9 @@ cites:
   - skills/loop/ferry/SKILL.md
   - skills/loop/steer/SKILL.md
   - skills/loop/write-OKF/scripts/render-check
-  - OKF/blueprints/022-validate-every-cite-at-every-status.md
+  - OKF/blueprints/B-022-validate-every-cite-at-every-status.md
   - OKF/learnings/loop.md
-  - OKF/decisions/019-recon-may-self-fire.md
+  - OKF/decisions/R-019-recon-may-self-fire.md
 ---
 
 # 024 — rename the spine to chart and rig, and give chart its ferry edge
@@ -21,7 +21,7 @@ cites:
 ## Justification
 
 [ROADMAP.md](../ROADMAP.md) phase 12, its **Precondition** cleared by
-[023](023-add-a-link-lint-over-relative-md-links.md). `architect` and `weave`
+[023](B-023-add-a-link-lint-over-relative-md-links.md). `architect` and `weave`
 are the only spine skills named for a trade, not a passage — unlike ferry,
 moor, sound, call-charon and steer.
 
@@ -35,7 +35,7 @@ phase's own grep; and **two symlinks** in `~/.claude/skills/`, checked by
 nothing.
 
 **Sealed pages move their cites, and only their cites.**
-[022](022-validate-every-cite-at-every-status.md) settled it: *a cite is a
+[022](B-022-validate-every-cite-at-every-status.md) settled it: *a cite is a
 working pointer, so every page carries the rule at every status — a
 blueprint's `cites:` are not frozen by lock*. The nine repairs are therefore
 obligations, not append-only violations — while the *prose* of those same
@@ -52,7 +52,7 @@ so by B-021. All four are `implemented`: never run again, never repairable.
 `ferry` never — so a phase too big to blueprint has no documented exit from
 the skill that wrote it. Phase 12 rules the edge is opened by `chart` itself,
 **never** by flipping ferry's `disable-model-invocation`, since
-[019](../decisions/019-recon-may-self-fire.md) exempts read-only recon only.
+[019](../decisions/R-019-recon-may-self-fire.md) exempts read-only recon only.
 
 ## Contract
 
@@ -140,7 +140,7 @@ gitignored `HANDOFF.md` first — `link-check` walks it (see §Out of scope).
 - **The nine live pre-split `OKF/LEARNINGS.md` pointers**, one in
   `weave/SKILL.md:54` — a separate census, carried by `HANDOFF.md`.
 - **Teaching `link-check` to skip gitignored files or backticked spans.**
-  [023](023-add-a-link-lint-over-relative-md-links.md) ruled inline-code spans
+  [023](B-023-add-a-link-lint-over-relative-md-links.md) ruled inline-code spans
   unreal; `HANDOFF.md` makes them real, but that Contract is sealed — the fix
   is a supersession, not a line in a rename.
 - **Any change to the loop's shape** — no fork added or removed, no

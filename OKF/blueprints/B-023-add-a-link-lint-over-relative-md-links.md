@@ -6,11 +6,11 @@ sounded: 2026-07-31
 cites:
   - OKF/ROADMAP.md
   - OKF/ARCHITECTURE.md:Cross-links
-  - OKF/blueprints/002-extract-why-register.md:ADR-FORMAT.md
+  - OKF/blueprints/B-002-extract-why-register.md:ADR-FORMAT.md
   - skills/loop/write-OKF/scripts/_pages.py:dot-directories and blueprints out
-  - OKF/blueprints/019-add-a-render-lint-over-the-loop-shape.md:Why a third script
-  - OKF/blueprints/017-add-a-line-cap-lint-over-skills.md:Why a sibling script
-  - OKF/decisions/016-one-okf-check-validator.md:One `okf-check` validator
+  - OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md:Why a third script
+  - OKF/blueprints/B-017-add-a-line-cap-lint-over-skills.md:Why a sibling script
+  - OKF/decisions/R-016-one-okf-check-validator.md:One `okf-check` validator
   - skills/productivity/conjure-a-skill/scripts/skill-check:usage: skill-check
   - skills/loop/write-OKF/SKILL.md:run and output pasted
 ---
@@ -36,15 +36,15 @@ surfaces as a failed read, not an error. No runtime signal: hence a static one.
 [ARCHITECTURE.md](../ARCHITECTURE.md) §Seams states it as prose — *"category
 moves are renames across these links (grep before moving)"*. This repo has
 mechanised that same shape three times, each after prose failed to hold:
-[017](017-add-a-line-cap-lint-over-skills.md) the line cap,
-[019](019-add-a-render-lint-over-the-loop-shape.md) the loop diagram,
-[020](020-enforce-the-prune-and-validate-every-cite.md) the prune.
+[017](B-017-add-a-line-cap-lint-over-skills.md) the line cap,
+[019](B-019-add-a-render-lint-over-the-loop-shape.md) the loop diagram,
+[020](B-020-enforce-the-prune-and-validate-every-cite.md) the prune.
 
 **What sounding found.** A naive walk reports **28** unresolvable links; two
 principled exclusions account for 26. **17 sit inside fenced code blocks** —
 templates and worked examples, where a link is illustration, not navigation.
 **9 sit in `OKF/blueprints/`** — sealed history, some genuinely stale (one
-cites `DECISION-FORMAT.md`, renamed by [002](002-extract-why-register.md));
+cites `DECISION-FORMAT.md`, renamed by [002](B-002-extract-why-register.md));
 linting it would force a rename to edit a sealed record, which append-only
 forbids, and `render-check` excludes `blueprints/` for the same reason. That
 leaves **2** real defects, both ellipsis placeholders in the very skill this
@@ -55,8 +55,8 @@ here, since a lint that cannot go green is no precondition at all.
 **Why a fourth script.** `okf-check` validates frontmatter `cites:`, not prose
 links; `skill-check` counts lines; `render-check` compares fenced blocks. None
 resolves a link target, and widening one changes the argv contract
-[019](019-add-a-render-lint-over-the-loop-shape.md) §*Why a third script* set
-for this case. [016](../decisions/016-one-okf-check-validator.md) is not
+[019](B-019-add-a-render-lint-over-the-loop-shape.md) §*Why a third script* set
+for this case. [016](../decisions/R-016-one-okf-check-validator.md) is not
 crossed: it settles how *OKF conformance* is enforced, and 017 already shipped
 a second validator under it.
 
@@ -89,7 +89,7 @@ both counts — `render-check` hardcodes `0 warning(s)` for the same reason.
 
 **Where it lives, and registration.** Under `write-OKF/scripts/` beside
 `okf-check` and `render-check`, per
-[019](019-add-a-render-lint-over-the-loop-shape.md)'s placement rule.
+[019](B-019-add-a-render-lint-over-the-loop-shape.md)'s placement rule.
 `write-OKF/SKILL.md`'s *run and output pasted* line grows to name it.
 
 **The two repairs.** `architect/SKILL.md:55` and `architect/revise.md:16` stop
@@ -146,5 +146,5 @@ Every check prints `OK`, no `FAIL` appears, and the clean-tree tally reads
 - **Wiring beyond the run-and-paste line** — no justfile, hook or CI; the
   three existing lints are obliged by prose alone.
 - **Absorbing any sibling into one validator** — four scripts sharing one argv
-  contract is [019](019-add-a-render-lint-over-the-loop-shape.md)'s settled
+  contract is [019](B-019-add-a-render-lint-over-the-loop-shape.md)'s settled
   shape.

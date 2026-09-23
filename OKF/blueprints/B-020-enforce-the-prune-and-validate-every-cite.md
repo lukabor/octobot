@@ -5,9 +5,9 @@ traces-to: user request 2026-07-30
 sounded: 2026-07-30
 cites:
   - OKF/ROADMAP.md:A live decision can be contradicted
-  - OKF/decisions/020-every-page-has-a-growth-path.md:a discharged phase to one
-  - OKF/decisions/017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see
-  - OKF/blueprints/019-add-a-render-lint-over-the-loop-shape.md:Two `okf-check` rules
+  - OKF/decisions/R-020-every-page-has-a-growth-path.md:a discharged phase to one
+  - OKF/decisions/R-017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see
+  - OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md:Two `okf-check` rules
   - skills/loop/write-OKF/page-warrant.md:cite drift does not split the same way
   - skills/loop/write-OKF/scripts/okf-check:carry their own frontmatter contracts
   - skills/loop/write-OKF/split-page.md
@@ -20,12 +20,12 @@ cites:
 
 ## Justification
 
-[B-019](019-add-a-render-lint-over-the-loop-shape.md)'s §Out of scope hands
+[B-019](B-019-add-a-render-lint-over-the-loop-shape.md)'s §Out of scope hands
 this blueprint two `okf-check` defects by name, both found sounding it and
 both in [ROADMAP.md](../ROADMAP.md) §Risks: a live decision with nothing to
 enforce it, and a validator skipping the pages it was built to check. Not
 phase 10 or 11 — drift against a live
-[R-020](../decisions/020-every-page-has-a-growth-path.md).
+[R-020](../decisions/R-020-every-page-has-a-growth-path.md).
 
 **The doc edits are not a separate concern.** A prune rule shipped while
 [architect](../../skills/loop/architect/SKILL.md) still tells its revision
@@ -54,7 +54,7 @@ pages — the format requires `traces-to`, not `cites:`, and eighteen live
 pages carry none. Cites validate **whole**, path and symbol, per
 [page-warrant.md](../../skills/loop/write-OKF/page-warrant.md): a cite needs
 no repo, so it does not split the way
-[R-017](../decisions/017-pin-drift-splits-by-visibility.md) splits a pin.
+[R-017](../decisions/R-017-pin-drift-splits-by-visibility.md) splits a pin.
 
 **Four stale cites are repaired**, not exempted: B-014's
 `CLAUDE.md:EXAMPLES.md`, B-017's `conjure-a-skill/SKILL.md:is ≤ 110 lines`,
@@ -108,10 +108,10 @@ sed -i '48,49s|✅ verified 2026-07-22,|✅ verified 2026-07-22, **Verify:** x,|
 "$CHECK" "$tmp/OKF" | grep -c 'ROADMAP'; echo "prune exit: $?"
 cp OKF/ROADMAP.md "$tmp/OKF/ROADMAP.md"
 sed -i 's|^  - OKF/CONTEXT.md:House cap|  - OKF/nope.md:x|' \
-  "$tmp/OKF/blueprints/017-add-a-line-cap-lint-over-skills.md"
+  "$tmp/OKF/blueprints/B-017-add-a-line-cap-lint-over-skills.md"
 "$CHECK" "$tmp/OKF" | grep -c 'unresolvable cite'
 sed -i '/^cites:/,/^status:/{/^  - /d}' \
-  "$tmp/OKF/blueprints/019-add-a-render-lint-over-the-loop-shape.md"
+  "$tmp/OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md"
 "$CHECK" "$tmp/OKF" | grep -c 'no cites'
 rm -rf "$tmp" skills/loop/write-OKF/scripts/__pycache__
 grep -n 'every phase\|verify line\|\*\*Verify:\*\*' \

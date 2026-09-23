@@ -4,7 +4,7 @@ purpose: Make a decision or blueprint findable by filename alone, not just by pr
 answers:
   - "Does a register entry's filename carry its prefix, or only its prose citation?"
 cites:
-  - OKF/decisions/022-prose-cites-carry-a-register-prefix.md
+  - OKF/decisions/R-022-prose-cites-carry-a-register-prefix.md
   - OKF/CONTEXT.md
   - skills/loop/blueprint/blueprint-format.md
   - skills/engineering/model-domain/decision-format.md
@@ -15,7 +15,7 @@ reversible: rename back; every link this change touches was mechanically
 
 # 024 — register filenames carry the R-/B- prefix
 
-**Supersedes [022](022-prose-cites-carry-a-register-prefix.md)'s filename
+**Supersedes [022](R-022-prose-cites-carry-a-register-prefix.md)'s filename
 ruling.** R-022 kept `OKF/decisions/NNN-<slug>.md` and
 `OKF/blueprints/NNN-<slug>.md` bare on disk — "a reading aid, not an
 identity" — on the reasoning that renaming breaks every link for no

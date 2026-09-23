@@ -46,7 +46,7 @@ are read off disk. The spine — `SUMMARY`, `ARCHITECTURE`, `CONTEXT`,
 `ROADMAP`, `LEARNINGS`, `decisions/` — is written by loop skills out of
 conversation, and no tree walk finds a glossary. That is the producer
 seam [SKILL.md](SKILL.md) already draws at scaffold step 3; decision
-[010](../../../OKF/decisions/010-two-zone-pages.md) draws it from the
+[010](../../../OKF/decisions/R-010-two-zone-pages.md) draws it from the
 other side, module and analysis pages being the only ones with a derived
 zone at all. `context/<subroot>.md` has no disk signal either — a
 bounded context is model-domain's to name.
@@ -74,7 +74,7 @@ Rescan runs the scan again and sorts every candidate, and every
 - **new** — a candidate `index.md` does not list → propose to add.
 - **standing** — listed and still proposed → keep. Its derived zone is
   regenerated wholesale, its judgement zone untouched, per
-  [010](../../../OKF/decisions/010-two-zone-pages.md).
+  [010](../../../OKF/decisions/R-010-two-zone-pages.md).
 - **unwarranted** — listed but no longer proposed → propose to remove or
   supersede, below.
 
@@ -87,7 +87,7 @@ nothing outside its `okf:derived` fences but frontmatter and title, so it
 loses nothing a rescan cannot rebuild. One byte of judgement and it is
 superseded instead, struck with a pointer per [SKILL.md](SKILL.md)
 refresh step 3. Decision
-[018](../../../OKF/decisions/018-rescan-deletes-only-derived-pages.md).
+[018](../../../OKF/decisions/R-018-rescan-deletes-only-derived-pages.md).
 
 **A container proposes nothing; its members do.** A directory matched by
 name alone with a candidate beneath it yields no page:

@@ -31,5 +31,5 @@ status: live
   up with `jj restore` wipes real Build work sitting uncommitted on the
   same file. Fix: undo exactly the planted lines (`head -n -N`), never
   a blanket restore, when other uncommitted edits may be present. Source:
-  [028](../blueprints/028-convert-cross-skill-links-to-skill-names.md),
+  [028](../blueprints/B-028-convert-cross-skill-links-to-skill-names.md),
   session 2026-09-23.

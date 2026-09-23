@@ -11,12 +11,12 @@ traces-to: 005's Out of scope (rescan on refresh); ROADMAP.md phase 8, added by 
 005 shipped the scaffold path only — a scan proposes a plan once, at
 birth. Refresh (`write-OKF/SKILL.md:50-73`) never runs it, so a repo that
 grows a module gets no page and one that loses a module keeps a stale
-page forever. [007](../decisions/007-taxonomy-derived-per-repo.md) makes
+page forever. [007](../decisions/R-007-taxonomy-derived-per-repo.md) makes
 the taxonomy derived per repo; today it is derived *once*.
 
 Removal is the part nobody has ruled on: the doctrine falls out of
-[010](../decisions/010-two-zone-pages.md)'s derived zone and
-[015](../decisions/015-moor-collapses-ferry-directory.md)'s "history is
+[010](../decisions/R-010-two-zone-pages.md)'s derived zone and
+[015](../decisions/R-015-moor-collapses-ferry-directory.md)'s "history is
 the archive of record", but neither states it — so it becomes decision
 018 here, before this locks. The last two items are flags 005's weave
 raised, both in `okf-scan`, both reproduced.

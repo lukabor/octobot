@@ -10,7 +10,7 @@ cites:
   - skills/productivity/resolve-conflicts-git/SKILL.md:git specifics worth knowing
   - skills/productivity/conjure-a-skill/SKILL.md:exceed 110 lines
   - skills/productivity/conjure-a-skill/principles.md:topic-named siblings
-  - OKF/decisions/020-every-page-has-a-growth-path.md:twelve pages
+  - OKF/decisions/R-020-every-page-has-a-growth-path.md:twelve pages
   - CLAUDE.md:≤ 110 lines
 ---
 
@@ -23,7 +23,7 @@ the repo) left F1 and F4 untriaged; they batch as one pass.
 
 **F1** — `call-charon/SKILL.md` and `commit-atomic-jj/SKILL.md` both
 measure 117 lines against CLAUDE.md §5's ≤110 cap. Same defect class
-[013](013-split-moor-into-skill-and-reference.md) fixed for `moor`.
+[013](B-013-split-moor-into-skill-and-reference.md) fixed for `moor`.
 
 **F4** — the `commit-atomic-git` / `-jj` pair is asymmetric: git has no
 `## When to use` body anchor and a shorter skeleton, while
@@ -50,7 +50,7 @@ irreducible doctrine, so this is a dedup, not a split:
   §*Letting a `jj` op spawn an editor headlessly* — and cites two of
   them while restating them.
 
-Per [012](012-add-ferry-level-muster.md)'s LEARNINGS entry, a blueprint
+Per [012](B-012-add-ferry-level-muster.md)'s LEARNINGS entry, a blueprint
 touching a near-cap skill prices the split into its scope: `commit-atomic-git`
 gains ~7 lines and sits at ~104, needing no split; if dedup alone leaves
 either offender over cap, this blueprint authorises a further offload into
@@ -68,7 +68,7 @@ overage is paid from restatement, never from doctrine.
 **Positive statement, not prohibition.** `call-charon/SKILL.md` names no
 VCS isolation mechanics — it names the mode and points at
 `crossing-format.md` §Isolation, which owns them.
-([014](014-unify-skill-sibling-file-naming.md)'s LEARNINGS entry: a
+([014](B-014-unify-skill-sibling-file-naming.md)'s LEARNINGS entry: a
 Verify that greps a banned string must not collide with prose that has
 to say it.)
 
@@ -127,7 +127,7 @@ Expect all three line counts ≤ 110, then `twins: parallel`,
 ## Out of scope
 
 - **A line-cap lint.** `skills/` already has both halves of
-  [020](../decisions/020-every-page-has-a-growth-path.md) *except* the
+  [020](../decisions/R-020-every-page-has-a-growth-path.md) *except* the
   enforcement: the named move exists (topic-named siblings,
   `conjure-a-skill/principles.md`) and so does the prohibition
   (`conjure-a-skill/SKILL.md`: never exceed 110 lines) — but nothing

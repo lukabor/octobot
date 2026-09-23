@@ -9,7 +9,7 @@ sounded: 2026-07-23
 
 ## Justification
 
-[007](007-add-sound.md) made the live-code read step 3 of every sounding,
+[007](B-007-add-sound.md) made the live-code read step 3 of every sounding,
 on the warrant that the OKF and the index can both go stale
 (`../CONTEXT.md:85-89`). That warrant predates nostos being on the
 machine. Nostos serves codegraph over MCP, and codegraph's `node` and
@@ -74,7 +74,7 @@ not reach, is the whole of this clause.
 `OKF/ARCHITECTURE.md` is **not** a seam: it names the invocation seam
 (`:47-50`) and 019, never the spine. `OKF/ROADMAP.md` phase 9 is **not**
 a seam: `:62-67` records what was verified on 2026-07-22 and is
-append-only per [013](../decisions/013-roadmap-is-a-plan.md). Neither is
+append-only per [013](../decisions/R-013-roadmap-is-a-plan.md). Neither is
 touched. `blueprint`, `blueprint-format.md`, `okf-check` and the
 `sounded:` gate are untouched — see *Out of scope*.
 

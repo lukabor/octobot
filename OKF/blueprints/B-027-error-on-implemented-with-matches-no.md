@@ -26,7 +26,7 @@ inside it. A blueprint carrying `tally: matches: no` passes the same check
 prose already says the loop must
 [never flip on a known miss](../../skills/loop/rig/SKILL.md), but nothing
 enforces it — the exact shape
-[025](025-rule-muster-on-every-blueprint.md) closed one level up, where an
+[025](B-025-rule-muster-on-every-blueprint.md) closed one level up, where an
 absent ruling was indistinguishable from a considered no. Carried across four
 handoffs as an open question; flagged a blueprint candidate since the
 2026-07-31 handoff.

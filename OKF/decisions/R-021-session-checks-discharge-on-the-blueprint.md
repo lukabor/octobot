@@ -5,7 +5,7 @@ answers:
   - "Where is a discharged-session check recorded?"
 cites:
   - skills/loop/blueprint/blueprint-format.md
-  - OKF/blueprints/007-add-sound.md
+  - OKF/blueprints/B-007-add-sound.md
   - OKF/ROADMAP.md
 status: live
 reversible: yes — strike the stamps; the checks they record stay in §Verify
@@ -30,9 +30,9 @@ stamp records that an unchanged check was run.
 ## Considered options
 
 Leaving the record in `ROADMAP.md`, where B-007's already sat, was
-rejected on two counts. [013](013-roadmap-is-a-plan.md) makes ROADMAP a
+rejected on two counts. [013](R-013-roadmap-is-a-plan.md) makes ROADMAP a
 plan, and a discharge is past-tense; worse,
-[020](020-every-page-has-a-growth-path.md) prunes a discharged phase to
+[020](R-020-every-page-has-a-growth-path.md) prunes a discharged phase to
 one line, so the prune silently deletes any check still pending — the
 one thing that must survive.
 
@@ -44,7 +44,7 @@ validator rule is a small addition on top and costs nothing now.
 
 ## Consequences
 
-- `007-add-sound.md` §Verify is backfilled with three `✅` stamps and one
+- `B-007-add-sound.md` §Verify is backfilled with three `✅` stamps and one
   `⏳ pending` (check 3, the self-fire byte-identity run).
 - `ROADMAP.md` phase 9 loses its parenthetical discharge prose and its
   trailing "Check 3 alone must ride the next sounding" clause.

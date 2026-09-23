@@ -11,7 +11,7 @@ tally:
   note: reviewed at the halt over review-base..@, 2 files +7/-2; first muster ever run in this repo
 cites:
   - skills/loop/blueprint/SKILL.md
-  - OKF/blueprints/011-add-blueprint-level-muster.md
+  - OKF/blueprints/B-011-add-blueprint-level-muster.md
   - skills/loop/rig/SKILL.md:Muster (only if
   - skills/loop/blueprint/blueprint-format.md:opts into the human review gate
   - skills/loop/write-OKF/scripts/okf-check:muster is opt-in
@@ -21,7 +21,7 @@ cites:
 
 ## Justification
 
-**The gate works and has never fired.** [011](011-add-blueprint-level-muster.md)
+**The gate works and has never fired.** [011](B-011-add-blueprint-level-muster.md)
 shipped blueprint-level muster: `muster: true` makes `rig` halt after the
 seal, show the whole `review-base..@` diff, and record a `tally:` the human
 signs. `okf-check` enforces it — a muster blueprint cannot reach
@@ -78,7 +78,7 @@ grep that the words exist and cannot see whether they are followed.
 ```sh
 cd <repo-root>
 grep -q 'muster: false' skills/loop/blueprint/SKILL.md && echo "OK step" || echo "FAIL step"
-grep -qx 'muster: true' OKF/blueprints/025-rule-muster-on-every-blueprint.md &&
+grep -qx 'muster: true' OKF/blueprints/B-025-rule-muster-on-every-blueprint.md &&
   echo "OK self" || echo "FAIL self"
 skills/productivity/conjure-a-skill/scripts/skill-check skills/ | tail -1
 skills/loop/write-OKF/scripts/link-check . ; skills/loop/write-OKF/scripts/okf-check OKF/
@@ -98,7 +98,7 @@ for the muster tally before flipping this blueprint's status.
   its next reader looks — phase 10's lesson, `ROADMAP.md` §Risks.
 - **`blueprint-format.md`** — the `muster:` / `review-base:` / `tally:`
   grammar already exists and is correct; only the procedure changes.
-- **Ferry-level muster** at `moor` ([012](012-add-ferry-level-muster.md)) —
+- **Ferry-level muster** at `moor` ([012](B-012-add-ferry-level-muster.md)) —
   a different gate on a different unit.
 - **Retro-mustering implemented blueprints**, B-024 included. Muster gates a
   close; a closed one has nothing left to gate.

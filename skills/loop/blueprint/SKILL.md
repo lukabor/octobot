@@ -1,6 +1,6 @@
 ---
 name: blueprint
-description: Synthesize the current conversation or a roadmap phase into a justified, verifiable blueprint at OKF/blueprints/NNN-<slug>.md — the unit that rig executes. No interview, pure synthesis.
+description: Synthesize the current conversation or a roadmap phase into a justified, verifiable blueprint at OKF/blueprints/B-NNN-<slug>.md — the unit that rig executes. No interview, pure synthesis.
 disable-model-invocation: true
 ---
 
@@ -22,9 +22,9 @@ blueprint with justification. The interview happened upstream
    resolved ferry decision. No source → stop; run grill-me/chart
    first. Never invent requirements.
 2. **Number it** — `NNN` = highest existing in `OKF/blueprints/` + 1
-   (`grep -ho '^[0-9]\{3\}' <(ls OKF/blueprints/) | sort -n | tail -1`);
-   directory empty or absent → start at `001`.
-3. **Write `OKF/blueprints/NNN-<slug>.md`** per
+   (`ls OKF/blueprints/ | grep -oE '^B-[0-9]{3}' | grep -oE '[0-9]{3}' |
+   sort -n | tail -1`); directory empty or absent → start at `001`.
+3. **Write `OKF/blueprints/B-NNN-<slug>.md`** per
    [blueprint-format.md](blueprint-format.md). Status starts `draft`.
    - *Justification* traces to a roadmap phase, ferry decision, or a
      stated user need — by reference, not restatement.

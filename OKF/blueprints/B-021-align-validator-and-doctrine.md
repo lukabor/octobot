@@ -8,11 +8,11 @@ cites:
   - skills/loop/write-OKF/okf-layout.md
   - skills/loop/write-OKF/scripts/okf-check
   - skills/loop/blueprint/blueprint-format.md
-  - OKF/decisions/022-prose-cites-carry-a-register-prefix.md
+  - OKF/decisions/R-022-prose-cites-carry-a-register-prefix.md
   - OKF/learnings/index.md
   - OKF/index.md
-  - OKF/decisions/020-every-page-has-a-growth-path.md:alone **splits**
-  - OKF/blueprints/020-enforce-the-prune-and-validate-every-cite.md:declaring `cites:`
+  - OKF/decisions/R-020-every-page-has-a-growth-path.md:alone **splits**
+  - OKF/blueprints/B-020-enforce-the-prune-and-validate-every-cite.md:declaring `cites:`
 ---
 
 # 021 — align the validator and the doctrine on splits, prefixes and cites
@@ -20,7 +20,7 @@ cites:
 ## Justification
 
 Three sites where doctrine and `okf-check` disagree, found sounding
-[B-020](020-enforce-the-prune-and-validate-every-cite.md): doctrine
+[B-020](B-020-enforce-the-prune-and-validate-every-cite.md): doctrine
 instructing into a validator error, doctrine with no validator, and a
 validated field no format declares — the defect class B-020's
 §Justification names when it refuses to ship a rule beside the doc
@@ -33,7 +33,7 @@ index says the capped page keeps its name and becomes its subpages' index;
 or `MAP.md`, so `learnings/<theme>.md` linked from `LEARNINGS.md` errors
 *not reachable from index.md*. Proved by running the validator over a
 copied tree, not by reading it.
-[R-020](../decisions/020-every-page-has-a-growth-path.md) grants every page
+[R-020](../decisions/R-020-every-page-has-a-growth-path.md) grants every page
 kind a growth path; this one cannot be taken. `LEARNINGS.md` sits at
 exactly 110, so the next entry meets the drift.
 
@@ -61,7 +61,7 @@ are the weave's, not this blueprint's. `learnings/index.md` carries
 **Rule 2 — an unprefixed register cite in prose is an ERROR.** A bare
 three-digit run matching an existing `blueprints/NNN-` or `decisions/NNN-`
 file, in the body of a root page or a `decisions/` page, is
-[R-022](../decisions/022-prose-cites-carry-a-register-prefix.md)'s
+[R-022](../decisions/R-022-prose-cites-carry-a-register-prefix.md)'s
 ambiguity unenforced. Exclusions are the rule's hard half, all mechanical:
 frontmatter, fenced blocks, code spans, markdown link text and targets, a
 number touching `/`, `-`, `.` or a word character (so a path or
@@ -109,7 +109,7 @@ tmp=$(mktemp -d); cp -r OKF "$tmp/"
 for f in skills README.md CLAUDE.md; do ln -s "$PWD/$f" "$tmp/$f"; done
 "$CHECK" "$tmp/OKF"; echo "copy exit: $?"
 printf '\nA bare 017 standing in prose.\n' \
-  >> "$tmp/OKF/decisions/012-one-why-register.md"
+  >> "$tmp/OKF/decisions/R-012-one-why-register.md"
 "$CHECK" "$tmp/OKF" | grep -c 'unprefixed register cite'
 rm -rf "$tmp" skills/loop/write-OKF/scripts/__pycache__
 grep -n 'index.md' skills/loop/write-OKF/split-page.md | head -5

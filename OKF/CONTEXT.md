@@ -35,7 +35,7 @@ Open-knowledge-format — the agent-first wiki at a target project's
 _Avoid_: docs folder, wiki (unqualified), knowledge base.
 
 **Blueprint**:
-A blueprint-skill-produced file `OKF/blueprints/NNN-<slug>.md` with
+A blueprint-skill-produced file `OKF/blueprints/B-NNN-<slug>.md` with
 status frontmatter; the unit rig executes. Its `## Contract` section
 states what the change must satisfy. _Avoid_: spec (superseded term —
 renamed for skill↔artifact consistency), ticket, issue, task.
@@ -78,7 +78,7 @@ The `OKF/decisions/` register — why we chose what we chose, indexed
 question-shaped by `index.md`. _Avoid_: ADR log, decision log.
 
 **Decision file**:
-One why-register entry, `OKF/decisions/NNN-<slug>.md`. Numbers permanent
+One why-register entry, `OKF/decisions/R-NNN-<slug>.md`. Numbers permanent
 — supersede, never renumber. _Avoid_: ADR, decision record, register file.
 
 **Ferry decision**:

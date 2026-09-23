@@ -4,10 +4,10 @@ status: superseded-by-026
 traces-to: ROADMAP.md phase 11
 sounded: 2026-07-30
 cites:
-  - OKF/blueprints/018-own-the-loop-shape-in-flow-1.md:**The lint.**
-  - OKF/blueprints/017-add-a-line-cap-lint-over-skills.md:Why a sibling script
-  - OKF/decisions/016-one-okf-check-validator.md:One `okf-check` validator
-  - OKF/decisions/013-roadmap-is-a-plan.md:plan, not an archive
+  - OKF/blueprints/B-018-own-the-loop-shape-in-flow-1.md:**The lint.**
+  - OKF/blueprints/B-017-add-a-line-cap-lint-over-skills.md:Why a sibling script
+  - OKF/decisions/R-016-one-okf-check-validator.md:One `okf-check` validator
+  - OKF/decisions/R-013-roadmap-is-a-plan.md:plan, not an archive
   - OKF/ARCHITECTURE.md:substrate (rare)
   - README.md:### loop — the metaharness spine
   - skills/loop/steer/SKILL.md:## The loop
@@ -23,7 +23,7 @@ cites:
 
 [ROADMAP.md](../ROADMAP.md) phase 11 pairs the ownership move with a lint
 *"so the copies cannot diverge again"*, and its Verify names the mechanism:
-**checked by script**. [018](018-own-the-loop-shape-in-flow-1.md) landed the
+**checked by script**. [018](B-018-own-the-loop-shape-in-flow-1.md) landed the
 first half and reserved this one; phase 11 does not verify until it lands.
 The warrant is not speculative — divergence already happened once, six sites
 in three forms. What holds them together today is 018's §Verify, a `sed`
@@ -40,8 +40,8 @@ of its 150-line cap, so the fix lands here.
 **Why a third script.** README.md sits at the repo root — outside `okf-check
 <okf-dir>` and outside `skill-check <skills-dir>` both. No existing walker
 sees all three sites, and widening either one's root changes the argv
-contract [017](017-add-a-line-cap-lint-over-skills.md) built `skill-check` to
-mirror. [016](../decisions/016-one-okf-check-validator.md) is not crossed: it
+contract [017](B-017-add-a-line-cap-lint-over-skills.md) built `skill-check` to
+mirror. [016](../decisions/R-016-one-okf-check-validator.md) is not crossed: it
 fixes how *OKF conformance* is enforced, and 017 already shipped a second
 validator under it.
 
@@ -87,7 +87,7 @@ no room to absorb its own Verify defect.
 
 **Phase 11 closes** — its entry ticked and pruned to the
 `✅ verified <date>, [019](…)` form phase 9 already carries, per
-[013](../decisions/013-roadmap-is-a-plan.md): a verified phase keeps no verify
+[013](../decisions/R-013-roadmap-is-a-plan.md): a verified phase keeps no verify
 step. **Today's tree is green** — three sites matching, no stray form; the
 lint changes no rendered content.
 

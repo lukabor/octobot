@@ -4,16 +4,16 @@ status: implemented
 traces-to: user request 2026-07-31 (B-020 stranded by the learnings/ split)
 sounded: 2026-07-31
 cites:
-  - OKF/blueprints/020-enforce-the-prune-and-validate-every-cite.md
-  - OKF/blueprints/021-align-validator-and-doctrine.md
+  - OKF/blueprints/B-020-enforce-the-prune-and-validate-every-cite.md
+  - OKF/blueprints/B-021-align-validator-and-doctrine.md
   - OKF/learnings/loop.md
   - OKF/index.md
   - skills/loop/write-OKF/scripts/okf-check
   - skills/loop/chart/SKILL.md
   - skills/loop/chart/revise.md
   - OKF/ROADMAP.md:A live decision can be contradicted
-  - OKF/decisions/020-every-page-has-a-growth-path.md:a discharged phase to one
-  - OKF/decisions/017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see
+  - OKF/decisions/R-020-every-page-has-a-growth-path.md:a discharged phase to one
+  - OKF/decisions/R-017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see
   - skills/loop/write-OKF/page-warrant.md:cite drift does not split the same way
   - skills/loop/blueprint/blueprint-format.md:sections are immutable
 ---
@@ -22,9 +22,9 @@ cites:
 
 ## Justification
 
-[B-020](020-enforce-the-prune-and-validate-every-cite.md) is **locked and
+[B-020](B-020-enforce-the-prune-and-validate-every-cite.md) is **locked and
 stranded**: its immutable §Verify runs `wc -l` over `OKF/LEARNINGS.md`, a
-path [B-021](021-align-validator-and-doctrine.md) deleted in the split to
+path [B-021](B-021-align-validator-and-doctrine.md) deleted in the split to
 `OKF/learnings/`. Its defects are still in the tree and supersession is the
 only exit, per the learning B-021 filed at
 [learnings/loop.md](../learnings/loop.md).
@@ -50,7 +50,7 @@ pages — the format requires `traces-to`, not `cites:`. Cites validate
 **whole**, path and symbol, per
 [page-warrant.md](../../skills/loop/write-OKF/page-warrant.md): a cite needs
 no repo, so it does not split the way
-[R-017](../decisions/017-pin-drift-splits-by-visibility.md) splits a pin.
+[R-017](../decisions/R-017-pin-drift-splits-by-visibility.md) splits a pin.
 
 **Rule 3 — the rule reaches backwards, and status buys no exemption.** A
 cite is validated wherever it appears, at `draft`, `locked`, `implemented`
@@ -112,10 +112,10 @@ sed -i 's|✅ verified 2026-07-22,|✅ verified 2026-07-22, **Verify:** x,|' \
 grep -c 'ROADMAP' "$tmp/prune.log"
 cp OKF/ROADMAP.md "$tmp/OKF/ROADMAP.md"
 sed -i '0,/^cites:/s|^cites:|cites:\n  - OKF/nope.md:x|' \
-  "$tmp/OKF/blueprints/017-add-a-line-cap-lint-over-skills.md"
+  "$tmp/OKF/blueprints/B-017-add-a-line-cap-lint-over-skills.md"
 "$CHECK" "$tmp/OKF" | grep -c 'unresolvable cite'
 sed -i '/^cites:/,/^---$/{/^  - /d}' \
-  "$tmp/OKF/blueprints/019-add-a-render-lint-over-the-loop-shape.md"
+  "$tmp/OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md"
 "$CHECK" "$tmp/OKF" | grep -c 'no cites'
 rm -rf "$tmp" skills/loop/write-OKF/scripts/__pycache__
 grep -n 'every phase\|verify line\|\*\*Verify:\*\*' \

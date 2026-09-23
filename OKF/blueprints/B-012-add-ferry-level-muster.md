@@ -10,10 +10,10 @@ sounded: 2026-07-24
 ## Justification
 
 The ferry-level half split out of
-[010](010-add-muster-the-human-review-gate.md) per growth-doctrine
-[020](../decisions/020-every-page-has-a-growth-path.md): 010 bundled the
+[010](B-010-add-muster-the-human-review-gate.md) per growth-doctrine
+[020](../decisions/R-020-every-page-has-a-growth-path.md): 010 bundled the
 weave gate and the moor gate, and the moor gate's `review-base` had no writer
-among 010's declared seams. [011](011-add-blueprint-level-muster.md) shipped
+among 010's declared seams. [011](B-011-add-blueprint-level-muster.md) shipped
 the weave gate. Sounding (2026-07-24) resolved the base question — the
 ferry's `review-base` is **derivable at moor**, so this needs no ferry-skill
 seam and no weave coupling. 010 carries the full justification and sounding
@@ -42,7 +42,7 @@ arrival → moor transition: nothing in moor mutates until the human signs off.
 
 **Prose-enforced.** `check_ferries` is shape-only, so `okf-check` does not
 gate the ferry tally — halt and tally both live in moor's prose (decision
-[017](../decisions/017-pin-drift-splits-by-visibility.md): okf-check enforces
+[017](../decisions/R-017-pin-drift-splits-by-visibility.md): okf-check enforces
 only what it can see).
 
 ## Seams touched

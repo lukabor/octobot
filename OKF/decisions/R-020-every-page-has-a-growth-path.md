@@ -4,7 +4,7 @@ purpose: Make the line cap enforceable by naming one legal move per page kind.
 answers:
   - "What happens to a page at cap+1?"
 cites:
-  - OKF/blueprints/009-give-every-page-a-growth-path.md
+  - OKF/blueprints/B-009-give-every-page-a-growth-path.md
   - skills/loop/write-OKF/okf-layout.md
   - skills/loop/write-OKF/split-page.md
   - skills/loop/write-OKF/scripts/okf-check

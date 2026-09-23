@@ -9,7 +9,7 @@ traces-to: ROADMAP.md phase 6, part A (decision 017)
 ## Justification
 
 Phase 6's first half. The warrant contract shipped with
-[002](002-extract-why-register.md); what phase 6 still owes is the half
+[002](B-002-extract-why-register.md); what phase 6 still owes is the half
 that *detects staleness*. `cite_resolves` (`okf-check:92-97`) already
 resolves the path half, repo-free, and discards the `:suffix` it is
 handed. The Real need is a cite that breaks when the thing it cites
@@ -32,7 +32,7 @@ dependency. The two suffixes are told apart by whether it parses as an
 integer.
 
 **Cite drift belongs to `okf-check`, not refresh.** This extends
-[017](../decisions/017-pin-drift-splits-by-visibility.md), which splits
+[017](../decisions/R-017-pin-drift-splits-by-visibility.md), which splits
 by *what a tool can see*: a `sealed:` pin needs `jj show`, so it goes to
 refresh; a cite needs only the working tree, so it stays in the validator
 already reading it. 017's doctrine is untouched — a cite needs no repo.

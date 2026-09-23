@@ -13,7 +13,7 @@ A blueprint locks on a human's yes, and that yes rests on knowledge
 nothing checked. `README.md:74` already claims something this repo is
 about to stop doing — the kind of drift a lock cannot see. Phase 9 in
 [ROADMAP.md](../ROADMAP.md) buys the check;
-[019](../decisions/019-recon-may-self-fire.md) says who may run it
+[019](../decisions/R-019-recon-may-self-fire.md) says who may run it
 unasked.
 
 This blueprint is itself the first sounding — hence the stamp, and
@@ -79,7 +79,7 @@ correct there) nor at `implemented` (noise, and it would retro-flag
 
 ```sh
 tmp=$(mktemp -d) && cp -r OKF "$tmp/OKF"
-f="$tmp/OKF/blueprints/006-rescan-the-page-plan-on-refresh.md"
+f="$tmp/OKF/blueprints/B-006-rescan-the-page-plan-on-refresh.md"
 for s in draft locked implemented; do
   sed -i "s/^status: .*/status: $s/" "$f"
   printf '%s: %s\n' "$s" \

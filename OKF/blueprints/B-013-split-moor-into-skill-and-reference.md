@@ -9,7 +9,7 @@ sounded: 2026-07-24
 
 ## Justification
 
-weave of [012](012-add-ferry-level-muster.md) added moor's MUSTER step and
+weave of [012](B-012-add-ferry-level-muster.md) added moor's MUSTER step and
 pushed `skills/loop/moor/SKILL.md` to 115 lines, over the repo's ≤110 skill
 cap (CLAUDE.md §5). The cap's own remedy is a `REFERENCE.md` split, not
 trimming load-bearing prose — the LEARNINGS note of 2026-07-24 records that a
@@ -56,7 +56,7 @@ in REFERENCE.md.
 - **Any change to moor's behaviour** — pure relocation; a moor run reads the
   same instructions in the same order.
 - **Splitting other over-cap skills** — one skill per blueprint.
-- **The MUSTER step's semantics** — [012](012-add-ferry-level-muster.md) owns
+- **The MUSTER step's semantics** — [012](B-012-add-ferry-level-muster.md) owns
   those; this only relocates prose.
 - **okf-check enforcing the skill cap** — it gates OKF pages, not skills; the
   cap stays a prose convention (CLAUDE.md §5).
