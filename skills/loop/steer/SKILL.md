@@ -47,6 +47,7 @@ rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refre
 
 | Situation | Skill |
 |---|---|
+| repo never ran octobot — no `AGENTS.md`, no `OKF/` | `/init-octobot` |
 | task vague, no codebase to anchor on | `/grill-me` |
 | plan needs stress-testing against the codebase | `/grill-with-docs` |
 | build test-first (fires on "tdd"/"bdd" too) | `/bdd` |

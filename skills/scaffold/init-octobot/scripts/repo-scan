@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+"""Scan a repo for init-octobot's two decisions. Usage: repo-scan <repo-root>
+
+Two kinds of line on stdout, each naming the disk evidence that warranted
+it — no evidence, no line; this scan proposes, it never writes:
+
+    LEGACY <path>              — a write-OKF migration source exists;
+                                  init-octobot defers OKF/ROADMAP.md
+                                  creation to /write-OKF instead of
+                                  scaffolding them itself.
+    CONVENTION <bullet> — <path> — a point-5 "Repo conventions" bullet
+                                  candidate, for user confirmation.
+"""
+import sys
+from pathlib import Path
+
+LEGACY_MARKERS = ("CONTEXT.md", "docs/Roadmap.md", "docs/adr")
+
+# marker file -> (ecosystem, one-line bullet)
+ECOSYSTEM_MARKERS = {
+    "pyproject.toml": "python",
+    "DESCRIPTION": "r-package",
+    "_targets.R": "r-analysis",
+    "package.json": "node",
+    "Cargo.toml": "rust",
+    "go.mod": "go",
+}
+
+LINT_MARKERS = (
+    ".eslintrc.json", ".eslintrc.js", ".eslintrc", "ruff.toml",
+    ".ruff.toml", ".flake8", ".rubocop.yml", "rustfmt.toml", ".golangci.yml",
+)
+
+TEST_MARKERS = {
+    "pytest.ini": "pytest", "tests": "tests/", "test": "test/",
+    "spec": "spec/",
+}
+
+
+def legacy(root):
+    for marker in LEGACY_MARKERS:
+        path = root / marker
+        if path.exists():
+            yield f"LEGACY {marker}"
+
+
+def ecosystem(root):
+    for marker, name in ECOSYSTEM_MARKERS.items():
+        path = root / marker
+        if path.exists():
+            yield f"CONVENTION language: {name} — {marker}"
+
+
+def lint(root):
+    for marker in LINT_MARKERS:
+        path = root / marker
+        if path.exists():
+            yield f"CONVENTION lint: {marker} — {marker}"
+
+
+def tests(root):
+    for marker, label in TEST_MARKERS.items():
+        path = root / marker
+        if path.exists():
+            yield f"CONVENTION tests: {label} — {marker}"
+
+
+def main():
+    if len(sys.argv) != 2:
+        print(__doc__, file=sys.stderr)
+        return 1
+    root = Path(sys.argv[1])
+    for line in (*legacy(root), *ecosystem(root), *lint(root), *tests(root)):
+        print(line)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
