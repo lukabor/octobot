@@ -85,7 +85,8 @@ scripts/link-skills.sh
 It symlinks every skill into both directories, so a `git pull` (or `jj
 git fetch`) is all that's needed to keep them up to date. Open any
 project, start your agent, and the skills below appear in the skill
-list.
+list. Optionally, run `/talk-caveman` for terse mode — no preamble, no
+summaries — it overlays any workflow below.
 
 **Any other harness** (Copilot, or anywhere `~/.claude/skills` doesn't
 apply): `npx skills@latest add lukabor/octobot` copies the skills you
@@ -95,9 +96,13 @@ pick into your project as ordinary files.
 
 ### loop — the metaharness spine
 Octobot's core: a loop-engineering metaharness over an **OKF**
-(open-knowledge-format) wiki at each project's `./OKF/`.
+(open-knowledge-format) wiki at each project's `./OKF/`. First time in a
+repo? Run `/init-octobot` before any of this — it bootstraps `AGENTS.md`
+and a bare `OKF/` so the spine below has something to scaffold or refresh.
 
 ```
+one-time         init-octobot — bootstrap AGENTS.md, bare OKF/ (new repos only)
+                      ↓
 substrate (rare)  write-OKF — scaffold, or refresh when stale
                       ↓
 per request       chart — a phase only for an arc over >1 blueprint
