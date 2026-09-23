@@ -23,10 +23,18 @@ flow"`, `"fix token refresh on 401"`.
 Scope is the smallest area the change touches; it makes the log
 greppable and the change's footprint visible at a glance.
 
+## Skipping the pre-describe `commit-msg-check`
+
+jj has no native hook (confirmed: nothing in `jj help` or `jj config
+schema` as of 0.38), so nothing stops a malformed message from landing
+except running the check yourself, before `jj describe`. Skipping it
+because "it's probably fine" is how a doubled blank line or a missing
+scope gets sealed into history. See SKILL.md §Workflow step 2.
+
 ## Docs in the next commit
 
 "I'll update the README after." You won't. Docstrings, README sections,
-CLAUDE.md updates for a new flag or env var — same change or it doesn't
+AGENTS.md updates for a new flag or env var — same change or it doesn't
 ship. See SKILL.md §4 *"Docs travel with the code"*.
 
 ## Skipping `jj new` after describe
