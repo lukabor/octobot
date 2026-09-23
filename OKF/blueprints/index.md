@@ -36,3 +36,4 @@ superseded-by-NNN`. Numbers are permanent — supersede, never renumber.
 - [027](027-error-on-implemented-with-matches-no.md) — error when a mustered blueprint reaches implemented on matches: no — implemented
 - [028](028-convert-cross-skill-links-to-skill-names.md) — convert cross-skill links to unchecked skill names — implemented
 - [029](029-prefix-register-filenames-and-validate-okf-structure.md) — validate OKF directory completeness and normalize blueprints/ferries indexing — implemented
+- [030](030-migrate-register-filenames-to-their-prefix.md) — migrate decision and blueprint filenames to their R-/B- prefix — locked
