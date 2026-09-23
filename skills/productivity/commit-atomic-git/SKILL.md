@@ -38,27 +38,23 @@ Same principles; the staging area replaces `jj split`, and there is no
 - Tests for existing behaviour: own commit, unless they land with the
   new behaviour they cover (`/bdd`).
 
-### 3. Semantic format
+### 3. Structural message format
+1-3 blank-line-separated blocks: subject (`type(scope): imperative
+phrase[; starts|extends|ends <REF>]`), optional justification, optional
+scope bullets. Full grammar, ticket refs, and blueprint citations:
+[commit-atomic-jj/message-format.md](../commit-atomic-jj/message-format.md).
+Install real enforcement once per repo:
 ```
-type(scope): imperative phrase completing "this change will…"
+skills/productivity/commit-atomic-jj/scripts/commit-msg-check --install-hook .
 ```
-- `type` ∈ `feat`, `fix`, `refactor`, `perf`, `test`, `docs`, `build`,
-  `chore`, `style`.
-- Imperative: **"add"**, **"fix"**, **"remove"** — never "added",
-  "adds", "now does X".
-- Subject ≤ 72 chars; body bullets ≤ 90, same `type(scope):` shape.
+This is a real `git commit-msg` hook (unlike jj, plain git fires it).
+Copies the checker to `.githooks/commit-msg` and sets `core.hooksPath` —
+teammates each run `git config core.hooksPath .githooks` once after
+pulling that directory, since the setting itself isn't versioned.
 
-### 4. Ticket references (optional, project-configurable)
-Project uses a ticket prefix → body verbs `starts/extends/ends <PREFIX>-N`.
-No convention → omit; don't invent a prefix.
-
-### 5. Blueprint citations
-A change executing `OKF/blueprints/NNN` cites it in the body:
-`implements blueprint NNN`.
-
-### 6. Docs travel with the code
+### 4. Docs travel with the code
 Same commit includes: updated docstring for a changed public signature;
-README / CLAUDE.md for a new flag, script, env var, command; a doc under
+README / AGENTS.md for a new flag, script, env var, command; a doc under
 `docs/` for any non-self-evident analysis result. One-line docstrings
 fine; none is not.
 
@@ -94,6 +90,8 @@ hangs the session.
   force-push is the agreed plan.
 
 ## See also
+- [commit-atomic-jj/message-format.md](../commit-atomic-jj/message-format.md)
+  — the message grammar `commit-msg-check` enforces, shared with jj.
 - `/commit-atomic-jj` — jj
   counterpart; shared philosophy, worked split example in its
   examples.md translates 1:1 (staging instead of `jj split`).

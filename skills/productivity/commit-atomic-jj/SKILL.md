@@ -31,35 +31,17 @@ description: Atomic-commit discipline with jujutsu — read every diff line befo
 - Test additions for an existing feature are their own change unless
   they accompany a new behaviour landing in the same diff.
 
-### 3. Semantic format
-```
-type(scope): imperative phrase completing "this change will…"
-```
-- `type` ∈ `feat`, `fix`, `refactor`, `perf`, `test`, `docs`, `build`,
-  `chore`, `style`.
-- Imperative voice: **"add"**, **"fix"**, **"remove"**, **"update"** —
-  never "added", "adding", "adds", "now does X".
-- Subject ≤ 72 chars. Body bullets ≤ 90 chars.
-- Body uses the same `type(scope): imperative` shape per sub-change.
+### 3. Structural message format
+1-3 blank-line-separated blocks: subject (`type(scope): imperative
+phrase[; starts|extends|ends <REF>]`), optional justification, optional
+scope bullets. `scripts/commit-msg-check` validates it mechanically —
+see [message-format.md](message-format.md) for the full grammar,
+examples, ticket refs, and blueprint citations.
 
-### 4. Ticket references (optional, project-configurable)
-If the project uses a ticket prefix (e.g. `DRAKE-42`, `JIRA-101`,
-`CIRI-7`), use these verbs in the body:
-- `starts <PREFIX>-N` — first commit on a ticket.
-- `extends <PREFIX>-N` — incremental progress.
-- `ends <PREFIX>-N` — final commit closing the ticket.
-
-If the project has no ticket convention, omit. Don't invent a prefix.
-
-### 5. Blueprint citations
-A change executing an `OKF/blueprints/NNN` blueprint (`/rig`)
-cites it in the body: `implements blueprint NNN`. Readers trace the diff to
-its justification without leaving the log.
-
-### 6. Docs travel with the code
+### 4. Docs travel with the code
 The same `jj describe` must include any of:
 - Updated docstring for a changed public function signature.
-- Updated README / CLAUDE.md for a new CLI flag, script, env var, or
+- Updated README / AGENTS.md for a new CLI flag, script, env var, or
   command.
 - A new doc under `docs/` for any analysis whose result is **not
   self-evident from reading the code** (e.g. a derived statistic, a
@@ -70,11 +52,16 @@ The same `jj describe` must include any of:
 ## Workflow
 
 ```
-jj diff                              # 1. read every line
-jj describe -m 'type(scope): ...'    # 2. one concern? seal it (foreground)
-jj diff   --revision @-              # 3. verify the message matches what shipped
-jj new   -m 'WIP'                    # 4. open a fresh empty @ for the next unit
+jj diff                                             # 1. read every line
+S=skills/productivity/commit-atomic-jj/scripts/commit-msg-check
+$S <(printf '%s' "$MSG")                            # 2. validate structure (jj has no hook)
+jj describe -m "$MSG"                               # 3. one concern? seal it (foreground)
+jj diff   --revision @-                             # 4. verify the message matches what shipped
+jj new   -m 'WIP'                                   # 5. open a fresh empty @ for the next unit
 ```
+Step 2 is mandatory, not optional — jj has no native hook to enforce it
+(nothing in `jj help` or `jj config schema` as of 0.38), so the skill
+itself is the only enforcement point.
 
 Mixed diff (more than one concern) → split **before** describing, minding
 which side the selected paths land on ([anti-patterns.md](anti-patterns.md)):
@@ -96,6 +83,8 @@ commits, past-tense messages, missing scope, deferred docs, skipped
 `jj new`, backgrounded mutations, headless editors, `split`'s parent side.
 
 ## See also
+- [message-format.md](message-format.md) — full block grammar, config,
+  and hook-install details for `scripts/commit-msg-check`.
 - [examples.md](examples.md) — a real before/after where a working copy is
   split into two atomic commits with proper messages.
 - `/style-r`

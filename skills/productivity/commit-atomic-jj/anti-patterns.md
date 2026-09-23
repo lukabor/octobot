@@ -27,7 +27,7 @@ greppable and the change's footprint visible at a glance.
 
 "I'll update the README after." You won't. Docstrings, README sections,
 CLAUDE.md updates for a new flag or env var — same change or it doesn't
-ship. See SKILL.md §6 *"Docs travel with the code"*.
+ship. See SKILL.md §4 *"Docs travel with the code"*.
 
 ## Skipping `jj new` after describe
 

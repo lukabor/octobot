@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""Validate commit message structure. Usage: commit-msg-check <message-file>
+       commit-msg-check --install-hook [repo-dir]
+
+Errors (exit 1): more than 3 blank-line-separated blocks; a leading,
+trailing, or doubled blank line; a line over 80 chars; block 1 absent,
+multi-line, or not `type(scope): phrase[; starts|extends|ends REF]` with
+`type` from the closed set (build, chore, ci, docs, feat, fix, perf,
+refactor, revert, style, test — extend via `.commit-lint.toml`'s
+`extra_types`); block 2 present but not 1-2 plain lines; block 3 present
+but a line not `* type(scope): phrase[; ...]`, or ordered before block 2.
+
+`--install-hook` copies this script into `<repo-dir>/.githooks/commit-msg`
+(default: cwd's repo) and points `core.hooksPath` at it. That config is
+per-clone, not versioned — each teammate runs
+`git config core.hooksPath .githooks` once after pulling the directory.
+
+See message-format.md for the grammar in prose.
+"""
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+MAX_LEN = 80
+DEFAULT_TYPES = {
+    "build", "chore", "ci", "docs", "feat", "fix",
+    "perf", "refactor", "revert", "style", "test",
+}
+BLOCK1_RE = re.compile(r"^(?P<head>[a-z]+\([^()]+\): [^;]+)(?:; (?P<trailer>.+))?$")
+HEAD_RE = re.compile(r"^(?P<type>[a-z]+)\((?P<scope>[^()]+)\): (?P<phrase>.+)$")
+TRAILER_RE = re.compile(r"^(starts|extends|ends) [A-Z][A-Z0-9]*-[0-9]+$")
+
+
+def load_extra_types(root):
+    config = root / ".commit-lint.toml"
+    if not config.exists():
+        return set()
+    match = re.search(r"extra_types\s*=\s*\[([^\]]*)\]", config.read_text())
+    if not match:
+        return set()
+    return {v.strip().strip("\"'") for v in match.group(1).split(",") if v.strip()}
+
+
+def git_root(start):
+    try:
+        out = subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"], cwd=start,
+            capture_output=True, text=True, check=True,
+        )
+        return Path(out.stdout.strip())
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
+
+def check_line_shape(line, errors, where, allowed_types):
+    """Validate one `type(scope): phrase[; verb REF]` line, sans any bullet marker."""
+    m = BLOCK1_RE.match(line)
+    if not m:
+        errors.append(f"{where}: not 'type(scope): phrase' shape: {line!r}")
+        return
+    head = HEAD_RE.match(m.group("head"))
+    if not head:
+        errors.append(f"{where}: missing scope or phrase: {line!r}")
+        return
+    if head.group("type") not in allowed_types:
+        errors.append(
+            f"{where}: type {head.group('type')!r} not in "
+            f"{sorted(allowed_types)}"
+        )
+    trailer = m.group("trailer")
+    if trailer is not None and not TRAILER_RE.fullmatch(trailer):
+        errors.append(
+            f"{where}: trailer must be 'starts|extends|ends REF' "
+            f"(REF like B-024): {trailer!r}"
+        )
+
+
+def split_blocks(lines, errors):
+    blocks, current, blank_run = [], [], 0
+    for line in lines:
+        if line == "":
+            blank_run += 1
+            if current:
+                blocks.append(current)
+                current = []
+        else:
+            if blank_run > 1:
+                errors.append(f"doubled blank line before: {line!r}")
+            blank_run = 0
+            current.append(line)
+    if current:
+        blocks.append(current)
+    return blocks
+
+
+def check_message(text, extra_types):
+    allowed_types = DEFAULT_TYPES | extra_types
+    lines = [l for l in text.splitlines() if not l.lstrip().startswith("#")]
+    errors = []
+    if not lines:
+        return ["empty message"]
+    if lines[0] == "":
+        errors.append("leading blank line")
+    if lines[-1] == "":
+        errors.append("trailing blank line")
+    for i, line in enumerate(lines, 1):
+        if len(line) > MAX_LEN:
+            errors.append(f"line {i}: over {MAX_LEN} chars: {line!r}")
+
+    blocks = split_blocks(lines, errors)
+    if len(blocks) > 3:
+        errors.append(f"too many blocks (max 3): got {len(blocks)}")
+
+    subject = blocks[0] if blocks else []
+    if len(subject) != 1:
+        errors.append(f"block 1 must be a single line, got {len(subject)}")
+    elif subject[0][:1] in ("-", "*"):
+        errors.append(f"block 1 must not start with a bullet marker: {subject[0]!r}")
+    elif subject:
+        check_line_shape(subject[0], errors, "block 1", allowed_types)
+
+    rest = blocks[1:]
+    kinds = ["bullets" if b[0].startswith("* ") else "prose" for b in rest]
+    if kinds == ["bullets", "prose"]:
+        errors.append("block 3 (bullets) must come after block 2 (justification)")
+    elif len(kinds) == 2 and kinds[0] == kinds[1]:
+        errors.append(f"two {kinds[0]} blocks in a row — only one of each allowed")
+
+    for block, kind in zip(rest, kinds):
+        label = "block 3" if kind == "bullets" else "block 2"
+        if kind == "prose":
+            if len(block) > 2:
+                errors.append(f"{label} must be 1-2 lines, got {len(block)}")
+        else:
+            for line in block:
+                if not line.startswith("* "):
+                    errors.append(f"{label}: bullet must start with '* ': {line!r}")
+                    continue
+                check_line_shape(line[2:], errors, label, allowed_types)
+
+    return errors
+
+
+def install_hook(argv):
+    start = Path(argv[0]).resolve() if argv else Path.cwd()
+    root = git_root(start) or start
+    hooks_dir = root / ".githooks"
+    hooks_dir.mkdir(exist_ok=True)
+    dest = hooks_dir / "commit-msg"
+    dest.write_bytes(Path(__file__).read_bytes())
+    dest.chmod(dest.stat().st_mode | 0o111)
+    subprocess.run(["git", "config", "core.hooksPath", ".githooks"], cwd=root, check=True)
+    print(f"installed {dest}")
+    print(f"core.hooksPath set to .githooks in {root}")
+    print("teammates: after pulling, run `git config core.hooksPath .githooks` once")
+    return 0
+
+
+def main(argv):
+    if len(argv) >= 2 and argv[1] == "--install-hook":
+        return install_hook(argv[2:])
+    if len(argv) != 2:
+        print("usage: commit-msg-check <message-file> | --install-hook [repo-dir]",
+              file=sys.stderr)
+        return 2
+    path = Path(argv[1])
+    root = git_root(path.parent) or Path.cwd()
+    errors = check_message(path.read_text(), load_extra_types(root))
+    for line in errors:
+        print(f"ERROR {line}")
+    print(f"{len(errors)} error(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

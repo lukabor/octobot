@@ -38,11 +38,11 @@ commit; the remaining paths stay in `@`. Adjust per `jj` version.)
 ### Commit A — the bug fix (lands first; ticket starts here)
 
 ```
-fix(indication/assemble_expr): defensive copy of input data.table; starts DRAKE-NN1
+fix(assemble_expr): defensive copy of input data.table; starts DRAKE-42
 
-* fix(indication/assemble_expr): copy() at boundary to stop in-place mutation; extends DRAKE-NN1
-* test(indication/assemble_expr): add idempotence test; extends DRAKE-NN1
-* docs(indication/assemble_expr): note reference-semantics contract; extends DRAKE-NN1
+* fix(assemble_expr): copy at boundary, stop in-place mutation; extends DRAKE-42
+* test(assemble_expr): add idempotence test; extends DRAKE-42
+* docs(assemble_expr): note reference-semantics contract; extends DRAKE-42
 ```
 
 Why this works:
@@ -52,14 +52,14 @@ Why this works:
 - The test ships with the fix (see
   `/bdd`).
 - The docstring update ships with the fix (see
-  [SKILL.md §5](SKILL.md)).
+  [SKILL.md §4](SKILL.md)).
 
 ### Commit B — the style refactor
 
 ```
-refactor(base): replace source() with box::use for dw_hippie; ends DRAKE-NN2
+refactor(base): replace source() with box::use for dw_hippie; ends DRAKE-43
 
-* refactor(base/dw_base_data): swap source() for ./dw_hippie box import; ends DRAKE-NN2
+* refactor(base): swap source() for ./dw_hippie box import; ends DRAKE-43
 ```
 
 Why this works:
