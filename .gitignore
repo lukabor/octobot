@@ -3,3 +3,4 @@
 *.swo
 .nfs*
 HANDOFF.md
+__pycache__/
