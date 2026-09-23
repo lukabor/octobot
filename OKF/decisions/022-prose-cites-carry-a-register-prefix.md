@@ -8,7 +8,7 @@ cites:
   - OKF/decisions/index.md
   - skills/loop/blueprint/blueprint-format.md
   - OKF/ferries/python-siblings/MAP.md
-status: live
+status: superseded-by-024
 reversible: yes — drop the prefixes; numbers, filenames and links never moved
 ---
 
