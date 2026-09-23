@@ -1,0 +1,4 @@
+# Extends commit-msg-check's closed `type` set (build, chore, ci, docs,
+# feat, fix, perf, refactor, revert, style, test). Octobot's own history
+# has used none beyond that set — empty for now, add here if one arises.
+extra_types = []
