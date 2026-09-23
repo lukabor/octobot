@@ -42,10 +42,10 @@ blueprint with justification. The interview happened upstream
 5. **Show the blueprint**; iterate. State the muster ruling in one line so
    an unwanted gate is overruled before the lock. On explicit user yes →
    flip status to `locked`. No yes, no lock.
-6. **Index it** — add `NNN — <title> — <status>` to `OKF/index.md`
-   Blueprints section.
+6. **Index it** — add `NNN — <title> — <status>` to
+   `OKF/blueprints/index.md`.
 7. **Seal** via `/commit-atomic-jj`:
-   `docs(blueprint): add NNN <slug>`.
+   `docs(blueprint): add B-NNN <slug>`.
 
 ## Status discipline
 `draft → locked → implemented`, or `→ superseded-by-NNN` from any state.
