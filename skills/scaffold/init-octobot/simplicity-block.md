@@ -3,22 +3,28 @@
 Insert verbatim into the target `AGENTS.md`, after the Knowledge and
 Behavioral guardrails sections from
 [write-OKF's `agents-md-hook.md`](../../loop/write-OKF/agents-md-hook.md).
-Distills CLAUDE.md sections 1–4 to the same terse, always-loaded register
-as the guardrails block above it — the full essay stays in CLAUDE.md for
-projects that opt into it.
+Each bullet below carries only what that hook block does **not** already
+say — CLAUDE.md §1–4 in full still holds every claim; this is the
+union minus the overlap, not a restatement, so nothing is lost even for
+a repo that never opts into CLAUDE.md.
 
 ```markdown
 ## Simplicity & rigor
 
-- **Think before coding** — state assumptions, name the simpler approach
-  you're rejecting, ask when unclear rather than guessing.
+- **Think before coding** — when multiple interpretations exist, present
+  them; don't pick silently.
 - **Three sieves before a line stays**: real (not speculative), good
   (nameably better for the next reader), minimal (leanest form —
   stdlib/existing code before new). Burden is on keeping, not cutting.
-- **Surgical changes** — touch only what the task requires; don't
-  refactor, reformat, or "improve" adjacent code; match existing style.
+  Exceptions that always pass *good*: input validation, error handling
+  that prevents data loss, security, accessibility, explicitly requested
+  behaviour.
+- **Surgical changes** — match existing style; clean up only your own
+  mess (remove orphans your change created, not pre-existing dead code);
+  every changed line should trace to the request.
 - **Goal-driven execution** — turn the task into a verifiable check
-  before starting, then loop against that check instead of "looks done".
+  before starting; for multi-step work, state a brief plan, each step
+  naming its own verify.
 ```
 
 ## Rules

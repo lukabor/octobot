@@ -44,12 +44,15 @@ that a silent sub-step would bypass.
      migration/hook-wiring steps are permanently skipped, not full
      population.
 3. **AGENTS.md** — create, assembling in order (never duplicate the
-   source prose into this repo's copy — insert each block verbatim):
+   source prose into this repo's copy — insert each block verbatim,
+   substituting `<project>` with the repo's directory name in every
+   block, not just the OKF templates):
    1. Knowledge + Behavioral guardrails, from write-OKF's
       [`agents-md-hook.md`](../../loop/write-OKF/agents-md-hook.md).
    2. Simplicity & rigor, from
-      [`simplicity-block.md`](simplicity-block.md) (CLAUDE.md §1–4,
-      distilled).
+      [`simplicity-block.md`](simplicity-block.md) — CLAUDE.md §1–4's
+      union-minus-overlap with the hook block above; no information
+      lost, nothing restated.
    3. `## Repo conventions — <dir-name>`, from
       [`AGENTS.md.tpl`](AGENTS.md.tpl) — empty repo: leave the
       fill-in-later placeholder. Non-empty: turn each confirmed
