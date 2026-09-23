@@ -50,6 +50,7 @@ your task needs. Humans welcome too.
 - [025](blueprints/025-rule-muster-on-every-blueprint.md) — rule muster on every blueprint — implemented
 - [026](blueprints/026-walk-only-what-git-does-not-ignore.md) — walk only what git does not ignore — implemented
 - [027](blueprints/027-error-on-implemented-with-matches-no.md) — error when a mustered blueprint reaches implemented on matches: no — implemented
+- [028](blueprints/028-convert-cross-skill-links-to-skill-names.md) — convert cross-skill links to unchecked skill names — locked
 
 ## Ferries
 

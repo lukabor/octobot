@@ -34,3 +34,4 @@ Format: `NNN — <question it settles> — <verdict> — <status>`.
 - [020](020-every-page-has-a-growth-path.md) — What happens to a page at cap+1? — one named move per page kind, enforced as an error — live
 - [021](021-session-checks-discharge-on-the-blueprint.md) — Where is a discharged-session check recorded? — stamped on its own blueprint's Verify check — live
 - [022](022-prose-cites-carry-a-register-prefix.md) — How is a register entry cited in prose? — `B-NNN` blueprint, `R-NNN` why-register, `D-n` ferry — live
+- [023](023-cross-skill-references-are-unchecked-skill-names.md) — How does one skill's prose reference another skill? — a backtick-wrapped `/skill-name`, never a path — live
