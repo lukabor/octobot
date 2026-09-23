@@ -56,6 +56,18 @@ single request traces to `user request <date>` instead, as B-008–B-017 did.
 
 14. **the skills tree installs into any harness** — ✅ 2026-09-23, [028](blueprints/028-convert-cross-skill-links-to-skill-names.md).
 
+15. **decision and blueprint files carry a searchable prefix** — supersedes
+    R-022's filename ruling; ferry `D-n` files untouched. `okf-check` gains
+    two `OKF/`-scoped checks: every directory holds an `index.md`, and each
+    lists its own `.md` siblings — retiring the root-inline pattern for
+    `blueprints/`/`ferries/` in favor of the delegate pattern
+    `decisions/`/`learnings/` already use. Migration renames every existing
+    decision/blueprint file and repairs every real link repo-wide; bare
+    unlinked prose numbers in `LEARNINGS.md` stay put, per R-022. Spans a
+    decision plus 2+ blueprints — `/ferry` carries it. **Verify:** all four
+    lints `0 error(s)`; no bare `decisions/NNN-`/`blueprints/NNN-` link
+    survives outside `LEARNINGS.md` prose.
+
 ## Risks & gotchas
 
 - **A self-firing skill fires when nobody asked.** Believed: every loop skill
