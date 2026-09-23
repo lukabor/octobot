@@ -29,10 +29,11 @@ filename*, not just in prose that quotes it. Effective now:
 carry their prefix, which is the collision R-022 exists to avoid.
 
 The **number stays permanent and un-renumbered** — only the prefix is
-added; `R-024` and the historical `024` are the same decision. `status:
-superseded-by-NNN` values, `cites:` entries that name a bare number in
-prose, and `traces-to` fields keep R-022's prose form (`R-NNN`) since
-those are citations, not filenames.
+added; `R-024` and the historical `024` are the same decision.
+`status: superseded-by-NNN` values stay bare, per R-022's original
+carve-out — they identify a number, not a filename or a prose sentence.
+A `cites:` entry that names a register page in prose, or a `traces-to`
+field, keeps R-022's prose form (`R-NNN`).
 
 ## Considered options
 
