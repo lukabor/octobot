@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 14
 sounded: 2026-09-23
 cites:
@@ -11,6 +11,11 @@ cites:
   - README.md
 muster: true
 review-base: myplnols
+tally:
+  intent: convert 290 cross-skill links to unchecked /skill-name prose
+    so skill content resolves under any install depth, and stand up the
+    replacement lint plus install tooling
+  matches: yes
 ---
 
 # 028 — convert cross-skill links to unchecked skill names

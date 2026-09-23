@@ -24,3 +24,12 @@ status: live
   produces phantom conflicts; rebasing onto the true destination shrank
   a 2-file conflict to 1 file before any hand-resolution. Source:
   session 2026-07-19 (write-readme-py conflict).
+- Believed: `jj restore <path>` undoes "what I just appended to this
+  file." True: with no `--from`, it reverts to the parent commit's
+  snapshot — discarding every uncommitted edit on that path, not just
+  the last append. A Verify script that plants a probe line and cleans
+  up with `jj restore` wipes real Build work sitting uncommitted on the
+  same file. Fix: undo exactly the planted lines (`head -n -N`), never
+  a blanket restore, when other uncommitted edits may be present. Source:
+  [028](../blueprints/028-convert-cross-skill-links-to-skill-names.md),
+  session 2026-09-23.

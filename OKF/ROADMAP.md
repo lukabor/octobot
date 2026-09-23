@@ -54,21 +54,7 @@ single request traces to `user request <date>` instead, as B-008–B-017 did.
     analysis has one with nowhere to land. **Verify:** `OKF/findings/` holds
     one finding `okf-check OKF/` validates 0/0; `blueprint` states the rule.
 
-14. **the skills tree installs into any harness** — 290 cross-skill links
-    break under a flat install (Copilot, `npx skills add <owner/repo>`).
-    Repo keeps its category directories; the links become unchecked
-    `` `/skill-name` `` prose instead
-    ([023](decisions/023-cross-skill-references-are-unchecked-skill-names.md)).
-    A new lint replaces `link-check`'s lost coverage on them.
-    `scripts/link-skills.sh` (mirrors mattpocock/skills) replaces
-    `README.md`'s copy-paste symlink loop; `README.md` gains `npx
-    skills@latest add <owner/repo>` as the non-Claude-harness path. The 7
-    links into `OKF/decisions/` (5) and `CLAUDE.md` (2) are untouched —
-    real paths, still `link-check`-validated. **Verify:** cross-skill
-    grep empty; `link-check .` 0 errors; new lint 0 errors;
-    `link-skills.sh` resolves under both skill dirs; `npx skills@latest
-    add <owner/repo>` installs
-    cleanly in a scratch dir.
+14. **the skills tree installs into any harness** — ✅ 2026-09-23, [028](blueprints/028-convert-cross-skill-links-to-skill-names.md).
 
 ## Risks & gotchas
 
