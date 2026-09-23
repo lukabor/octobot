@@ -284,13 +284,17 @@ def main(argv):
             warnings.append(f"{rel}: locked without sounded:")
 
         # muster is opt-in: a blueprint carrying `muster: true` may not
-        # reach `implemented` without its `tally:` — the human verdict the
-        # gate exists to force. Blueprints without the field are untouched.
+        # reach `implemented` without its `tally:`, and never on a known
+        # miss — the human verdict the gate exists to force. Blueprints
+        # without the field are untouched.
         if ("blueprints" in rel.parts
                 and str(fields.get("muster", "")).lower() == "true"
-                and fields.get("status") == "implemented"
-                and not tally(text)):
-            errors.append(f"{rel}: muster: true, implemented without tally:")
+                and fields.get("status") == "implemented"):
+            verdict = tally(text)
+            if not verdict:
+                errors.append(f"{rel}: muster: true, implemented without tally:")
+            elif verdict.get("matches") == "no":
+                errors.append(f"{rel}: muster: true, implemented with tally: matches: no")
 
         # A cite is a working pointer, so every page carries the rule at
         # every status — a blueprint's `cites:` are not frozen by lock.

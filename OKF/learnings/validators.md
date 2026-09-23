@@ -40,3 +40,8 @@ status: live
   follows the symbol. Repointing has a trap of its own: the phrase wrapped
   across two lines in its new home, and a wrapped symbol never resolves,
   so the obvious repoint stays red. Source: rig of B-026.
+- Believed: gating `implemented` on a `tally:` block's presence gates the
+  muster verdict. True: `not tally(text)` only tests that the block exists
+  — a `tally: matches: no` block is non-empty, so it passed the same check
+  a missing block failed. A presence check is not a verdict check; the
+  field inside still has to be read. Source: rig of B-027.

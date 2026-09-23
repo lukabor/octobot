@@ -49,7 +49,7 @@ your task needs. Humans welcome too.
 - [024](blueprints/024-rename-the-spine-and-give-chart-its-ferry-edge.md) — rename the spine to chart and rig, and give chart its ferry edge — implemented
 - [025](blueprints/025-rule-muster-on-every-blueprint.md) — rule muster on every blueprint — implemented
 - [026](blueprints/026-walk-only-what-git-does-not-ignore.md) — walk only what git does not ignore — implemented
-- [027](blueprints/027-error-on-implemented-with-matches-no.md) — error when a mustered blueprint reaches implemented on matches: no — locked
+- [027](blueprints/027-error-on-implemented-with-matches-no.md) — error when a mustered blueprint reaches implemented on matches: no — implemented
 
 ## Ferries
 
