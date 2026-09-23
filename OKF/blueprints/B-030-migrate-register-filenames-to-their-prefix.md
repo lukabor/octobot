@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 15
 sounded: 2026-09-23
 cites:
@@ -14,6 +14,12 @@ cites:
   - skills/loop/write-OKF/scripts/link-check
 muster: true
 review-base: tklwumrx
+tally:
+  intent: rename every OKF/decisions and OKF/blueprints file to its R-/B-
+    prefix, repair every repo-wide link/cites: reference, and fix the
+    two callers (blueprint SKILL.md's numbering step, okf-check's
+    register_numbers) that read the old bare-NNN filename shape
+  matches: yes
 ---
 
 # 030 — migrate decision and blueprint filenames to their R-/B- prefix
