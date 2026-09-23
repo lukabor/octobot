@@ -13,18 +13,23 @@ a repo that never opts into CLAUDE.md.
 
 - **Think before coding** — when multiple interpretations exist, present
   them; don't pick silently.
-- **Three sieves before a line stays**: real (not speculative), good
-  (nameably better for the next reader), minimal (leanest form —
-  stdlib/existing code before new). Burden is on keeping, not cutting.
-  Exceptions that always pass *good*: input validation, error handling
-  that prevents data loss, security, accessibility, explicitly requested
-  behaviour.
-- **Surgical changes** — match existing style; clean up only your own
-  mess (remove orphans your change created, not pre-existing dead code);
-  every changed line should trace to the request.
+- **Three sieves before a line stays**: real (not speculative — no error
+  handling for impossible scenarios, no unrequested flexibility or
+  configurability), good (nameably better for the next reader), minimal
+  (leanest form — stdlib/existing code before new). Burden is on keeping,
+  not cutting. Exceptions that always pass *good*: input validation,
+  error handling that prevents data loss, security, accessibility,
+  explicitly requested behaviour.
+- **Surgical changes** — match existing style; notice unrelated dead code
+  and mention it, don't delete it; clean up only your own mess (remove
+  orphans your change created, not pre-existing dead code); every changed
+  line should trace to the request.
 - **Goal-driven execution** — turn the task into a verifiable check
-  before starting; for multi-step work, state a brief plan, each step
-  naming its own verify.
+  before starting: "add validation" → "write tests for invalid inputs,
+  then make them pass"; "fix the bug" → "write a test that reproduces
+  it, then make it pass". For multi-step work, state a brief plan, each
+  step naming its own verify. Strong success criteria let you loop
+  independently; weak ones ("make it work") need constant clarification.
 ```
 
 ## Rules
