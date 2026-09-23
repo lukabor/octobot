@@ -78,4 +78,4 @@ rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refre
   loop as far upstream as the situation allows.
 - One skill at a time; each names its own hand-offs.
 - New skill added to octobot → add its row here
-  ([conjure-a-skill](../../productivity/conjure-a-skill/SKILL.md) step).
+  (`/conjure-a-skill` step).

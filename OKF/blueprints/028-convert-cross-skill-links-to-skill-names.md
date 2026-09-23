@@ -98,7 +98,9 @@ B=skills/loop/chart/SKILL.md
 printf '\nSee `/skill-that-does-not-exist`.\n' >> $B
 skills/productivity/conjure-a-skill/scripts/skill-ref-check skills/ | grep -q 'skill-that-does-not-exist' \
   && echo "OK typo caught" || echo "FAIL typo caught"
-jj restore $B   # git: git checkout -- $B
+head -n -2 $B > $B.tmp && mv $B.tmp $B   # undo exactly the 2 appended lines —
+                                          # `jj restore`/`git checkout --` would
+                                          # discard any other uncommitted work on $B too
 
 # 4. link-skills.sh symlinks resolve into this repo
 scripts/link-skills.sh

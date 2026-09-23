@@ -31,15 +31,15 @@ disable-model-invocation: true
    └── .gitignore                  ← gitignore.tpl
    ```
 3. **Delegate Docker** to
-   [`/containerize-project`](../containerize-project/SKILL.md)
+   `/containerize-project`
    (r-package variant): it writes `Dockerfile`, `docker-compose.yml`,
    `.dockerignore`, and appends the Docker recipes to the justfile.
 4. **Stop. Do not run `jj describe`.** Tell the user:
    > "Review with `jj diff`. Then run `just build-dev` → `just up` → `R
    > -e 'renv::init()'` to lock dependencies; then `just document` and
    > `just check`. Describe the change with
-   > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
-5. **Suggest** [`/write-readme`](../../engineering/write-readme/SKILL.md),
+   > `/commit-atomic-jj` when satisfied."
+5. **Suggest** `/write-readme`,
    which already covers r-package; its dedicated R counterpart is
    B-001, still a draft.
 
@@ -61,9 +61,9 @@ disable-model-invocation: true
   invent stub functions.
 
 ## See also
-- [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
+- `/containerize-project`
   — owns the Docker templates and the three-stage pattern rationale.
-- [`../../engineering/develop-r/SKILL.md`](../../engineering/develop-r/SKILL.md)
+- `/develop-r`
   — workflow auto-detects DESCRIPTION → R-package loop.
-- [`../../engineering/style-r/SKILL.md`](../../engineering/style-r/SKILL.md)
+- `/style-r`
   — coding standards every function in `R/` must follow.

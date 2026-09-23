@@ -4,7 +4,7 @@
 
 > Snippets below show only the function bodies; the `box::use(...)`
 > prologue is omitted for clarity. Real files start with one — see
-> [`../style-r/box.md`](../style-r/box.md).
+> `/style-r`.
 
 ## Seams you may mock
 

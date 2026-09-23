@@ -21,14 +21,14 @@ about to act on.
 ## Why default-to-refuted
 The opposite default — accept unless disproven — is how plausible-but-wrong
 findings survive a review, and how cosmetic changes pass as improvements.
-The burden of proof is the whole game: the same inversion the [`sieve`](../sieve/SKILL.md)
+The burden of proof is the whole game: the same inversion the `/sieve`
 uses for keeping vs cutting, pointed at *believing* vs acting.
 
 ## Used by
 - [`SKILL.md`](SKILL.md) — refute each review-angle candidate before emitting.
-- [`../winnow/SKILL.md`](../winnow/SKILL.md) — refute "it's redundant" before
+- `/winnow` — refute "it's redundant" before
   cutting; the type-checker is one skeptic.
-- [`../bdd/SKILL.md`](../bdd/SKILL.md) — a green suite is a claim, not a
+- `/bdd` — a green suite is a claim, not a
   proof; the post-green pass refutes it.
-- [`../sieve/SKILL.md`](../sieve/SKILL.md) — Good-with-receipts refutes the
+- `/sieve` — Good-with-receipts refutes the
   merely-cosmetic change.

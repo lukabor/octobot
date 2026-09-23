@@ -14,8 +14,8 @@ contract: [okf-layout.md](okf-layout.md).
 ## When to use
 - User says "scribe OKF", "/write-OKF", "set up the knowledge folder",
   "refresh the wiki".
-- Another loop skill ([chart](../chart/SKILL.md),
-  [rig](../rig/SKILL.md)) requires an `OKF/` that is absent
+- Another loop skill (`/chart`,
+  `/rig`) requires an `OKF/` that is absent
   or stale.
 
 ## Mode detection
@@ -36,7 +36,7 @@ contract: [okf-layout.md](okf-layout.md).
    is listed when planned, written when its producer has something to
    say: SUMMARY from an existing README, ARCHITECTURE bones from the
    directory tree and manifests, while ROADMAP and CONTEXT stay
-   listed-not-written until [chart](../chart/SKILL.md) /
+   listed-not-written until `/chart` /
    model-domain produce them. **Never invent facts** — an empty section
    with a TODO beats a fabricated architecture claim, and an unwritten
    page beats an empty one.
@@ -59,8 +59,7 @@ contract: [okf-layout.md](okf-layout.md).
 2. **Smallest edit per delta** — never rewrite a page wholesale; a page
    over its cap splits per [split-page.md](split-page.md), alone.
 3. **Supersede, don't delete**: outdated claims get struck with a
-   pointer to the replacement, mirroring
-   [chart/revise.md](../chart/revise.md) discipline.
+   pointer to the replacement, mirroring `/chart`'s `revise.md` discipline.
 4. Every ARCHITECTURE.md claim must be **traceable to a file** — cite
    `path:symbol` when a symbol carries the claim, `path` or `path:line`
    otherwise; grammar in [okf-layout.md](okf-layout.md). A claim you
@@ -91,7 +90,7 @@ contract: [okf-layout.md](okf-layout.md).
 - Refresh: every edit traces to a named delta (commit, file, or session
   fact); superseded claims remain visible.
 - Nothing committed — hand to
-  [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md)
+  `/commit-atomic-jj`
   (`docs(okf): ...`).
 
 ## Guardrails
@@ -104,7 +103,7 @@ contract: [okf-layout.md](okf-layout.md).
 - **Never** move legacy files without explicit consent.
 
 ## See also
-- [../chart/SKILL.md](../chart/SKILL.md) — writes ROADMAP.md.
-- [../blueprint/SKILL.md](../blueprint/SKILL.md) — writes blueprints/.
-- [../../engineering/model-domain/SKILL.md](../../engineering/model-domain/SKILL.md)
+- `/chart` — writes ROADMAP.md.
+- `/blueprint` — writes blueprints/.
+- `/model-domain`
   — owns CONTEXT.md content; scribe only places it.

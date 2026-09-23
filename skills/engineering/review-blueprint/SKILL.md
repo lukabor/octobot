@@ -6,14 +6,14 @@ description: Review a diff against its originating blueprint (OKF/blueprints/NNN
 # review-blueprint
 
 The **blueprint axis** — the other three axes
-([review-angles](../review-angles/SKILL.md) correctness,
-[nuke-review](../nuke-review/SKILL.md) structure,
-[winnow](../winnow/SKILL.md) debloat) judge the code on its own terms;
+(`/review-angles` correctness,
+`/nuke-review` structure,
+`/winnow` debloat) judge the code on its own terms;
 this one judges it against *what was asked*. Adapted from Matt Pocock's
 code-review Spec axis + obra/superpowers' verification-before-completion.
 
 ## When to use
-- [rig](../../loop/rig/SKILL.md) reaches its done-gate.
+- `/rig` reaches its done-gate.
 - User says "review against the blueprint", "does this match the blueprint".
 - Any post-green review pass where an `OKF/blueprints/NNN` exists for the diff.
 
@@ -43,8 +43,8 @@ VERIFIED:  ✓ | ✗ — <verify command>
 <pasted output, trimmed to the verdict lines>
 ```
 Verdict: pass only when all three are ✓. Findings are severity-tagged
-like [review-angles](../review-angles/SKILL.md); refute each before
-emitting ([refute.md](../review-angles/refute.md)).
+like `/review-angles`; refute each before
+emitting (`/review-angles`'s `refute.md`).
 
 ## Guardrails
 - **Never** pass on a prose claim of verification — output or it
@@ -54,14 +54,14 @@ emitting ([refute.md](../review-angles/refute.md)).
 - **Never** widen review into correctness/structure here — single axis,
   like winnow. Point findings at the right sibling instead.
 - A diff that *improves* on the blueprint still fails **Contained** — the
-  blueprint gets superseded first ([blueprint](../../loop/blueprint/SKILL.md)),
+  blueprint gets superseded first (`/blueprint`),
   then the diff lands.
 
 ## See also
-- [../review-angles/SKILL.md](../review-angles/SKILL.md),
-  [../nuke-review/SKILL.md](../nuke-review/SKILL.md),
-  [../winnow/SKILL.md](../winnow/SKILL.md) — the other three axes.
-- [../../loop/rig/SKILL.md](../../loop/rig/SKILL.md) — runs
+- `/review-angles`,
+  `/nuke-review`,
+  `/winnow` — the other three axes.
+- `/rig` — runs
   this axis as its done-gate.
-- [../../productivity/spawn-cavecrew/SKILL.md](../../productivity/spawn-cavecrew/SKILL.md)
+- `/spawn-cavecrew`
   — spawn it as a subagent pass.

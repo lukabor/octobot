@@ -11,7 +11,7 @@ disable-model-invocation: true
   over-engineered", "find what to cut", "simplify review".
 - A diff or file is written and working; you want a separate pass that hunts
   *only* for removable mass.
-- **Not** a judgment gate — that is [`../sieve/SKILL.md`](../sieve/SKILL.md).
+- **Not** a judgment gate — that is `/sieve`.
   Winnow runs *after* the fact and argues *only* for deletion. It blows the
   chaff off the grain; it never adds.
 
@@ -51,7 +51,7 @@ Close with: `net: -<N> lines possible.`
 
 A "redundant" idiom may be **load-bearing**. Every `delete`/`shrink` is the
 claim *"this is redundant"* — refute it before you act
-([`../review-angles/refute.md`](../review-angles/refute.md)); the type-checker
+(`/review-angles`); the type-checker
 is one skeptic. A real review flagged a
 repeated `tuple(r) for r in conn.execute(...)` wrapper and a
 `cast(int | None, line)` as noise. Both were genuine no-ops at *runtime* —
@@ -70,20 +70,20 @@ So, before emitting any `delete`/`shrink`:
 
 ## Scope
 Winnow ignores **correctness bugs, security, and performance** — those are
-[`../review-angles/SKILL.md`](../review-angles/SKILL.md) and `/code-review`.
+`/review-angles` and `/code-review`.
 This pass is *only* structural complexity. Staying single-axis is what keeps
 it sharp.
 
 ## See also
-- [`../sieve/SKILL.md`](../sieve/SKILL.md) — the judgment gate. Sieve decides
+- `/sieve` — the judgment gate. Sieve decides
   what earns its place; winnow mechanically clears what doesn't.
-- [`../nuke-review/SKILL.md`](../nuke-review/SKILL.md) — *structural-quality* review (code-judo). Pairs naturally — nuke-review judges shape; winnow clears chaff.
-- [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md) — the
+- `/nuke-review` — *structural-quality* review (code-judo). Pairs naturally — nuke-review judges shape; winnow clears chaff.
+- `/design-codebase` — the
   **deletion test** formalised: if removing a module makes complexity
   vanish, it was a pass-through; if it reappears across N callers, it earned
   its keep. The `delete` and `yagni` tags are this test mechanised.
-- [`../bdd/refactoring-r.md`](../bdd/refactoring-r.md) — file the
+- `/bdd` — file the
   architectural follow-ups a winnow surfaces; don't auto-cut them mid-pass.
-- [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — the *correctness*
+- `/review-angles` — the *correctness*
   axis winnow deliberately does not touch.
-- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *blueprint-fidelity* axis winnow also does not touch.
+- `/review-blueprint` — the *blueprint-fidelity* axis winnow also does not touch.

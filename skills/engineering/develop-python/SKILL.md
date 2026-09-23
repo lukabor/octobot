@@ -26,8 +26,8 @@ approach you're rejecting, surface tradeoffs. Push back when warranted; if
 something is unclear, stop and ask. See
 [`../../../CLAUDE.md`](../../../CLAUDE.md) for the full version. If the
 task is ambiguous, hand off to
-[`/grill-me`](../../productivity/grill-me/SKILL.md) or
-[`/grill-with-docs`](../grill-with-docs/SKILL.md) first.
+`/grill-me` or
+`/grill-with-docs` first.
 
 ### 1. Implement
 - Write code under `src/<package>/`.
@@ -51,7 +51,7 @@ Fix type errors. Don't suppress with `# type: ignore` unless genuinely
 unavoidable — explain inline why.
 
 ### 4. Test (TDD-BDD)
-Hand to [`/bdd`](../bdd/SKILL.md), which loops red→green→refactor
+Hand to `/bdd`, which loops red→green→refactor
 **one scenario at a time** — never write all the tests upfront (that's the
 horizontal-slicing anti-pattern called out in bdd itself). When every
 scenario from step 0 is green:
@@ -62,7 +62,7 @@ The full suite must be green before commit. New edge case found mid-loop
 → add as the next scenario, don't skip.
 
 ### 5. Commit
-Hand to [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md). The fix
+Hand to `/commit-atomic-jj`. The fix
 + the regression test land in the **same** atomic change.
 
 ## Reference: justfile commands
@@ -80,13 +80,13 @@ Hand to [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md). The
 | `just fix-and-check` | lint-fix + fmt + typecheck + test |
 
 ## See also
-- [`../bdd/SKILL.md`](../bdd/SKILL.md) — Given/When/Then loop;
+- `/bdd` — Given/When/Then loop;
   Python siblings `tests-py.md`, `mocking-py.md`, `interface-design-py.md`,
   `docstrings-py.md`.
-- [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — six-phase bug hunt.
-- [`../../productivity/commit-atomic-jj/SKILL.md`](../../productivity/commit-atomic-jj/SKILL.md)
+- `/diagnose` — six-phase bug hunt.
+- `/commit-atomic-jj`
   — commit discipline.
-- [`../../scaffold/build-py-project/SKILL.md`](../../scaffold/build-py-project/SKILL.md)
+- `/build-py-project`
   — sets up the project this workflow assumes.
-- [`write-readme-py`](../write-readme-py/SKILL.md) — README from
+- `/write-readme-py` — README from
   `pyproject.toml` + `justfile`.

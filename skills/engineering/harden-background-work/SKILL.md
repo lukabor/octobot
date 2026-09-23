@@ -12,7 +12,7 @@ description: Hard-won rules for writing a service with a background thread, a ch
 - A service answers requests whose data is built **asynchronously**.
 - Read this *before* writing the thread — these are the bugs a green,
   scenario-driven unit suite does not catch (see
-  [`../bdd/SKILL.md`](../bdd/SKILL.md) *"After green"*).
+  `/bdd` *"After green"*).
 
 ## Core principle
 **A background thread that dies takes its silence with it.** The process
@@ -64,9 +64,9 @@ happens again. Everything below defends against that one failure shape.
 - **Never** answer a query the underlying data can't yet satisfy — gate it.
 
 ## See also
-- [`../bdd/SKILL.md`](../bdd/SKILL.md) — green is necessary, not
+- `/bdd` — green is necessary, not
   sufficient; budget a recall-biased review after the thread is written.
-- [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — EAFP, stale
+- `/review-angles` — EAFP, stale
   references, readiness — the correctness angles these loops trip over.
-- [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — when a background loop is
+- `/diagnose` — when a background loop is
   silently not doing its job, start here.

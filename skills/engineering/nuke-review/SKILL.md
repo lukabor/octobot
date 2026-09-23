@@ -8,8 +8,8 @@ disable-model-invocation: true
 
 Adapted from [thermo-nuclear-code-quality-review](https://github.com/cursor/plugins/blob/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review/SKILL.md).
 **Structural-quality review** — goal is to *delete* moving pieces, not rearrange them.
-Pair with [`../review-angles/SKILL.md`](../review-angles/SKILL.md) (correctness)
-and [`../winnow/SKILL.md`](../winnow/SKILL.md) (debloat).
+Pair with `/review-angles` (correctness)
+and `/winnow` (debloat).
 
 ## Core prompt
 
@@ -100,8 +100,8 @@ Don't approve because behaviour is correct. Each is a presumptive blocker unless
 - duplicates a canonical helper or puts logic in the wrong layer
 
 ## See also
-- [`../review-angles/SKILL.md`](../review-angles/SKILL.md) — the *correctness* axis: stale refs, TOCTOU, ordering, durability.
-- [`../winnow/SKILL.md`](../winnow/SKILL.md) — the *mechanical debloat* axis: single-tag findings, `net: -N lines` scoreboard. Pairs naturally — nuke-review judges shape; winnow clears chaff.
-- [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md) — the vocabulary nuke-review applies (deep modules, seams, leverage, locality).
-- [`../../productivity/spawn-cavecrew/SKILL.md`](../../productivity/spawn-cavecrew/SKILL.md) — how to spawn `caveman:cavecrew-reviewer` to *execute* this axis on a diff.
-- [`../review-blueprint/SKILL.md`](../review-blueprint/SKILL.md) — the *blueprint-fidelity* axis (diff vs OKF/blueprints/NNN).
+- `/review-angles` — the *correctness* axis: stale refs, TOCTOU, ordering, durability.
+- `/winnow` — the *mechanical debloat* axis: single-tag findings, `net: -N lines` scoreboard. Pairs naturally — nuke-review judges shape; winnow clears chaff.
+- `/design-codebase` — the vocabulary nuke-review applies (deep modules, seams, leverage, locality).
+- `/spawn-cavecrew` — how to spawn `caveman:cavecrew-reviewer` to *execute* this axis on a diff.
+- `/review-blueprint` — the *blueprint-fidelity* axis (diff vs OKF/blueprints/NNN).

@@ -9,14 +9,14 @@ disable-model-invocation: true
 One format, two exits: a **file** (`./HANDOFF.md`, or the OS temp dir on
 request) for the next session or a human; a **prompt payload** for a
 subagent spawn (the handoff-gate brief —
-[spawn-cavecrew](../spawn-cavecrew/SKILL.md)).
+`/spawn-cavecrew`).
 
 ## When to use
 - User says "write handoff", "/write-handoff", "wrap up", "prep a handoff doc".
 - Session ending / context near full on unfinished work.
 - A mutating subagent needs a brief and no locked blueprint covers the work
   (a locked `OKF/blueprints/NNN` **is** the brief — don't duplicate it;
-  see [rig](../../loop/rig/SKILL.md)).
+  see `/rig`).
 
 ## Rules (both exits)
 - **Reference, don't duplicate.** Anything already captured in an
@@ -72,7 +72,7 @@ subagent spawn (the handoff-gate brief —
   restated; no secret values; "Next concrete step" is one action.
 
 ## See also
-- [../../loop/ferry/SKILL.md](../../loop/ferry/SKILL.md) — multi-session
+- `/ferry` — multi-session
   *design* work rides the ferry, not the handoff.
-- [../spawn-cavecrew/SKILL.md](../spawn-cavecrew/SKILL.md) — the
+- `/spawn-cavecrew` — the
   handoff gate this format serves.

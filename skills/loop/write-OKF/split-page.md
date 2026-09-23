@@ -78,7 +78,7 @@ deleted once.
 Over 150 lines, ask what is long before splitting the file. A blueprint
 naming three things in its slug is over-*scoped*, not over-written:
 compound work that still fits one session becomes two blueprints, and work
-past one session goes to [ferry](../ferry/SKILL.md), whose own trigger is
+past one session goes to `/ferry`, whose own trigger is
 exactly this. The `NNN-<slug>/` directory form is for a blueprint's notes,
 not for a blueprint that should have been two.
 

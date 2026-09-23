@@ -45,7 +45,7 @@ disable-model-invocation: true
 - **Never** overwrite an existing `Dockerfile`, `docker-compose.yml`, or
   `.dockerignore` without explicit confirmation — show a diff first.
 - **Never** put credentials in `ENV`, `ARG`, or `COPY`-ed files — that's
-  [`add-docker-secrets`](../add-docker-secrets/SKILL.md) territory.
+  `/add-docker-secrets` territory.
 - **Never** add a source mount to the production service — it overrides
   the baked image and defeats immutability.
 - The development stage runs as root deliberately (bind mounts +
@@ -55,9 +55,9 @@ disable-model-invocation: true
 ## See also
 - [three-stage-dockerfile.md](three-stage-dockerfile.md) — rationale for
   the base/production/development pattern, caveats, anti-patterns.
-- [`../add-docker-secrets/SKILL.md`](../add-docker-secrets/SKILL.md) —
+- `/add-docker-secrets` —
   build-time and runtime secrets once the project needs credentials.
-- [`../build-py-project/SKILL.md`](../build-py-project/SKILL.md),
-  [`../build-r-package/SKILL.md`](../build-r-package/SKILL.md),
-  [`../build-r-analysis/SKILL.md`](../build-r-analysis/SKILL.md) —
+- `/build-py-project`,
+  `/build-r-package`,
+  `/build-r-analysis` —
   scaffolds that delegate their Docker step here.

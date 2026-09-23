@@ -65,6 +65,6 @@ disable-model-invocation: true
   `environment:` literals.
 
 ## See also
-- [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
+- `/containerize-project`
   — the three-stage setup this hardens; its `.dockerignore` templates
   already exclude `.env` and `.env.*`.

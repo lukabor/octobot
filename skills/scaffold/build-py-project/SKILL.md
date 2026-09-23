@@ -34,14 +34,14 @@ disable-model-invocation: true
    └── .gitignore                 ← gitignore.tpl
    ```
 3. **Delegate Docker** to
-   [`/containerize-project`](../containerize-project/SKILL.md) (python
+   `/containerize-project` (python
    variant): it writes `Dockerfile`, `docker-compose.yml`,
    `.dockerignore`, and appends the Docker recipes to the justfile.
 4. **Stop. Do not run `jj describe`.** Tell the user:
    > "Review with `jj diff` (or `git status` + `git diff`). Then run
    > `just build-dev` to verify the toolchain. Describe the change with
-   > [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md) when satisfied."
-5. **Suggest** running [`/write-readme-py`](../../engineering/write-readme-py/SKILL.md)
+   > `/commit-atomic-jj` when satisfied."
+5. **Suggest** running `/write-readme-py`
    after the first successful build to generate the README.
 
 ## Placeholders used by templates
@@ -61,10 +61,10 @@ disable-model-invocation: true
   the scaffold lean and let the user grow it.
 
 ## See also
-- [`../containerize-project/SKILL.md`](../containerize-project/SKILL.md)
+- `/containerize-project`
   — owns the Docker templates and the three-stage pattern rationale.
-- [`../../engineering/develop-python/SKILL.md`](../../engineering/develop-python/SKILL.md)
+- `/develop-python`
   — workflow that this scaffold sets up.
-- [`../../engineering/write-readme-py/SKILL.md`](../../engineering/write-readme-py/SKILL.md)
+- `/write-readme-py`
   — README generator that reads the scaffolded `pyproject.toml` and
   `justfile`.

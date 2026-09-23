@@ -87,7 +87,7 @@ load on session start — tell the user to restart the session.
 - **Never** claim installed without the three-case verify output.
 
 ## See also
-- [../../productivity/commit-atomic-git/SKILL.md](../../productivity/commit-atomic-git/SKILL.md)
+- `/commit-atomic-git`
   — the prose discipline this hook backstops.
-- [../../productivity/resolve-conflicts-git/SKILL.md](../../productivity/resolve-conflicts-git/SKILL.md)
+- `/resolve-conflicts-git`
   — abort/continue flows; unaffected by these blocks.

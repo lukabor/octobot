@@ -27,7 +27,7 @@ description: Atomic-commit discipline with jujutsu — read every diff line befo
 - If the diff touches two areas (a bug fix and a refactor; two
   unrelated features), **`jj split`** before describing.
 - Style refactors are their own change — they shouldn't share a commit
-  with logic changes (see [`../../engineering/style-r/tidyverse.md`](../../engineering/style-r/tidyverse.md#tooling)).
+  with logic changes (see `/style-r`).
 - Test additions for an existing feature are their own change unless
   they accompany a new behaviour landing in the same diff.
 
@@ -52,7 +52,7 @@ If the project uses a ticket prefix (e.g. `DRAKE-42`, `JIRA-101`,
 If the project has no ticket convention, omit. Don't invent a prefix.
 
 ### 5. Blueprint citations
-A change executing an `OKF/blueprints/NNN` blueprint ([rig](../../loop/rig/SKILL.md))
+A change executing an `OKF/blueprints/NNN` blueprint (`/rig`)
 cites it in the body: `implements blueprint NNN`. Readers trace the diff to
 its justification without leaving the log.
 
@@ -98,11 +98,11 @@ commits, past-tense messages, missing scope, deferred docs, skipped
 ## See also
 - [examples.md](examples.md) — a real before/after where a working copy is
   split into two atomic commits with proper messages.
-- [`../../engineering/style-r/SKILL.md`](../../engineering/style-r/SKILL.md)
+- `/style-r`
   — style refactors are their own atomic change.
-- [`../../engineering/bdd/SKILL.md`](../../engineering/bdd/SKILL.md)
+- `/bdd`
   — the regression test for a bug fix lands in the *same* atomic change
   as the fix.
-- [`../../engineering/diagnose/SKILL.md`](../../engineering/diagnose/SKILL.md)
+- `/diagnose`
   — phase-6 post-mortem commit message names the confirmed hypothesis.
-- [`../../engineering/develop-python/SKILL.md`](../../engineering/develop-python/SKILL.md) / [`../../engineering/develop-r/SKILL.md`](../../engineering/develop-r/SKILL.md) — workflow orchestrators that hand off here for the commit phase.
+- `/develop-python` / `/develop-r` — workflow orchestrators that hand off here for the commit phase.

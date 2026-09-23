@@ -11,7 +11,7 @@ disable-model-invocation: true
 - User says "write readme", "/write-readme", "generate readme",
   "document the project".
 - For a confirmed Python project, the dedicated
-  [`../write-readme-py/SKILL.md`](../write-readme-py/SKILL.md) carries the
+  `/write-readme-py` carries the
   fuller `[dev]`-extras handling — prefer it once python is established.
 
 ## Process
@@ -73,9 +73,9 @@ disable-model-invocation: true
 - **Omit** empty sections rather than hallucinating content.
 
 ## See also
-- [`../write-readme-py/SKILL.md`](../write-readme-py/SKILL.md) — the
+- `/write-readme-py` — the
   worked python example and `readme-py.template.md` this skill generalizes.
-- [`../../scaffold/containerize-project/SKILL.md`](../../scaffold/containerize-project/SKILL.md)
+- `/containerize-project`
   — same marker-file ecosystem detection.
-- [`../../productivity/commit-atomic-jj/SKILL.md`](../../productivity/commit-atomic-jj/SKILL.md)
+- `/commit-atomic-jj`
   — the commit step this skill hands off to.

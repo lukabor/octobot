@@ -1,13 +1,13 @@
 # Interface design for testability (R)
 
-Vocabulary lives in [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md) —
+Vocabulary lives in `/design-codebase` —
 module, interface, seam, adapter. This file is the R-flavored leaf.
 
 Three rules. Apply them before writing the test, not after.
 
 > Snippets below show only the function bodies; the `box::use(...)`
 > prologue is omitted for clarity. Real files start with one — see
-> [`../style-r/box.md`](../style-r/box.md).
+> `/style-r`.
 
 ## 1. Dependency injection — pass clients, don't construct them
 

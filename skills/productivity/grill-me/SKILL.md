@@ -35,6 +35,6 @@ disable-model-invocation: true
 - If the user gets impatient, offer to stop early with the current understanding.
 
 ## See also
-- [../../engineering/grill-with-docs/SKILL.md](../../engineering/grill-with-docs/SKILL.md)
+- `/grill-with-docs`
   — same energy, but anchored to the repo's `CONTEXT.md` and code. Use
   that one when a codebase exists to grill against.

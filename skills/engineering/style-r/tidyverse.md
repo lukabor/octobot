@@ -194,4 +194,4 @@ still strongly recommended.
 The skill states the rules. The tools enforce them. Don't run tooling
 inside the edit you're being asked to review — that conflates style
 changes with logic changes (anti-atomic — see
-[`../../productivity/commit-atomic-jj/SKILL.md`](../../productivity/commit-atomic-jj/SKILL.md)).
+`/commit-atomic-jj`).

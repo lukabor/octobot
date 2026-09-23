@@ -35,7 +35,7 @@ Full vocabulary: [glossary.md](glossary.md). Design playbook: [principles.md](pr
      No new-skill exceptions; `bdd` is the single grandfathered non-verb
      name (initialism, trigger muscle memory), not precedent.
    - **invocation**: default `disable-model-invocation: true` + a
-     [`steer`](../../loop/steer/SKILL.md) row; model-invoked only when
+     `/steer` row; model-invoked only when
      the agent must fire it from natural mid-work phrasing (then the
      description carries "Use when" triggers).
    - one-line purpose
@@ -69,7 +69,7 @@ Full vocabulary: [glossary.md](glossary.md). Design playbook: [principles.md](pr
    `~/.claude/skills/`, so create a per-skill symlink:
    `ln -s ~/code/octobot/skills/<category>/<name> ~/.claude/skills/<name>`
 6. **Commit** — from the octobot repo, following the `type(scope):
-   imperative` format from [`../commit-atomic-jj/SKILL.md`](../commit-atomic-jj/SKILL.md):
+   imperative` format from `/commit-atomic-jj`:
    `jj describe -m "feat(skills): add <name> skill"`
    (and `jj git push` if a remote exists).
 
@@ -97,7 +97,7 @@ description: <what it does>. Use when <concrete trigger>.
 - Never accept a name that doesn't open with an imperative verb.
 - Never write a model-invoked skill whose description lacks "Use when".
 - Never finish without adding the skill's row to
-  [`steer`](../../loop/steer/SKILL.md).
+  `/steer`.
 - **Never let `SKILL.md` exceed 110 lines.** Split into topic-named
   siblings before committing.
 - Reject any line that fails the **no-op** test (principles.md §pruning).
@@ -105,4 +105,4 @@ description: <what it does>. Use when <concrete trigger>.
 ## See also
 - [principles.md](principles.md) — the design playbook this skill applies.
 - [glossary.md](glossary.md) — definitions for every bold term above.
-- [`../commit-atomic-jj/SKILL.md`](../commit-atomic-jj/SKILL.md) — commit format.
+- `/commit-atomic-jj` — commit format.

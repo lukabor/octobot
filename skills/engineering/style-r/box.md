@@ -62,7 +62,7 @@ fetch_pages     <- function(req) { ... }
 ```
 
 Keep `box::export()` deliberately small — see
-[../bdd/deep-modules-r.md](../bdd/deep-modules-r.md). Every name
+`/bdd`. Every name
 you export is a contract you owe future callers and tests.
 
 ## `.Rmd` setup chunks — no exception
@@ -114,7 +114,7 @@ box::reload(R/indication/client)        # drops the cache; next box::use re-eval
 
 Use this in `feedback-loops-r.md` loops where determinism matters more
 than speed. See
-[`../diagnose/feedback-loops-r.md`](../diagnose/feedback-loops-r.md#make-the-loop-deterministic).
+`/diagnose`.
 
 ## Anti-patterns
 

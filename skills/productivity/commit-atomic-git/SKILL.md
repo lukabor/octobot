@@ -5,7 +5,7 @@ description: Atomic-commit discipline for plain git repos (no .jj) — read ever
 
 # commit-atomic-git
 
-git-native counterpart of [commit-atomic-jj](../commit-atomic-jj/SKILL.md).
+git-native counterpart of `/commit-atomic-jj`.
 Same principles; the staging area replaces `jj split`, and there is no
 `jj new` step — but git has its own traps (blind `-a`, `add .`).
 
@@ -36,7 +36,7 @@ Same principles; the staging area replaces `jj split`, and there is no
   edit the patch down to one concern's hunks, `git apply --cached c.patch`.
 - Style refactors are their own commit — never share one with logic.
 - Tests for existing behaviour: own commit, unless they land with the
-  new behaviour they cover ([bdd](../../engineering/bdd/SKILL.md)).
+  new behaviour they cover (`/bdd`).
 
 ### 3. Semantic format
 ```
@@ -94,11 +94,11 @@ hangs the session.
   force-push is the agreed plan.
 
 ## See also
-- [../commit-atomic-jj/SKILL.md](../commit-atomic-jj/SKILL.md) — jj
+- `/commit-atomic-jj` — jj
   counterpart; shared philosophy, worked split example in its
   examples.md translates 1:1 (staging instead of `jj split`).
-- [../resolve-conflicts-git/SKILL.md](../resolve-conflicts-git/SKILL.md)
+- `/resolve-conflicts-git`
   — sealing a resolved merge lands here.
-- [../../scaffold/setup-git-guardrails/SKILL.md](../../scaffold/setup-git-guardrails/SKILL.md)
+- `/setup-git-guardrails`
   — installs a PreToolUse hook that mechanically backstops the force-push
   and destructive-command rules; prose can drift, hooks cannot.

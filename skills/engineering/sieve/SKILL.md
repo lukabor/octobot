@@ -57,7 +57,7 @@ describe`), not per keystroke — otherwise it fights iteration.
 | Context | What the gate guards |
 |---|---|
 | **Build** | gates *adding*; Good leans forward — it is the sieve that lets *necessary robustness in* (validation, error handling), curing the under-build failure mode of pure YAGNI. |
-| **Prune** | gates *keeping*; default-delete, Good must earn each survivor (see [`../winnow/SKILL.md`](../winnow/SKILL.md) for the mechanical cut). |
+| **Prune** | gates *keeping*; default-delete, Good must earn each survivor (see `/winnow` for the mechanical cut). |
 | **Analysis** | gates the *artifact* (`_targets.R`, the report), never the scratch. Minimal is sharp **and dangerous** here: no type-checker catches a cut that changes a conclusion. Good carries **epistemic** weight — *does removing this change what the analysis concludes?* A kept step names the inference it supports. |
 
 ## Intensity
@@ -78,12 +78,12 @@ describe`), not per keystroke — otherwise it fights iteration.
   requested behaviour. Don't simplify these away.
 
 ## See also
-- [`../winnow/SKILL.md`](../winnow/SKILL.md) — the mechanical after-the-fact
+- `/winnow` — the mechanical after-the-fact
   audit. The sieve judges entry; winnow clears the field.
-- [`../design-codebase/SKILL.md`](../design-codebase/SKILL.md) — *Minimal*
+- `/design-codebase` — *Minimal*
   invokes **depth** intuition. The leanest form that works tends to be the
   deepest: small interface, large implementation hidden behind it.
-- [`../../productivity/commit-atomic-jj/SKILL.md`](../../productivity/commit-atomic-jj/SKILL.md)
+- `/commit-atomic-jj`
   — the seal where the sieve fires.
-- [`../grill-with-docs/SKILL.md`](../grill-with-docs/SKILL.md)
+- `/grill-with-docs`
   — Socratic siblings; grill the requirement, then sieve the code.

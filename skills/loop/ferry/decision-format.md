@@ -52,5 +52,5 @@ Append-only — a changed mind is a new decision superseding this one.>
 - `blocked-by` edges must be acyclic — check when adding, not when stuck.
 - Status flips only with a filled Resolution; Resolution never edited
   after — supersede with a new decision instead.
-- The `blueprint` column in MAP.md fills as [blueprint](../blueprint/SKILL.md)
+- The `blueprint` column in MAP.md fills as `/blueprint`
   crystallises resolutions into `OKF/blueprints/NNN`.

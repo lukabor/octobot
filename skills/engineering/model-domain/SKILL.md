@@ -56,7 +56,7 @@ OKF/                       # open-knowledge-format wiki (see write-OKF)
 
 Create files **lazily** — only when there's a real first thing to write.
 No `OKF/CONTEXT.md` yet? Create it when the first term is resolved (run
-[write-OKF](../../loop/write-OKF/SKILL.md) scaffold if `OKF/` itself is
+`/write-OKF` scaffold if `OKF/` itself is
 missing). No `OKF/decisions/`? Create it when the first decision is
 settled. Confirm the *first* write to any new file in the repo before
 proceeding. A legacy root `CONTEXT.md` or `docs/adr/` → offer to migrate
@@ -89,16 +89,16 @@ indexed from `OKF/index.md`. **The split axis is the bounded context
   bounded context, full stop.
 
 ## See also
-- [../design-codebase/SKILL.md](../design-codebase/SKILL.md) — sibling
+- `/design-codebase` — sibling
   vocabulary skill. **model-domain** pins terms for the *problem domain*
   (CONTEXT.md, glossary); **design-codebase** pins terms for the *solution
   structure* (module, interface, seam, adapter).
-- [../grill-with-docs/SKILL.md](../grill-with-docs/SKILL.md) — the
+- `/grill-with-docs` — the
   user-invoked router that pairs this skill with a Socratic interview.
-- [../bdd/SKILL.md](../bdd/SKILL.md) — once vocabulary is pinned, the
+- `/bdd` — once vocabulary is pinned, the
   Given/When/Then scenarios should use the canonical terms.
-- [../diagnose/SKILL.md](../diagnose/SKILL.md) — hypothesis names in
+- `/diagnose` — hypothesis names in
   diagnose post-mortems should match `CONTEXT.md` terminology.
-- [../../productivity/grill-me/SKILL.md](../../productivity/grill-me/SKILL.md)
+- `/grill-me`
   — plan-only Socratic interview, no docs. The interview engine the
   router uses.

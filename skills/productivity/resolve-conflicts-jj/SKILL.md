@@ -36,9 +36,9 @@ conflicts are **first-class committed objects** — no mid-merge limbo, no
 5. **Squash the resolution.** Working copy sits on the conflicted
    commit (or `jj new <conflicted>` first); edit markers out; then
    `jj squash --use-destination-message` — plain `jj squash` opens an
-   editor and **hangs a headless session**
-   ([commit-atomic-jj anti-patterns](../commit-atomic-jj/anti-patterns.md)). Foreground
-   only; backgrounded jj mutations race the snapshot.
+   editor and **hangs a headless session** (`/commit-atomic-jj`'s
+   `anti-patterns.md`). Foreground only; backgrounded jj mutations race
+   the snapshot.
 
 6. **Verify.** Conflicted chains skip your checks while red — run the
    project's automated checks now (typecheck, tests, lint). Cross-file
@@ -69,7 +69,7 @@ conflicts are **first-class committed objects** — no mid-merge limbo, no
   or reject it explicitly.
 
 ## See also
-- [../commit-atomic-jj/SKILL.md](../commit-atomic-jj/SKILL.md) — sealing discipline
+- `/commit-atomic-jj` — sealing discipline
   after resolution; foreground-only rule.
-- [../../engineering/review-angles/SKILL.md](../../engineering/review-angles/SKILL.md)
+- `/review-angles`
   — a resolved merge is a diff like any other; review it.

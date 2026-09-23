@@ -6,7 +6,7 @@ For a project with no real roadmap yet. Formerly `plan-project`.
 
 1. **Survey the repo.** `ls` it. Existing substantial code → this is not
    greenfield; stress-test the plan with
-   [grill-with-docs](../../engineering/grill-with-docs/SKILL.md) instead.
+   `/grill-with-docs` instead.
 2. **Research before asking.** Every tool, product, or codename in the
    pitch you don't recognize with certainty: WebSearch it *first*, report
    findings with sources, then ask what role it plays. Never guess; never
@@ -31,12 +31,12 @@ For a project with no real roadmap yet. Formerly `plan-project`.
    `OKF/CONTEXT.md` edit (confirm the first write).
 6. **Write `OKF/ROADMAP.md`** when answers stop moving decisions, using
    the skeleton in [SKILL.md](SKILL.md). If `OKF/` is missing, run
-   [write-OKF](../write-OKF/SKILL.md) scaffold first.
+   `/write-OKF` scaffold first.
 7. **Hand forward**: name the Phase-0 items ready for
-   [blueprint](../blueprint/SKILL.md), and the scaffold skill
-   ([build-py-project](../../scaffold/build-py-project/SKILL.md) /
-   [build-r-package](../../scaffold/build-r-package/SKILL.md) /
-   [build-r-analysis](../../scaffold/build-r-analysis/SKILL.md)) that
+   `/blueprint`, and the scaffold skill
+   (`/build-py-project` /
+   `/build-r-package` /
+   `/build-r-analysis`) that
    fits the locked stack.
 
 ## Done

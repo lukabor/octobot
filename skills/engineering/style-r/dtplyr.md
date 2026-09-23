@@ -130,7 +130,7 @@ add_log_expr <- function(df) {
 }
 ```
 This is exactly the bug class covered in
-[../diagnose/feedback-loops-r.md](../diagnose/feedback-loops-r.md)
+`/diagnose`
 *"Worked example 1 — in-place mutation, intermittently wrong output"*.
 Read that before you reach for `:=`.
 
@@ -148,5 +148,5 @@ Read that before you reach for `:=`.
 ## See also
 - [box.md](box.md) — preferred way to bring `data.table` / `dtplyr`
   names into scope (`dt = data.table[...]`).
-- [../bdd/interface-design-r.md](../bdd/interface-design-r.md) —
+- `/bdd` —
   "return, don't mutate" applies even harder to `data.table`.

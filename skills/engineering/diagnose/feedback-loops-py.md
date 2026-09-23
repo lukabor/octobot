@@ -6,7 +6,7 @@ idioms: `pytest path::test -x -q` for a single test; `-k` for substring,
 Determinism: `np.random.default_rng(42)` (never global `np.random`),
 `monkeypatch.setenv("PYTHONHASHSEED", "0")`, `tmp_path` for filesystem
 isolation; autouse network-kill fixture in
-[../bdd/mocking-py.md](../bdd/mocking-py.md).
+`/bdd`.
 
 ---
 
@@ -40,7 +40,7 @@ Test passes. H1 confirmed.
 **Phase 5 — regression test** = the idempotence test. Move the copy from
 the diagnostic patch into the real fix at the contract seam (return a
 fresh frame, don't mutate the argument — see
-[../bdd/interface-design-py.md](../bdd/interface-design-py.md)).
+`/bdd`).
 
 **Phase 6 — cleanup.** `grep -rn "### DIAGNOSE-" .` → zero hits. Commit:
 *"fix(assemble_expr): return a fresh frame — H1: pandas view aliasing
@@ -76,4 +76,4 @@ time).
 **Phase 6 — cleanup.** Nothing to revert. Commit: *"test(textmining): seed
 RNG to stabilise tie-break — H1 confirmed"*. File a follow-up: production
 `score_terms()` should break ties on a stable key (`term_id`), not input
-order → [../bdd/refactoring-r.md](../bdd/refactoring-r.md) candidate.
+order → `/bdd` candidate.

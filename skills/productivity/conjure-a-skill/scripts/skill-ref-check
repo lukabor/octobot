@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""Validate cross-skill `/skill-name` references. Usage: skill-ref-check <skills-dir>
+
+Errors (exit 1): a backtick-wrapped `/skill-name` mention (R-023) that
+names no `<category>/<name>/` folder under the skills directory. This is
+the replacement coverage for the path-validation `link-check` lost when
+cross-skill references stopped being paths — it checks name existence,
+not path resolution, so it cannot tell a real skill from a typo that
+happens to collide with one.
+
+Fenced blocks are skipped, same reason as `link-check`: there a mention
+is illustration, not a reference. `BUILTIN` exempts a Claude Code
+skill this repo doesn't own — it ships with the harness, not
+`skills/`, so no local folder can ever resolve it.
+"""
+import re
+import sys
+from pathlib import Path
+
+REF = re.compile(r"`/([A-Za-z][A-Za-z0-9-]*)`")
+BUILTIN = ("code-review",)
+
+
+def refs(text):
+    """(line number, name) for every `/skill-name` mention outside fences."""
+    fenced = False
+    for number, line in enumerate(text.splitlines(), 1):
+        if line.startswith("```"):
+            fenced = not fenced
+        elif not fenced:
+            for name in REF.findall(line):
+                yield number, name
+
+
+def main(argv):
+    if len(argv) != 2:
+        print("usage: skill-ref-check <skills-dir>", file=sys.stderr)
+        return 2
+    root = Path(argv[1]).resolve()
+    if not root.is_dir():
+        print(f"not a directory: {root}", file=sys.stderr)
+        return 2
+
+    names = {p.name for p in root.glob("*/*") if p.is_dir()}
+
+    errors = []
+    for page in sorted(root.rglob("*.md")):
+        rel = page.relative_to(root.parent)
+        for number, name in refs(page.read_text()):
+            if name not in names and name not in BUILTIN:
+                errors.append(f"{rel}:{number}: unresolvable skill reference: /{name}")
+
+    for line in errors:
+        print(f"ERROR {line}")
+    print(f"{len(errors)} error(s), 0 warning(s)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

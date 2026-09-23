@@ -17,7 +17,7 @@ uv pip install -e "."        # core: <core-deps-csv>
 uv pip install -e ".[dev]"   # + dev tools: <dev-deps-csv>
 ```
 Usage = `just` recipes. For the full `[dev]`-extras treatment defer to
-[`../write-readme-py/SKILL.md`](../write-readme-py/SKILL.md).
+`/write-readme-py`.
 
 ## r-package (`DESCRIPTION`)
 Read: `Package`, `Title`, `Description`, `Imports`, `License`.

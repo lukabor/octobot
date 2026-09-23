@@ -13,9 +13,9 @@ Workflow for R repos. Detects project type from filesystem markers:
 | `DESCRIPTION` only | R package | [`package-loop.md`](package-loop.md) |
 | `_targets.R` only | R analysis | [`analysis-loop.md`](analysis-loop.md) |
 | both | ambiguous | ask the user |
-| neither | refuse | suggest [`/build-r-package`](../../scaffold/build-r-package/SKILL.md) or [`/build-r-analysis`](../../scaffold/build-r-analysis/SKILL.md) |
+| neither | refuse | suggest `/build-r-package` or `/build-r-analysis` |
 
-Apply [`/style-r`](../style-r/SKILL.md) at every implementation step.
+Apply `/style-r` at every implementation step.
 
 ## When NOT to use
 - Single-task work: bug fix → `/diagnose` + `/bdd` directly.
@@ -31,8 +31,8 @@ something is unclear, stop and ask. See
 [`../../../CLAUDE.md`](../../../CLAUDE.md) for the full version.
 
 If the task is ambiguous, hand off to
-[`/grill-me`](../../productivity/grill-me/SKILL.md) (no codebase needed)
-or [`/grill-with-docs`](../grill-with-docs/SKILL.md) (anchors to
+`/grill-me` (no codebase needed)
+or `/grill-with-docs` (anchors to
 `CONTEXT.md`) before entering the loop.
 
 ## Then enter the appropriate loop
@@ -43,14 +43,14 @@ or [`/grill-with-docs`](../grill-with-docs/SKILL.md) (anchors to
   (lint → style → test → run pipeline → render → commit)
 
 ## See also
-- [`../bdd/SKILL.md`](../bdd/SKILL.md) and its R siblings
+- `/bdd` and its R siblings
   (`tests-r.md`, `interface-design-r.md`, `mocking-r.md`,
   `deep-modules-r.md`, `refactoring-r.md`, `anti-patterns.md`).
-- [`../diagnose/SKILL.md`](../diagnose/SKILL.md) — six-phase bug hunt
+- `/diagnose` — six-phase bug hunt
   with R-flavored siblings.
-- [`../style-r/SKILL.md`](../style-r/SKILL.md) — coding standards.
-- [`../../productivity/commit-atomic-jj/SKILL.md`](../../productivity/commit-atomic-jj/SKILL.md).
-- [`../../scaffold/build-r-package/SKILL.md`](../../scaffold/build-r-package/SKILL.md)
+- `/style-r` — coding standards.
+- `/commit-atomic-jj`.
+- `/build-r-package`
   and
-  [`../../scaffold/build-r-analysis/SKILL.md`](../../scaffold/build-r-analysis/SKILL.md)
+  `/build-r-analysis`
   — set up the projects this workflow assumes.

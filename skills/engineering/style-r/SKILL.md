@@ -50,13 +50,13 @@ file under review.
   saving. See [dtplyr.md](dtplyr.md#when-not-to-use).
 
 ## See also
-- [../bdd/deep-modules-r.md](../bdd/deep-modules-r.md) —
+- `/bdd` —
   `box::export()` is the public-surface control mechanism.
-- [../bdd/interface-design-r.md](../bdd/interface-design-r.md) —
+- `/bdd` —
   pure functions + DI compose with these style rules.
-- [../diagnose/feedback-loops-r.md](../diagnose/feedback-loops-r.md) —
+- `/diagnose` —
   worked example #1 (in-place mutation) is the canonical `dtplyr` /
   `data.table::copy()` failure mode.
-- [../../productivity/commit-atomic-jj/SKILL.md](../../productivity/commit-atomic-jj/SKILL.md)
+- `/commit-atomic-jj`
   — when a style refactor changes more than one file, it's an atomic
   commit of its own.

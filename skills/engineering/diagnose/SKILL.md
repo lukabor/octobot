@@ -63,7 +63,7 @@ Prefer interactive inspection over logging —
 cleanup is `grep`-able.
 
 ### 5. Fix + regression test
-Hand off to [bdd](../bdd/SKILL.md):
+Hand off to `/bdd`:
 - State the bug as one Given/When/Then scenario.
 - Translate into a failing test at the **public** interface
   (see `../bdd/mocking-r.md` — do not reach past it).
@@ -72,7 +72,7 @@ Hand off to [bdd](../bdd/SKILL.md):
 
 If no correct seam exists, **that is itself the finding** — the codebase
 architecture is preventing the bug from being locked down. File a
-[refactoring-r.md](../bdd/refactoring-r.md) candidate; don't write a test
+`/bdd`'s `refactoring-r.md` candidate; don't write a test
 that lies about the bug pattern.
 
 ### 6. Cleanup + post-mortem
@@ -83,7 +83,7 @@ Then ask: **what would have prevented this bug?**
   (re-render the book, re-run the pipeline end-to-end).
 - Commit message names the confirmed hypothesis ("H1: `data.table`
   reference semantics in `assemble_expr`") so future readers see the *why*.
-- File architectural follow-ups to [refactoring-r.md](../bdd/refactoring-r.md); don't auto-fix in the same commit.
+- File architectural follow-ups to `/bdd`'s `refactoring-r.md`; don't auto-fix in the same commit.
 
 ## Guardrails
 - **Never** test more than one hypothesis at a time — you lose the signal.
@@ -92,9 +92,9 @@ Then ask: **what would have prevented this bug?**
 - **Never** ship instrumentation. Cleanup is a phase, not an afterthought.
 
 ## See also
-- [../bdd/SKILL.md](../bdd/SKILL.md) — phase 5 is a bdd cycle.
-- [../bdd/refactoring-r.md](../bdd/refactoring-r.md) — file
+- `/bdd` — phase 5 is a bdd cycle.
+- `/bdd` — file
   architectural follow-ups here.
-- [../design-codebase/SKILL.md](../design-codebase/SKILL.md) — definition of **seam** (Phase 5's "no correct seam" finding).
-- [../model-domain/SKILL.md](../model-domain/SKILL.md) — phase 3
+- `/design-codebase` — definition of **seam** (Phase 5's "no correct seam" finding).
+- `/model-domain` — phase 3
   hypothesis names should use canonical terms from `CONTEXT.md`.

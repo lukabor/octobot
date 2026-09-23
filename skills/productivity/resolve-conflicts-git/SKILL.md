@@ -5,7 +5,7 @@ description: Resolve git merge/rebase conflicts by intent, not by picking sides 
 
 # resolve-conflicts-git
 
-git-native counterpart of [resolve-conflicts-jj](../resolve-conflicts-jj/SKILL.md).
+git-native counterpart of `/resolve-conflicts-jj`.
 Unlike jj, git conflicts are **mid-operation limbo** — `MERGE_HEAD` or a
 paused rebase holds the repo until you continue or abort. The limbo is
 still not an emergency: `--abort` is a clean reset to before the
@@ -80,10 +80,10 @@ under abort-pressure.
   `grep -rn '<<<<<<<' .` before continuing.
 
 ## See also
-- [../resolve-conflicts-jj/SKILL.md](../resolve-conflicts-jj/SKILL.md) — jj
+- `/resolve-conflicts-jj` — jj
   counterpart; topology-first rule and real-world phantom-conflict case
   (`OKF/LEARNINGS.md`) apply verbatim.
-- [../commit-atomic-git/SKILL.md](../commit-atomic-git/SKILL.md) —
+- `/commit-atomic-git` —
   sealing discipline after resolution.
-- [../../engineering/review-angles/SKILL.md](../../engineering/review-angles/SKILL.md)
+- `/review-angles`
   — a resolved merge is a diff like any other; review it.

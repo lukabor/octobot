@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # call-charon
 
-The execution counterpart of [ferry](../ferry/SKILL.md): ferry resolves
+The execution counterpart of `/ferry`: ferry resolves
 one *decision* per sitting; Charon delivers *blueprints* — each built
 by its own agent, reviewed by a fresh-context flotilla, sealed only by
 the orchestrator. The main session never implements. The ferry's
@@ -16,17 +16,17 @@ holds no state in his head.
 ## When to use
 - User says "call charon", "/call-charon", "implement the ferry",
   "drive the ferry home", "next blueprint".
-- A [ferry](../ferry/SKILL.md) has arrived (decisions resolved,
+- A `/ferry` has arrived (decisions resolved,
   blueprints locked) and implementation spans multiple blueprints.
 - One blueprint, no orchestration worth the cost → plain
-  [rig](../rig/SKILL.md).
+  `/rig`.
 
 ## Preconditions (check, don't assume)
 - `OKF/ferries/<topic>/MAP.md` exists; every decision resolved. Open
   decisions → back to ferry; this is a crossing, not a mapping.
 - The spawned blueprints are `locked` or beyond
   (`grep -r "^status:" OKF/blueprints/`); a needed one still `draft` →
-  back to [blueprint](../blueprint/SKILL.md) for the user's lock.
+  back to `/blueprint` for the user's lock.
 
 ## Process
 1. **ORIENT** — read `MAP.md` + the statuses of every blueprint it
@@ -63,18 +63,18 @@ holds no state in his head.
    blueprint's Verify *itself* in the main workspace and pastes the
    output — post-integration, so what's verified is what ships. A
    builder's "tests pass" is never trusted. Seal via
-   [commit-atomic-jj](../../productivity/commit-atomic-jj/SKILL.md)
+   `/commit-atomic-jj`
    (git mode:
-   [commit-atomic-git](../../productivity/commit-atomic-git/SKILL.md))
+   `/commit-atomic-git`)
    citing the blueprint, flip its status.
 7. **LOG** — update the Passage line: status, axes run, rounds,
    commit, ISO date. Blocked mid-crossing → log that instead; the
    reason is the handoff.
 8. **REPEAT or END SITTING** — context healthy → step 2. Otherwise
    stop; Passage *is* the handoff — no HANDOFF.md duplication
-   ([write-handoff](../../productivity/write-handoff/SKILL.md) rule).
+   (`/write-handoff` rule).
 9. **ARRIVE** — last blueprint `implemented` → hand to
-   [moor](../moor/SKILL.md). Charon delivers; moor consolidates.
+   `/moor`. Charon delivers; moor consolidates.
 
 ## Output / done criteria
 - Each sitting: ≥1 blueprint gated green, or the blocker named in
@@ -100,7 +100,7 @@ holds no state in his head.
 ## See also
 - [crossing-format.md](crossing-format.md) — Passage line, builder
   brief, reviewer brief, finding-merge contract.
-- [../ferry/SKILL.md](../ferry/SKILL.md) — upstream; owns MAP.md.
-- [../rig/SKILL.md](../rig/SKILL.md) — the process each builder
+- `/ferry` — upstream; owns MAP.md.
+- `/rig` — the process each builder
   brief encodes for one blueprint.
-- [../moor/SKILL.md](../moor/SKILL.md) — downstream close-out.
+- `/moor` — downstream close-out.

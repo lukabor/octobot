@@ -16,7 +16,7 @@ where step 2 came up short.
 
 1. **OKF** — read the pages the question touches, starting at
    `OKF/index.md`. No `./OKF/` → say so in one line, name
-   [`/write-OKF`](../write-OKF/SKILL.md), **stop**. Nothing else runs.
+   `/write-OKF`, **stop**. Nothing else runs.
 2. **nostos** — query the nostos MCP server, via its `find` /
    `provenance_of` tools. It is the primary source for what the code
    says, not a hint feeding a later read: what it returns is source, not
@@ -36,10 +36,9 @@ where step 2 came up short.
 
 Cite `path:symbol` where a symbol carries the claim — that is the shape
 that breaks when the thing it cites moves, while a `path:line` suffix is
-a reading aid nothing validates
-([okf-layout.md](../write-OKF/okf-layout.md)). A claim with no internal
-owner — a third-party API, a spec — is followed to its primary source
-and cited. **Nothing else leaves the repo.**
+a reading aid nothing validates (`/write-OKF`'s `okf-layout.md`). A
+claim with no internal owner — a third-party API, a spec — is followed
+to its primary source and cited. **Nothing else leaves the repo.**
 
 ## Two mouths
 
@@ -59,8 +58,7 @@ decides whether it becomes a write.
 ## The mark
 
 `sounded: YYYY-MM-DD`, fourth frontmatter field, after `traces-to` (see
-[blueprint-format.md](../blueprint/blueprint-format.md)). Sounding is a
-precondition of lock: `okf-check` warns `<path>: locked without
+`/blueprint`'s `blueprint-format.md`). Sounding is a precondition of lock: `okf-check` warns `<path>: locked without
 sounded:` on a `locked` blueprint carrying no stamp. Warning, not error
 — exit status stays 0.
 
@@ -87,12 +85,12 @@ the user asks, or when a cite no longer resolves.
   research is upstream `research`, not this.
 - **Never** edit a locked blueprint's Contract or Verify — a sounding
   that contradicts them supersedes, per
-  [blueprint](../blueprint/SKILL.md)'s status discipline.
+  `/blueprint`'s status discipline.
 
 ## See also
-- [../blueprint/SKILL.md](../blueprint/SKILL.md) — the caller; sounding
+- `/blueprint` — the caller; sounding
   gates its lock step.
-- [../write-OKF/SKILL.md](../write-OKF/SKILL.md) — no `OKF/` → there
+- `/write-OKF` — no `OKF/` → there
   first; `okf-check` owns the warning.
-- [../rig/SKILL.md](../rig/SKILL.md) — executes what a sounded
+- `/rig` — executes what a sounded
   blueprint locked.

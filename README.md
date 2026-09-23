@@ -25,19 +25,23 @@ Modeled on [mattpocock/skills](https://github.com/mattpocock/skills).
 
 ## Install
 
+**Claude Code, or any Agent Skills-compatible harness on this machine.**
 Claude Code discovers skills at `~/.claude/skills/<name>/SKILL.md` (flat,
-one level deep — category subfolders are not scanned). Symlink each skill
-individually:
+one level deep — category subfolders are not scanned); Codex and similar
+harnesses read `~/.agents/skills/<name>/`. Clone this repo, then run:
 
 ```bash
-mkdir -p ~/.claude/skills
-for s in ~/code/octobot/skills/*/*/; do
-  ln -s "${s%/}" "$HOME/.claude/skills/$(basename "$s")"
-done
+scripts/link-skills.sh
 ```
 
-Open any project, start Claude Code, and the skills below appear in the
-skill list.
+It symlinks every skill into both directories, so a `git pull` (or `jj
+git fetch`) is all that's needed to keep them up to date. Open any
+project, start your agent, and the skills below appear in the skill
+list.
+
+**Any other harness** (Copilot, or anywhere `~/.claude/skills` doesn't
+apply): `npx skills@latest add lukabor/octobot` copies the skills you
+pick into your project as ordinary files.
 
 ## Skills
 

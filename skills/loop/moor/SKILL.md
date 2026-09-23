@@ -6,14 +6,14 @@ disable-model-invocation: true
 
 # moor
 
-What you do when the [ferry](../ferry/SKILL.md) has arrived: tie it up.
+What you do when the `/ferry` has arrived: tie it up.
 Runs **after** rig + review-blueprint + commit-atomic-jj, once every
 decision is resolved and the spawned blueprints are done. Consolidates
 the wiki so the next cold-start agent reads reality, not history.
 
 ## When to use
 - User says "moor", "/moor", "close out the ferry", "the ferry is done".
-- [rig](../rig/SKILL.md)'s done-gate passes on the last blueprint of
+- `/rig`'s done-gate passes on the last blueprint of
   a ferry-traced chain.
 
 ## Process
@@ -94,9 +94,9 @@ the wiki so the next cold-start agent reads reality, not history.
   neglect. Go back to the ferry skill.
 
 ## See also
-- [../ferry/SKILL.md](../ferry/SKILL.md) — upstream; its "Arrive" step
+- `/ferry` — upstream; its "Arrive" step
   hands off here.
-- [../rig/SKILL.md](../rig/SKILL.md) — moor runs after its
+- `/rig` — moor runs after its
   done-gate on the ferry's last blueprint.
-- [../write-OKF/okf-layout.md](../write-OKF/okf-layout.md) — the page
+- `/write-OKF` — the page
   contracts moor reconciles against.

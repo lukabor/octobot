@@ -81,8 +81,7 @@ loop, not on disk.
   splits: a discharged phase collapses to one line naming what shipped
   and its blueprint numbers, which hold the detail.
 - **decisions/** — the why-register: one file per settled decision,
-  permanent numbers, format in
-  [model-domain/decision-format.md](../../engineering/model-domain/decision-format.md).
+  permanent numbers, format in `/model-domain`'s `decision-format.md`.
   `decisions/index.md` carries one **question-shaped** line per decision,
   the question derived from the file's first `answers:` entry — index.md
   lists the register, not its members.
@@ -97,8 +96,8 @@ loop, not on disk.
   source: MAP.md). A multi-blueprint MAP may opt into moor's human review
   gate with `muster: true`; moor derives `review-base` (parent of the
   earliest commit citing a ferry blueprint) and persists it on the
-  collapsed page — prose-enforced in [moor](../moor/SKILL.md), never
-  `okf-check`. [moor](../moor/SKILL.md) graduates the resolved
+  collapsed page — prose-enforced in `/moor`, never
+  `okf-check`. `/moor` graduates the resolved
   decisions into `decisions/` and collapses the directory into
   `<topic>.md` — problem shape, rejected alternatives, graduated
   numbers — indexed `<topic> — moored <date> → <topic>.md`. The two
@@ -116,7 +115,7 @@ loop, not on disk.
 ## Rules
 
 - Durable knowledge only — no session state, no high-frequency logs
-  (that's [write-handoff](../../productivity/write-handoff/SKILL.md) territory).
+  (that's `/write-handoff` territory).
 - One fact, one home; cross-link with relative paths.
 - Every page ≤110 lines, a blueprint ≤150; grow by splitting + indexing,
   not by scrolling. Over cap is an **error**, not a warning, because every
@@ -126,4 +125,4 @@ loop, not on disk.
 - Blueprints may grow from `NNN-<slug>.md` into `NNN-<slug>/` directories
   (blueprint.md + notes) — the glossary never moves in there. Over 150
   lines reads as **scope** first: two blueprints, or a
-  [ferry](../ferry/SKILL.md).
+  `/ferry`.

@@ -58,7 +58,7 @@ disable-model-invocation: true
    > match `project.optional-dependencies`; the License block defaults to
    > Apache 2.0 wording only when `project.license` says so. Drop a
    > `assets/<name>.png` if you want the logo to render. When satisfied,
-   > describe with [`/commit-atomic-jj`](../../productivity/commit-atomic-jj/SKILL.md)."
+   > describe with `/commit-atomic-jj`."
 
 ## Guardrails
 - **Never** invent dependency versions, recipe descriptions, author
@@ -69,7 +69,7 @@ disable-model-invocation: true
   attribution block for Apache 2.0; other licenses get the one-liner.
 
 ## Out of scope
-- R projects. Generic [`../write-readme/SKILL.md`](../write-readme/SKILL.md)
+- R projects. Generic `/write-readme`
   covers them — it detects `DESCRIPTION` (r-package) and `_targets.R`
   (r-analysis) and reads their fields. No R counterpart to this skill is
   planned.
@@ -78,7 +78,7 @@ disable-model-invocation: true
 - [`saduko-license-block.md`](saduko-license-block.md) — the Apache 2.0
   rights / requirements / attribution / bibtex template, lifted from the
   Saduko reference and parameterised.
-- [`../../scaffold/build-py-project/SKILL.md`](../../scaffold/build-py-project/SKILL.md)
+- `/build-py-project`
   — produces the `pyproject.toml` + `justfile` this skill reads.
-- [`../develop-python/SKILL.md`](../develop-python/SKILL.md) — the workflow
+- `/develop-python` — the workflow
   whose `just check` commands this README documents.

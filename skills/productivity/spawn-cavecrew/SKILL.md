@@ -61,7 +61,7 @@ fan out concurrently.
 A **builder** (or any subagent that edits files) spawns only with a
 written brief: goal, blueprint/OKF references by path (`OKF/blueprints/NNN`, the
 pages it needs), constraints, and the **verify command** for its slice.
-A locked blueprint is the default brief ([rig](../../loop/rig/SKILL.md)).
+A locked blueprint is the default brief (`/rig`).
 Read-only lookups (**investigator**) are exempt. No brief, no builder.
 
 ## octobot conventions
@@ -80,7 +80,7 @@ Read-only lookups (**investigator**) are exempt. No brief, no builder.
 - A review pass named the diff source (`jj diff` / `-r @-`) in its prompt.
 
 ## See also (review axis/discipline lives here, not in the cavecrew skill)
-- [`../../engineering/review-angles/SKILL.md`](../../engineering/review-angles/SKILL.md) — *correctness*.
-- [`../../engineering/nuke-review/SKILL.md`](../../engineering/nuke-review/SKILL.md) — *structural quality* (code-judo).
-- [`../../engineering/winnow/SKILL.md`](../../engineering/winnow/SKILL.md) — *mechanical debloat*.
-- [`../../engineering/review-blueprint/SKILL.md`](../../engineering/review-blueprint/SKILL.md) — *blueprint fidelity* (diff vs OKF/blueprints/NNN).
+- `/review-angles` — *correctness*.
+- `/nuke-review` — *structural quality* (code-judo).
+- `/winnow` — *mechanical debloat*.
+- `/review-blueprint` — *blueprint fidelity* (diff vs OKF/blueprints/NNN).

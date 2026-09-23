@@ -14,10 +14,10 @@ directory is what crosses the session boundary.
 ## When to use
 - User says "ferry", "/ferry", "this is too big for one session",
   "map this feature out".
-- A [chart](../chart/SKILL.md) phase or
-  [blueprint](../blueprint/SKILL.md) attempt turns out too large to blueprint
+- A `/chart` phase or
+  `/blueprint` attempt turns out too large to blueprint
   as one implementable unit.
-- A [write-handoff](../../productivity/write-handoff/SKILL.md) is looming on a
+- A `/write-handoff` is looming on a
   half-decided design — ferry the open questions instead of prose-dumping
   them.
 
@@ -31,23 +31,23 @@ directory is what crosses the session boundary.
    decision each — if a "decision" is really three, split it. Declare
    `blocked-by:` edges honestly; no edge, no ordering claim.
 4. **Resolve one decision per sitting.** Pick an unblocked one. Grill it
-   [grill-with-docs](../../engineering/grill-with-docs/SKILL.md)-style
+   `/grill-with-docs`-style
    — research first, one question at a time, recommendation attached.
    Record resolution + rationale in the file; flip status.
 5. **Crystallise as you go**: a resolved decision that unlocks
-   implementable work → hand to [blueprint](../blueprint/SKILL.md);
+   implementable work → hand to `/blueprint`;
    the blueprint's `traces-to` cites `ferries/<topic>/D-<n>`. Resolved terms →
    `OKF/CONTEXT.md` per model-domain.
 6. **Arrive**: every decision resolved → update `MAP.md` with the blueprint
    numbers produced; the ferry directory stays as the decision record
    (supersede, don't delete). Once the spawned blueprints are woven and
-   sealed, close out with [moor](../moor/SKILL.md).
+   sealed, close out with `/moor`.
 
 ## Session boundary
 End of sitting → `MAP.md` *is* the handoff for this work: next session
 reads MAP.md, picks the next unblocked decision. Don't duplicate ferry
 state into HANDOFF.md — reference the directory
-([write-handoff](../../productivity/write-handoff/SKILL.md) rule).
+(`/write-handoff` rule).
 
 ## Output / done criteria
 - `MAP.md` lists every decision with status and edges; no cycles.
@@ -65,9 +65,9 @@ state into HANDOFF.md — reference the directory
 
 ## See also
 - [decision-format.md](decision-format.md) — file contract.
-- [../blueprint/SKILL.md](../blueprint/SKILL.md) — downstream of every
+- `/blueprint` — downstream of every
   resolution.
-- [../chart/SKILL.md](../chart/SKILL.md) — phases too big to
+- `/chart` — phases too big to
   blueprint directly get ferried.
-- [../moor/SKILL.md](../moor/SKILL.md) — closes out the ferry after its
+- `/moor` — closes out the ferry after its
   blueprints ship.

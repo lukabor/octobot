@@ -46,15 +46,14 @@ up in the diff.>
 ## Rules
 
 - Title is imperative — a blueprint names a change, not a state.
-- `type: Blueprint` is the OKF-v0.1 conformance field (see
-  [write-OKF/okf-layout.md](../write-OKF/okf-layout.md)) — always first.
+- `type: Blueprint` is the OKF-v0.1 conformance field (see `/write-OKF`'s
+  `okf-layout.md`) — always first.
 - `traces-to` is mandatory; a blueprint that traces to nothing fails
-  [sieve](../../engineering/sieve/SKILL.md)'s Real test by definition.
-- `sounded:` is the date [sound](../sound/SKILL.md) verified what the
+  `/sieve`'s Real test by definition.
+- `sounded:` is the date `/sound` verified what the
   blueprint rests on; absent until then, and required to lock.
 - `cites:` (optional) pins what the blueprint rests on — one entry per
-  line, grammar owned by
-  [write-OKF/okf-layout.md](../write-OKF/okf-layout.md) §Conformance, not
+  line, grammar owned by `/write-OKF`'s `okf-layout.md` §Conformance, not
   restated here. Optional because a blueprint may rest on nothing on disk:
   B-015 carries none.
 - `muster: true` (optional) opts into the human review gate: rig halts
