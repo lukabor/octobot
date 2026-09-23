@@ -35,4 +35,4 @@ superseded-by-NNN`. Numbers are permanent — supersede, never renumber.
 - [026](026-walk-only-what-git-does-not-ignore.md) — walk only what git does not ignore — implemented
 - [027](027-error-on-implemented-with-matches-no.md) — error when a mustered blueprint reaches implemented on matches: no — implemented
 - [028](028-convert-cross-skill-links-to-skill-names.md) — convert cross-skill links to unchecked skill names — implemented
-- [029](029-prefix-register-filenames-and-validate-okf-structure.md) — validate OKF directory completeness and normalize blueprints/ferries indexing — locked
+- [029](029-prefix-register-filenames-and-validate-okf-structure.md) — validate OKF directory completeness and normalize blueprints/ferries indexing — implemented

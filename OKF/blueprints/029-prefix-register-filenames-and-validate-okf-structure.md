@@ -1,6 +1,6 @@
 ---
 type: Blueprint
-status: locked
+status: implemented
 traces-to: ROADMAP.md phase 15
 sounded: 2026-09-23
 cites:
@@ -17,6 +17,12 @@ cites:
   - OKF/learnings/index.md
 muster: true
 review-base: pxryqqmw
+tally:
+  intent: okf-check validates OKF directory completeness (every dir with
+    .md files has an index.md, MAP.md-exempt for open ferry topics; every
+    index.md directly links its own .md siblings), and blueprints/ferries
+    normalize from root-inline to the delegate index.md pattern
+  matches: yes
 ---
 
 # 029 — validate OKF directory completeness and normalize blueprints/ferries indexing
