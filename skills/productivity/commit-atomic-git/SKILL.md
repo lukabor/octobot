@@ -45,12 +45,15 @@ scope bullets. Full grammar, ticket refs, and blueprint citations:
 [commit-atomic-jj/message-format.md](../commit-atomic-jj/message-format.md).
 Install real enforcement once per repo:
 ```
-skills/productivity/commit-atomic-jj/scripts/commit-msg-check --install-hook .
+$JJ_SKILL/scripts/commit-msg-check --install-hook .
 ```
-This is a real `git commit-msg` hook (unlike jj, plain git fires it).
-Copies the checker to `.githooks/commit-msg` and sets `core.hooksPath` —
-teammates each run `git config core.hooksPath .githooks` once after
-pulling that directory, since the setting itself isn't versioned.
+`$JJ_SKILL` = `commit-atomic-jj`'s own base directory (a sibling of this
+skill's, e.g. `~/.claude/skills/commit-atomic-jj`) — never a path
+relative to the repo being committed in. This is a real `git commit-msg`
+hook (unlike jj, plain git fires it). Copies the checker to
+`.githooks/commit-msg` and sets `core.hooksPath` — teammates each run
+`git config core.hooksPath .githooks` once after pulling that directory,
+since the setting itself isn't versioned.
 
 ### 4. Docs travel with the code
 Same commit includes: updated docstring for a changed public signature;

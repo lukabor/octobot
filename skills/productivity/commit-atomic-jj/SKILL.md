@@ -53,15 +53,17 @@ The same `jj describe` must include any of:
 
 ```
 jj diff                                             # 1. read every line
-S=skills/productivity/commit-atomic-jj/scripts/commit-msg-check
-$S <(printf '%s' "$MSG")                            # 2. validate structure (jj has no hook)
+$SKILL/scripts/commit-msg-check <(printf '%s' "$MSG")  # 2. validate (jj has no hook)
 jj describe -m "$MSG"                               # 3. one concern? seal it (foreground)
 jj diff   --revision @-                             # 4. verify the message matches what shipped
 jj new   -m 'WIP'                                   # 5. open a fresh empty @ for the next unit
 ```
-Step 2 is mandatory, not optional — jj has no native hook to enforce it
-(nothing in `jj help` or `jj config schema` as of 0.38), so the skill
-itself is the only enforcement point.
+`$SKILL` = **this skill's own base directory** — the path the harness
+reports when loading `commit-atomic-jj` (e.g. `~/.claude/skills/commit-atomic-jj`),
+never a path relative to the repo you're committing in; the target repo
+usually isn't octobot. Step 2 is mandatory, not optional — jj has no
+native hook to enforce it (nothing in `jj help` or `jj config schema` as
+of 0.38), so the skill itself is the only enforcement point.
 
 Mixed diff (more than one concern) → split **before** describing, minding
 which side the selected paths land on ([anti-patterns.md](anti-patterns.md)):

@@ -77,6 +77,11 @@ Module grew too big to review well. Splitting keeps each piece small.
 
 ## Enforcement
 
+Lives at `scripts/commit-msg-check` in *this skill's own* base
+directory — resolve it from the path the harness reports when
+`commit-atomic-jj` loads, not from the repo being committed in; that
+repo usually isn't octobot.
+
 `commit-msg-check <message-file>` validates structure; all violations
 are hard errors, no warning tier. `commit-msg-check --install-hook
 [repo-dir]` copies the script to `<repo>/.githooks/commit-msg` and sets
