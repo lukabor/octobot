@@ -6,8 +6,11 @@ unresolvable cite, unprefixed register cite in prose, discharged roadmap
 phase keeping a verify step, malformed `okf:derived` fence, page
 unreachable from index.md, page over its line cap, register index line
 disagreeing with its decision file, moored ferry with a malformed
-`sealed:` pin or a surviving directory. Warnings
-(exit 0): page with no cites, blueprint locked without a `sounded:` stamp.
+`sealed:` pin or a surviving directory, a directory holding `.md` files
+with no `index.md` (an open ferry topic directory may carry `MAP.md`
+instead), an `index.md` not directly linking every `.md` file physically
+beside it. Warnings (exit 0): page with no cites, blueprint locked
+without a `sounded:` stamp.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
 hand, which is write-OKF refresh's job, not a validator that must exit 0
@@ -197,12 +200,47 @@ def check_roadmap(text, rel, errors):
     close()
 
 
+def check_dir_index(okf, errors):
+    """Every OKF directory holding `.md` files carries an entry point.
+
+    Directly under `ferries/`, an open ferry topic directory is fronted
+    by `MAP.md` instead — R-015's directory-means-open shape; a moored
+    ferry is a single file, never a directory, so it never reaches here.
+    """
+    dirs = {p.parent for p in okf.rglob("*.md")}
+    for d in sorted(dirs):
+        entry = "MAP.md" if d.parent == okf / "ferries" else "index.md"
+        if not (d / entry).exists():
+            rel = d.relative_to(okf.parent)
+            errors.append(f"{rel}: directory holds .md files with no {entry}")
+
+
+def check_index_completeness(okf, errors):
+    """`index.md` directly links every `.md` file beside it.
+
+    Independent of `reachable()`'s transitive, whole-tree check — a page
+    linked only from a grandparent index still fails this one. `MAP.md`
+    carries its own D-n table shape and is exempt.
+    """
+    for idx in okf.rglob("index.md"):
+        d = idx.parent
+        siblings = {p.resolve() for p in d.glob("*.md") if p.name != "index.md"}
+        linked = {(d / t).resolve() for t in links(idx.read_text())}
+        missing = siblings - linked
+        if missing:
+            rel = idx.relative_to(okf.parent)
+            names = ", ".join(sorted(p.name for p in missing))
+            errors.append(f"{rel}: index.md missing {names}")
+
+
 def check_ferries(okf, errors):
     """A page directly under ferries/ is a moored ferry: pinned, collapsed."""
     ferries = okf / "ferries"
     if not ferries.is_dir():
         return
     for page in sorted(ferries.glob("*.md")):
+        if page.name == "index.md":
+            continue
         rel = page.relative_to(okf.parent)
         if (ferries / page.stem).is_dir():
             errors.append(f"{rel}: coexists with ferries/{page.stem}/ — open or moored, never both")
@@ -332,6 +370,8 @@ def main(argv):
 
     check_ferries(okf, errors)
     check_register(okf, warrants, errors)
+    check_dir_index(okf, errors)
+    check_index_completeness(okf, errors)
 
     for line in warnings:
         print(f"WARN  {line}")
