@@ -25,7 +25,7 @@ behind that claim: [learnings/index.md](learnings/index.md).
 
 ## Locked decisions
 
-20 live, in the why-register: [decisions/index.md](decisions/index.md).
+23 live, in the why-register: [decisions/index.md](decisions/index.md).
 Each line is the question its decision settles. Cite by number.
 
 ## Architecture
@@ -56,17 +56,9 @@ single request traces to `user request <date>` instead, as B-008–B-017 did.
 
 14. **the skills tree installs into any harness** — ✅ 2026-09-23, [028](blueprints/B-028-convert-cross-skill-links-to-skill-names.md).
 
-15. **decision and blueprint files carry a searchable prefix** — supersedes
-    R-022's filename ruling; ferry `D-n` files untouched. `okf-check` gains
-    two `OKF/`-scoped checks: every directory holds an `index.md`, and each
-    lists its own `.md` siblings — retiring the root-inline pattern for
-    `blueprints/`/`ferries/` in favor of the delegate pattern
-    `decisions/`/`learnings/` already use. Migration renames every existing
-    decision/blueprint file and repairs every real link repo-wide; bare
-    unlinked prose numbers in `LEARNINGS.md` stay put, per R-022. Spans a
-    decision plus 2+ blueprints — `/ferry` carries it. **Verify:** all four
-    lints `0 error(s)`; no bare `decisions/NNN-`/`blueprints/NNN-` link
-    survives outside `LEARNINGS.md` prose.
+15. **decision and blueprint files carry a searchable prefix** — ✅
+    2026-09-23, [029](blueprints/B-029-prefix-register-filenames-and-validate-okf-structure.md),
+    [030](blueprints/B-030-migrate-register-filenames-to-their-prefix.md).
 
 ## Risks & gotchas
 

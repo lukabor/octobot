@@ -10,6 +10,9 @@
 <td width="60%">
 
 ## Table of Contents
+- [Why this exists](#why-this-exists)
+- [Inspiration](#inspiration)
+- [Authorship & testing](#authorship--testing)
 - [Install](#install)
 - [Skills](#skills)
 - [Workflows](#workflows)
@@ -21,7 +24,52 @@
 </tr>
 </table>
 
-Modeled on [mattpocock/skills](https://github.com/mattpocock/skills).
+## Why this exists
+
+[mattpocock/skills](https://github.com/mattpocock/skills) works perfectly
+for lean, coding tasks. Octobot grew out of adapting that set with my own
+experiences with analytical workflows carrying vast biological context —
+reporter assays, single cell and bulk RNA-seq, genomics or clinical
+pipelines. If you add the time needed to generate a hypothesis, run wet
+lab experiments, the periods of time are getting very long. As a
+computational biologist you also are involved in multiple parallel
+projects. Bioinformatics analysis usually requires deep project
+understanding and tremendous focus. This situation creates a specific
+knowledge and mental gap that has to be removed quickly. This can be done
+in many ways. My preferred way is to write decisions and their
+justifications in human readable format and to keep a functional, project
+directory structure supported by version control. This is the reason why
+I made a conscious decision to extend documentation and bake it into the
+loop itself (the OKF wiki, blueprints, decision files) rather than leave
+it implicit, plus a Socratic front end (`grill-me`, `chart`, `sound`) and
+backend (`winnow`, `nuke-review`, `sieve`, `review-angles`), to pin down
+ambiguity before it becomes an expensive rewrite three months later.
+Initially, I developed my own skill workflow that turned out to be very
+similar to other skill repositories that got significant traction on
+GitHub. Therefore, I decided to merge my workflow with current best
+practices.
+
+## Inspiration
+
+- [Matt Pocock's skills](https://github.com/mattpocock/skills) — the base
+  this repo is modeled on.
+- [Superpowers](https://github.com/obra/superpowers)
+- [Ponytail](https://github.com/DietrichGebert/ponytail) — highly
+  recommended paired with octobot's skills when writing code.
+- [Andrej Karpathy's skills wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
+  (also mirrored as
+  [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md),
+  itself the source of `CLAUDE.md` §1–4 here)
+- [Google's Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/) —
+  the shape behind octobot's `OKF/` wiki.
+
+## Authorship & testing
+
+Initial drafts of these skills were human-written and came from my own workflow.
+I backed them on top of Matt Pocock's skills. During development I adapted them
+with Anthropic's Sonnet and Opus models as well as Qwen's. Skills were tested
+across multiple harnesses: Claude Code, GitHub Copilot, and the Pi coding
+agent.
 
 ## Install
 
@@ -159,6 +207,9 @@ except **sound**, which only reads — see `OKF/decisions/019`.
   pipelines (e.g. R `{targets}` projects).
 
 ### scaffold
+- **init-octobot** — bootstrap octobot's framework files (`AGENTS.md`,
+  optional `CLAUDE.md`, bare `OKF/`, `README.md` stub) into any repo,
+  greenfield or ongoing, that never ran octobot before.
 - **build-py-project** — uv + justfile + pyproject; Docker via
   `containerize-project`.
 - **build-r-package** — renv + DESCRIPTION + testthat; Docker via
@@ -181,8 +232,16 @@ Common ways the skills chain together. Each recipe is a *sequence*, not a
 script — read the relevant SKILL.md as you enter each step.
 
 ### Project lifecycle
-- **Greenfield project** — `/write-OKF` (knowledge scaffold) → `/chart`
-  (Socratic kickoff → `OKF/ROADMAP.md`)
+- **New repo (octobot never ran here)** — `/init-octobot` (bootstrap
+  `AGENTS.md`, bare `OKF/`, README stub) → `/write-OKF` only if
+  `init-octobot` found a `LEGACY` file (migrates `CONTEXT.md` /
+  `docs/Roadmap.md` / `docs/adr` into `OKF/`) → `/chart` (Socratic
+  kickoff → `OKF/ROADMAP.md`) → `/build-py-project` |
+  `/build-r-package` | `/build-r-analysis` (scaffold) → `/write-readme`
+  (replaces the stub with a real README) → feature loops below →
+  `/chart` (revision mode as you learn).
+- **Greenfield, octobot already present** — `/write-OKF` (knowledge
+  scaffold) → `/chart` (Socratic kickoff → `OKF/ROADMAP.md`)
   → `/build-py-project` | `/build-r-package` | `/build-r-analysis` (scaffold)
   → feature loops below → `/chart` (revision mode as you learn).
 - **Feature on an existing codebase** — `/grill-with-docs` if the design needs
