@@ -68,10 +68,14 @@ that a silent sub-step would bypass.
    [`README.md.tpl`](README.md.tpl)'s minimal placeholder. Present →
    skip untouched; a stub over real content is a regression, not a
    convenience.
-6. **Existing AGENTS.md/CLAUDE.md** in the target repo — propose a merge
+6. **.gitignore** — `write-handoff` defaults to `./HANDOFF.md` in any
+   octobot repo; ensure it's ignored. No `.gitignore` → create one with
+   just `HANDOFF.md`. Existing `.gitignore` missing the line → append
+   it. Already present → skip untouched.
+7. **Existing AGENTS.md/CLAUDE.md** in the target repo — propose a merge
    reshaping the existing prose into the step-3/4 structure; show the
    diff; write only after the user confirms.
-7. **Close out** — list what was written and skipped, and suggest next
+8. **Close out** — list what was written and skipped, and suggest next
    steps: `/write-OKF`, `/chart`, `/write-readme` — whichever apply.
 
 ## Output / done criteria
