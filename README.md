@@ -5,7 +5,7 @@
 <td width="60%" align="center">
   <img src="assets/octobot.jpeg" alt="octobot logo" width="200"/>
   <h3>octobot</h3>
-  <p>Personal, reusable Claude Code skills — language-agnostic productivity workflows that travel with you across every project.</p>
+  <p>Personal, reusable skills for long term projects - productivity workflows that travel with you across every project.</p>
 </td>
 <td width="60%">
 
@@ -100,27 +100,11 @@ Octobot's core: a loop-engineering metaharness over an **OKF**
 repo? Run `/init-octobot` before any of this — it bootstraps `AGENTS.md`
 and a bare `OKF/` so the spine below has something to scaffold or refresh.
 
-```
-one-time         init-octobot — bootstrap AGENTS.md, bare OKF/ (new repos only)
-                      ↓
-substrate (rare)  write-OKF — scaffold, or refresh when stale
-                      ↓
-per request       chart — a phase only for an arc over >1 blueprint
-                      ↓
-                 know what to do?
-        ┌──── yes ────┴──── no ────┐
-  blueprint → sound          ferry — decisions + blocking edges,
-    → rig                    resolve one per sitting
-    (rig closes it)                  ↓
-                             blueprint per cleared decision → sound
-                                     ↓
-                             1 left → rig
-                             N left → call-charon (agent per blueprint)
-                                     ↓
-                                   moor
-
-rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refresh)
-```
+<p align="center">
+  <img src="assets/octo_workflow.jpg" alt="octobot loop workflow diagram" width="600"/>
+  <br/>
+  <sub>Generated with GPT-5.6 Luna</sub>
+</p>
 
 - **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
   every agent reads `OKF/index.md` before code.
