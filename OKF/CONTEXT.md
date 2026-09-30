@@ -102,9 +102,11 @@ in the blueprint's frontmatter. _Avoid_: research, investigation, spike.
 
 **Line cap**:
 The per-file limit a page kind carries — 110 for SKILL.md and OKF pages,
-150 for blueprints. Over it errors: a legal move always exists.
-_Avoid_: limit, budget.
+250 for `ROADMAP.md`, `CONTEXT.md`, a guide, or a blueprint (B-031),
+selected by declared `type:`, not path. Over it errors: a legal move
+always exists. _Avoid_: limit, budget.
 
 **House cap**:
-The 110 itself — the line cap SKILL.md and OKF pages share. Topic-named
-siblings load on demand and carry no cap.
+The 110 itself — the line cap SKILL.md and most OKF pages share. The
+wide-cap kinds are worked against, not read cold — see **Line cap**.
+Topic-named siblings load on demand and carry no cap.

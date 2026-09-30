@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 CAP = 110
-BLUEPRINT_CAP = 150
+WIDE_CAP = 250  # Roadmap, Glossary, Guide, and blueprints — worked against, not read cold
 LINE_SUFFIX = re.compile(r"\d+(-\d+)?")
 
 
@@ -314,8 +314,12 @@ def main(argv):
         if not fields.get("type"):
             errors.append(f"{rel}: missing type:")
         # Every page kind has a growth path at cap+1, so the cap is an
-        # error: a legal move always exists. See split-page.md.
-        cap = BLUEPRINT_CAP if "blueprints" in rel.parts else CAP
+        # error: a legal move always exists. See split-page.md. Wide
+        # pages are selected by declared type, not path, so ROADMAP.md
+        # and CONTEXT.md get the wider cap wherever they live.
+        wide = ("blueprints" in rel.parts
+                or fields.get("type") in ("Roadmap", "Glossary", "Guide"))
+        cap = WIDE_CAP if wide else CAP
         if len(text.splitlines()) > cap:
             errors.append(f"{rel}: over the {cap}-line cap")
 

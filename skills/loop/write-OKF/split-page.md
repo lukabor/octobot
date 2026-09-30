@@ -1,9 +1,10 @@
 # Splitting a page at the cap
 
-`okf-check` errors when a page passes its cap — 110 lines, 150 for a
-blueprint. This is that error's procedure. Which move a page gets is its
-contract in [okf-layout.md](okf-layout.md); this page is *how* to make the
-move without losing content or breaking the bundle.
+`okf-check` errors when a page passes its cap — 110 lines, 250 for
+`ROADMAP.md`, `CONTEXT.md`, a guide, or a blueprint. This is that error's
+procedure. Which move a page gets is its contract in
+[okf-layout.md](okf-layout.md); this page is *how* to make the move
+without losing content or breaking the bundle.
 
 ## The move is pure
 
@@ -75,12 +76,24 @@ deleted once.
 
 ## When the page is a blueprint
 
-Over 150 lines, ask what is long before splitting the file. A blueprint
+Over 250 lines, ask what is long before splitting the file. A blueprint
 naming three things in its slug is over-*scoped*, not over-written:
 compound work that still fits one session becomes two blueprints, and work
 past one session goes to `/ferry`, whose own trigger is
 exactly this. The `NNN-<slug>/` directory form is for a blueprint's notes,
 not for a blueprint that should have been two.
+
+## When the page is a guide
+
+Over 250 lines, ask what is *prose* and what is *code* before splitting
+the file — a guide runs long because a worked example is frozen inline,
+not because the procedure itself is over-scoped. Extract: pull each
+runnable block out into a real sibling file (a script the guide can
+cite instead of embed), the same `<name>.md` → `<name>/` move a
+blueprint makes at its own cap, except the directory holds extracted
+code alongside `guide.md`, not notes. Only split into two guides when
+the *procedure* names two unrelated howtos, the same over-scope test a
+blueprint gets.
 
 ## Done criteria
 

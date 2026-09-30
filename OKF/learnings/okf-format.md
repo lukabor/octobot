@@ -36,3 +36,14 @@ status: live
   visibility principle it follows from. A decision that *extends* a live
   one without changing it is that one applied, not a new one. Source:
   warrant test, session 2026-07-22; 020 stays unspent.
+- Believed: a Verify step that pads a file and then restores it is safe
+  once the padding is described in prose. True: `jj restore` (and `git
+  restore` / `git checkout --`) restores from the **parent** revision,
+  and `describe` does not move the working-copy edits there — they stay
+  on `@` until the next `jj new`. A Verify that pads and restores a path
+  the *same blueprint* also edits throws that edit away, silently,
+  possibly more than once, while every step still prints `OK`. A Verify
+  may only pad-and-restore paths outside its own blueprint's edits; a
+  path inside them needs a different check shape (diff against a named
+  commit, not restore-and-compare). Source: a prior unmerged exploration
+  of B-031's own cap-raise, discovered while sounding it.

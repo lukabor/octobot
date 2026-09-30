@@ -37,3 +37,4 @@ superseded-by-NNN`. Numbers are permanent — supersede, never renumber.
 - [028](B-028-convert-cross-skill-links-to-skill-names.md) — convert cross-skill links to unchecked skill names — implemented
 - [029](B-029-prefix-register-filenames-and-validate-okf-structure.md) — validate OKF directory completeness and normalize blueprints/ferries indexing — implemented
 - [030](B-030-migrate-register-filenames-to-their-prefix.md) — migrate decision and blueprint filenames to their R-/B- prefix — implemented
+- [031](B-031-widen-the-okf-line-cap-and-add-a-guide-page-type.md) — widen the OKF line cap and add a Guide page type — implemented
