@@ -1,6 +1,6 @@
 ---
 name: winnow
-description: After-the-fact debloat audit; only removes; ends with a net: -N lines scoreboard.
+description: "After-the-fact debloat audit; only removes; ends with a net: -N lines scoreboard."
 disable-model-invocation: true
 ---
 

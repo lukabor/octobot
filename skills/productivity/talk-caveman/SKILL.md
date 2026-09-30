@@ -1,6 +1,6 @@
 ---
 name: talk-caveman
-description: Terse mode for the rest of the session: no preamble, no summaries, artifact + one line.
+description: "Terse mode for the rest of the session: no preamble, no summaries, artifact + one line."
 disable-model-invocation: true
 ---
 

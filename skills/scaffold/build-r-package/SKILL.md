@@ -1,6 +1,6 @@
 ---
 name: build-r-package
-description: Scaffold an R package: renv + justfile + DESCRIPTION + testthat ed. 3; Docker via containerize-project.
+description: "Scaffold an R package: renv + justfile + DESCRIPTION + testthat ed. 3; Docker via containerize-project."
 disable-model-invocation: true
 ---
 

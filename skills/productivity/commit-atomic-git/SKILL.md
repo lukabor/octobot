@@ -1,6 +1,6 @@
 ---
 name: commit-atomic-git
-description: Atomic-commit discipline for plain git repos (no .jj) — read every diff line before committing, use the staging area to split mixed changes into one-concern commits, write semantic messages (`type(scope): imperative phrase completing "this change will…"`), docs travel with the code. Use when the user says "commit", "what's the commit message", or is about to commit a working tree touching more than one concern, in a repo where `[ -d .jj ]` fails. jj repos → commit-atomic-jj.
+description: "Atomic-commit discipline for plain git repos (no .jj) — read every diff line before committing, use the staging area to split mixed changes into one-concern commits, write semantic messages (`type(scope): imperative phrase completing \"this change will…\"`), docs travel with the code. Use when the user says \"commit\", \"what's the commit message\", or is about to commit a working tree touching more than one concern, in a repo where `[ -d .jj ]` fails. jj repos → commit-atomic-jj."
 ---
 
 # commit-atomic-git

@@ -1,6 +1,6 @@
 ---
 name: commit-atomic-jj
-description: Atomic-commit discipline with jujutsu — read every diff line before describing, split mixed changes with `jj split`, write semantic commit messages (`type(scope): imperative phrase completing "this change will…"`), and update docs / docstrings / READMEs in the same change as the code. Use when the user says "commit", "jj describe", "split this change", "atomic commit", "what's the commit message", or is about to seal a working copy that touches more than one logical concern.
+description: "Atomic-commit discipline with jujutsu — read every diff line before describing, split mixed changes with `jj split`, write semantic commit messages (`type(scope): imperative phrase completing \"this change will…\"`), and update docs / docstrings / READMEs in the same change as the code. Use when the user says \"commit\", \"jj describe\", \"split this change\", \"atomic commit\", \"what's the commit message\", or is about to seal a working copy that touches more than one logical concern."
 ---
 
 # commit-atomic-jj

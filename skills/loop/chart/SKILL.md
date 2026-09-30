@@ -1,6 +1,6 @@
 ---
 name: chart
-description: Plan a project or revise its plan — one mode-routed skill replacing plan-project and update-project. Greenfield: research-backed Socratic interview producing OKF/ROADMAP.md. Revision: fold reality back into the roadmap with supersede-never-delete discipline.
+description: "Plan a project or revise its plan — one mode-routed skill replacing plan-project and update-project. Greenfield: research-backed Socratic interview producing OKF/ROADMAP.md. Revision: fold reality back into the roadmap with supersede-never-delete discipline."
 disable-model-invocation: true
 ---
 

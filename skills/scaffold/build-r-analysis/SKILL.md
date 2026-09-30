@@ -1,6 +1,6 @@
 ---
 name: build-r-analysis
-description: Scaffold an R analysis: renv + targets + Quarto on rocker/verse; Docker via containerize-project.
+description: "Scaffold an R analysis: renv + targets + Quarto on rocker/verse; Docker via containerize-project."
 disable-model-invocation: true
 ---
 

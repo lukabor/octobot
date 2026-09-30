@@ -1,6 +1,6 @@
 ---
 name: resolve-conflicts-git
-description: Resolve git merge/rebase conflicts by intent, not by picking sides — check topology first (phantom conflicts from wrong rebase bases), read both parents' purpose via git show :1:/:2:/:3: and zdiff3 markers, merge meanings, continue with editor guarded. Use when the user says "resolve the conflict", "fix the conflict", git reports "CONFLICT", or a merge/rebase stopped with unmerged paths, in a repo where `[ -d .jj ]` fails. jj repos → resolve-conflicts-jj.
+description: "Resolve git merge/rebase conflicts by intent, not by picking sides — check topology first (phantom conflicts from wrong rebase bases), read both parents' purpose via git show :1:/:2:/:3: and zdiff3 markers, merge meanings, continue with editor guarded. Use when the user says \"resolve the conflict\", \"fix the conflict\", git reports \"CONFLICT\", or a merge/rebase stopped with unmerged paths, in a repo where `[ -d .jj ]` fails. jj repos → resolve-conflicts-jj."
 ---
 
 # resolve-conflicts-git

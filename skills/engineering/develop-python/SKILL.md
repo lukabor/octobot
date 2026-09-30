@@ -1,6 +1,6 @@
 ---
 name: develop-python
-description: Orchestrate the full Python dev loop: implement, lint, typecheck, test (bdd), commit.
+description: "Orchestrate the full Python dev loop: implement, lint, typecheck, test (bdd), commit."
 disable-model-invocation: true
 ---
 

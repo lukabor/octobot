@@ -1,6 +1,6 @@
 ---
 name: sound
-description: Verify what a blueprint is about to rest on, before it locks — read the OKF pages the question touches, query the nostos MCP server for what the code says, open files only where nostos cannot answer, and stamp `sounded: <date>`. Use when the user says "sound", "/sound", "sound this blueprint", "verify this before I lock it"; when blueprint reaches its lock step; or when you are about to act on a claim taken from an OKF page, a blueprint's Justification, or a cite that nothing has checked against the code. Not open-ended "how does this work" research — the trigger is an unverified claim about *this* repo, not a topic.
+description: "Verify what a blueprint is about to rest on, before it locks — read the OKF pages the question touches, query the nostos MCP server for what the code says, open files only where nostos cannot answer, and stamp `sounded: <date>`. Use when the user says \"sound\", \"/sound\", \"sound this blueprint\", \"verify this before I lock it\"; when blueprint reaches its lock step; or when you are about to act on a claim taken from an OKF page, a blueprint's Justification, or a cite that nothing has checked against the code. Not open-ended \"how does this work\" research — the trigger is an unverified claim about *this* repo, not a topic."
 ---
 
 # sound

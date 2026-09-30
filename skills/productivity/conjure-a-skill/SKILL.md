@@ -1,6 +1,6 @@
 ---
 name: conjure-a-skill
-description: Author a new octobot skill: verb-first name, Use-when description, 110-line cap, symlink install.
+description: "Author a new octobot skill: verb-first name, Use-when description, 110-line cap, symlink install."
 disable-model-invocation: true
 ---
 

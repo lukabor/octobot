@@ -1,6 +1,6 @@
 ---
 name: build-py-project
-description: Scaffold a Python project: uv + justfile + pyproject (ruff, ty, pytest); Docker via containerize-project.
+description: "Scaffold a Python project: uv + justfile + pyproject (ruff, ty, pytest); Docker via containerize-project."
 disable-model-invocation: true
 ---
 
