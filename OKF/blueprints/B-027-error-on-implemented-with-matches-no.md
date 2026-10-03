@@ -4,8 +4,8 @@ status: implemented
 traces-to: user request 2026-09-23
 sounded: 2026-09-23
 cites:
-  - skills/loop/write-OKF/scripts/okf-check:muster is opt-in
-  - skills/loop/write-OKF/scripts/okf-check:tally
+  - skills/loop/write-okf/scripts/okf-check:muster is opt-in
+  - skills/loop/write-okf/scripts/okf-check:tally
   - skills/loop/rig/SKILL.md:never flip on a known miss
   - skills/loop/blueprint/blueprint-format.md:tally
 muster: false  # Verify constructs the exact matches:no/implemented/muster:true
@@ -19,7 +19,7 @@ muster: false  # Verify constructs the exact matches:no/implemented/muster:true
 
 `okf-check` errors when a `muster: true` blueprint reaches `implemented`
 without a `tally:` block at all
-([okf-check:muster is opt-in](../../skills/loop/write-OKF/scripts/okf-check)),
+([okf-check:muster is opt-in](../../skills/loop/write-okf/scripts/okf-check)),
 but it only checks that the block **exists** — it never reads the verdict
 inside it. A blueprint carrying `tally: matches: no` passes the same check
 `implemented` requires, silently. [rig](../../skills/loop/rig/SKILL.md)'s
@@ -42,7 +42,7 @@ unchanged.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — the muster/tally check
+- `skills/loop/write-okf/scripts/okf-check` — the muster/tally check
   (currently the block starting `# muster is opt-in`, ~line 289) and the
   `tally()` helper it calls.
 
@@ -79,8 +79,8 @@ None.
 ## Out of scope
 None.
 EOF
-skills/loop/write-OKF/scripts/okf-check "$d" | grep "muster: true, implemented" && \
-  skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check "$d" | grep "muster: true, implemented" && \
+  skills/loop/write-okf/scripts/okf-check OKF/
 ```
 The fixture run must print an error naming the fixture page; the real-tree
 run after it must stay `0 error(s), 0 warning(s)` (no existing blueprint

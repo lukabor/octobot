@@ -1,7 +1,7 @@
 <!--
 Assembly, not a flat file: init-octobot builds AGENTS.md from three
 sources rather than this template holding real prose —
-1. skills/loop/write-OKF/agents-md-hook.md — Knowledge + Behavioral
+1. skills/loop/write-okf/agents-md-hook.md — Knowledge + Behavioral
    guardrails, verbatim.
 2. simplicity-block.md — Simplicity & rigor, verbatim.
 3. Point 5 below, materialized from scripts/repo-scan's output.

@@ -4,9 +4,9 @@ status: implemented
 traces-to: user request 2026-10-01
 sounded: 2026-10-01
 cites:
-  - skills/loop/write-OKF/scripts/okf-check
-  - skills/loop/write-OKF/okf-layout.md
-  - skills/loop/write-OKF/split-page.md
+  - skills/loop/write-okf/scripts/okf-check
+  - skills/loop/write-okf/okf-layout.md
+  - skills/loop/write-okf/split-page.md
   - OKF/learnings/okf-format.md
 muster: false  # Verify runs okf-check against real + synthetic fixtures and checks exit codes — observes the cap/type logic directly, not just "tests pass"
 ---
@@ -74,11 +74,11 @@ branch itself is not merged or rebased — redone fresh against `main`.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — the `CAP`/`BLUEPRINT_CAP`
+- `skills/loop/write-okf/scripts/okf-check` — the `CAP`/`BLUEPRINT_CAP`
   constants and the cap-selection branch inside the per-page loop.
-- `skills/loop/write-OKF/okf-layout.md` — spine diagram, Conformance
+- `skills/loop/write-okf/okf-layout.md` — spine diagram, Conformance
   page-type enum, Page contracts section, Rules section.
-- `skills/loop/write-OKF/split-page.md` — opening sentence, new Guide
+- `skills/loop/write-okf/split-page.md` — opening sentence, new Guide
   section.
 - `OKF/learnings/okf-format.md` — one new append-only entry.
 - `OKF/CONTEXT.md` — **Line cap** / **House cap** glossary entries, which
@@ -87,7 +87,7 @@ branch itself is not merged or rebased — redone fresh against `main`.
 ## Verify
 
 ```bash
-cd skills/loop/write-OKF
+cd skills/loop/write-okf
 # 1. No regression: this repo's own OKF still validates.
 python3 scripts/okf-check ../../../OKF
 # 2. The new cap/type logic actually fires, both directions.

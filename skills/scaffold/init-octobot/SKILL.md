@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Fixes the "octobot dropped into a repo with no ROADMAP, no OKF, no
 AGENTS.md, no CLAUDE.md" gap. Writes everything itself — never chains to
-another user-invoked skill mid-run, since write-OKF, `/chart`, and
+another user-invoked skill mid-run, since write-okf, `/chart`, and
 write-readme each gate their own writes on explicit user confirmation
 that a silent sub-step would bypass.
 
@@ -25,20 +25,20 @@ that a silent sub-step would bypass.
    - `CONVENTION <bullet> — <path>` — a language/lint/test signal.
 2. **OKF/ROADMAP.md**:
    - Any `LEGACY` line → **skip** `OKF/` and `ROADMAP.md` entirely. Tell
-     the user to run `/write-OKF` (offers the migration these files need)
+     the user to run `/write-okf` (offers the migration these files need)
      then `/chart` (produces a real roadmap). Do not scaffold in this
-     branch — write-OKF's Scaffold-only migration step never fires once
+     branch — write-okf's Scaffold-only migration step never fires once
      `OKF/` already exists, so pre-creating it here would forfeit that
      path.
    - No `LEGACY` line → materialize `OKF/index.md` and `OKF/ROADMAP.md`
-     from write-OKF's own
-     [`templates/index.md.tpl`](../../loop/write-OKF/templates/index.md.tpl)
+     from write-okf's own
+     [`templates/index.md.tpl`](../../loop/write-okf/templates/index.md.tpl)
      and
-     [`templates/ROADMAP.md.tpl`](../../loop/write-OKF/templates/ROADMAP.md.tpl)
+     [`templates/ROADMAP.md.tpl`](../../loop/write-okf/templates/ROADMAP.md.tpl)
      verbatim (`<project>` substituted) — reuse, don't reinvent. Both stay
      all-`TODO`, so `/chart`'s "absent or all-TODO → Greenfield" mode
      detection still fires correctly later. `OKF/` now exists, so a
-     future `/write-OKF` run takes Refresh mode — its rescan step (page
+     future `/write-okf` run takes Refresh mode — its rescan step (page
      plan via `okf-scan`, sorted against the still-empty `index.md`) is
      built to reconcile exactly this bare state; only the Scaffold-only
      migration/hook-wiring steps are permanently skipped, not full
@@ -47,8 +47,8 @@ that a silent sub-step would bypass.
    source prose into this repo's copy — insert each block verbatim,
    substituting `<project>` with the repo's directory name in every
    block, not just the OKF templates):
-   1. Knowledge + Behavioral guardrails, from write-OKF's
-      [`agents-md-hook.md`](../../loop/write-OKF/agents-md-hook.md).
+   1. Knowledge + Behavioral guardrails, from write-okf's
+      [`agents-md-hook.md`](../../loop/write-okf/agents-md-hook.md).
    2. Simplicity & rigor, from
       [`simplicity-block.md`](simplicity-block.md) — CLAUDE.md §1–4's
       union-minus-overlap with the hook block above; no information
@@ -76,7 +76,7 @@ that a silent sub-step would bypass.
    reshaping the existing prose into the step-3/4 structure; show the
    diff; write only after the user confirms.
 8. **Close out** — list what was written and skipped, and suggest next
-   steps: `/write-OKF`, `/chart`, `/write-readme` — whichever apply.
+   steps: `/write-okf`, `/chart`, `/write-readme` — whichever apply.
 
 ## Output / done criteria
 - Every file in Process is either written (diff shown) or explicitly
@@ -88,7 +88,7 @@ that a silent sub-step would bypass.
   the repo takes chore-scoped infra commits).
 
 ## Guardrails
-- **Never** invoke write-OKF, `/chart`, or write-readme as a sub-step —
+- **Never** invoke write-okf, `/chart`, or write-readme as a sub-step —
   point the user at them instead.
 - **Never** fabricate a `CONVENTION` bullet without a `repo-scan` line
   behind it.
@@ -97,7 +97,7 @@ that a silent sub-step would bypass.
 - **Never** scaffold `OKF/` or `ROADMAP.md` when a `LEGACY` line fired.
 
 ## See also
-- `/write-OKF` — full OKF scaffold/refresh, legacy migration, AGENTS.md
+- `/write-okf` — full OKF scaffold/refresh, legacy migration, AGENTS.md
   hook-wiring on a repo with no prior `OKF/`.
 - `/chart` — writes real `OKF/ROADMAP.md` content.
 - `/write-readme` — full README generation by ecosystem detection.

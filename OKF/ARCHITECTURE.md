@@ -17,7 +17,7 @@ status: live
 One module per skill category; the interface of each skill is its
 frontmatter `description` (routing) plus its SKILL.md body (procedure).
 
-- **loop** (`skills/loop/`) — the metaharness spine: write-OKF
+- **loop** (`skills/loop/`) — the metaharness spine: write-okf
   (knowledge), chart (plan), blueprint, ferry, rig, steer.
 - **engineering** (`skills/engineering/`) — practice skills: bdd,
   diagnose, review axes (review-angles, nuke-review, winnow), sieve,
@@ -37,7 +37,7 @@ frontmatter `description` (routing) plus its SKILL.md body (procedure).
    §The loop.
 
 ```
-substrate (rare)  write-OKF — scaffold, or refresh when stale
+substrate (rare)  write-okf — scaffold, or refresh when stale
                       ↓
 per request       chart — a phase only for an arc over >1 blueprint
                       ↓

@@ -18,7 +18,7 @@ Owns `OKF/ROADMAP.md`. Planning only, never implementation.
 ## Mode detection
 | State | Mode |
 |---|---|
-| no `./OKF/` | run `/write-OKF` scaffold first |
+| no `./OKF/` | run `/write-okf` scaffold first |
 | `OKF/ROADMAP.md` absent or all-TODO | **Greenfield** → [greenfield.md](greenfield.md) |
 | `OKF/ROADMAP.md` has real content | **Revision** → [revise.md](revise.md) |
 | code exists but user wants plan-vs-code stress-test only | hand to `/grill-with-docs` |
@@ -71,7 +71,7 @@ fill the missing sections as deltas, don't restart.
 
 ## See also
 - [greenfield.md](greenfield.md) / [revise.md](revise.md) — the loops.
-- `/write-OKF` — scaffolds the OKF
+- `/write-okf` — scaffolds the OKF
   this skill writes into.
 - `/blueprint` — decomposes roadmap
   phases into blueprints.

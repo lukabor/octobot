@@ -6,7 +6,7 @@ answers:
   - "How does one skill's prose reference another skill?"
 cites:
   - OKF/ROADMAP.md
-  - skills/loop/write-OKF/scripts/link-check
+  - skills/loop/write-okf/scripts/link-check
 status: live
 reversible: yes — costly (290 links, 59 files), but nothing else depends
   on the prose form

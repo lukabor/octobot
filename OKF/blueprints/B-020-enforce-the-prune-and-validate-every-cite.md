@@ -8,9 +8,9 @@ cites:
   - OKF/decisions/R-020-every-page-has-a-growth-path.md:a discharged phase to one
   - OKF/decisions/R-017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see
   - OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md:Two `okf-check` rules
-  - skills/loop/write-OKF/page-warrant.md:cite drift does not split the same way
-  - skills/loop/write-OKF/scripts/okf-check:carry their own frontmatter contracts
-  - skills/loop/write-OKF/split-page.md
+  - skills/loop/write-okf/page-warrant.md:cite drift does not split the same way
+  - skills/loop/write-okf/scripts/okf-check:carry their own frontmatter contracts
+  - skills/loop/write-okf/split-page.md
   - skills/loop/chart/SKILL.md
   - skills/loop/chart/revise.md
   - OKF/learnings/index.md:Append-only
@@ -46,13 +46,13 @@ next such line or the next `## ` heading — carrying both `✅` and
 this is the mechanical half.
 
 **Rule 2 — every page's cites resolve.** The `continue` at
-[`okf-check`](../../skills/loop/write-OKF/scripts/okf-check):245 skips
+[`okf-check`](../../skills/loop/write-okf/scripts/okf-check):245 skips
 `blueprints`/`ferries` *before* the cite loop, so no blueprint's or ferry's
 cites are validated at all. The resolvability loop moves **above** that
 `continue`; the `no cites:` warning stays **below** it, gated to warrant
 pages — the format requires `traces-to`, not `cites:`, and eighteen live
 pages carry none. Cites validate **whole**, path and symbol, per
-[page-warrant.md](../../skills/loop/write-OKF/page-warrant.md): a cite needs
+[page-warrant.md](../../skills/loop/write-okf/page-warrant.md): a cite needs
 no repo, so it does not split the way
 [R-017](../decisions/R-017-pin-drift-splits-by-visibility.md) splits a pin.
 
@@ -80,14 +80,14 @@ omitted. This blueprint cites every file it edits that way.
 **`LEARNINGS.md` ends at or under 110 with the entry present.** It sits at
 105 and B-019 owes it one too; whichever weave crosses the cap performs
 R-020's named move, the split into `learnings/<theme>.md`, per
-[split-page.md](../../skills/loop/write-OKF/split-page.md) — pure
+[split-page.md](../../skills/loop/write-okf/split-page.md) — pure
 relocation, alone in its own change. **Both new rules fire today** — rule 1
 on a fixture, rule 2 on the four real cites before repair — and nothing
 rendered changes.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — `main()`'s per-page loop
+- `skills/loop/write-okf/scripts/okf-check` — `main()`'s per-page loop
   (rule 2's move) plus one new roadmap check reached from it (rule 1); the
   module docstring's error list names both.
 - `skills/loop/architect/SKILL.md` — `:36`, `:54`.
@@ -98,7 +98,7 @@ rendered changes.
 ## Verify
 
 ```sh
-CHECK=skills/loop/write-OKF/scripts/okf-check
+CHECK=skills/loop/write-okf/scripts/okf-check
 "$CHECK" OKF/; echo "real exit: $?"
 tmp=$(mktemp -d); cp -r OKF "$tmp/"
 for f in skills README.md CLAUDE.md; do ln -s "$PWD/$f" "$tmp/$f"; done
@@ -113,7 +113,7 @@ sed -i 's|^  - OKF/CONTEXT.md:House cap|  - OKF/nope.md:x|' \
 sed -i '/^cites:/,/^status:/{/^  - /d}' \
   "$tmp/OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md"
 "$CHECK" "$tmp/OKF" | grep -c 'no cites'
-rm -rf "$tmp" skills/loop/write-OKF/scripts/__pycache__
+rm -rf "$tmp" skills/loop/write-okf/scripts/__pycache__
 grep -n 'every phase\|verify line\|\*\*Verify:\*\*' \
   skills/loop/architect/SKILL.md skills/loop/architect/revise.md
 wc -l OKF/LEARNINGS.md skills/loop/architect/SKILL.md \

@@ -9,7 +9,7 @@ traces-to: 005's Out of scope (rescan on refresh); ROADMAP.md phase 8, added by 
 ## Justification
 
 005 shipped the scaffold path only — a scan proposes a plan once, at
-birth. Refresh (`write-OKF/SKILL.md:50-73`) never runs it, so a repo that
+birth. Refresh (`write-okf/SKILL.md:50-73`) never runs it, so a repo that
 grows a module gets no page and one that loses a module keeps a stale
 page forever. [007](../decisions/R-007-taxonomy-derived-per-repo.md) makes
 the taxonomy derived per repo; today it is derived *once*.
@@ -57,12 +57,12 @@ page plan.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-scan` — container suppression;
+- `skills/loop/write-okf/scripts/okf-scan` — container suppression;
   unreadable directories yield no evidence. No new flag, no new mode —
   the delta is read by refresh, not computed by the scanner.
-- `skills/loop/write-OKF/taxonomy-scan.md` (64/110) — a **Rescan on
+- `skills/loop/write-okf/taxonomy-scan.md` (64/110) — a **Rescan on
   refresh** section: three buckets, removal doctrine, container rule.
-- `skills/loop/write-OKF/SKILL.md` (103/110) — refresh step 1 gains the
+- `skills/loop/write-okf/SKILL.md` (103/110) — refresh step 1 gains the
   rescan and its lock. **≤7 net new lines** — the whole slack it has.
 - `OKF/decisions/018-<slug>.md` + `decisions/index.md` — the removal
   doctrine. 018 is spent here, so 004's carried cite/pin-split question
@@ -83,7 +83,7 @@ Weave builds `$SCRATCH/fx-refresh/` — `analysis/2026-cohort/report.Rmd`,
 `src/emit/emit.py`; refreshes per the rewritten steps; then runs:
 
 ```sh
-S=$SCRATCH/fx-refresh && O=$S/OKF && W=skills/loop/write-OKF \
+S=$SCRATCH/fx-refresh && O=$S/OKF && W=skills/loop/write-okf \
   && $W/scripts/okf-scan $S > $S/plan \
   && grep -q '^analyses/2026-cohort\.md ' $S/plan \
   && grep -q '^modules/emit\.md ' $S/plan \

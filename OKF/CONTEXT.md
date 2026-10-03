@@ -5,7 +5,7 @@ answers:
   - "What is the canonical name for this concept in octobot?"
 cites:
   - skills/productivity/conjure-a-skill/glossary.md
-  - skills/loop/write-OKF/okf-layout.md
+  - skills/loop/write-okf/okf-layout.md
 status: live
 ---
 
@@ -31,7 +31,7 @@ _Avoid_: pipeline, workflow (those describe the develop-* orchestrators).
 **OKF**:
 Open-knowledge-format — the agent-first wiki at a target project's
 `./OKF/`; layout contract in
-[write-OKF/okf-layout.md](../skills/loop/write-OKF/okf-layout.md).
+[write-okf/okf-layout.md](../skills/loop/write-okf/okf-layout.md).
 _Avoid_: docs folder, wiki (unqualified), knowledge base.
 
 **Blueprint**:
@@ -51,7 +51,7 @@ fires here. _Avoid_: commit (mechanics), merge.
 
 **Page plan**:
 The locked set of admissible OKF pages, recorded as `index.md`'s
-one-line-per-page list. write-OKF proposes it from a repo scan; the user
+one-line-per-page list. write-okf proposes it from a repo scan; the user
 edits and locks it. A page absent from the plan is inadmissible.
 _Avoid_: TOC, sitemap, nav, wiki.json.
 

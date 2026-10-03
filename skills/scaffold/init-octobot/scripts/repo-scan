@@ -4,9 +4,9 @@
 Two kinds of line on stdout, each naming the disk evidence that warranted
 it — no evidence, no line; this scan proposes, it never writes:
 
-    LEGACY <path>              — a write-OKF migration source exists;
+    LEGACY <path>              — a write-okf migration source exists;
                                   init-octobot defers OKF/ROADMAP.md
-                                  creation to /write-OKF instead of
+                                  creation to /write-okf instead of
                                   scaffolding them itself.
     CONVENTION <bullet> — <path> — a point-5 "Repo conventions" bullet
                                   candidate, for user confirmation.

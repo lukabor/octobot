@@ -68,17 +68,17 @@ at init. `learnings/` appears when the cap forces it, never before.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/okf-layout.md` — layout tree, page contracts,
+- `skills/loop/write-okf/okf-layout.md` — layout tree, page contracts,
   Rules: per-kind caps, growth paths, indexing rule, supersession.
-- `skills/loop/write-OKF/split-page.md` — **new**: the split procedure.
-- `skills/loop/write-OKF/SKILL.md` — refresh gains the trigger that routes
+- `skills/loop/write-okf/split-page.md` — **new**: the split procedure.
+- `skills/loop/write-okf/SKILL.md` — refresh gains the trigger that routes
   an over-cap error to `split-page.md`; the ≤110 guardrail restates.
-- `skills/loop/write-OKF/scripts/okf-check` — per-kind cap, warning → error.
+- `skills/loop/write-okf/scripts/okf-check` — per-kind cap, warning → error.
 
 ## Verify
 
 ```sh
-cd skills/loop/write-OKF && d=$(mktemp -d) && mkdir -p "$d/blueprints" &&
+cd skills/loop/write-okf && d=$(mktemp -d) && mkdir -p "$d/blueprints" &&
 printf -- '---\nokf_version: "0.1"\n---\n- [a](a.md)\n- [b](blueprints/b.md)\n- [c](blueprints/c.md)\n' > "$d/index.md" &&
 for f in "a:120:Learnings" "blueprints/b:140:Blueprint" "blueprints/c:160:Blueprint"; do
   p=${f%%:*}; r=${f#*:}; n=${r%%:*}; t=${r##*:}

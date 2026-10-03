@@ -13,7 +13,7 @@ beside it. Warnings (exit 0): page with no cites, blueprint locked
 without a `sounded:` stamp.
 
 Pin *shape* only — whether the change id still resolves needs the repo in
-hand, which is write-OKF refresh's job, not a validator that must exit 0
+hand, which is write-okf refresh's job, not a validator that must exit 0
 on an OKF tree copied outside its jj repo.
 """
 import re

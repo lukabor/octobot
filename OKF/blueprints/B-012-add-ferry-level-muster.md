@@ -50,7 +50,7 @@ only what it can see).
 - `skills/loop/moor/SKILL.md` — a **Muster** step as moor's first act (after
   GATHER SIGNAL, before CONSOLIDATE), guarded by the ferry's `muster: true`;
   derives and persists `review-base`.
-- `skills/loop/write-OKF/okf-layout.md` — the `muster: true` (+ persisted
+- `skills/loop/write-okf/okf-layout.md` — the `muster: true` (+ persisted
   `review-base:`) fields in the ferry-map contract.
 
 ## Verify

@@ -70,7 +70,7 @@ the wiki so the next cold-start agent reads reality, not history.
    register gains its new lines; blueprint statuses go current.
 
 ## Output / done criteria
-- **`write-OKF/scripts/okf-check OKF/` run and its output pasted**,
+- **`write-okf/scripts/okf-check OKF/` run and its output pasted**,
   exiting 0. A claim of conformance is not a gate.
 - The arrived ferry contains no forward-looking work — every follow-up
   has a new home with a backlink.
@@ -98,5 +98,5 @@ the wiki so the next cold-start agent reads reality, not history.
   hands off here.
 - `/rig` — moor runs after its
   done-gate on the ferry's last blueprint.
-- `/write-OKF` — the page
+- `/write-okf` — the page
   contracts moor reconciles against.

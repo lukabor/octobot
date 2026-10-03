@@ -8,13 +8,13 @@ cites:
   - OKF/blueprints/B-021-align-validator-and-doctrine.md
   - OKF/learnings/loop.md
   - OKF/index.md
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/scripts/okf-check
   - skills/loop/chart/SKILL.md
   - skills/loop/chart/revise.md
   - OKF/ROADMAP.md:A live decision can be contradicted
   - OKF/decisions/R-020-every-page-has-a-growth-path.md:a discharged phase to one
   - OKF/decisions/R-017-pin-drift-splits-by-visibility.md:pin drift splits by what each tool can see
-  - skills/loop/write-OKF/page-warrant.md:cite drift does not split the same way
+  - skills/loop/write-okf/page-warrant.md:cite drift does not split the same way
   - skills/loop/blueprint/blueprint-format.md:sections are immutable
 ---
 
@@ -42,13 +42,13 @@ such line or the next `## ` heading — carrying both `✅` and `**Verify:**` is
 an **ERROR**: the mechanical half R-020's prune never had. As in B-020.
 
 **Rule 2 — every page's cites resolve.** The `continue` at
-[`okf-check`](../../skills/loop/write-OKF/scripts/okf-check):272 skips
+[`okf-check`](../../skills/loop/write-okf/scripts/okf-check):272 skips
 `blueprints`/`ferries` *before* the cite loop, so no blueprint's or ferry's
 cites are validated at all. The resolvability loop moves **above** that
 `continue`; the `no cites:` warning stays **below** it, gated to warrant
 pages — the format requires `traces-to`, not `cites:`. Cites validate
 **whole**, path and symbol, per
-[page-warrant.md](../../skills/loop/write-OKF/page-warrant.md): a cite needs
+[page-warrant.md](../../skills/loop/write-okf/page-warrant.md): a cite needs
 no repo, so it does not split the way
 [R-017](../decisions/R-017-pin-drift-splits-by-visibility.md) splits a pin.
 
@@ -68,7 +68,7 @@ approximate text. Dropped: B-014 `CLAUDE.md:EXAMPLES.md` (file gone); B-018
 B-018 `ROADMAP.md:loop diagram in` and B-019 `ROADMAP.md:checked by script`
 (erased when phase 11 discharged). Repointed: B-017
 `conjure-a-skill/SKILL.md:is ≤ 110 lines`, live at `:55`; B-019
-`write-OKF/SKILL.md:run and its output pasted`, live at `:84`; B-019 and
+`write-okf/SKILL.md:run and its output pasted`, live at `:84`; B-019 and
 B-020 `OKF/LEARNINGS.md:Append-only` and B-021 `OKF/LEARNINGS.md`, all onto
 `OKF/learnings/index.md`, the page the split renamed it to.
 
@@ -90,7 +90,7 @@ rule 2 on the nine real cites before repair — and nothing rendered changes.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — `main()`'s per-page loop (rule
+- `skills/loop/write-okf/scripts/okf-check` — `main()`'s per-page loop (rule
   2's move), one new roadmap check reached from it (rule 1), the docstring.
 - `skills/loop/architect/SKILL.md` `:36`, `:54`; `revise.md` `:15`.
 - `OKF/blueprints/014-…`, `017-…`, `018-…`, `019-…`, `021-…` — `cites:`
@@ -101,7 +101,7 @@ rule 2 on the nine real cites before repair — and nothing rendered changes.
 ## Verify
 
 ```sh
-CHECK=skills/loop/write-OKF/scripts/okf-check
+CHECK=skills/loop/write-okf/scripts/okf-check
 "$CHECK" OKF/; echo "real exit: $?"
 tmp=$(mktemp -d); cp -r OKF "$tmp/"
 for f in skills README.md CLAUDE.md; do ln -s "$PWD/$f" "$tmp/$f"; done
@@ -117,7 +117,7 @@ sed -i '0,/^cites:/s|^cites:|cites:\n  - OKF/nope.md:x|' \
 sed -i '/^cites:/,/^---$/{/^  - /d}' \
   "$tmp/OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md"
 "$CHECK" "$tmp/OKF" | grep -c 'no cites'
-rm -rf "$tmp" skills/loop/write-OKF/scripts/__pycache__
+rm -rf "$tmp" skills/loop/write-okf/scripts/__pycache__
 grep -n 'every phase\|verify line\|\*\*Verify:\*\*' \
   skills/loop/architect/SKILL.md skills/loop/architect/revise.md
 grep -h '^status:' OKF/blueprints/020-*.md

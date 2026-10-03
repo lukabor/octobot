@@ -10,10 +10,10 @@ cites:
   - OKF/blueprints/B-016-pull-two-skills-under-cap-and-level-commit-twins.md:A line-cap lint
   - skills/productivity/conjure-a-skill/SKILL.md:exceed 110 lines
   - skills/productivity/conjure-a-skill/SKILL.md:≤ 110 lines** — octobot's house cap
-  - skills/loop/write-OKF/scripts/okf-check:CAP = 110
-  - skills/loop/write-OKF/scripts/okf-check:a check that cannot fail
-  - skills/loop/write-OKF/SKILL.md:output pasted
-  - skills/loop/write-OKF/split-page.md:errors when a page passes its cap
+  - skills/loop/write-okf/scripts/okf-check:CAP = 110
+  - skills/loop/write-okf/scripts/okf-check:a check that cannot fail
+  - skills/loop/write-okf/SKILL.md:output pasted
+  - skills/loop/write-okf/split-page.md:errors when a page passes its cap
   - CLAUDE.md:≤ 110 lines
 ---
 
@@ -92,11 +92,11 @@ green path over the real tree.
 **The lint has one invocation obligation.** `conjure-a-skill`'s
 done-criteria list currently asserts the cap in prose (`SKILL.md` is ≤ 110
 lines); that line becomes the script call, matching how
-`write-OKF/SKILL.md` obliges `okf-check` to be run and its output pasted.
+`write-okf/SKILL.md` obliges `okf-check` to be run and its output pasted.
 One line replaces one line — `conjure-a-skill` sits at 105 and stays there.
 
 **Today's tree is green.** Zero errors; nine of 41 skills sit in the
-warning band, `write-OKF` and `bdd` at the cap itself. The lint changes no
+warning band, `write-okf` and `bdd` at the cap itself. The lint changes no
 skill's content.
 
 ## Seams touched
@@ -117,7 +117,7 @@ tmp=$(mktemp -d); mkdir -p "$tmp/category/over-cap"
 rm -rf "$tmp"
 grep -c 'skill-check' skills/productivity/conjure-a-skill/SKILL.md
 wc -l < skills/productivity/conjure-a-skill/SKILL.md
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 ```
 
 Expect, in order: `0 error(s), 9 warning(s)` then `exit: 0` over the real

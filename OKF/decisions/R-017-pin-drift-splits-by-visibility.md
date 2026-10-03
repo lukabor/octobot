@@ -4,8 +4,8 @@ purpose: Stop the next agent from "fixing" okf-check to resolve sealed: pins.
 answers:
   - "Why doesn't `okf-check` verify that a `sealed:` pin resolves?"
 cites:
-  - skills/loop/write-OKF/scripts/okf-check
-  - skills/loop/write-OKF/SKILL.md
+  - skills/loop/write-okf/scripts/okf-check
+  - skills/loop/write-okf/SKILL.md
 status: live
 reversible: yes — the resolution check is a few lines either side
 ---

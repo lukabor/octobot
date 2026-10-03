@@ -53,7 +53,7 @@ replaced by the warrant per decision 12, and `ADR-FORMAT.md` becomes the
 decision-file format rather than a separate one. `OKF/index.md`
 §Decisions points at `decisions/index.md`.
 
-**`okf-check` exists** at `skills/loop/write-OKF/scripts/`, exiting 1 on
+**`okf-check` exists** at `skills/loop/write-okf/scripts/`, exiting 1 on
 any error and 0 otherwise, listing every finding with its page path.
 
 - Errors: page missing `type:`; page missing `purpose:` or `answers:`; an
@@ -67,29 +67,29 @@ any error and 0 otherwise, listing every finding with its page path.
 - Stdlib only; frontmatter parsing handles multi-line `answers:` lists.
 - Script, not a skill — no SKILL.md, no invocation surface. Callers reach
   it **from the skill's own base directory**, never a repo-relative path,
-  since `skills/loop/...` resolves only inside octobot and write-OKF's
+  since `skills/loop/...` resolves only inside octobot and write-okf's
   purpose is running elsewhere. The target OKF is an argument.
 
-**write-OKF gates on it** — done-criteria require running `okf-check` and
+**write-okf gates on it** — done-criteria require running `okf-check` and
 pasting output; a claim of conformance is not a gate. `okf-layout.md`
 documents the register and the warrant contract.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — CLI: `okf-check <okf-dir>`,
+- `skills/loop/write-okf/scripts/okf-check` — CLI: `okf-check <okf-dir>`,
   findings on stdout, exit 0/1. The interface tests run against.
 - `OKF/decisions/index.md` — question-shaped index format.
 - `OKF/decisions/NNN-<slug>.md` — warrant frontmatter contract.
 - `OKF/ROADMAP.md` §Locked decisions, §Risks & gotchas — pointer shape.
 - `OKF/index.md` §Decisions — register link replacing `adr/`.
-- `skills/loop/write-OKF/SKILL.md` done-criteria + `okf-layout.md`.
+- `skills/loop/write-okf/SKILL.md` done-criteria + `okf-layout.md`.
 - `model-domain/ADR-FORMAT.md` — decision-file format, renamed and
   re-pointed. The rest of the sweep is reference edits, not seams.
 
 ## Verify
 
 ```sh
-skills/loop/write-OKF/scripts/okf-check OKF/ \
+skills/loop/write-okf/scripts/okf-check OKF/ \
   && test "$(wc -l < OKF/ROADMAP.md)" -le 110 \
   && test "$(ls OKF/decisions/[0-9][0-9][0-9]-*.md | wc -l)" -eq 16 \
   && test ! -d OKF/adr \

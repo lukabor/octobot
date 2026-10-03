@@ -22,7 +22,7 @@ Format: `NNN — <question it settles> — <verdict> — <status>`.
 - [008](R-008-page-warrant.md) — What justifies a page's existence in the OKF? — its warrant — live
 - [009](R-009-index-is-the-page-plan.md) — Where is the locked page plan recorded? — `index.md` itself — live
 - [010](R-010-two-zone-pages.md) — How does a refresh regenerate a page without destroying judgement? — `okf:derived` fences — live
-- [011](R-011-code-reference-inside-write-okf.md) — Does the code-reference layer get its own skill? — no, write-OKF siblings — live
+- [011](R-011-code-reference-inside-write-okf.md) — Does the code-reference layer get its own skill? — no, write-okf siblings — live
 - [012](R-012-one-why-register.md) — Where do settled decisions live? — this register — live
 - [013](R-013-roadmap-is-a-plan.md) — What may ROADMAP.md hold? — only what is still ahead — live
 - [014](R-014-ferry-decisions-graduate-at-moor.md) — What happens to a resolved ferry decision at moor? — it graduates here — live

@@ -4,9 +4,9 @@ status: implemented
 traces-to: user request 2026-07-30 (the split drift); B-020 §Out of scope
 sounded: 2026-07-30
 cites:
-  - skills/loop/write-OKF/split-page.md
-  - skills/loop/write-OKF/okf-layout.md
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/split-page.md
+  - skills/loop/write-okf/okf-layout.md
+  - skills/loop/write-okf/scripts/okf-check
   - skills/loop/blueprint/blueprint-format.md
   - OKF/decisions/R-022-prose-cites-carry-a-register-prefix.md
   - OKF/learnings/index.md
@@ -27,7 +27,7 @@ validated field no format declares — the defect class B-020's
 contradicting it.
 
 **The first is load-bearing today.**
-[split-page.md](../../skills/loop/write-OKF/split-page.md) §Rewiring the
+[split-page.md](../../skills/loop/write-okf/split-page.md) §Rewiring the
 index says the capped page keeps its name and becomes its subpages' index;
 `okf-check`'s `reachable()` propagates only through pages named `index.md`
 or `MAP.md`, so `learnings/<theme>.md` linked from `LEARNINGS.md` errors
@@ -77,7 +77,7 @@ repaired with code spans, which is what the rule already permits.
 and `sounded:` only, while every blueprint since B-014 but B-015 carries a
 `cites:` that B-020 makes the validator enforce. Declared as **optional**
 — B-015 is why — with the cite grammar owned by
-[okf-layout.md](../../skills/loop/write-OKF/okf-layout.md) and referenced,
+[okf-layout.md](../../skills/loop/write-okf/okf-layout.md) and referenced,
 not restated.
 
 **Nothing rendered by `render-check` changes**, and every touched file
@@ -85,11 +85,11 @@ stays under its cap.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — one new check reached from
+- `skills/loop/write-okf/scripts/okf-check` — one new check reached from
   `main()`'s per-page loop, plus the module docstring's error list.
   `reachable()` unchanged.
-- `skills/loop/write-OKF/split-page.md` — §Rewiring the index.
-- `skills/loop/write-OKF/okf-layout.md` — the tree comment on
+- `skills/loop/write-okf/split-page.md` — §Rewiring the index.
+- `skills/loop/write-okf/okf-layout.md` — the tree comment on
   `LEARNINGS.md` and its page contract.
 - `skills/loop/blueprint/blueprint-format.md` — skeleton + one Rules bullet.
 - `OKF/decisions/022-…` — one sentence, code spans only.
@@ -99,9 +99,9 @@ stays under its cap.
 ## Verify
 
 ```sh
-CHECK=skills/loop/write-OKF/scripts/okf-check
+CHECK=skills/loop/write-okf/scripts/okf-check
 "$CHECK" OKF/; echo "real exit: $?"
-skills/loop/write-OKF/scripts/render-check .
+skills/loop/write-okf/scripts/render-check .
 ls OKF/LEARNINGS.md; ls OKF/learnings/
 grep -c '^- Believed:' OKF/learnings/*.md | awk -F: '{s+=$2} END{print "entries:",s}'
 grep -n 'learnings/index.md' OKF/index.md
@@ -111,10 +111,10 @@ for f in skills README.md CLAUDE.md; do ln -s "$PWD/$f" "$tmp/$f"; done
 printf '\nA bare 017 standing in prose.\n' \
   >> "$tmp/OKF/decisions/R-012-one-why-register.md"
 "$CHECK" "$tmp/OKF" | grep -c 'unprefixed register cite'
-rm -rf "$tmp" skills/loop/write-OKF/scripts/__pycache__
-grep -n 'index.md' skills/loop/write-OKF/split-page.md | head -5
+rm -rf "$tmp" skills/loop/write-okf/scripts/__pycache__
+grep -n 'index.md' skills/loop/write-okf/split-page.md | head -5
 grep -n 'cites' skills/loop/blueprint/blueprint-format.md
-wc -l skills/loop/write-OKF/split-page.md skills/loop/write-OKF/okf-layout.md \
+wc -l skills/loop/write-okf/split-page.md skills/loop/write-okf/okf-layout.md \
   skills/loop/blueprint/blueprint-format.md OKF/learnings/*.md OKF/index.md
 skills/productivity/conjure-a-skill/scripts/skill-check skills/ | tail -1
 ```

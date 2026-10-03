@@ -106,7 +106,7 @@ and a bare `OKF/` so the spine below has something to scaffold or refresh.
   <sub>Generated with GPT-5.6 Luna</sub>
 </p>
 
-- **write-OKF** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
+- **write-okf** — scaffold or refresh the OKF wiki; wires `AGENTS.md` so
   every agent reads `OKF/index.md` before code.
 - **chart** — plan a project or revise its plan (`OKF/ROADMAP.md`);
   greenfield and revision modes (replaces plan-project + update-project).
@@ -222,14 +222,14 @@ script — read the relevant SKILL.md as you enter each step.
 
 ### Project lifecycle
 - **New repo (octobot never ran here)** — `/init-octobot` (bootstrap
-  `AGENTS.md`, bare `OKF/`, README stub) → `/write-OKF` only if
+  `AGENTS.md`, bare `OKF/`, README stub) → `/write-okf` only if
   `init-octobot` found a `LEGACY` file (migrates `CONTEXT.md` /
   `docs/Roadmap.md` / `docs/adr` into `OKF/`) → `/chart` (Socratic
   kickoff → `OKF/ROADMAP.md`) → `/build-py-project` |
   `/build-r-package` | `/build-r-analysis` (scaffold) → `/write-readme`
   (replaces the stub with a real README) → feature loops below →
   `/chart` (revision mode as you learn).
-- **Greenfield, octobot already present** — `/write-OKF` (knowledge
+- **Greenfield, octobot already present** — `/write-okf` (knowledge
   scaffold) → `/chart` (Socratic kickoff → `OKF/ROADMAP.md`)
   → `/build-py-project` | `/build-r-package` | `/build-r-analysis` (scaffold)
   → feature loops below → `/chart` (revision mode as you learn).

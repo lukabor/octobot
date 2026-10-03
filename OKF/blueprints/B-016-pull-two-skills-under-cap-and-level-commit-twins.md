@@ -117,7 +117,7 @@ printf 'charon-mechanics: %s stale-backrefs: %s\n' \
   "$(grep -cE 'workspace add|isolation: worktree' skills/loop/call-charon/SKILL.md)" \
   "$(grep -cE 'SKILL\.md §5|Workflow.*step 5' \
      skills/productivity/commit-atomic-jj/anti-patterns.md)"
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 ```
 
 Expect all three line counts ≤ 110, then `twins: parallel`,

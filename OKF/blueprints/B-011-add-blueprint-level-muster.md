@@ -75,15 +75,15 @@ cannot see live behaviour (decision
   Close-the-loop, guarded by `muster: true`; `review-base` recorded at Frame.
 - `skills/loop/blueprint/blueprint-format.md` — documents `muster`,
   `review-base`, and the `tally` block.
-- `skills/loop/write-OKF/scripts/okf-check` — the tally-required-when-implemented
+- `skills/loop/write-okf/scripts/okf-check` — the tally-required-when-implemented
   rule, via a `tally:` block parser modelled on `pin()`.
-- `skills/loop/write-OKF/okf-layout.md` — the new fields in the blueprint
+- `skills/loop/write-okf/okf-layout.md` — the new fields in the blueprint
   contract.
 
 ## Verify
 
 ```sh
-cd skills/loop/write-OKF && d=$(mktemp -d) && mkdir -p "$d/blueprints" &&
+cd skills/loop/write-okf && d=$(mktemp -d) && mkdir -p "$d/blueprints" &&
 printf -- '---\nokf_version: "0.1"\n---\n- [a](blueprints/a.md)\n- [b](blueprints/b.md)\n' > "$d/index.md" &&
 base='---\ntype: Blueprint\nstatus: implemented\ntraces-to: t\nmuster: true\n'
 printf -- "${base}---\n# a\n" > "$d/blueprints/a.md"                       # muster+implemented, NO tally

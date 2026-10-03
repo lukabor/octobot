@@ -13,7 +13,7 @@ be. Ask "/steer <situation>" or just read the table.
 ## The loop (the metaharness spine)
 
 ```
-substrate (rare)  write-OKF — scaffold, or refresh when stale
+substrate (rare)  write-okf — scaffold, or refresh when stale
                       ↓
 per request       chart — a phase only for an arc over >1 blueprint
                       ↓
@@ -34,7 +34,7 @@ rig = bdd → 4-axis review → Verify → commit-atomic-jj → close (OKF refre
 
 | Situation | Skill |
 |---|---|
-| project has no `OKF/` knowledge folder, or wiki is stale | `/write-OKF` |
+| project has no `OKF/` knowledge folder, or wiki is stale | `/write-okf` |
 | starting a project / roadmap needs creating or revising | `/chart` |
 | discussed work needs a justified, verifiable blueprint | `/blueprint` |
 | a blueprint is about to lock on unverified knowledge | `/sound` |

@@ -67,9 +67,9 @@ rule. Done-criteria require running it and pasting output.
 
 - `skills/loop/moor/SKILL.md` — the graduation and collapse steps, the
   two narrowed guardrails, the `okf-check` gate in done-criteria.
-- `skills/loop/write-OKF/scripts/okf-check` — the ferry shape rule. CLI
+- `skills/loop/write-okf/scripts/okf-check` — the ferry shape rule. CLI
   unchanged: `okf-check <okf-dir>`, findings on stdout, exit 0/1.
-- `skills/loop/write-OKF/okf-layout.md` — `ferries/` contract gains the
+- `skills/loop/write-okf/okf-layout.md` — `ferries/` contract gains the
   moored shape, `sealed:`, and the refresh DRIFT rule.
 - `OKF/index.md` — the two ferry line shapes.
 - `OKF/ROADMAP.md` phase 7 — both halves tick as one net-shedding line.
@@ -86,10 +86,10 @@ F=$SCRATCH/fixture-okf \
   && grep -q '^sealed:' $F/ferries/fx-topic.md \
   && ls $F/decisions/[0-9][0-9][0-9]-*.md \
   && (cd $F && jj show "$(sed -n 's/.*change: *//p' ferries/fx-topic.md)" >/dev/null) \
-  && skills/loop/write-OKF/scripts/okf-check $F \
-  && mkdir $F/ferries/fx-topic && ! skills/loop/write-OKF/scripts/okf-check $F \
+  && skills/loop/write-okf/scripts/okf-check $F \
+  && mkdir $F/ferries/fx-topic && ! skills/loop/write-okf/scripts/okf-check $F \
   && rmdir $F/ferries/fx-topic \
-  && skills/loop/write-OKF/scripts/okf-check OKF/ \
+  && skills/loop/write-okf/scripts/okf-check OKF/ \
   && test "$(wc -l < OKF/ROADMAP.md)" -le 110 \
   && test "$(wc -l < skills/loop/moor/SKILL.md)" -le 110 \
   && echo PASS

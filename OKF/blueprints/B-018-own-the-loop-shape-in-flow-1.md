@@ -28,7 +28,7 @@ flat arrow string cannot state cadence. Three end at `commit-atomic-jj`,
 three continue to `moor` — what hand-copying produces, not a decision.
 
 The cost is not cosmetic. The string asserts a straight line; four cited
-facts contradict it. `write-OKF` fires on scaffold or staleness, not per
+facts contradict it. `write-okf` fires on scaffold or staleness, not per
 request. `ferry` is for work more than one agent session can hold, so it
 *branches* off blueprint rather than following it. `call-charon` is the
 multi-blueprint form of weave, not a tier above it. `moor` closes only a
@@ -45,7 +45,7 @@ fixes an ordering is what let six sites drift.
 inside the fence:
 
 ```
-substrate (rare)  write-OKF — scaffold, or refresh when stale
+substrate (rare)  write-okf — scaffold, or refresh when stale
                       ↓
 per request       architect — a phase only for an arc over >1 blueprint
                       ↓
@@ -121,7 +121,7 @@ done
 grep -rln 'architect → blueprint' --include='*.md' --exclude='018-*' .
 echo "strays exit: $?"
 grep -rn 'zero context load\|loop diagram in' --include='*.md' --exclude='018-*' .
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 skills/productivity/conjure-a-skill/scripts/skill-check skills/ | tail -1
 wc -l OKF/ARCHITECTURE.md OKF/CONTEXT.md skills/loop/steer/SKILL.md
 ```

@@ -11,8 +11,8 @@ cites:
   - OKF/ARCHITECTURE.md:substrate (rare)
   - README.md:### loop — the metaharness spine
   - skills/loop/steer/SKILL.md:## The loop
-  - skills/loop/write-OKF/scripts/okf-check:a check that cannot fail
-  - skills/loop/write-OKF/SKILL.md:run and output pasted
+  - skills/loop/write-okf/scripts/okf-check:a check that cannot fail
+  - skills/loop/write-okf/SKILL.md:run and output pasted
   - skills/productivity/conjure-a-skill/scripts/skill-check:usage: skill-check
   - OKF/learnings/index.md:Append-only
 ---
@@ -33,7 +33,7 @@ range typed into a blueprint, which expires with it.
 empty string on a file missing the block; both copies then compare
 empty-to-empty and print `match`. Only the separate `owner: 17 lines`
 expectation catches it —
-[`okf-check`](../../skills/loop/write-OKF/scripts/okf-check)'s own docstring
+[`okf-check`](../../skills/loop/write-okf/scripts/okf-check)'s own docstring
 names the failure: *a check that cannot fail is not a check*. 018 sits at 149
 of its 150-line cap, so the fix lands here.
 
@@ -47,12 +47,12 @@ validator under it.
 
 ## Contract
 
-**A script at `skills/loop/write-OKF/scripts/render-check`, taking a repo
+**A script at `skills/loop/write-okf/scripts/render-check`, taking a repo
 root: `render-check <repo-root>`.** It mirrors its two siblings — same argv
 shape, same `WARN `/`ERROR ` prefixes, same closing `N error(s), M
 warning(s)` tally, same exit codes (1 on any error, 0 otherwise, 2 on usage),
-same `#!/usr/bin/env python3` shebang. Under `write-OKF` because the owner
-page is a write-OKF page.
+same `#!/usr/bin/env python3` shebang. Under `write-okf` because the owner
+page is a write-okf page.
 
 **The owner is a fixed path; the copies are discovered.** `OKF/ARCHITECTURE.md`
 is the sole owner per 018, so the script names it. Copies come from walking
@@ -76,7 +76,7 @@ by [blueprint-format](../../skills/loop/blueprint/blueprint-format.md), so a
 rule that could turn one red would be unfixable by design, and blueprints
 quote retired forms as record. 018's `--exclude='018-*'` becomes a rule.
 
-**One invocation obligation, one line for one line.** `write-OKF/SKILL.md:83`
+**One invocation obligation, one line for one line.** `write-okf/SKILL.md:83`
 obliges `okf-check` to be run and its output pasted; that line grows to name
 both scripts. The file sits at exactly 110 — the cap — so it must not grow.
 
@@ -93,16 +93,16 @@ lint changes no rendered content.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/render-check` — new; the CLI entry point
+- `skills/loop/write-okf/scripts/render-check` — new; the CLI entry point
   (`render-check <repo-root>`).
-- `skills/loop/write-OKF/SKILL.md` — the §Output done-criteria line at :83.
+- `skills/loop/write-okf/SKILL.md` — the §Output done-criteria line at :83.
 - `OKF/LEARNINGS.md` — one appended entry.
 - `OKF/ROADMAP.md` — phase 11's entry, ticked and pruned.
 
 ## Verify
 
 ```sh
-LINT=skills/loop/write-OKF/scripts/render-check
+LINT=skills/loop/write-okf/scripts/render-check
 "$LINT" .; echo "exit: $?"
 tmp=$(mktemp -d); mkdir -p "$tmp/OKF" "$tmp/skills/loop/steer"
 cp OKF/ARCHITECTURE.md "$tmp/OKF/"; cp README.md "$tmp/"
@@ -115,10 +115,10 @@ sed -i 's/^  blueprint → sound/  blueprint →  sound/' "$tmp/README.md"
 sed -i '/^substrate (rare)/,/^weave = bdd/d' "$tmp/OKF/ARCHITECTURE.md"
 "$LINT" "$tmp"; echo "no-owner exit: $?"
 rm -rf "$tmp"
-grep -c 'render-check' skills/loop/write-OKF/SKILL.md
-wc -l skills/loop/write-OKF/SKILL.md OKF/LEARNINGS.md OKF/ROADMAP.md
+grep -c 'render-check' skills/loop/write-okf/SKILL.md
+wc -l skills/loop/write-okf/SKILL.md OKF/LEARNINGS.md OKF/ROADMAP.md
 grep -n '^11\.' OKF/ROADMAP.md
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 skills/productivity/conjure-a-skill/scripts/skill-check skills/ | tail -1
 ```
 
@@ -126,7 +126,7 @@ Expect `0 error(s), 0 warning(s)` / exit 0 over the real repo and again over
 the pristine copy, then each leg firing alone at exit 1: `stray.md` naming
 the retired form, `README.md` diverging on one added space, and the missing
 owner block reported as an error — **not** as a `match`, the defect this
-blueprint exists to remove. Then `1`; `110` for `write-OKF/SKILL.md` with
+blueprint exists to remove. Then `1`; `110` for `write-okf/SKILL.md` with
 both OKF pages at or under 110; a phase 11 line carrying `✅`; and
 `0 error(s), 0 warning(s)` / `0 error(s), 9 warning(s)` from the siblings.
 

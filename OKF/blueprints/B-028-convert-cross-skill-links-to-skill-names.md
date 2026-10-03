@@ -6,7 +6,7 @@ sounded: 2026-09-23
 cites:
   - OKF/ROADMAP.md
   - OKF/decisions/R-023-cross-skill-references-are-unchecked-skill-names.md
-  - skills/loop/write-OKF/scripts/link-check
+  - skills/loop/write-okf/scripts/link-check
   - skills/productivity/conjure-a-skill/scripts/skill-check
   - README.md
 muster: true
@@ -94,7 +94,7 @@ grep -rEn '\]\(\.\./' skills/ | grep -vE '\.\./\.\./\.\./' \
   && echo "FAIL leftover cross-skill links" || echo "OK links converted"
 
 # 2. link-check still passes — OKF escapes + sibling links still resolve
-skills/loop/write-OKF/scripts/link-check . && echo "OK link-check" || echo "FAIL link-check"
+skills/loop/write-okf/scripts/link-check . && echo "OK link-check" || echo "FAIL link-check"
 
 # 3. new lint passes clean, and catches a planted typo
 skills/productivity/conjure-a-skill/scripts/skill-ref-check skills/ \
@@ -118,8 +118,8 @@ for d in ~/.claude/skills ~/.agents/skills; do
 done
 
 # 5. tree still green
-skills/loop/write-OKF/scripts/render-check .
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/render-check .
+skills/loop/write-okf/scripts/okf-check OKF/
 skills/productivity/conjure-a-skill/scripts/skill-check skills/
 ```
 

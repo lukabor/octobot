@@ -81,7 +81,7 @@ touched. `blueprint`, `blueprint-format.md`, `okf-check` and the
 ## Verify
 
 ```sh
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 awk 'END{print NR}' skills/loop/sound/SKILL.md
 grep -rni 'live code' README.md OKF/CONTEXT.md skills/loop/sound/SKILL.md
 ```

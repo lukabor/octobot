@@ -22,7 +22,7 @@ from pathlib import Path
 from _pages import pages
 
 OWNER = "OKF/ARCHITECTURE.md"
-SENTINEL = "substrate (rare)  write-OKF — scaffold, or refresh when stale"
+SENTINEL = "substrate (rare)  write-okf — scaffold, or refresh when stale"
 RETIRED = "chart → blueprint"
 
 

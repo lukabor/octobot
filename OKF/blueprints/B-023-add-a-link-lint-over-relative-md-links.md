@@ -7,12 +7,12 @@ cites:
   - OKF/ROADMAP.md
   - OKF/ARCHITECTURE.md:Cross-links
   - OKF/blueprints/B-002-extract-why-register.md:ADR-FORMAT.md
-  - skills/loop/write-OKF/scripts/_pages.py:dot-directories and blueprints out
+  - skills/loop/write-okf/scripts/_pages.py:dot-directories and blueprints out
   - OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md:Why a third script
   - OKF/blueprints/B-017-add-a-line-cap-lint-over-skills.md:Why a sibling script
   - OKF/decisions/R-016-one-okf-check-validator.md:One `okf-check` validator
   - skills/productivity/conjure-a-skill/scripts/skill-check:usage: skill-check
-  - skills/loop/write-OKF/SKILL.md:run and output pasted
+  - skills/loop/write-okf/SKILL.md:run and output pasted
 ---
 
 # 023 — add a link lint over relative markdown links
@@ -62,7 +62,7 @@ a second validator under it.
 
 ## Contract
 
-**A script at `skills/loop/write-OKF/scripts/link-check`, taking a repo root:
+**A script at `skills/loop/write-okf/scripts/link-check`, taking a repo root:
 `link-check <repo-root>`.** It mirrors its three siblings — same argv shape,
 `WARN `/`ERROR ` prefixes, closing `N error(s), M warning(s)` tally, exit
 codes (1 on any error, 0 otherwise, 2 on usage), and `python3` shebang.
@@ -87,10 +87,10 @@ unresolvable link: ../architect/SKILL.md`. Errors only; an unresolvable link
 is always a defect, so there is no warning band, though the tally still prints
 both counts — `render-check` hardcodes `0 warning(s)` for the same reason.
 
-**Where it lives, and registration.** Under `write-OKF/scripts/` beside
+**Where it lives, and registration.** Under `write-okf/scripts/` beside
 `okf-check` and `render-check`, per
 [019](B-019-add-a-render-lint-over-the-loop-shape.md)'s placement rule.
-`write-OKF/SKILL.md`'s *run and output pasted* line grows to name it.
+`write-okf/SKILL.md`'s *run and output pasted* line grows to name it.
 
 **The two repairs.** `architect/SKILL.md:55` and `architect/revise.md:16` stop
 being links: `[NNN](…)` becomes `` `NNN` ``, `[NNN](blueprints/…)` becomes
@@ -98,17 +98,17 @@ being links: `[NNN](…)` becomes `` `NNN` ``, `[NNN](blueprints/…)` becomes
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/link-check` — the CLI (argv arity, exit codes
+- `skills/loop/write-okf/scripts/link-check` — the CLI (argv arity, exit codes
   0/1/2, `ERROR ` format, tally) and target classification (skipped: external,
   fragment-only, fenced, under `OKF/blueprints/`).
-- `skills/loop/write-OKF/SKILL.md` — the run-and-paste obligation.
+- `skills/loop/write-okf/SKILL.md` — the run-and-paste obligation.
 - `skills/loop/architect/SKILL.md`, `skills/loop/architect/revise.md` — the
   two ellipsis placeholders, as prose not links.
 
 ## Verify
 
 ```sh
-cd <repo-root>; LINT=skills/loop/write-OKF/scripts/link-check
+cd <repo-root>; LINT=skills/loop/write-okf/scripts/link-check
 B=skills/loop/moor/SKILL.md; L='[x](../nonexistent-abc/SKILL.md)'
 F=$(printf '\140\140\140')   # a fence, without closing this one
 

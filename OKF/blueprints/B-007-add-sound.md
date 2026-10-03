@@ -25,7 +25,7 @@ re-founded on the OKF.
 **The spine.** Three steps, in order, every run:
 
 1. **OKF** — read the pages the question touches. No `./OKF/` → say so
-   in one line, name `/write-OKF`, stop. Nothing else runs — which is
+   in one line, name `/write-okf`, stop. Nothing else runs — which is
    also what keeps a wrong self-fire costing two lines, not a recon.
 2. **nostos** — query the nostos MCP server when one is configured, via
    its `find` / `provenance_of` tools. Presence comes from the agent's
@@ -68,7 +68,7 @@ correct there) nor at `implemented` (noise, and it would retro-flag
   4; the precondition in *Status discipline* (`:43-47`).
 - `skills/loop/blueprint/blueprint-format.md` — `sounded:` in the
   frontmatter template.
-- `skills/loop/write-OKF/scripts/okf-check` — the gate, above the
+- `skills/loop/write-okf/scripts/okf-check` — the gate, above the
   blueprint escape at `:213`.
 - `skills/loop/steer/SKILL.md` — one row in the loop table.
 - `README.md:74` — "All loop skills are user-invoked" is now false.
@@ -83,18 +83,18 @@ f="$tmp/OKF/blueprints/B-006-rescan-the-page-plan-on-refresh.md"
 for s in draft locked implemented; do
   sed -i "s/^status: .*/status: $s/" "$f"
   printf '%s: %s\n' "$s" \
-    "$(skills/loop/write-OKF/scripts/okf-check "$tmp/OKF" \
+    "$(skills/loop/write-okf/scripts/okf-check "$tmp/OKF" \
        | grep -c 'locked without sounded')"
 done
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 ```
 
 Expect `draft: 0` `locked: 1` `implemented: 0`, then `0 error(s)` live.
 
 Four session checks the script cannot make, run once each:
 
-1. A repo with no `OKF/` — sound stops and names `/write-OKF`.
-   ✅ 2026-07-22 (no-OKF fixture — one line naming `/write-OKF` after a
+1. A repo with no `OKF/` — sound stops and names `/write-okf`.
+   ✅ 2026-07-22 (no-OKF fixture — one line naming `/write-okf` after a
    single directory listing, nothing else run)
 2. A repo with no nostos MCP — one line naming `nostos install`, then
    the run continues.
@@ -112,5 +112,5 @@ Four session checks the script cannot make, run once each:
 - Writing on a self-fire, in any form, however small.
 - Subagents, background or otherwise.
 - Web research past the no-internal-owner gap — upstream `research`.
-- Retro-sounding 001–006, and any change to `write-OKF`.
+- Retro-sounding 001–006, and any change to `write-okf`.
 - Wiring nostos into octobot; the live-nostos leg is tested elsewhere.

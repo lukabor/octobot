@@ -4,7 +4,7 @@ purpose: Fix where a project's knowledge substrate lives and what shape it takes
 answers:
   - "Where does a project's OKF live?"
 cites:
-  - skills/loop/write-OKF/okf-layout.md
+  - skills/loop/write-okf/okf-layout.md
 status: live
 reversible: it's files
 ---

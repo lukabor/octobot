@@ -7,11 +7,11 @@ cites:
   - OKF/decisions/R-024-register-filenames-carry-their-prefix.md
   - OKF/decisions/R-022-prose-cites-carry-a-register-prefix.md
   - OKF/ROADMAP.md
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/scripts/okf-check
   - skills/loop/blueprint/SKILL.md
   - skills/loop/blueprint/blueprint-format.md
   - skills/engineering/model-domain/decision-format.md
-  - skills/loop/write-OKF/scripts/link-check
+  - skills/loop/write-okf/scripts/link-check
 muster: true
 review-base: tklwumrx
 tally:
@@ -69,7 +69,7 @@ blueprint is that second, later piece of
 - `OKF/decisions/*.md`, `OKF/blueprints/*.md` — renamed.
 - `OKF/index.md`, `OKF/decisions/index.md`, `OKF/blueprints/index.md`,
   `OKF/ferries/index.md`, `OKF/learnings/*.md` — link targets updated.
-- `skills/loop/write-OKF/scripts/okf-check` — `register_numbers()`.
+- `skills/loop/write-okf/scripts/okf-check` — `register_numbers()`.
 - `skills/loop/blueprint/SKILL.md` — numbering step.
 - `skills/loop/blueprint/blueprint-format.md`,
   `skills/engineering/model-domain/decision-format.md`,
@@ -77,9 +77,9 @@ blueprint is that second, later piece of
 
 ## Verify
 ```
-skills/loop/write-OKF/scripts/render-check .
-skills/loop/write-OKF/scripts/okf-check OKF/
-skills/loop/write-OKF/scripts/link-check .
+skills/loop/write-okf/scripts/render-check .
+skills/loop/write-okf/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/link-check .
 skills/productivity/conjure-a-skill/scripts/skill-ref-check skills/
 ls OKF/decisions/ | grep -c '^R-[0-9]\{3\}-'   # 24
 ls OKF/blueprints/ | grep -c '^B-[0-9]\{3\}-'  # 30

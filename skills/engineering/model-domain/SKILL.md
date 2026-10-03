@@ -45,7 +45,7 @@ habit any skill can do; that's not this skill.
 ## File layout the skill expects
 
 ```
-OKF/                       # open-knowledge-format wiki (see write-OKF)
+OKF/                       # open-knowledge-format wiki (see write-okf)
 ├── CONTEXT.md             # single-context default — THE canonical glossary
 ├── context/               # multi-context mode: one <subroot>.md per
 │   └── <subroot>.md       #   bounded context, indexed from OKF/index.md
@@ -56,7 +56,7 @@ OKF/                       # open-knowledge-format wiki (see write-OKF)
 
 Create files **lazily** — only when there's a real first thing to write.
 No `OKF/CONTEXT.md` yet? Create it when the first term is resolved (run
-`/write-OKF` scaffold if `OKF/` itself is
+`/write-okf` scaffold if `OKF/` itself is
 missing). No `OKF/decisions/`? Create it when the first decision is
 settled. Confirm the *first* write to any new file in the repo before
 proceeding. A legacy root `CONTEXT.md` or `docs/adr/` → offer to migrate

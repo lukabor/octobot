@@ -51,7 +51,7 @@ superpowers' subagent-driven-development, jj-native.
 7. **Close the loop** — flip blueprint status to `implemented`; update its
    index.md line; tick the roadmap item via
    `/chart` revise mode; wiki-worthy learnings
-   → `OKF/LEARNINGS.md` (`/write-OKF` refresh if
+   → `OKF/LEARNINGS.md` (`/write-okf` refresh if
    pages went stale).
 
 ## Subagent dispatch — the handoff gate

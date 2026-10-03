@@ -5,7 +5,7 @@ traces-to: user request 2026-07-30
 sounded: 2026-07-30
 cites:
   - skills/productivity/conjure-a-skill/SKILL.md:topic-named siblings
-  - skills/loop/write-OKF/scripts/okf-check:cite_resolves
+  - skills/loop/write-okf/scripts/okf-check:cite_resolves
 ---
 
 # 014 — unify skill sibling-file naming on lowercase-kebab topic names
@@ -89,7 +89,7 @@ repository, not a local reference, and is not rewritten.
   progressive-disclosure bullet.
 - The 8 renamed files and their 33 referring sites across 21 files.
 - `OKF/` frontmatter `cites:` — 4 pages, read by
-  `skills/loop/write-OKF/scripts/okf-check`.
+  `skills/loop/write-okf/scripts/okf-check`.
 
 ## Verify
 
@@ -98,7 +98,7 @@ old='REFERENCE\.md|GLOSSARY\.md|PRINCIPLES\.md|CONTEXT-FORMAT\.md|DECISION-FORMA
 stale=$(grep -rnE "$old" --include='*.md' skills README.md CLAUDE.md OKF \
   | grep -vE '^OKF/(blueprints/(001|003|013|014)|index\.md)' | grep -v 'https\?://')
 upper=$(find skills -type f -name '*.md' ! -name 'SKILL.md' | grep -E '/[A-Z][A-Z0-9-]*\.md$')
-[ -z "$stale" ] && [ -z "$upper" ] && python3 skills/loop/write-OKF/scripts/okf-check OKF
+[ -z "$stale" ] && [ -z "$upper" ] && python3 skills/loop/write-okf/scripts/okf-check OKF
 ```
 
 Green when no old name survives outside the four exempted OKF files and the
@@ -126,7 +126,7 @@ non-zero baseline and cannot express pass/fail.
   renaming either one for *meaning* is a vocabulary decision needing
   model-domain's warrant test, and burying it in a 33-site mechanical diff
   would defeat `review-blueprint`'s scope check. F9 inherits the coincidence.
-- `write-OKF/` — the folder's uppercase `OKF` is a skill name, not a sibling
+- `write-okf/` — the folder's uppercase `OKF` is a skill name, not a sibling
   file. Untouched.
 - `*.template.md` files — already lowercase, and their `.template.` infix is
   deliberate.

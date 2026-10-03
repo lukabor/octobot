@@ -2,7 +2,7 @@
 
 Insert verbatim into the target `AGENTS.md`, after the Knowledge and
 Behavioral guardrails sections from
-[write-OKF's `agents-md-hook.md`](../../loop/write-OKF/agents-md-hook.md).
+[write-okf's `agents-md-hook.md`](../../loop/write-okf/agents-md-hook.md).
 Each bullet below carries only what that hook block does **not** already
 say — CLAUDE.md §1–4 in full still holds every claim; this is the
 union minus the overlap, not a restatement, so nothing is lost even for

@@ -10,7 +10,7 @@ cites:
   - skills/loop/rig/SKILL.md
   - skills/loop/ferry/SKILL.md
   - skills/loop/steer/SKILL.md
-  - skills/loop/write-OKF/scripts/render-check
+  - skills/loop/write-okf/scripts/render-check
   - OKF/blueprints/B-022-validate-every-cite-at-every-status.md
   - OKF/learnings/loop.md
   - OKF/decisions/R-019-recon-may-self-fire.md
@@ -102,14 +102,14 @@ gap. Ferry's `disable-model-invocation` stays `true`.
   terminal, in §Shared rules and §See also.
 - `OKF/ARCHITECTURE.md` flow 1 — the canonical render, plus its byte-copy
   sites in `README.md` and `steer/SKILL.md`.
-- `skills/loop/write-OKF/scripts/render-check` — the `RETIRED` constant.
+- `skills/loop/write-okf/scripts/render-check` — the `RETIRED` constant.
 - Frontmatter `cites:` on `OKF/decisions/002`, `005`, `learnings/loop.md`,
   `OKF/blueprints/018`, `020`, `022`, `024`.
 
 ## Verify
 
 ```sh
-cd <repo-root>; S=skills/loop/write-OKF/scripts; K=~/.claude/skills
+cd <repo-root>; S=skills/loop/write-okf/scripts; K=~/.claude/skills
 $S/link-check . ; $S/render-check . ; $S/okf-check OKF/
 skills/productivity/conjure-a-skill/scripts/skill-check skills/ | tail -1
 grep -rniw 'architect\|weave' skills/ README.md AGENTS.md && echo "FAIL names" || echo "OK names"

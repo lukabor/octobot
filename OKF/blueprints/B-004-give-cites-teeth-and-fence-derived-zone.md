@@ -62,14 +62,14 @@ split nobody wrote down is one the next agent re-litigates.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-check` — `cite_resolves` gains the
+- `skills/loop/write-okf/scripts/okf-check` — `cite_resolves` gains the
   symbol case; a fence-shape check joins it. CLI unchanged:
   `okf-check <okf-dir>`, findings on stdout, exit 0/1.
-- `skills/loop/write-OKF/page-warrant.md` — **new**. The warrant contract
+- `skills/loop/write-okf/page-warrant.md` — **new**. The warrant contract
   and the `sealed:` pin block, moved verbatim.
-- `skills/loop/write-OKF/okf-layout.md` — the cite grammar, the derived
+- `skills/loop/write-okf/okf-layout.md` — the cite grammar, the derived
   fence contract, and a pointer replacing the two moved blocks.
-- `skills/loop/write-OKF/SKILL.md` — refresh step 4 (the cite grammar),
+- `skills/loop/write-okf/SKILL.md` — refresh step 4 (the cite grammar),
   step 6 (narrowed to pins), and the derived-zone regeneration rule.
 - `OKF/ROADMAP.md` phase 6 — the corrected Verify clause and the split
   line. One hunk; the phase stays under 110.
@@ -83,16 +83,16 @@ citing `src/conf.py:parse_config` from a fenced `ARCHITECTURE.md`, and a
 
 ```sh
 S=$SCRATCH/fx-cites && Z='/okf:derived begin/,/okf:derived end/d' \
-  && test ! -d $S/.jj && skills/loop/write-OKF/scripts/okf-check $S/OKF \
+  && test ! -d $S/.jj && skills/loop/write-okf/scripts/okf-check $S/OKF \
   && sed -i 's/def parse_config/def load_config/' $S/src/conf.py \
-  && ! skills/loop/write-OKF/scripts/okf-check $S/OKF \
+  && ! skills/loop/write-okf/scripts/okf-check $S/OKF \
   && diff <(sed "$Z" $S/OKF/ARCHITECTURE.md) <(sed "$Z" $S/before/ARCHITECTURE.md) \
   && printf '<!-- okf:derived begin -->\n' >> $S/OKF/SUMMARY.md \
-  && ! skills/loop/write-OKF/scripts/okf-check $S/OKF \
-  && skills/loop/write-OKF/scripts/okf-check OKF/ \
+  && ! skills/loop/write-okf/scripts/okf-check $S/OKF \
+  && skills/loop/write-okf/scripts/okf-check OKF/ \
   && grep -rL "^purpose:" OKF/*.md OKF/decisions/[0-9]*.md | grep -qx OKF/index.md \
-  && for f in skills/loop/write-OKF/okf-layout.md \
-              skills/loop/write-OKF/page-warrant.md OKF/ROADMAP.md; do
+  && for f in skills/loop/write-okf/okf-layout.md \
+              skills/loop/write-okf/page-warrant.md OKF/ROADMAP.md; do
        test "$(wc -l < $f)" -le 110 || exit 1; done \
   && echo PASS
 ```

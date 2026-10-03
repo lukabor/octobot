@@ -4,8 +4,8 @@ purpose: Keep what the OKF format's page contracts, warrants and prior art turne
 answers:
   - "What did we get wrong about the OKF format itself?"
 cites:
-  - skills/loop/write-OKF/okf-layout.md
-  - skills/loop/write-OKF/page-warrant.md
+  - skills/loop/write-okf/okf-layout.md
+  - skills/loop/write-okf/page-warrant.md
 status: live
 ---
 

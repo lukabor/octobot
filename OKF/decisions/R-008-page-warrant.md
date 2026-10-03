@@ -5,7 +5,7 @@ answers:
   - "What justifies a page's existence in the OKF?"
 cites:
   - OKF/CONTEXT.md
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/scripts/okf-check
 status: live
 reversible: OKF v0.1 permits producer-defined fields after type
 ---

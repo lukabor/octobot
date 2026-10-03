@@ -14,7 +14,7 @@ cites:
   - OKF/blueprints/B-011-add-blueprint-level-muster.md
   - skills/loop/rig/SKILL.md:Muster (only if
   - skills/loop/blueprint/blueprint-format.md:opts into the human review gate
-  - skills/loop/write-OKF/scripts/okf-check:muster is opt-in
+  - skills/loop/write-okf/scripts/okf-check:muster is opt-in
 ---
 
 # 025 — rule muster on every blueprint
@@ -81,7 +81,7 @@ grep -q 'muster: false' skills/loop/blueprint/SKILL.md && echo "OK step" || echo
 grep -qx 'muster: true' OKF/blueprints/B-025-rule-muster-on-every-blueprint.md &&
   echo "OK self" || echo "FAIL self"
 skills/productivity/conjure-a-skill/scripts/skill-check skills/ | tail -1
-skills/loop/write-OKF/scripts/link-check . ; skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/link-check . ; skills/loop/write-okf/scripts/okf-check OKF/
 ```
 
 `skill-check` prints `0 error(s), 9 warning(s)`; `link-check` and `okf-check`

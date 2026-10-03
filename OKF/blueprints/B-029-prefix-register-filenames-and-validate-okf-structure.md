@@ -11,7 +11,7 @@ cites:
   - OKF/decisions/R-009-index-is-the-page-plan.md
   - OKF/decisions/R-015-moor-collapses-ferry-directory.md
   - OKF/decisions/R-020-every-page-has-a-growth-path.md
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/scripts/okf-check
   - OKF/index.md
   - OKF/decisions/index.md
   - OKF/learnings/index.md
@@ -73,7 +73,7 @@ collapsed page), mirroring the current inline `## Ferries` section this
 replaces.
 
 ## Seams touched
-- `skills/loop/write-OKF/scripts/okf-check` — two new check functions,
+- `skills/loop/write-okf/scripts/okf-check` — two new check functions,
   parallel in shape to the existing `reachable()` check.
 - `OKF/blueprints/index.md` — new file.
 - `OKF/ferries/index.md` — new file.
@@ -82,9 +82,9 @@ replaces.
 
 ## Verify
 ```
-skills/loop/write-OKF/scripts/render-check .
-skills/loop/write-OKF/scripts/okf-check OKF/
-skills/loop/write-OKF/scripts/link-check .
+skills/loop/write-okf/scripts/render-check .
+skills/loop/write-okf/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/link-check .
 skills/productivity/conjure-a-skill/scripts/skill-ref-check skills/
 ```
 All four `0 error(s)`, and `okf-check` errors (verified by a temporary

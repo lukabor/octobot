@@ -4,8 +4,8 @@ status: implemented
 traces-to: user request 2026-07-31
 sounded: 2026-07-31
 cites:
-  - skills/loop/write-OKF/scripts/link-check
-  - skills/loop/write-OKF/scripts/render-check
+  - skills/loop/write-okf/scripts/link-check
+  - skills/loop/write-okf/scripts/render-check
   - OKF/blueprints/B-023-add-a-link-lint-over-relative-md-links.md:What it walks
   - OKF/blueprints/B-019-add-a-render-lint-over-the-loop-shape.md:dot-directories skipped
   - OKF/blueprints/B-024-rename-the-spine-and-give-chart-its-ferry-edge.md:that Contract is sealed
@@ -48,7 +48,7 @@ mechanised three times — [017](B-017-add-a-line-cap-lint-over-skills.md),
 
 ## Contract
 
-**One shared walk, at `skills/loop/write-OKF/scripts/_pages.py`.** Both lints
+**One shared walk, at `skills/loop/write-okf/scripts/_pages.py`.** Both lints
 import it and neither keeps a private `pages()`. A sibling module is importable
 because `python3 <script>` puts the script's directory on `sys.path`; the
 scripts keep their extensionless names and shebangs.
@@ -85,11 +85,11 @@ true, not whether the blueprint's subject moved.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/_pages.py` — **new**: `pages(root)`, its git
+- `skills/loop/write-okf/scripts/_pages.py` — **new**: `pages(root)`, its git
   call, and the fallback.
-- `skills/loop/write-OKF/scripts/link-check` — imports `pages`, drops its own
+- `skills/loop/write-okf/scripts/link-check` — imports `pages`, drops its own
   and its now-unused `SKIP`; docstring gains the walk's rule.
-- `skills/loop/write-OKF/scripts/render-check` — the same two edits; `SKIP`
+- `skills/loop/write-okf/scripts/render-check` — the same two edits; `SKIP`
   moves, `OWNER`/`SENTINEL`/`RETIRED` stay.
 - `OKF/blueprints/023-*.md`, `019-*.md`, `OKF/index.md` — status words only.
 
@@ -97,8 +97,8 @@ true, not whether the blueprint's subject moved.
 
 ```sh
 cd <repo-root>
-LINK=skills/loop/write-OKF/scripts/link-check
-REND=skills/loop/write-OKF/scripts/render-check
+LINK=skills/loop/write-okf/scripts/link-check
+REND=skills/loop/write-okf/scripts/render-check
 L='[x](../nonexistent-abc/SKILL.md)'
 R=$(grep -m1 '^RETIRED' $REND | cut -d'"' -f2)   # the constant, never quoted
 

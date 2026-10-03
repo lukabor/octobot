@@ -4,7 +4,7 @@ purpose: Keep what the check scripts turned out to see, and what their parsers a
 answers:
   - "What did we get wrong about the OKF check scripts?"
 cites:
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/scripts/okf-check
 status: live
 ---
 

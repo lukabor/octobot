@@ -12,7 +12,7 @@ Phase 6's second half, the last thing owed before it ticks.
 [007](../decisions/R-007-taxonomy-derived-per-repo.md) settled that the page
 taxonomy is derived per repo; [009](../decisions/R-009-index-is-the-page-plan.md)
 settled where the plan is recorded. Neither has a producer — scaffold
-still materialises a fixed four-template skeleton (`write-OKF/SKILL.md:32`),
+still materialises a fixed four-template skeleton (`write-okf/SKILL.md:32`),
 the exact layout 007 rejects. The Real need: a scan turning a repo's shape
 into a proposal a user can lock. Brief: `ROADMAP.md:70-77`.
 
@@ -58,19 +58,19 @@ fill, unmaterialised — no pre-warranted shell slips past the check.
 
 ## Seams touched
 
-- `skills/loop/write-OKF/scripts/okf-scan` — **new**. CLI
+- `skills/loop/write-okf/scripts/okf-scan` — **new**. CLI
   `okf-scan <repo-root>`, candidates on stdout, exit 0 whatever it finds
   (2 on usage) — a scanner is not a validator, so
   [016](../decisions/R-016-one-okf-check-validator.md) holds.
-- `skills/loop/write-OKF/taxonomy-scan.md` — **new**. The scan contract:
+- `skills/loop/write-okf/taxonomy-scan.md` — **new**. The scan contract:
   two signals, the evidence rule, the producer seam, the propose-never-
   write boundary, and how a proposal becomes a locked plan.
-- `skills/loop/write-OKF/okf-layout.md` — `modules/` and `analyses/` in
+- `skills/loop/write-okf/okf-layout.md` — `modules/` and `analyses/` in
   the tree, marked proposable; a pointer to `taxonomy-scan.md`.
-- `skills/loop/write-OKF/SKILL.md` — scaffold step 2 becomes scan →
+- `skills/loop/write-okf/SKILL.md` — scaffold step 2 becomes scan →
   propose → user locks `index.md` → materialise what it lists *and* a
   producer can fill.
-- `skills/loop/write-OKF/templates/` — warrants on the four templates;
+- `skills/loop/write-okf/templates/` — warrants on the four templates;
   `CONTEXT.md.tpl` and `ROADMAP.md.tpl` added, unmaterialised.
 - `OKF/ROADMAP.md` phase 6 — the ✅ tick, paid for by its spent risk line
   (`:94-96`; 004 shipped `path:symbol`).
@@ -83,7 +83,7 @@ Weave builds two scratchpad fixtures — `fx-analysis/` with
 scaffolds `fx-analysis/OKF` per the rewritten step 2, then runs:
 
 ```sh
-S=$SCRATCH && A=$S/fx-analysis && L=$S/fx-lib && W=skills/loop/write-OKF \
+S=$SCRATCH && A=$S/fx-analysis && L=$S/fx-lib && W=skills/loop/write-okf \
   && $W/scripts/okf-scan $A > $S/plan-a && $W/scripts/okf-scan $L > $S/plan-l \
   && test -s $S/plan-a && test -s $S/plan-l && ! diff -q $S/plan-a $S/plan-l \
   && grep -q '^analyses/' $S/plan-a && ! grep -q '^modules/' $S/plan-a \

@@ -1,10 +1,10 @@
 ---
-name: write-OKF
+name: write-okf
 description: Scaffold or refresh a project's OKF (open-knowledge-format) wiki — the agent-first knowledge folder at ./OKF/ that AGENTS.md points every agent at before it touches code.
 disable-model-invocation: true
 ---
 
-# write-OKF
+# write-okf
 
 The OKF is a Karpathy-LLM-wiki-style knowledge substrate: dense synthesis,
 not raw dumps; agents read it *before* code; every page inspectable,
@@ -12,7 +12,7 @@ versioned, agent-maintained. Layout and Google-OKF-v0.1 conformance
 contract: [okf-layout.md](okf-layout.md).
 
 ## When to use
-- User says "scribe OKF", "/write-OKF", "set up the knowledge folder",
+- User says "scribe OKF", "/write-okf", "set up the knowledge folder",
   "refresh the wiki".
 - Another loop skill (`/chart`,
   `/rig`) requires an `OKF/` that is absent

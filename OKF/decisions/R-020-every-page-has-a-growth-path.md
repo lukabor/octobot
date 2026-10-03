@@ -5,9 +5,9 @@ answers:
   - "What happens to a page at cap+1?"
 cites:
   - OKF/blueprints/B-009-give-every-page-a-growth-path.md
-  - skills/loop/write-OKF/okf-layout.md
-  - skills/loop/write-OKF/split-page.md
-  - skills/loop/write-OKF/scripts/okf-check
+  - skills/loop/write-okf/okf-layout.md
+  - skills/loop/write-okf/split-page.md
+  - skills/loop/write-okf/scripts/okf-check
 status: live
 reversible: demote the cap to a warning in okf-check; splits already made stand
 ---

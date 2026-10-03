@@ -62,7 +62,7 @@ printf 'roadmap-stale: %s roadmap-verified: %s\n' \
   "$(grep -c '✅ verified' OKF/ROADMAP.md)"
 printf 'exemption: %s\n' \
   "$(grep -c 'stamp' skills/loop/blueprint/blueprint-format.md)"
-skills/loop/write-OKF/scripts/okf-check OKF/
+skills/loop/write-okf/scripts/okf-check OKF/
 ```
 
 Expect `stamped: 3` `pending: 1`, `roadmap-stale: 0`

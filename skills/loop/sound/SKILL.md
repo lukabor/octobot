@@ -16,7 +16,7 @@ where step 2 came up short.
 
 1. **OKF** — read the pages the question touches, starting at
    `OKF/index.md`. No `./OKF/` → say so in one line, name
-   `/write-OKF`, **stop**. Nothing else runs.
+   `/write-okf`, **stop**. Nothing else runs.
 2. **nostos** — query the nostos MCP server, via its `find` /
    `provenance_of` tools. It is the primary source for what the code
    says, not a hint feeding a later read: what it returns is source, not
@@ -36,7 +36,7 @@ where step 2 came up short.
 
 Cite `path:symbol` where a symbol carries the claim — that is the shape
 that breaks when the thing it cites moves, while a `path:line` suffix is
-a reading aid nothing validates (`/write-OKF`'s `okf-layout.md`). A
+a reading aid nothing validates (`/write-okf`'s `okf-layout.md`). A
 claim with no internal owner — a third-party API, a spec — is followed
 to its primary source and cited. **Nothing else leaves the repo.**
 
@@ -90,7 +90,7 @@ the user asks, or when a cite no longer resolves.
 ## See also
 - `/blueprint` — the caller; sounding
   gates its lock step.
-- `/write-OKF` — no `OKF/` → there
+- `/write-okf` — no `OKF/` → there
   first; `okf-check` owns the warning.
 - `/rig` — executes what a sounded
   blueprint locked.
