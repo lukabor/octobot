@@ -37,6 +37,16 @@ for DEST in "${DESTS[@]}"; do
 
   mkdir -p "$DEST"
 
+  # Prune links into this repo whose target is gone (a renamed or removed
+  # skill), so they don't linger as dangling entries.
+  for link in "$DEST"/*; do
+    if [ -L "$link" ] && [ ! -e "$link" ]; then
+      case "$(readlink "$link")" in
+        "$REPO"/*) rm "$link"; echo "pruned $(basename "$link") ($DEST)" ;;
+      esac
+    fi
+  done
+
   for i in "${!names[@]}"; do
     name="${names[$i]}"
     src="${srcs[$i]}"
